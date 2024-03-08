@@ -1,0 +1,6 @@
+framework module Pods_YouthUnionTLU {
+  umbrella header "Pods-YouthUnionTLU-umbrella.h"
+
+  export *
+  module * { export * }
+}

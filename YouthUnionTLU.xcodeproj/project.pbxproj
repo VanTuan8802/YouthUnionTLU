@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75DAFBEE875009620FCC9B14 /* Pods_YouthUnionTLU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5442DE59D1755506FBFF32 /* Pods_YouthUnionTLU.framework */; };
+		AA732F242B9B767C009EB608 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA732F232B9B767C009EB608 /* GoogleService-Info.plist */; };
 		AAC206422B9B625000BDFCF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC206412B9B625000BDFCF9 /* AppDelegate.swift */; };
 		AAC206442B9B625000BDFCF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC206432B9B625000BDFCF9 /* SceneDelegate.swift */; };
 		AAC206462B9B625000BDFCF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC206452B9B625000BDFCF9 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F0A6FA60D4219DC995B36EA /* Pods-YouthUnionTLU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouthUnionTLU.release.xcconfig"; path = "Target Support Files/Pods-YouthUnionTLU/Pods-YouthUnionTLU.release.xcconfig"; sourceTree = "<group>"; };
+		AA732F232B9B767C009EB608 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AAC2063E2B9B625000BDFCF9 /* YouthUnionTLU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouthUnionTLU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC206412B9B625000BDFCF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAC206432B9B625000BDFCF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		AAC2064A2B9B625200BDFCF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAC2064D2B9B625200BDFCF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAC2064F2B9B625200BDFCF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC5442DE59D1755506FBFF32 /* Pods_YouthUnionTLU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YouthUnionTLU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8ECEDEF893615FBFFA5AEE9 /* Pods-YouthUnionTLU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouthUnionTLU.debug.xcconfig"; path = "Target Support Files/Pods-YouthUnionTLU/Pods-YouthUnionTLU.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75DAFBEE875009620FCC9B14 /* Pods_YouthUnionTLU.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A1507878F4EB32C337BD9D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC5442DE59D1755506FBFF32 /* Pods_YouthUnionTLU.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AAC206352B9B625000BDFCF9 = {
 			isa = PBXGroup;
 			children = (
 				AAC206402B9B625000BDFCF9 /* YouthUnionTLU */,
 				AAC2063F2B9B625000BDFCF9 /* Products */,
+				FB5BE572E31EF3EC6E5E932C /* Pods */,
+				8A1507878F4EB32C337BD9D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,10 +78,20 @@
 				AAC206452B9B625000BDFCF9 /* ViewController.swift */,
 				AAC206472B9B625000BDFCF9 /* Main.storyboard */,
 				AAC2064A2B9B625200BDFCF9 /* Assets.xcassets */,
+				AA732F232B9B767C009EB608 /* GoogleService-Info.plist */,
 				AAC2064C2B9B625200BDFCF9 /* LaunchScreen.storyboard */,
 				AAC2064F2B9B625200BDFCF9 /* Info.plist */,
 			);
 			path = YouthUnionTLU;
+			sourceTree = "<group>";
+		};
+		FB5BE572E31EF3EC6E5E932C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F8ECEDEF893615FBFFA5AEE9 /* Pods-YouthUnionTLU.debug.xcconfig */,
+				4F0A6FA60D4219DC995B36EA /* Pods-YouthUnionTLU.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AAC206522B9B625200BDFCF9 /* Build configuration list for PBXNativeTarget "YouthUnionTLU" */;
 			buildPhases = (
+				5A5E23C53AB208610CAEAFDC /* [CP] Check Pods Manifest.lock */,
 				AAC2063A2B9B625000BDFCF9 /* Sources */,
 				AAC2063B2B9B625000BDFCF9 /* Frameworks */,
 				AAC2063C2B9B625000BDFCF9 /* Resources */,
+				3A915A73F0C5D4FDD1CEE606 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,12 +155,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAC2064E2B9B625200BDFCF9 /* LaunchScreen.storyboard in Resources */,
+				AA732F242B9B767C009EB608 /* GoogleService-Info.plist in Resources */,
 				AAC2064B2B9B625200BDFCF9 /* Assets.xcassets in Resources */,
 				AAC206492B9B625000BDFCF9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A915A73F0C5D4FDD1CEE606 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YouthUnionTLU/Pods-YouthUnionTLU-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YouthUnionTLU/Pods-YouthUnionTLU-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YouthUnionTLU/Pods-YouthUnionTLU-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A5E23C53AB208610CAEAFDC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YouthUnionTLU-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AAC2063A2B9B625000BDFCF9 /* Sources */ = {
@@ -287,12 +359,14 @@
 		};
 		AAC206532B9B625200BDFCF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8ECEDEF893615FBFFA5AEE9 /* Pods-YouthUnionTLU.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9AUU5RLM92;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YouthUnionTLU/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -300,6 +374,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,12 +390,14 @@
 		};
 		AAC206542B9B625200BDFCF9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F0A6FA60D4219DC995B36EA /* Pods-YouthUnionTLU.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9AUU5RLM92;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YouthUnionTLU/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -328,6 +405,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
