@@ -7,23 +7,17 @@
 
 import UIKit
 
-class SplashViewController: UIViewController {
-
+class SplashViewController: UIViewController, StoryboardInstantiable {
+    
+    private var viewModel: SplashViewModel!
+    
+    class func create(with viewModel: SplashViewModel) -> SplashViewController {
+        let vc = SplashViewController.instantiateViewController()
+        vc.viewModel = viewModel
+        return vc
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
