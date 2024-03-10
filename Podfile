@@ -9,6 +9,7 @@ target 'YouthUnionTLU' do
   pod 'FirebaseFirestore'
   pod 'FirebaseFirestoreSwift'
   pod 'FirebaseStorage'
+  pod 'R.swift'
   # Pods for YouthUnionTLU
 
 end
