@@ -9,9 +9,12 @@ import Foundation
 import UIKit
 
 class OnboardDIContainer {
+    
     struct Dependencies {
         var a: String
     }
+    
+    
     private let dependencies: Dependencies
     
     init(dependencies: Dependencies) {

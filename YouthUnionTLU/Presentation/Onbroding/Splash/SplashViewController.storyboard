@@ -35,7 +35,7 @@
                                 <color key="textColor" name="2D3BB6"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vce-of-lcz">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vce-of-lcz">
                                 <rect key="frame" x="24" y="766" width="345" height="4"/>
                                 <color key="tintColor" name="253590"/>
                             </progressView>
@@ -65,6 +65,9 @@
                             <constraint firstItem="DvJ-6T-xeE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="u5X-Rv-499"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="progressView" destination="vce-of-lcz" id="JEQ-Vu-Vm7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

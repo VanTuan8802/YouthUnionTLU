@@ -22,9 +22,13 @@ final class OnboardFlowCoodinator {
     }
     
     func start() {
-        let actions = SplashActions(showFirstLanguage: show, showIntro: show)
+        let actions = SplashActions(showFirstLanguage: showLanguage, showIntro: show)
         let vc = dependencies.makeSplashVC(actions: actions)
         navigationController?.viewControllers = [vc]
+    }
+    
+    private func showLanguage() {
+        
     }
     
     private func show() {

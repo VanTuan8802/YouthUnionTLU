@@ -8,9 +8,9 @@
 import UIKit
 import FirebaseCore
 
-@main
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     let appDIContainer = AppDIContainer()
     var appFlowCoordinator: AppFlowCoordinator?
     var window: UIWindow?
@@ -19,11 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static var shared: AppDelegate {
         return sharedInstance!
     }
-    
-    func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
         AppDelegate.sharedInstance = self
         AppAppearance.setupAppearance()
+        FirebaseApp.configure()
         
         window = UIWindow(frame: UIScreen.main.bounds)
         let navigationController = UINavigationController()
@@ -36,9 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         )
         appFlowCoordinator?.start()
         window?.makeKeyAndVisible()
-        FirebaseApp.configure()
+        
         return true
     }
-
 }
-
