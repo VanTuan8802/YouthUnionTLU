@@ -10,6 +10,7 @@ import UIKit
 
 protocol OnboardFlowCoordinatorDependencies {
     func makeSplashVC(actions: SplashActions) -> SplashViewController
+    func makeLanguageVC(actions: LanguageActions) -> LanguageViewController
 }
 
 final class OnboardFlowCoodinator {
@@ -28,7 +29,9 @@ final class OnboardFlowCoodinator {
     }
     
     private func showLanguage() {
-        
+        let actions = LanguageActions(showPermission: show)
+        let vc = dependencies.makeLanguageVC(actions: actions)
+        navigationController?.viewControllers = [vc]
     }
     
     private func show() {

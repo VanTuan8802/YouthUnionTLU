@@ -12,11 +12,22 @@ let R = _R(bundle: Bundle(for: BundleFinder.self))
 
 struct _R {
   let bundle: Foundation.Bundle
+  var string: string { .init(bundle: bundle, preferredLanguages: nil, locale: nil) }
   var color: color { .init(bundle: bundle) }
   var image: image { .init(bundle: bundle) }
   var file: file { .init(bundle: bundle) }
+  var nib: nib { .init(bundle: bundle) }
   var storyboard: storyboard { .init(bundle: bundle) }
 
+  func string(bundle: Foundation.Bundle) -> string {
+    .init(bundle: bundle, preferredLanguages: nil, locale: nil)
+  }
+  func string(locale: Foundation.Locale) -> string {
+    .init(bundle: bundle, preferredLanguages: nil, locale: locale)
+  }
+  func string(preferredLanguages: [String], locale: Locale? = nil) -> string {
+    .init(bundle: bundle, preferredLanguages: preferredLanguages, locale: locale)
+  }
   func color(bundle: Foundation.Bundle) -> color {
     .init(bundle: bundle)
   }
@@ -26,15 +37,102 @@ struct _R {
   func file(bundle: Foundation.Bundle) -> file {
     .init(bundle: bundle)
   }
+  func nib(bundle: Foundation.Bundle) -> nib {
+    .init(bundle: bundle)
+  }
   func storyboard(bundle: Foundation.Bundle) -> storyboard {
     .init(bundle: bundle)
   }
   func validate() throws {
+    try self.nib.validate()
     try self.storyboard.validate()
   }
 
   struct project {
     let developmentRegion = "en"
+  }
+
+  /// This `_R.string` struct is generated, and contains static references to 2 localization tables.
+  struct string {
+    let bundle: Foundation.Bundle
+    let preferredLanguages: [String]?
+    let locale: Locale?
+    var launchScreen: launchScreen { .init(source: .init(bundle: bundle, tableName: "LaunchScreen", preferredLanguages: preferredLanguages, locale: locale)) }
+    var localizable: localizable { .init(source: .init(bundle: bundle, tableName: "Localizable", preferredLanguages: preferredLanguages, locale: locale)) }
+
+    func launchScreen(preferredLanguages: [String]) -> launchScreen {
+      .init(source: .init(bundle: bundle, tableName: "LaunchScreen", preferredLanguages: preferredLanguages, locale: locale))
+    }
+    func localizable(preferredLanguages: [String]) -> localizable {
+      .init(source: .init(bundle: bundle, tableName: "Localizable", preferredLanguages: preferredLanguages, locale: locale))
+    }
+
+
+    /// This `_R.string.launchScreen` struct is generated, and contains static references to 0 localization keys.
+    struct launchScreen {
+      let source: RswiftResources.StringResource.Source
+    }
+
+    /// This `_R.string.localizable` struct is generated, and contains static references to 8 localization keys.
+    struct localizable {
+      let source: RswiftResources.StringResource.Source
+
+      /// en translation: OK
+      ///
+      /// Key: button.Ok
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var buttonOk: RswiftResources.StringResource { .init(key: "button.Ok", tableName: "Localizable", source: source, developmentValue: "OK", comment: nil) }
+
+      /// en translation: Cancle
+      ///
+      /// Key: button.cancle
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var buttonCancle: RswiftResources.StringResource { .init(key: "button.cancle", tableName: "Localizable", source: source, developmentValue: "Cancle", comment: nil) }
+
+      /// en translation: Cambodian
+      ///
+      /// Key: language.cam
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var languageCam: RswiftResources.StringResource { .init(key: "language.cam", tableName: "Localizable", source: source, developmentValue: "Cambodian", comment: nil) }
+
+      /// en translation: English
+      ///
+      /// Key: language.eng
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var languageEng: RswiftResources.StringResource { .init(key: "language.eng", tableName: "Localizable", source: source, developmentValue: "English", comment: nil) }
+
+      /// en translation: French
+      ///
+      /// Key: language.fre
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var languageFre: RswiftResources.StringResource { .init(key: "language.fre", tableName: "Localizable", source: source, developmentValue: "French", comment: nil) }
+
+      /// en translation: Laos
+      ///
+      /// Key: language.lao
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var languageLao: RswiftResources.StringResource { .init(key: "language.lao", tableName: "Localizable", source: source, developmentValue: "Laos", comment: nil) }
+
+      /// en translation: Language
+      ///
+      /// Key: language.title
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var languageTitle: RswiftResources.StringResource { .init(key: "language.title", tableName: "Localizable", source: source, developmentValue: "Language", comment: nil) }
+
+      /// en translation: VietNames
+      ///
+      /// Key: language.vie
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var languageVie: RswiftResources.StringResource { .init(key: "language.vie", tableName: "Localizable", source: source, developmentValue: "VietNames", comment: nil) }
+    }
   }
 
   /// This `_R.color` struct is generated, and contains static references to 2 colors.
@@ -48,9 +146,27 @@ struct _R {
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 1 images.
+  /// This `_R.image` struct is generated, and contains static references to 7 images.
   struct image {
     let bundle: Foundation.Bundle
+
+    /// Image `Cambodian`.
+    var cambodian: RswiftResources.ImageResource { .init(name: "Cambodian", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `English`.
+    var english: RswiftResources.ImageResource { .init(name: "English", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `French`.
+    var french: RswiftResources.ImageResource { .init(name: "French", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `Laos`.
+    var laos: RswiftResources.ImageResource { .init(name: "Laos", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `VietNam`.
+    var vietNam: RswiftResources.ImageResource { .init(name: "VietNam", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `check`.
+    var check: RswiftResources.ImageResource { .init(name: "check", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `splash`.
     var splash: RswiftResources.ImageResource { .init(name: "splash", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -64,12 +180,28 @@ struct _R {
     var googleServiceInfoPlist: RswiftResources.FileResource { .init(name: "GoogleService-Info", pathExtension: "plist", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `_R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    let bundle: Foundation.Bundle
+
+    /// Nib `LanguageTableViewCell`.
+    var languageTableViewCell: RswiftResources.NibReference<LanguageTableViewCell> { .init(name: "LanguageTableViewCell", bundle: bundle) }
+
+    func validate() throws {
+
+    }
+  }
+
+  /// This `_R.storyboard` struct is generated, and contains static references to 3 storyboards.
   struct storyboard {
     let bundle: Foundation.Bundle
+    var languageViewController: languageViewController { .init(bundle: bundle) }
     var launchScreen: launchScreen { .init(bundle: bundle) }
     var splashViewController: splashViewController { .init(bundle: bundle) }
 
+    func languageViewController(bundle: Foundation.Bundle) -> languageViewController {
+      .init(bundle: bundle)
+    }
     func launchScreen(bundle: Foundation.Bundle) -> launchScreen {
       .init(bundle: bundle)
     }
@@ -77,10 +209,27 @@ struct _R {
       .init(bundle: bundle)
     }
     func validate() throws {
+      try self.languageViewController.validate()
       try self.launchScreen.validate()
       try self.splashViewController.validate()
     }
 
+
+    /// Storyboard `LanguageViewController`.
+    struct languageViewController: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
+      typealias InitialController = LanguageViewController
+
+      let bundle: Foundation.Bundle
+
+      let name = "LanguageViewController"
+
+      var languageViewController: RswiftResources.StoryboardViewControllerIdentifier<LanguageViewController> { .init(identifier: "LanguageViewController", storyboard: name, bundle: bundle) }
+
+      func validate() throws {
+        if UIKit.UIImage(named: "check", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'check' is used in storyboard 'LanguageViewController', but couldn't be loaded.") }
+        if languageViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'languageViewController' could not be loaded from storyboard 'LanguageViewController' as 'LanguageViewController'.") }
+      }
+    }
 
     /// Storyboard `LaunchScreen`.
     struct launchScreen: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {

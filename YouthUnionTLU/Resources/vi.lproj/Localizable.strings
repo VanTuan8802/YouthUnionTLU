@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  YouthUnionTLU
+
+  Created by VanTuan on 11/03/2024.
+  
+*/
+
+button.Ok = "Đồng ý";
+button.cancle = "Hủy";
+
+language.title = "Ngôn ngữ";
+language.eng = "Tiếng Anh";
+language.fre = "Tiếng Pháp";
+language.cam = "Tiếng Campuchia";
+language.lao = "Tiếng Lào";
+language.vie = "Tiếng Việt";
