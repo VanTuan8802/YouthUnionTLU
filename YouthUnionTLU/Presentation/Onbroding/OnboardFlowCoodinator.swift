@@ -11,6 +11,7 @@ import UIKit
 protocol OnboardFlowCoordinatorDependencies {
     func makeSplashVC(actions: SplashActions) -> SplashViewController
     func makeLanguageVC(actions: LanguageActions) -> LanguageViewController
+    func makePermission(actions: PermissionActions) -> PermissionViewController
 }
 
 final class OnboardFlowCoodinator {
@@ -29,8 +30,14 @@ final class OnboardFlowCoodinator {
     }
     
     private func showLanguage() {
-        let actions = LanguageActions(showPermission: show)
+        let actions = LanguageActions(showPermission: showPermission)
         let vc = dependencies.makeLanguageVC(actions: actions)
+        navigationController?.viewControllers = [vc]
+    }
+    
+    private func showPermission() {
+        let actions = PermissionActions(showLogin: show)
+        let vc = dependencies.makePermission(actions: actions)
         navigationController?.viewControllers = [vc]
     }
     

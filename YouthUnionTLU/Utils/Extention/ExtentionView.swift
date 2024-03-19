@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIView {
-      var cornerRadius: CGFloat {
+    @IBInspectable var cornerRadius: CGFloat {
         get {
             return self.layer.cornerRadius
         }
@@ -42,16 +42,7 @@ extension UIView {
             }
         }
     }
-    
-    @IBInspectable var shadowBlur: CGFloat {
-        get {
-            return self.layer.shadowRadius * 2.0
-        }
-        set {
-            self.layer.shadowRadius = newValue / 2.0
-        }
-    }
-    
+
     @IBInspectable var shadowColor: UIColor? {
         get {
             if let color = self.layer.shadowColor {
@@ -67,6 +58,24 @@ extension UIView {
                 self.layer.shadowColor = nil
                 self.layer.shadowOpacity = 0.0
             }
+        }
+    }
+    
+    @IBInspectable var shadowOffset: CGSize {
+        get {
+            return self.layer.shadowOffset
+        }
+        set {
+            self.layer.shadowOffset = newValue
+        }
+    }
+    
+    @IBInspectable var shadowRadius: CGFloat {
+        get {
+            return self.layer.shadowRadius
+        }
+        set {
+            self.layer.shadowRadius = newValue
         }
     }
 }

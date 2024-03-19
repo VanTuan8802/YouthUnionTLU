@@ -32,8 +32,8 @@ class DefaultLanguageViewModel: LanguageViewModel {
 }
 
 extension DefaultLanguageViewModel {
-    
     func viewDidLoad() {
+        
     }
     
     func openPermisstion() {

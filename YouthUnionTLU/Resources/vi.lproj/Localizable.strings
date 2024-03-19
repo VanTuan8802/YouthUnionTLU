@@ -15,3 +15,10 @@ language.fre = "Tiếng Pháp";
 language.cam = "Tiếng Campuchia";
 language.lao = "Tiếng Lào";
 language.vie = "Tiếng Việt";
+
+permission.title = "Quyền riêng tư";
+permission.content = "Ứng dụng cần quyền để sử dụng máy ảnh, thư mục và thông báo của thiết bị";
+permission.notifications = "Thông báo";
+permission.photos = "Ảnh";
+permission.camera = "Máy ảnh";
+

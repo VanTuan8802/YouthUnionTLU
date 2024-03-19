@@ -15,3 +15,9 @@ language.fre = "បារាំង";
 language.cam = "កម្ពុជា";
 language.lao = "ឡាវ";
 language.vie = "វៀតណាម";
+
+permission.title = "ការអនុញ្ញាត";
+permission.content = "កម្មវិធីត្រូវការការអនុញ្ញាតដើម្បីប្រើការស្រាវជាម៉ាស៊ីនថត, ថត និងការជូនដំណឹងរបស់ឧបករណ៍";
+permission.notifications = "ការជូនដំណឹង";
+permission.photos = "រូបថត";
+permission.camera = "កាមេរ៉ា";

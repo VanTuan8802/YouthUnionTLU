@@ -34,6 +34,10 @@ class OnboardDIContainer {
     private func makeLanguageViewModel(actions: LanguageActions) -> LanguageViewModel {
         DefaultLanguageViewModel(actions: actions)
     }
+    
+    private func makePerrmissionModel(actions: PermissionActions) -> PermissionViewModel {
+        DefaultPermisstionViewModel(actions: actions)
+    }
 }
 
 extension OnboardDIContainer: OnboardFlowCoordinatorDependencies {
@@ -43,5 +47,9 @@ extension OnboardDIContainer: OnboardFlowCoordinatorDependencies {
     
     func makeLanguageVC(actions: LanguageActions) -> LanguageViewController {
         LanguageViewController.create(with: makeLanguageViewModel(actions: actions))
+    }
+    
+    func makePermission(actions: PermissionActions) -> PermissionViewController {
+        PermissionViewController.create(with: makePerrmissionModel(actions: actions))
     }
 }

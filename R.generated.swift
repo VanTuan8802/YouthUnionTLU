@@ -73,7 +73,7 @@ struct _R {
       let source: RswiftResources.StringResource.Source
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 8 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 13 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -132,6 +132,41 @@ struct _R {
       ///
       /// Locales: en, fr, km-KH, lo-LA, vi
       var languageVie: RswiftResources.StringResource { .init(key: "language.vie", tableName: "Localizable", source: source, developmentValue: "VietNames", comment: nil) }
+
+      /// en translation: Camera
+      ///
+      /// Key: permission.camera
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var permissionCamera: RswiftResources.StringResource { .init(key: "permission.camera", tableName: "Localizable", source: source, developmentValue: "Camera", comment: nil) }
+
+      /// en translation: App requires permission to use the device’s camera, folder and notifications
+      ///
+      /// Key: permission.content
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var permissionContent: RswiftResources.StringResource { .init(key: "permission.content", tableName: "Localizable", source: source, developmentValue: "App requires permission to use the device’s camera, folder and notifications", comment: nil) }
+
+      /// en translation: Notifications
+      ///
+      /// Key: permission.notifications
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var permissionNotifications: RswiftResources.StringResource { .init(key: "permission.notifications", tableName: "Localizable", source: source, developmentValue: "Notifications", comment: nil) }
+
+      /// en translation: Photos
+      ///
+      /// Key: permission.photos
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var permissionPhotos: RswiftResources.StringResource { .init(key: "permission.photos", tableName: "Localizable", source: source, developmentValue: "Photos", comment: nil) }
+
+      /// en translation: Permission
+      ///
+      /// Key: permission.title
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var permissionTitle: RswiftResources.StringResource { .init(key: "permission.title", tableName: "Localizable", source: source, developmentValue: "Permission", comment: nil) }
     }
   }
 
@@ -146,7 +181,7 @@ struct _R {
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 7 images.
+  /// This `_R.image` struct is generated, and contains static references to 8 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -167,6 +202,9 @@ struct _R {
 
     /// Image `check`.
     var check: RswiftResources.ImageResource { .init(name: "check", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `permission`.
+    var permission: RswiftResources.ImageResource { .init(name: "permission", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `splash`.
     var splash: RswiftResources.ImageResource { .init(name: "splash", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -192,11 +230,12 @@ struct _R {
     }
   }
 
-  /// This `_R.storyboard` struct is generated, and contains static references to 3 storyboards.
+  /// This `_R.storyboard` struct is generated, and contains static references to 4 storyboards.
   struct storyboard {
     let bundle: Foundation.Bundle
     var languageViewController: languageViewController { .init(bundle: bundle) }
     var launchScreen: launchScreen { .init(bundle: bundle) }
+    var permissionViewController: permissionViewController { .init(bundle: bundle) }
     var splashViewController: splashViewController { .init(bundle: bundle) }
 
     func languageViewController(bundle: Foundation.Bundle) -> languageViewController {
@@ -205,12 +244,16 @@ struct _R {
     func launchScreen(bundle: Foundation.Bundle) -> launchScreen {
       .init(bundle: bundle)
     }
+    func permissionViewController(bundle: Foundation.Bundle) -> permissionViewController {
+      .init(bundle: bundle)
+    }
     func splashViewController(bundle: Foundation.Bundle) -> splashViewController {
       .init(bundle: bundle)
     }
     func validate() throws {
       try self.languageViewController.validate()
       try self.launchScreen.validate()
+      try self.permissionViewController.validate()
       try self.splashViewController.validate()
     }
 
@@ -240,6 +283,24 @@ struct _R {
       let name = "LaunchScreen"
       func validate() throws {
 
+      }
+    }
+
+    /// Storyboard `PermissionViewController`.
+    struct permissionViewController: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
+      typealias InitialController = PermissionViewController
+
+      let bundle: Foundation.Bundle
+
+      let name = "PermissionViewController"
+
+      var permissionViewController: RswiftResources.StoryboardViewControllerIdentifier<PermissionViewController> { .init(identifier: "PermissionViewController", storyboard: name, bundle: bundle) }
+
+      func validate() throws {
+        if UIKit.UIImage(named: "permission", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'permission' is used in storyboard 'PermissionViewController', but couldn't be loaded.") }
+        if UIKit.UIColor(named: "253590", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named '253590' is used in storyboard 'PermissionViewController', but couldn't be loaded.") }
+        if UIKit.UIColor(named: "2D3BB6", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named '2D3BB6' is used in storyboard 'PermissionViewController', but couldn't be loaded.") }
+        if permissionViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'permissionViewController' could not be loaded from storyboard 'PermissionViewController' as 'PermissionViewController'.") }
       }
     }
 

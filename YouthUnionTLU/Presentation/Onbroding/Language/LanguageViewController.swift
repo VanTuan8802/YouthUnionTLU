@@ -53,9 +53,9 @@ class LanguageViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func checkAction(_ sender: Any) {
+        UserDefaultsData.shared.language = languageSelected
         viewModel.openPermisstion()
     }
-    
 }
 
 extension LanguageViewController: UITableViewDataSource {
@@ -71,9 +71,8 @@ extension LanguageViewController: UITableViewDataSource {
         cell.bindData(language: items[indexPath.row], selected: items[indexPath.row] == languageSelected)
         return cell
     }
-    
-    
 }
+
 extension LanguageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 72
@@ -82,6 +81,7 @@ extension LanguageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? LanguageTableViewCell {
             languageSelected = items[indexPath.row]
+            print(languageSelected.name)
             cell.bindData(language: languageSelected, selected: items[indexPath.row] == languageSelected)
         }
         tableView.reloadData()

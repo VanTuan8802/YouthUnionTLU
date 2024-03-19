@@ -11,8 +11,8 @@ enum LanguageType: String, Encodable {
     case vie = "vie"
     case eng = "eng"
     case fre = "fre"
-    case lao = "lap=o"
-    case cam = "cam"
+    case lao = "lo-LA"
+    case cam = "km-KH"
     
     var image: String {
         switch self {
@@ -32,15 +32,15 @@ enum LanguageType: String, Encodable {
     var name: String {
         switch self {
         case .vie:
-            return R.string.localizable.languageVie()
+            return R.stringLocalizable.languageVie()
         case .eng:
-            return R.string.localizable.languageEng()
+            return R.stringLocalizable.languageEng()
         case .fre:
-            return R.string.localizable.languageFre()
+            return R.stringLocalizable.languageFre()
         case .lao:
-            return R.string.localizable.languageLao()
+            return R.stringLocalizable.languageLao()
         case .cam:
-            return R.string.localizable.languageCam()
+            return R.stringLocalizable.languageCam()
         }
     }
 }

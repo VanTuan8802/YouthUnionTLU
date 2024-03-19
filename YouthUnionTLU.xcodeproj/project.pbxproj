@@ -33,6 +33,9 @@
 		AAC206422B9B625000BDFCF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC206412B9B625000BDFCF9 /* AppDelegate.swift */; };
 		AAC2064B2B9B625200BDFCF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAC2064A2B9B625200BDFCF9 /* Assets.xcassets */; };
 		AAC2064E2B9B625200BDFCF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC2064C2B9B625200BDFCF9 /* LaunchScreen.storyboard */; };
+		AADC74052BA33F5000406787 /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC74042BA33F5000406787 /* PermissionViewController.swift */; };
+		AADC74072BA33F5A00406787 /* PermissionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AADC74062BA33F5A00406787 /* PermissionViewController.storyboard */; };
+		AADC74092BA3434A00406787 /* PermisstionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC74082BA3434A00406787 /* PermisstionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +80,9 @@
 		AAC2064A2B9B625200BDFCF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAC2064D2B9B625200BDFCF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAC2064F2B9B625200BDFCF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AADC74042BA33F5000406787 /* PermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewController.swift; sourceTree = "<group>"; };
+		AADC74062BA33F5A00406787 /* PermissionViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PermissionViewController.storyboard; sourceTree = "<group>"; };
+		AADC74082BA3434A00406787 /* PermisstionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermisstionViewModel.swift; sourceTree = "<group>"; };
 		EC5442DE59D1755506FBFF32 /* Pods_YouthUnionTLU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YouthUnionTLU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8ECEDEF893615FBFFA5AEE9 /* Pods-YouthUnionTLU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouthUnionTLU.debug.xcconfig"; path = "Target Support Files/Pods-YouthUnionTLU/Pods-YouthUnionTLU.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +192,7 @@
 			children = (
 				AA732F342B9D762A009EB608 /* Splash */,
 				AA732F562B9ECD05009EB608 /* Language */,
+				AADC74032BA33F2800406787 /* Permission */,
 				AA732F4C2B9DD374009EB608 /* OnboardFlowCoodinator.swift */,
 			);
 			path = Onbroding;
@@ -309,6 +316,16 @@
 			path = YouthUnionTLU;
 			sourceTree = "<group>";
 		};
+		AADC74032BA33F2800406787 /* Permission */ = {
+			isa = PBXGroup;
+			children = (
+				AADC74042BA33F5000406787 /* PermissionViewController.swift */,
+				AADC74062BA33F5A00406787 /* PermissionViewController.storyboard */,
+				AADC74082BA3434A00406787 /* PermisstionViewModel.swift */,
+			);
+			path = Permission;
+			sourceTree = "<group>";
+		};
 		FB5BE572E31EF3EC6E5E932C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,6 +402,7 @@
 			files = (
 				AA732F762B9F4EC5009EB608 /* LanguageTableViewCell.xib in Resources */,
 				AA732F5B2B9F42BE009EB608 /* LanguageViewController.storyboard in Resources */,
+				AADC74072BA33F5A00406787 /* PermissionViewController.storyboard in Resources */,
 				AA732F642B9F4530009EB608 /* Localizable.strings in Resources */,
 				AAC2064E2B9B625200BDFCF9 /* LaunchScreen.storyboard in Resources */,
 				AA732F422B9D844F009EB608 /* GoogleService-Info.plist in Resources */,
@@ -465,8 +483,10 @@
 				AA732F552B9DF311009EB608 /* ExtentionNameable.swift in Sources */,
 				AA732F492B9DD32F009EB608 /* AppDIContainer.swift in Sources */,
 				AA732F5D2B9F432B009EB608 /* LanguageViewModel.swift in Sources */,
+				AADC74052BA33F5000406787 /* PermissionViewController.swift in Sources */,
 				AA732F752B9F4EC5009EB608 /* LanguageTableViewCell.swift in Sources */,
 				AA732F3A2B9D7723009EB608 /* SplashViewModel.swift in Sources */,
+				AADC74092BA3434A00406787 /* PermisstionViewModel.swift in Sources */,
 				AAC206422B9B625000BDFCF9 /* AppDelegate.swift in Sources */,
 				AA732F712B9F4CF2009EB608 /* UserDefaultsData.swift in Sources */,
 				AA732F4B2B9DD346009EB608 /* OnboardDIContainer.swift in Sources */,
@@ -646,6 +666,10 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YouthUnionTLU/Resources/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -676,6 +700,10 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YouthUnionTLU/Resources/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

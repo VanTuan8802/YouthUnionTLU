@@ -15,3 +15,9 @@ language.fre = "French";
 language.cam = "Cambodian";
 language.lao = "Laos";
 language.vie = "VietNames";
+
+permission.title = "Permission";
+permission.content = "App requires permission to use the device’s camera, folder and notifications";
+permission.notifications = "Notifications";
+permission.photos = "Photos";
+permission.camera = "Camera";

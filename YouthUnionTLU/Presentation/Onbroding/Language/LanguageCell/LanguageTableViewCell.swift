@@ -17,21 +17,10 @@ class LanguageTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-      
-        setUI()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-    }
-    
-    private func setUI() {
-        languageView.layer.cornerRadius = 20
-        languageView.layer.masksToBounds = true
-        languageView.layer.borderWidth = 1
-        
-        selectionStyle = .none
-        backgroundColor = .clear
     }
     
     func bindData(language: LanguageType, selected: Bool) {
