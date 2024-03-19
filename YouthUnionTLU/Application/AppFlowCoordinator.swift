@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 final class AppFlowCoordinator {
-    
+
     var navigationController: UINavigationController
     private let appDIContainer: AppDIContainer
     
@@ -20,7 +20,7 @@ final class AppFlowCoordinator {
         self.navigationController = navigationController
         self.appDIContainer = appDIContainer
     }
-    
+
     func start() {
         let onboardDIContainer = appDIContainer.makeOnboardDIContainer()
         let flow = onboardDIContainer.makeOnboardFlowCoordinator(navigationController: navigationController)

@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  YouthUnionTLU
+
+  Created by VanTuan on 11/03/2024.
+  
+*/
+button.Ok = "ຕົກ​ລົງ";
+button.cancle = "ຍົກ​ເລີກ";
+
+language.title = "ພາສາ";
+language.eng = "ອັງກິດ";
+language.fre = "ພາສາ​ຝຣັ່ງ";
+language.cam = "ກຳ​ປູ​ງ";
+language.lao = "ລາວ";
+language.vie = "ຫວຽດ​ນາ​ມີ";
+
+permission.title = "ການອ້າງອີງ";
+permission.content = "ແອັບວິທີການຮ່ວມມືຖືກຕ້ອງສຳເລັດການນໍາໃຊ້ໂຟນັດແລະຖານຂໍ້ມູນຂອງອະລະບ້ຳ";
+permission.notifications = "ການແຈ້ງເຕືອນ";
+permission.photos = "ຮູບພາບ";
+permission.camera = "ກ້ອງຖິ່ນ";

@@ -36,10 +36,10 @@ extension DefaultSplashViewModel {
     func viewDidLoad() { }
     
     func openFirstLanguage() {
-       
+        actions?.showFirstLanguage()
     }
     
     func openIntro() {
-        
+        actions?.showIntro()
     }
 }

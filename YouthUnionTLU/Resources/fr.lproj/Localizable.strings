@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  YouthUnionTLU
+
+  Created by VanTuan on 11/03/2024.
+  
+*/
+
+button.Ok = "OK";
+button.cancle = "Annuler";
+
+language.title = "Langue";
+language.eng = "Anglais";
+language.fre = "Français";
+language.cam = "Cambodgien";
+language.lao = "Laotien";
+language.vie = "Vietnamien";
+
+permission.title = "Autorisation";
+permission.content = "L'application nécessite une autorisation pour utiliser l'appareil photo, le dossier et les notifications du périphérique";
+permission.notifications = "Notifications";
+permission.photos = "Photos";
+permission.camera = "Caméra";
