@@ -27,7 +27,10 @@ button.go = "Tiếp tục";
 button.signIn = "Đăng nhập";
 textField.email = "Nhập Email";
 textField.password = "Nhập mật khẩu";
-button.forgotPassword = "Quên mật khẩu?";
+button.forgotPassword = "Quên mật khẩu";
+label.sendEmail = "Một email đã được gửi đến bạn. Vui lòng nhấn vào liên kết để đặt lại mật khẩu của bạn.";
+button.backLogin = "Quay lại đăng nhập";
+button.resetPassword = "Đặt lại mật khẩu";
 
 error.email.title = "Email không hợp lệ.";
 error.email.message = "Email nhập không chính xác.";

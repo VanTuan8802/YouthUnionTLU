@@ -27,7 +27,10 @@ button.go = "Go";
 button.signIn = "Sign In";
 textField.email = "Enter E-mail";
 textField.password = "Enter Password";
-button.forgotPassword = "Forgot Password?";
+button.forgotPassword = "Forgot Password";
+lable.sendEmail = "An email has been sent to you. Please click on the link to reset your password.";
+button.backLogin = "Back to login";
+button.resetPassword = "Reset my password";
 
 error.email.title = "Invalid Email";
 error.email.message = "The e-mail you have entered is incorrect.";
@@ -36,3 +39,4 @@ error.password.title = "Invalid Password";
 error.password.message = "Password must be at least 8 characters without spaces";
 error.password.messageRequire = "Password is required";
 error.login.message =  "Incorrect login credentials.";
+

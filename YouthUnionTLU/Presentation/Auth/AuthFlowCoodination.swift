@@ -10,6 +10,7 @@ import UIKit
 
 protocol AuthenFlowCoodinatorDependencies {
     func makeLoginVC(actions: LoginActions) -> LoginViewController
+    func makeForgotPasswordVC(actions: ForgotPasswordActions) -> ForgotPasswordViewController
 }
 
 final class AuthenFlowCoodinator {
@@ -23,9 +24,19 @@ final class AuthenFlowCoodinator {
     
     func login() {
         let actions = LoginActions(showHome: showHome,
-                                   showForgotPassword: showHome)
+                                   showForgotPassword: showForgotPassword)
         let vc = dependencies.makeLoginVC(actions: actions)
         navigationController?.viewControllers = [vc]
+    }
+    
+    private func showForgotPassword() {
+        let actions = ForgotPasswordActions(showLogin: popShowLogin)
+        let vc = dependencies.makeForgotPasswordVC(actions: actions)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func popShowLogin() {
+        navigationController?.popViewController(animated: true)
     }
     
     func showHome() {

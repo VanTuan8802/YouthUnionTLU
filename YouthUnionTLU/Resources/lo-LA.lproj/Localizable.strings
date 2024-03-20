@@ -28,6 +28,9 @@ button.signIn = "ເຂົ້າລະບົບ";
 textField.email = "ປ້ອນອີເມລ";
 textField.password = "ປ້ອນລະຫັດຜ່ານ";
 button.forgotPassword = "ລືມລະຫັດຜ່ານ?";
+label.sendEmail = "ອີເມວຖືກສົ່ງຫາທ່ານແລ້ວ. ກະລຸນາຄລິກປຸ່ມທີ່ລຸກປະສົບໃນການຄືບໄປເພື່ອປ່ຽນລະຫັດຜ່ານຂອງທ່ານ.";
+button.backLogin = "ກັບໄປກັບເຂົ້າລະບົບ";
+button.resetPassword = "ຄືບໄປໃສ່ລະຫັດຜ່ານ​ຂອງຂ້ອຍ";
 
 error.email.title = "ອີເມວທີ່ບໍ່ຖືກຕ້ອງ";
 error.email.message = "ອີເມວທີ່ທ່ານປ້ອນບໍ່ຖືກຕ້ອງ";

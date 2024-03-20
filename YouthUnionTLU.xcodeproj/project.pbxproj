@@ -43,6 +43,9 @@
 		AA8826962BAABF46004A2FAC /* CheckValidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826952BAABF46004A2FAC /* CheckValidate.swift */; };
 		AA8826982BAAC0B8004A2FAC /* ExtensionUIVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826972BAAC0B8004A2FAC /* ExtensionUIVc.swift */; };
 		AA88269A2BAAC0D3004A2FAC /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826992BAAC0D3004A2FAC /* Alert.swift */; };
+		AA88269D2BAADC8A004A2FAC /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88269C2BAADC8A004A2FAC /* ForgotPasswordViewController.swift */; };
+		AA88269F2BAADC94004A2FAC /* ForgotPasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA88269E2BAADC94004A2FAC /* ForgotPasswordViewController.storyboard */; };
+		AA8826A12BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826A02BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift */; };
 		AAC206422B9B625000BDFCF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC206412B9B625000BDFCF9 /* AppDelegate.swift */; };
 		AAC2064B2B9B625200BDFCF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAC2064A2B9B625200BDFCF9 /* Assets.xcassets */; };
 		AAC2064E2B9B625200BDFCF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC2064C2B9B625200BDFCF9 /* LaunchScreen.storyboard */; };
@@ -101,6 +104,9 @@
 		AA8826952BAABF46004A2FAC /* CheckValidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckValidate.swift; sourceTree = "<group>"; };
 		AA8826972BAAC0B8004A2FAC /* ExtensionUIVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIVc.swift; sourceTree = "<group>"; };
 		AA8826992BAAC0D3004A2FAC /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		AA88269C2BAADC8A004A2FAC /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		AA88269E2BAADC94004A2FAC /* ForgotPasswordViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPasswordViewController.storyboard; sourceTree = "<group>"; };
+		AA8826A02BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		AAC2063E2B9B625000BDFCF9 /* YouthUnionTLU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouthUnionTLU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC206412B9B625000BDFCF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAC2064A2B9B625200BDFCF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -322,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				AA88267E2BAA6879004A2FAC /* Login */,
+				AA88269B2BAAD27B004A2FAC /* ForgotPassword */,
 				AA88267F2BAA6898004A2FAC /* AuthFlowCoodination.swift */,
 			);
 			path = Auth;
@@ -366,6 +373,16 @@
 				AA8826932BAA9999004A2FAC /* LoadingView.swift */,
 			);
 			path = LoadingView;
+			sourceTree = "<group>";
+		};
+		AA88269B2BAAD27B004A2FAC /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				AA88269C2BAADC8A004A2FAC /* ForgotPasswordViewController.swift */,
+				AA88269E2BAADC94004A2FAC /* ForgotPasswordViewController.storyboard */,
+				AA8826A02BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift */,
+			);
+			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
 		AAC206352B9B625000BDFCF9 = {
@@ -494,6 +511,7 @@
 				AA732F642B9F4530009EB608 /* Localizable.strings in Resources */,
 				AAC2064E2B9B625200BDFCF9 /* LaunchScreen.storyboard in Resources */,
 				AA732F422B9D844F009EB608 /* GoogleService-Info.plist in Resources */,
+				AA88269F2BAADC94004A2FAC /* ForgotPasswordViewController.storyboard in Resources */,
 				AA732F382B9D770A009EB608 /* SplashViewController.storyboard in Resources */,
 				AAC2064B2B9B625200BDFCF9 /* Assets.xcassets in Resources */,
 			);
@@ -570,6 +588,7 @@
 			files = (
 				AA732F552B9DF311009EB608 /* ExtentionNameable.swift in Sources */,
 				AA732F492B9DD32F009EB608 /* AppDIContainer.swift in Sources */,
+				AA88269D2BAADC8A004A2FAC /* ForgotPasswordViewController.swift in Sources */,
 				AA732F5D2B9F432B009EB608 /* LanguageViewModel.swift in Sources */,
 				AA8826822BAA68C6004A2FAC /* LoginViewController.swift in Sources */,
 				AADC74052BA33F5000406787 /* PermissionViewController.swift in Sources */,
@@ -578,6 +597,7 @@
 				AA8826802BAA6898004A2FAC /* AuthFlowCoodination.swift in Sources */,
 				AA732F3A2B9D7723009EB608 /* SplashViewModel.swift in Sources */,
 				AADC74092BA3434A00406787 /* PermisstionViewModel.swift in Sources */,
+				AA8826A12BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift in Sources */,
 				AAC206422B9B625000BDFCF9 /* AppDelegate.swift in Sources */,
 				AA8826982BAAC0B8004A2FAC /* ExtensionUIVc.swift in Sources */,
 				AA732F712B9F4CF2009EB608 /* UserDefaultsData.swift in Sources */,

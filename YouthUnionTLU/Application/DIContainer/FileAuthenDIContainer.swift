@@ -31,11 +31,18 @@ class AuthenDIContainer {
         DefaultLoginViewModel(actions: actions, authClient: dependencies.authClient)
     }
     
+    private func makeJoinForgotPasswordVC(actions: ForgotPasswordActions) -> ForgotPasswordViewModel {
+        DefaultForgotPasswordViewModel(actions: actions)
+    }
 }
 
 extension AuthenDIContainer: AuthenFlowCoodinatorDependencies {
     func makeLoginVC(actions: LoginActions) -> LoginViewController {
         return LoginViewController.create(with: makeLoginViewModel(actions: actions))
+    }
+    
+    func makeForgotPasswordVC(actions: ForgotPasswordActions) -> ForgotPasswordViewController {
+        ForgotPasswordViewController.create(with: makeJoinForgotPasswordVC(actions: actions))
     }
 }
 
