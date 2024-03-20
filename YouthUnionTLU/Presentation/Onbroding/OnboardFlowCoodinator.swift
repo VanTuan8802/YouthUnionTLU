@@ -36,9 +36,23 @@ final class OnboardFlowCoodinator {
     }
     
     private func showPermission() {
-        let actions = PermissionActions(showLogin: show)
+        let actions = PermissionActions(showLogin: showLogin)
         let vc = dependencies.makePermission(actions: actions)
         navigationController?.viewControllers = [vc]
+    }
+    
+    private func showLogin() {
+        guard let navigationController = navigationController else {
+            return
+        }
+        
+        let appDIContainer = AppDIContainer()
+        let appFlowCoordinator = AppFlowCoordinator(
+            navigationController: navigationController,
+            appDIContainer: appDIContainer
+        )
+
+        appFlowCoordinator.auth()
     }
     
     private func show() {

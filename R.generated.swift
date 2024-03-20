@@ -230,11 +230,12 @@ struct _R {
     }
   }
 
-  /// This `_R.storyboard` struct is generated, and contains static references to 4 storyboards.
+  /// This `_R.storyboard` struct is generated, and contains static references to 5 storyboards.
   struct storyboard {
     let bundle: Foundation.Bundle
     var languageViewController: languageViewController { .init(bundle: bundle) }
     var launchScreen: launchScreen { .init(bundle: bundle) }
+    var loginViewController: loginViewController { .init(bundle: bundle) }
     var permissionViewController: permissionViewController { .init(bundle: bundle) }
     var splashViewController: splashViewController { .init(bundle: bundle) }
 
@@ -242,6 +243,9 @@ struct _R {
       .init(bundle: bundle)
     }
     func launchScreen(bundle: Foundation.Bundle) -> launchScreen {
+      .init(bundle: bundle)
+    }
+    func loginViewController(bundle: Foundation.Bundle) -> loginViewController {
       .init(bundle: bundle)
     }
     func permissionViewController(bundle: Foundation.Bundle) -> permissionViewController {
@@ -253,6 +257,7 @@ struct _R {
     func validate() throws {
       try self.languageViewController.validate()
       try self.launchScreen.validate()
+      try self.loginViewController.validate()
       try self.permissionViewController.validate()
       try self.splashViewController.validate()
     }
@@ -283,6 +288,21 @@ struct _R {
       let name = "LaunchScreen"
       func validate() throws {
 
+      }
+    }
+
+    /// Storyboard `LoginViewController`.
+    struct loginViewController: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
+      typealias InitialController = LoginViewController
+
+      let bundle: Foundation.Bundle
+
+      let name = "LoginViewController"
+
+      var loginViewController: RswiftResources.StoryboardViewControllerIdentifier<LoginViewController> { .init(identifier: "LoginViewController", storyboard: name, bundle: bundle) }
+
+      func validate() throws {
+        if loginViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'LoginViewController' as 'LoginViewController'.") }
       }
     }
 
