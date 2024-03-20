@@ -48,6 +48,7 @@ class PermissionViewController: UIViewController, StoryboardInstantiable {
         photoPermisstion.text = R.stringLocalizable.permissionPhotos()
         cameraPermission.text = R.stringLocalizable.permissionCamera()
         notificationPermission.text = R.stringLocalizable.permissionNotifications()
+        goBtn.setTitle(R.stringLocalizable.buttonGo(), for: .normal)
     }
     
     @IBAction func photoPermisionChangeValue(_ sender: UISwitch) {

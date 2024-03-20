@@ -38,6 +38,11 @@
 		AA8826882BAA6939004A2FAC /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826872BAA6939004A2FAC /* Observable.swift */; };
 		AA88268B2BAA69A2004A2FAC /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88268A2BAA69A2004A2FAC /* AuthClient.swift */; };
 		AA88268F2BAA6CC1004A2FAC /* FireAuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88268E2BAA6CC1004A2FAC /* FireAuthClient.swift */; };
+		AA8826912BAA9156004A2FAC /* ExtentionTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826902BAA9156004A2FAC /* ExtentionTextField.swift */; };
+		AA8826942BAA9999004A2FAC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826932BAA9999004A2FAC /* LoadingView.swift */; };
+		AA8826962BAABF46004A2FAC /* CheckValidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826952BAABF46004A2FAC /* CheckValidate.swift */; };
+		AA8826982BAAC0B8004A2FAC /* ExtensionUIVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826972BAAC0B8004A2FAC /* ExtensionUIVc.swift */; };
+		AA88269A2BAAC0D3004A2FAC /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826992BAAC0D3004A2FAC /* Alert.swift */; };
 		AAC206422B9B625000BDFCF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC206412B9B625000BDFCF9 /* AppDelegate.swift */; };
 		AAC2064B2B9B625200BDFCF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAC2064A2B9B625200BDFCF9 /* Assets.xcassets */; };
 		AAC2064E2B9B625200BDFCF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC2064C2B9B625200BDFCF9 /* LaunchScreen.storyboard */; };
@@ -91,6 +96,11 @@
 		AA8826872BAA6939004A2FAC /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		AA88268A2BAA69A2004A2FAC /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
 		AA88268E2BAA6CC1004A2FAC /* FireAuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAuthClient.swift; sourceTree = "<group>"; };
+		AA8826902BAA9156004A2FAC /* ExtentionTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionTextField.swift; sourceTree = "<group>"; };
+		AA8826932BAA9999004A2FAC /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		AA8826952BAABF46004A2FAC /* CheckValidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckValidate.swift; sourceTree = "<group>"; };
+		AA8826972BAAC0B8004A2FAC /* ExtensionUIVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIVc.swift; sourceTree = "<group>"; };
+		AA8826992BAAC0D3004A2FAC /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		AAC2063E2B9B625000BDFCF9 /* YouthUnionTLU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouthUnionTLU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC206412B9B625000BDFCF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAC2064A2B9B625200BDFCF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,6 +136,7 @@
 		AA732F292B9D73E8009EB608 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				AA8826902BAA9156004A2FAC /* ExtentionTextField.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -133,10 +144,13 @@
 		AA732F2A2B9D73F2009EB608 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AA8826922BAA9989004A2FAC /* LoadingView */,
 				AA732F512B9DF28D009EB608 /* Extention */,
 				AA732F6D2B9F4CA7009EB608 /* LanguageLocalizable */,
 				AA732F4E2B9DD3D8009EB608 /* Protocols */,
 				AA8826872BAA6939004A2FAC /* Observable.swift */,
+				AA8826952BAABF46004A2FAC /* CheckValidate.swift */,
+				AA8826992BAAC0D3004A2FAC /* Alert.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -153,8 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				AA732F3B2B9D77BA009EB608 /* Font */,
-				AAC2064A2B9B625200BDFCF9 /* Assets.xcassets */,
 				AA732F662B9F4530009EB608 /* Localizable.strings */,
+				AAC2064A2B9B625200BDFCF9 /* Assets.xcassets */,
 				AA732F412B9D844F009EB608 /* GoogleService-Info.plist */,
 				AAC2064F2B9B625200BDFCF9 /* Info.plist */,
 				AAC2064C2B9B625200BDFCF9 /* LaunchScreen.storyboard */,
@@ -262,6 +276,7 @@
 			children = (
 				AA732F522B9DF2A7009EB608 /* ExtentionView.swift */,
 				AA732F542B9DF311009EB608 /* ExtentionNameable.swift */,
+				AA8826972BAAC0B8004A2FAC /* ExtensionUIVc.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -343,6 +358,14 @@
 				AA88268E2BAA6CC1004A2FAC /* FireAuthClient.swift */,
 			);
 			path = Client;
+			sourceTree = "<group>";
+		};
+		AA8826922BAA9989004A2FAC /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				AA8826932BAA9999004A2FAC /* LoadingView.swift */,
+			);
+			path = LoadingView;
 			sourceTree = "<group>";
 		};
 		AAC206352B9B625000BDFCF9 = {
@@ -551,10 +574,12 @@
 				AA8826822BAA68C6004A2FAC /* LoginViewController.swift in Sources */,
 				AADC74052BA33F5000406787 /* PermissionViewController.swift in Sources */,
 				AA732F752B9F4EC5009EB608 /* LanguageTableViewCell.swift in Sources */,
+				AA8826912BAA9156004A2FAC /* ExtentionTextField.swift in Sources */,
 				AA8826802BAA6898004A2FAC /* AuthFlowCoodination.swift in Sources */,
 				AA732F3A2B9D7723009EB608 /* SplashViewModel.swift in Sources */,
 				AADC74092BA3434A00406787 /* PermisstionViewModel.swift in Sources */,
 				AAC206422B9B625000BDFCF9 /* AppDelegate.swift in Sources */,
+				AA8826982BAAC0B8004A2FAC /* ExtensionUIVc.swift in Sources */,
 				AA732F712B9F4CF2009EB608 /* UserDefaultsData.swift in Sources */,
 				AA8826882BAA6939004A2FAC /* Observable.swift in Sources */,
 				AA732F4B2B9DD346009EB608 /* OnboardDIContainer.swift in Sources */,
@@ -566,11 +591,14 @@
 				AA8826862BAA68EE004A2FAC /* LoginViewModel.swift in Sources */,
 				AA732F472B9DD30C009EB608 /* AppAppearance.swift in Sources */,
 				AA732F502B9DD3F2009EB608 /* StoryboardInstantiable.swift in Sources */,
+				AA8826962BAABF46004A2FAC /* CheckValidate.swift in Sources */,
 				AA732F6F2B9F4CC6009EB608 /* LanguageLocalizable.swift in Sources */,
 				AA732F362B9D76F5009EB608 /* SplashViewController.swift in Sources */,
 				AA732F592B9F42A8009EB608 /* LanguageViewController.swift in Sources */,
+				AA8826942BAA9999004A2FAC /* LoadingView.swift in Sources */,
 				AA732F4D2B9DD374009EB608 /* OnboardFlowCoodinator.swift in Sources */,
 				AA732F6C2B9F4A3C009EB608 /* LanguageType.swift in Sources */,
+				AA88269A2BAAC0D3004A2FAC /* Alert.swift in Sources */,
 				AA732F532B9DF2A7009EB608 /* ExtentionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

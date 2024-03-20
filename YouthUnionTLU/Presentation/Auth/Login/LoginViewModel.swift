@@ -38,26 +38,20 @@ class DefaultLoginViewModel: LoginViewModel {
     }
 }
 
-// MARK: - INPUT. View event methods
 extension DefaultLoginViewModel {
-    
     func viewDidLoad() {
+        
     }
     
-    
     func login(email: String, password: String) {
-        //LoadingView.show()
+        LoadingView.show()
         FSFireAuthClient.shared.login(email: email, password: password) { [weak self] error in
             guard let self = self, error == nil else {
-                self?.error.value = error?.localizedDescription
-              //  LoadingView.hide()
+                self?.error.value = R.stringLocalizable.errorLoginMessage()
+                LoadingView.hide()
                 return
             }
-            
-            guard let uid = self.uid else {
-                return
-            }
-            
+            LoadingView.hide()
             self.actions.showHome()
         }
     }

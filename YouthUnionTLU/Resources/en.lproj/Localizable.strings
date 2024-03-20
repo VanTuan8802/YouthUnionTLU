@@ -21,3 +21,18 @@ permission.content = "App requires permission to use the device’s camera, fold
 permission.notifications = "Notifications";
 permission.photos = "Photos";
 permission.camera = "Camera";
+
+button.go = "Go";
+
+button.signIn = "Sign In";
+textField.email = "Enter E-mail";
+textField.password = "Enter Password";
+button.forgotPassword = "Forgot Password?";
+
+error.email.title = "Invalid Email";
+error.email.message = "The e-mail you have entered is incorrect.";
+error.email.messageRequire = "Email is required";
+error.password.title = "Invalid Password";
+error.password.message = "Password must be at least 8 characters without spaces";
+error.password.messageRequire = "Password is required";
+error.login.message =  "Incorrect login credentials.";

@@ -21,3 +21,18 @@ permission.content = "L'application nécessite une autorisation pour utiliser l'
 permission.notifications = "Notifications";
 permission.photos = "Photos";
 permission.camera = "Caméra";
+
+button.go = "Aller";
+
+button.signIn = "Se connecter";
+textField.email = "Entrez votre e-mail";
+textField.password = "Entrez votre mot de passe";
+button.forgotPassword = "Mot de passe oublié ?";
+
+error.email.title = "Email invalide";
+error.email.message = "L'e-mail que vous avez saisi est incorrect.";
+error.email.messageRequire = "L'e-mail est requis";
+error.password.title = "Mot de passe invalide";
+error.password.message = "Le mot de passe doit comporter au moins 8 caractères sans espaces.";
+error.password.messageRequire = "Le mot de passe est requis";
+error.login.message =  "Les informations de connexion sont incorrectes.";

@@ -9,6 +9,7 @@ import Foundation
 
 struct LanguageActions {
     let showPermission: () -> Void
+    let showLogin: () -> Void
 }
 
 protocol LanguageViewModelInput {
@@ -38,7 +39,11 @@ extension DefaultLanguageViewModel {
     
     func openPermisstion() {
         UserDefaultsData.shared.showFirstLanguage = true
-        actions?.showPermission()
+        if !UserDefaultsData.shared.showPermission {
+            actions?.showPermission()
+        } else {
+            actions?.showLogin()
+        }
     }
 }
 

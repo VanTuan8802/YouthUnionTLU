@@ -24,13 +24,15 @@ final class OnboardFlowCoodinator {
     }
     
     func start() {
-        let actions = SplashActions(showFirstLanguage: showLanguage, showIntro: show)
+        let actions = SplashActions(showFirstLanguage: showLanguage,
+                                    showPermission: showPermission,
+                                    showLogin: showLogin)
         let vc = dependencies.makeSplashVC(actions: actions)
         navigationController?.viewControllers = [vc]
     }
     
     private func showLanguage() {
-        let actions = LanguageActions(showPermission: showPermission)
+        let actions = LanguageActions(showPermission: showPermission, showLogin: showLogin)
         let vc = dependencies.makeLanguageVC(actions: actions)
         navigationController?.viewControllers = [vc]
     }

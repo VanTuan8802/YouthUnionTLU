@@ -21,3 +21,18 @@ permission.content = "កម្មវិធីត្រូវការការ�
 permission.notifications = "ការជូនដំណឹង";
 permission.photos = "រូបថត";
 permission.camera = "កាមេរ៉ា";
+
+button.go = "ទៅ";
+
+button.signIn = "ចូលគណនី";
+textField.email = "បញ្ចូលអ៊ីម៉ែល";
+textField.password = "បញ្ចូលពាក្យសំងាត់";
+button.forgotPassword = "ភ្លេចពាក្យសំងាត់?";
+
+error.email.title = "អ៊ីមែល​មិន​ត្រឹមត្រូវ";
+error.email.message = "អ៊ីមែល​ដែល​អ្នក​បាន​បញ្ចូល​ហើយ​មិន​ត្រឹមត្រូវ។";
+error.email.messageRequire = "អ៊ីមែល​ត្រូវ​ការ";
+error.password.title = "ពាក្យ​សម្ងាត់​មិន​ត្រឹមត្រូវ";
+error.password.message = "ពាក្យ​សម្ងាត់​ត្រូវ​មាន​យ៉ាងតិច 8 តួអក្សរ ដោយ​គ្មាន​លំនឹង";
+error.password.messageRequire = "ពាក្យ​សម្ងាត់​ត្រូវ​ការ";
+error.login.message = "ព័ត៌មានចូលមិនត្រឹមត្រូវ។" ;
