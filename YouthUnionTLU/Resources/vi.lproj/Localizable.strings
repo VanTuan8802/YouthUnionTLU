@@ -17,8 +17,25 @@ language.lao = "Tiếng Lào";
 language.vie = "Tiếng Việt";
 
 permission.title = "Quyền riêng tư";
-permission.content = "Ứng dụng cần quyền để sử dụng máy ảnh, thư mục và thông báo của thiết bị";
+permission.content = "Ứng dụng cần quyền để sử dụng máy ảnh, thư mục và thông báo của thiết bị.";
 permission.notifications = "Thông báo";
 permission.photos = "Ảnh";
 permission.camera = "Máy ảnh";
 
+button.go = "Tiếp tục";
+
+button.signIn = "Đăng nhập";
+textField.email = "Nhập Email";
+textField.password = "Nhập mật khẩu";
+button.forgotPassword = "Quên mật khẩu";
+label.sendEmail = "Một email đã được gửi đến bạn. Vui lòng nhấn vào liên kết để đặt lại mật khẩu của bạn.";
+button.backLogin = "Quay lại đăng nhập";
+button.resetPassword = "Đặt lại mật khẩu";
+
+error.email.title = "Email không hợp lệ.";
+error.email.message = "Email nhập không chính xác.";
+error.email.messageRequire = "Email là bắt buộc.";
+error.password.title = "Mật khẩu không hợp lệ.";
+error.password.message = "Mật khẩu phải có ít nhất 8 ký tự và không có dấu cách.";
+error.password.messageRequire = "Mật khẩu là bắt buộc.";
+error.login.message = "Thông tin đăng nhập hoặc mật khẩu không chính xác.";

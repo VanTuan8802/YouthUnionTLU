@@ -9,13 +9,15 @@ import Foundation
 
 struct SplashActions {
     let showFirstLanguage: () -> Void
-    let showIntro: () -> Void
+    let showPermission: () -> Void
+    let showLogin: () -> Void
 }
 
 protocol SplashViewModelInput {
     func viewDidLoad()
     func openFirstLanguage()
-    func openIntro()
+    func openPermission()
+    func openLogin()
 }
 
 protocol SplashViewModelOutput {
@@ -36,10 +38,22 @@ extension DefaultSplashViewModel {
     func viewDidLoad() { }
     
     func openFirstLanguage() {
-        actions?.showFirstLanguage()
+        if !UserDefaultsData.shared.showFirstLanguage {
+            actions?.showFirstLanguage()
+        } else {
+            if !UserDefaultsData.shared.showPermission {
+                actions?.showPermission()
+            } else {
+                actions?.showLogin()
+            }
+        }
     }
     
-    func openIntro() {
-        actions?.showIntro()
+    func openPermission() {
+        actions?.showPermission()
+    }
+    
+    func openLogin() {
+        
     }
 }

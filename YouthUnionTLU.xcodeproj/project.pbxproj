@@ -30,6 +30,22 @@
 		AA732F712B9F4CF2009EB608 /* UserDefaultsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA732F702B9F4CF2009EB608 /* UserDefaultsData.swift */; };
 		AA732F752B9F4EC5009EB608 /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA732F732B9F4EC5009EB608 /* LanguageTableViewCell.swift */; };
 		AA732F762B9F4EC5009EB608 /* LanguageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA732F742B9F4EC5009EB608 /* LanguageTableViewCell.xib */; };
+		AA88267C2BAA6837004A2FAC /* FileAuthenDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88267B2BAA6837004A2FAC /* FileAuthenDIContainer.swift */; };
+		AA8826802BAA6898004A2FAC /* AuthFlowCoodination.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88267F2BAA6898004A2FAC /* AuthFlowCoodination.swift */; };
+		AA8826822BAA68C6004A2FAC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826812BAA68C6004A2FAC /* LoginViewController.swift */; };
+		AA8826842BAA68CD004A2FAC /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA8826832BAA68CD004A2FAC /* LoginViewController.storyboard */; };
+		AA8826862BAA68EE004A2FAC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826852BAA68EE004A2FAC /* LoginViewModel.swift */; };
+		AA8826882BAA6939004A2FAC /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826872BAA6939004A2FAC /* Observable.swift */; };
+		AA88268B2BAA69A2004A2FAC /* AuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88268A2BAA69A2004A2FAC /* AuthClient.swift */; };
+		AA88268F2BAA6CC1004A2FAC /* FireAuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88268E2BAA6CC1004A2FAC /* FireAuthClient.swift */; };
+		AA8826912BAA9156004A2FAC /* ExtentionTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826902BAA9156004A2FAC /* ExtentionTextField.swift */; };
+		AA8826942BAA9999004A2FAC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826932BAA9999004A2FAC /* LoadingView.swift */; };
+		AA8826962BAABF46004A2FAC /* CheckValidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826952BAABF46004A2FAC /* CheckValidate.swift */; };
+		AA8826982BAAC0B8004A2FAC /* ExtensionUIVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826972BAAC0B8004A2FAC /* ExtensionUIVc.swift */; };
+		AA88269A2BAAC0D3004A2FAC /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826992BAAC0D3004A2FAC /* Alert.swift */; };
+		AA88269D2BAADC8A004A2FAC /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88269C2BAADC8A004A2FAC /* ForgotPasswordViewController.swift */; };
+		AA88269F2BAADC94004A2FAC /* ForgotPasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA88269E2BAADC94004A2FAC /* ForgotPasswordViewController.storyboard */; };
+		AA8826A12BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826A02BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift */; };
 		AAC206422B9B625000BDFCF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC206412B9B625000BDFCF9 /* AppDelegate.swift */; };
 		AAC2064B2B9B625200BDFCF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAC2064A2B9B625200BDFCF9 /* Assets.xcassets */; };
 		AAC2064E2B9B625200BDFCF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC2064C2B9B625200BDFCF9 /* LaunchScreen.storyboard */; };
@@ -75,6 +91,22 @@
 		AA732F702B9F4CF2009EB608 /* UserDefaultsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsData.swift; sourceTree = "<group>"; };
 		AA732F732B9F4EC5009EB608 /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
 		AA732F742B9F4EC5009EB608 /* LanguageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageTableViewCell.xib; sourceTree = "<group>"; };
+		AA88267B2BAA6837004A2FAC /* FileAuthenDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileAuthenDIContainer.swift; sourceTree = "<group>"; };
+		AA88267F2BAA6898004A2FAC /* AuthFlowCoodination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowCoodination.swift; sourceTree = "<group>"; };
+		AA8826812BAA68C6004A2FAC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AA8826832BAA68CD004A2FAC /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
+		AA8826852BAA68EE004A2FAC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		AA8826872BAA6939004A2FAC /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		AA88268A2BAA69A2004A2FAC /* AuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthClient.swift; sourceTree = "<group>"; };
+		AA88268E2BAA6CC1004A2FAC /* FireAuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAuthClient.swift; sourceTree = "<group>"; };
+		AA8826902BAA9156004A2FAC /* ExtentionTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtentionTextField.swift; sourceTree = "<group>"; };
+		AA8826932BAA9999004A2FAC /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		AA8826952BAABF46004A2FAC /* CheckValidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckValidate.swift; sourceTree = "<group>"; };
+		AA8826972BAAC0B8004A2FAC /* ExtensionUIVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIVc.swift; sourceTree = "<group>"; };
+		AA8826992BAAC0D3004A2FAC /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		AA88269C2BAADC8A004A2FAC /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		AA88269E2BAADC94004A2FAC /* ForgotPasswordViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPasswordViewController.storyboard; sourceTree = "<group>"; };
+		AA8826A02BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		AAC2063E2B9B625000BDFCF9 /* YouthUnionTLU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouthUnionTLU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC206412B9B625000BDFCF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAC2064A2B9B625200BDFCF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +142,7 @@
 		AA732F292B9D73E8009EB608 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				AA8826902BAA9156004A2FAC /* ExtentionTextField.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -117,9 +150,13 @@
 		AA732F2A2B9D73F2009EB608 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AA8826922BAA9989004A2FAC /* LoadingView */,
 				AA732F512B9DF28D009EB608 /* Extention */,
 				AA732F6D2B9F4CA7009EB608 /* LanguageLocalizable */,
 				AA732F4E2B9DD3D8009EB608 /* Protocols */,
+				AA8826872BAA6939004A2FAC /* Observable.swift */,
+				AA8826952BAABF46004A2FAC /* CheckValidate.swift */,
+				AA8826992BAAC0D3004A2FAC /* Alert.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -136,8 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				AA732F3B2B9D77BA009EB608 /* Font */,
-				AAC2064A2B9B625200BDFCF9 /* Assets.xcassets */,
 				AA732F662B9F4530009EB608 /* Localizable.strings */,
+				AAC2064A2B9B625200BDFCF9 /* Assets.xcassets */,
 				AA732F412B9D844F009EB608 /* GoogleService-Info.plist */,
 				AAC2064F2B9B625200BDFCF9 /* Info.plist */,
 				AAC2064C2B9B625200BDFCF9 /* LaunchScreen.storyboard */,
@@ -167,6 +204,7 @@
 		AA732F2F2B9D7443009EB608 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				AA8826892BAA6987004A2FAC /* FirebaseAuth */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -182,6 +220,7 @@
 		AA732F312B9D7457009EB608 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				AA88267D2BAA686D004A2FAC /* Auth */,
 				AA732F332B9D7621009EB608 /* Onbroding */,
 			);
 			path = Presentation;
@@ -225,6 +264,7 @@
 			children = (
 				AA732F482B9DD32F009EB608 /* AppDIContainer.swift */,
 				AA732F4A2B9DD346009EB608 /* OnboardDIContainer.swift */,
+				AA88267B2BAA6837004A2FAC /* FileAuthenDIContainer.swift */,
 			);
 			path = DIContainer;
 			sourceTree = "<group>";
@@ -242,6 +282,7 @@
 			children = (
 				AA732F522B9DF2A7009EB608 /* ExtentionView.swift */,
 				AA732F542B9DF311009EB608 /* ExtentionNameable.swift */,
+				AA8826972BAAC0B8004A2FAC /* ExtensionUIVc.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -260,6 +301,8 @@
 		AA732F572B9F2219009EB608 /* FireStore */ = {
 			isa = PBXGroup;
 			children = (
+				AA88268D2BAA69EE004A2FAC /* Client */,
+				AA88268C2BAA69E2004A2FAC /* Model */,
 			);
 			path = FireStore;
 			sourceTree = "<group>";
@@ -279,6 +322,67 @@
 				AA732F742B9F4EC5009EB608 /* LanguageTableViewCell.xib */,
 			);
 			path = LanguageCell;
+			sourceTree = "<group>";
+		};
+		AA88267D2BAA686D004A2FAC /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				AA88267E2BAA6879004A2FAC /* Login */,
+				AA88269B2BAAD27B004A2FAC /* ForgotPassword */,
+				AA88267F2BAA6898004A2FAC /* AuthFlowCoodination.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		AA88267E2BAA6879004A2FAC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AA8826812BAA68C6004A2FAC /* LoginViewController.swift */,
+				AA8826832BAA68CD004A2FAC /* LoginViewController.storyboard */,
+				AA8826852BAA68EE004A2FAC /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		AA8826892BAA6987004A2FAC /* FirebaseAuth */ = {
+			isa = PBXGroup;
+			children = (
+				AA88268A2BAA69A2004A2FAC /* AuthClient.swift */,
+			);
+			path = FirebaseAuth;
+			sourceTree = "<group>";
+		};
+		AA88268C2BAA69E2004A2FAC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AA88268D2BAA69EE004A2FAC /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				AA88268E2BAA6CC1004A2FAC /* FireAuthClient.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		AA8826922BAA9989004A2FAC /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				AA8826932BAA9999004A2FAC /* LoadingView.swift */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
+		AA88269B2BAAD27B004A2FAC /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				AA88269C2BAADC8A004A2FAC /* ForgotPasswordViewController.swift */,
+				AA88269E2BAADC94004A2FAC /* ForgotPasswordViewController.storyboard */,
+				AA8826A02BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift */,
+			);
+			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
 		AAC206352B9B625000BDFCF9 = {
@@ -400,12 +504,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA8826842BAA68CD004A2FAC /* LoginViewController.storyboard in Resources */,
 				AA732F762B9F4EC5009EB608 /* LanguageTableViewCell.xib in Resources */,
 				AA732F5B2B9F42BE009EB608 /* LanguageViewController.storyboard in Resources */,
 				AADC74072BA33F5A00406787 /* PermissionViewController.storyboard in Resources */,
 				AA732F642B9F4530009EB608 /* Localizable.strings in Resources */,
 				AAC2064E2B9B625200BDFCF9 /* LaunchScreen.storyboard in Resources */,
 				AA732F422B9D844F009EB608 /* GoogleService-Info.plist in Resources */,
+				AA88269F2BAADC94004A2FAC /* ForgotPasswordViewController.storyboard in Resources */,
 				AA732F382B9D770A009EB608 /* SplashViewController.storyboard in Resources */,
 				AAC2064B2B9B625200BDFCF9 /* Assets.xcassets in Resources */,
 			);
@@ -482,23 +588,37 @@
 			files = (
 				AA732F552B9DF311009EB608 /* ExtentionNameable.swift in Sources */,
 				AA732F492B9DD32F009EB608 /* AppDIContainer.swift in Sources */,
+				AA88269D2BAADC8A004A2FAC /* ForgotPasswordViewController.swift in Sources */,
 				AA732F5D2B9F432B009EB608 /* LanguageViewModel.swift in Sources */,
+				AA8826822BAA68C6004A2FAC /* LoginViewController.swift in Sources */,
 				AADC74052BA33F5000406787 /* PermissionViewController.swift in Sources */,
 				AA732F752B9F4EC5009EB608 /* LanguageTableViewCell.swift in Sources */,
+				AA8826912BAA9156004A2FAC /* ExtentionTextField.swift in Sources */,
+				AA8826802BAA6898004A2FAC /* AuthFlowCoodination.swift in Sources */,
 				AA732F3A2B9D7723009EB608 /* SplashViewModel.swift in Sources */,
 				AADC74092BA3434A00406787 /* PermisstionViewModel.swift in Sources */,
+				AA8826A12BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift in Sources */,
 				AAC206422B9B625000BDFCF9 /* AppDelegate.swift in Sources */,
+				AA8826982BAAC0B8004A2FAC /* ExtensionUIVc.swift in Sources */,
 				AA732F712B9F4CF2009EB608 /* UserDefaultsData.swift in Sources */,
+				AA8826882BAA6939004A2FAC /* Observable.swift in Sources */,
 				AA732F4B2B9DD346009EB608 /* OnboardDIContainer.swift in Sources */,
 				AA732F272B9D739A009EB608 /* R.generated.swift in Sources */,
+				AA88267C2BAA6837004A2FAC /* FileAuthenDIContainer.swift in Sources */,
+				AA88268B2BAA69A2004A2FAC /* AuthClient.swift in Sources */,
+				AA88268F2BAA6CC1004A2FAC /* FireAuthClient.swift in Sources */,
 				AA732F452B9DD2E1009EB608 /* AppFlowCoordinator.swift in Sources */,
+				AA8826862BAA68EE004A2FAC /* LoginViewModel.swift in Sources */,
 				AA732F472B9DD30C009EB608 /* AppAppearance.swift in Sources */,
 				AA732F502B9DD3F2009EB608 /* StoryboardInstantiable.swift in Sources */,
+				AA8826962BAABF46004A2FAC /* CheckValidate.swift in Sources */,
 				AA732F6F2B9F4CC6009EB608 /* LanguageLocalizable.swift in Sources */,
 				AA732F362B9D76F5009EB608 /* SplashViewController.swift in Sources */,
 				AA732F592B9F42A8009EB608 /* LanguageViewController.swift in Sources */,
+				AA8826942BAA9999004A2FAC /* LoadingView.swift in Sources */,
 				AA732F4D2B9DD374009EB608 /* OnboardFlowCoodinator.swift in Sources */,
 				AA732F6C2B9F4A3C009EB608 /* LanguageType.swift in Sources */,
+				AA88269A2BAAC0D3004A2FAC /* Alert.swift in Sources */,
 				AA732F532B9DF2A7009EB608 /* ExtentionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

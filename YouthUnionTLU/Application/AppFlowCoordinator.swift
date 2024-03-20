@@ -26,4 +26,10 @@ final class AppFlowCoordinator {
         let flow = onboardDIContainer.makeOnboardFlowCoordinator(navigationController: navigationController)
         flow.start()
     }
+    
+    func auth() {
+        let authenDIContainer = appDIContainer.makeAuthenDIContainer()
+        let flow = authenDIContainer.makeAuthenFlowCoodinator(navigationController: navigationController)
+        flow.login()
+    }
 }

@@ -73,7 +73,7 @@ struct _R {
       let source: RswiftResources.StringResource.Source
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 13 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 28 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -84,12 +84,103 @@ struct _R {
       /// Locales: en, fr, km-KH, lo-LA, vi
       var buttonOk: RswiftResources.StringResource { .init(key: "button.Ok", tableName: "Localizable", source: source, developmentValue: "OK", comment: nil) }
 
+      /// en translation: Back to login
+      ///
+      /// Key: button.backLogin
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var buttonBackLogin: RswiftResources.StringResource { .init(key: "button.backLogin", tableName: "Localizable", source: source, developmentValue: "Back to login", comment: nil) }
+
       /// en translation: Cancle
       ///
       /// Key: button.cancle
       ///
       /// Locales: en, fr, km-KH, lo-LA, vi
       var buttonCancle: RswiftResources.StringResource { .init(key: "button.cancle", tableName: "Localizable", source: source, developmentValue: "Cancle", comment: nil) }
+
+      /// en translation: Forgot Password
+      ///
+      /// Key: button.forgotPassword
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var buttonForgotPassword: RswiftResources.StringResource { .init(key: "button.forgotPassword", tableName: "Localizable", source: source, developmentValue: "Forgot Password", comment: nil) }
+
+      /// en translation: Go
+      ///
+      /// Key: button.go
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var buttonGo: RswiftResources.StringResource { .init(key: "button.go", tableName: "Localizable", source: source, developmentValue: "Go", comment: nil) }
+
+      /// en translation: Reset my password
+      ///
+      /// Key: button.resetPassword
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var buttonResetPassword: RswiftResources.StringResource { .init(key: "button.resetPassword", tableName: "Localizable", source: source, developmentValue: "Reset my password", comment: nil) }
+
+      /// en translation: Sign In
+      ///
+      /// Key: button.signIn
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var buttonSignIn: RswiftResources.StringResource { .init(key: "button.signIn", tableName: "Localizable", source: source, developmentValue: "Sign In", comment: nil) }
+
+      /// en translation: The e-mail you have entered is incorrect.
+      ///
+      /// Key: error.email.message
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var errorEmailMessage: RswiftResources.StringResource { .init(key: "error.email.message", tableName: "Localizable", source: source, developmentValue: "The e-mail you have entered is incorrect.", comment: nil) }
+
+      /// en translation: Email is required
+      ///
+      /// Key: error.email.messageRequire
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var errorEmailMessageRequire: RswiftResources.StringResource { .init(key: "error.email.messageRequire", tableName: "Localizable", source: source, developmentValue: "Email is required", comment: nil) }
+
+      /// en translation: Invalid Email
+      ///
+      /// Key: error.email.title
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var errorEmailTitle: RswiftResources.StringResource { .init(key: "error.email.title", tableName: "Localizable", source: source, developmentValue: "Invalid Email", comment: nil) }
+
+      /// en translation: Incorrect login credentials.
+      ///
+      /// Key: error.login.message
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var errorLoginMessage: RswiftResources.StringResource { .init(key: "error.login.message", tableName: "Localizable", source: source, developmentValue: "Incorrect login credentials.", comment: nil) }
+
+      /// en translation: Password must be at least 8 characters without spaces
+      ///
+      /// Key: error.password.message
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var errorPasswordMessage: RswiftResources.StringResource { .init(key: "error.password.message", tableName: "Localizable", source: source, developmentValue: "Password must be at least 8 characters without spaces", comment: nil) }
+
+      /// en translation: Password is required
+      ///
+      /// Key: error.password.messageRequire
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var errorPasswordMessageRequire: RswiftResources.StringResource { .init(key: "error.password.messageRequire", tableName: "Localizable", source: source, developmentValue: "Password is required", comment: nil) }
+
+      /// en translation: Invalid Password
+      ///
+      /// Key: error.password.title
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var errorPasswordTitle: RswiftResources.StringResource { .init(key: "error.password.title", tableName: "Localizable", source: source, developmentValue: "Invalid Password", comment: nil) }
+
+      /// en translation: An email has been sent to you. Please click on the link to reset your password.
+      ///
+      /// Key: lable.sendEmail
+      ///
+      /// Locales: en
+      var lableSendEmail: RswiftResources.StringResource { .init(key: "lable.sendEmail", tableName: "Localizable", source: source, developmentValue: "An email has been sent to you. Please click on the link to reset your password.", comment: nil) }
 
       /// en translation: Cambodian
       ///
@@ -167,6 +258,20 @@ struct _R {
       ///
       /// Locales: en, fr, km-KH, lo-LA, vi
       var permissionTitle: RswiftResources.StringResource { .init(key: "permission.title", tableName: "Localizable", source: source, developmentValue: "Permission", comment: nil) }
+
+      /// en translation: Enter E-mail
+      ///
+      /// Key: textField.email
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var textFieldEmail: RswiftResources.StringResource { .init(key: "textField.email", tableName: "Localizable", source: source, developmentValue: "Enter E-mail", comment: nil) }
+
+      /// en translation: Enter Password
+      ///
+      /// Key: textField.password
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var textFieldPassword: RswiftResources.StringResource { .init(key: "textField.password", tableName: "Localizable", source: source, developmentValue: "Enter Password", comment: nil) }
     }
   }
 
@@ -181,7 +286,7 @@ struct _R {
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 8 images.
+  /// This `_R.image` struct is generated, and contains static references to 12 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -202,6 +307,18 @@ struct _R {
 
     /// Image `check`.
     var check: RswiftResources.ImageResource { .init(name: "check", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `eye`.
+    var eye: RswiftResources.ImageResource { .init(name: "eye", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `eye-slash`.
+    var eyeSlash: RswiftResources.ImageResource { .init(name: "eye-slash", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `forgotpassword`.
+    var forgotpassword: RswiftResources.ImageResource { .init(name: "forgotpassword", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `login`.
+    var login: RswiftResources.ImageResource { .init(name: "login", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `permission`.
     var permission: RswiftResources.ImageResource { .init(name: "permission", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -230,18 +347,26 @@ struct _R {
     }
   }
 
-  /// This `_R.storyboard` struct is generated, and contains static references to 4 storyboards.
+  /// This `_R.storyboard` struct is generated, and contains static references to 6 storyboards.
   struct storyboard {
     let bundle: Foundation.Bundle
+    var forgotPasswordViewController: forgotPasswordViewController { .init(bundle: bundle) }
     var languageViewController: languageViewController { .init(bundle: bundle) }
     var launchScreen: launchScreen { .init(bundle: bundle) }
+    var loginViewController: loginViewController { .init(bundle: bundle) }
     var permissionViewController: permissionViewController { .init(bundle: bundle) }
     var splashViewController: splashViewController { .init(bundle: bundle) }
 
+    func forgotPasswordViewController(bundle: Foundation.Bundle) -> forgotPasswordViewController {
+      .init(bundle: bundle)
+    }
     func languageViewController(bundle: Foundation.Bundle) -> languageViewController {
       .init(bundle: bundle)
     }
     func launchScreen(bundle: Foundation.Bundle) -> launchScreen {
+      .init(bundle: bundle)
+    }
+    func loginViewController(bundle: Foundation.Bundle) -> loginViewController {
       .init(bundle: bundle)
     }
     func permissionViewController(bundle: Foundation.Bundle) -> permissionViewController {
@@ -251,12 +376,31 @@ struct _R {
       .init(bundle: bundle)
     }
     func validate() throws {
+      try self.forgotPasswordViewController.validate()
       try self.languageViewController.validate()
       try self.launchScreen.validate()
+      try self.loginViewController.validate()
       try self.permissionViewController.validate()
       try self.splashViewController.validate()
     }
 
+
+    /// Storyboard `ForgotPasswordViewController`.
+    struct forgotPasswordViewController: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
+      typealias InitialController = ForgotPasswordViewController
+
+      let bundle: Foundation.Bundle
+
+      let name = "ForgotPasswordViewController"
+
+      var forgotPasswordViewController: RswiftResources.StoryboardViewControllerIdentifier<ForgotPasswordViewController> { .init(identifier: "ForgotPasswordViewController", storyboard: name, bundle: bundle) }
+
+      func validate() throws {
+        if UIKit.UIImage(named: "forgotpassword", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'forgotpassword' is used in storyboard 'ForgotPasswordViewController', but couldn't be loaded.") }
+        if UIKit.UIColor(named: "2D3BB6", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named '2D3BB6' is used in storyboard 'ForgotPasswordViewController', but couldn't be loaded.") }
+        if forgotPasswordViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'forgotPasswordViewController' could not be loaded from storyboard 'ForgotPasswordViewController' as 'ForgotPasswordViewController'.") }
+      }
+    }
 
     /// Storyboard `LanguageViewController`.
     struct languageViewController: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
@@ -283,6 +427,24 @@ struct _R {
       let name = "LaunchScreen"
       func validate() throws {
 
+      }
+    }
+
+    /// Storyboard `LoginViewController`.
+    struct loginViewController: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
+      typealias InitialController = LoginViewController
+
+      let bundle: Foundation.Bundle
+
+      let name = "LoginViewController"
+
+      var loginViewController: RswiftResources.StoryboardViewControllerIdentifier<LoginViewController> { .init(identifier: "LoginViewController", storyboard: name, bundle: bundle) }
+
+      func validate() throws {
+        if UIKit.UIImage(named: "eye", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'eye' is used in storyboard 'LoginViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "login", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'login' is used in storyboard 'LoginViewController', but couldn't be loaded.") }
+        if UIKit.UIColor(named: "2D3BB6", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named '2D3BB6' is used in storyboard 'LoginViewController', but couldn't be loaded.") }
+        if loginViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'loginViewController' could not be loaded from storyboard 'LoginViewController' as 'LoginViewController'.") }
       }
     }
 
