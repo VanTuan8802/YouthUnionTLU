@@ -40,6 +40,16 @@ final class AuthenFlowCoodinator {
     }
     
     func showHome() {
+        guard let navigationController = navigationController else {
+            return
+        }
         
+        let appDIContainer = AppDIContainer()
+        let appFlowCoordinator = AppFlowCoordinator(
+            navigationController: navigationController,
+            appDIContainer: appDIContainer
+        )
+
+        appFlowCoordinator.home()
     }
 }

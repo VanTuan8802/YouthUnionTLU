@@ -32,4 +32,22 @@ final class AppFlowCoordinator {
         let flow = authenDIContainer.makeAuthenFlowCoodinator(navigationController: navigationController)
         flow.login()
     }
+    
+    func home() {
+        let homeDIContainer = appDIContainer.makeHomeDIContainer()
+        let flow = homeDIContainer.makeHomeFlowCoodinator(navigationController: navigationController)
+        flow.home()
+    }
+    
+    func search() {
+        let searchDIContainer = appDIContainer.makeSearchDIContainer()
+        let flow = searchDIContainer.makeSearchFlowCoodinator(navigationController: navigationController)
+        flow.search()
+    }
+    
+    func setting() {
+        let settingDIContainer = appDIContainer.makeSettingDIContainer()
+        let flow = settingDIContainer.makeSettingFlowCoodinator(navigationController: navigationController)
+        flow.setting()
+    }
 }

@@ -11,6 +11,7 @@ target 'YouthUnionTLU' do
   pod 'FirebaseStorage'
   pod 'R.swift'
   pod 'IQKeyboardManagerSwift'
+  pod "ESTabBarController-swift"
   # Pods for YouthUnionTLU
 
 end

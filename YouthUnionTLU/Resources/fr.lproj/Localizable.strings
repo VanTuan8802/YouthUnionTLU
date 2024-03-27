@@ -39,3 +39,8 @@ error.password.title = "Mot de passe invalide";
 error.password.message = "Le mot de passe doit comporter au moins 8 caractères sans espaces.";
 error.password.messageRequire = "Le mot de passe est requis";
 error.login.message =  "Les informations de connexion sont incorrectes.";
+
+tabBar.home = "Accueil";
+tabBar.search = "Recherche";
+tabBar.settings = "Paramètres";
+

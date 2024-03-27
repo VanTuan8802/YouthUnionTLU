@@ -73,7 +73,7 @@ struct _R {
       let source: RswiftResources.StringResource.Source
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 28 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 31 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -259,6 +259,27 @@ struct _R {
       /// Locales: en, fr, km-KH, lo-LA, vi
       var permissionTitle: RswiftResources.StringResource { .init(key: "permission.title", tableName: "Localizable", source: source, developmentValue: "Permission", comment: nil) }
 
+      /// en translation: Home
+      ///
+      /// Key: tabBar.home
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var tabBarHome: RswiftResources.StringResource { .init(key: "tabBar.home", tableName: "Localizable", source: source, developmentValue: "Home", comment: nil) }
+
+      /// en translation: Search
+      ///
+      /// Key: tabBar.search
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var tabBarSearch: RswiftResources.StringResource { .init(key: "tabBar.search", tableName: "Localizable", source: source, developmentValue: "Search", comment: nil) }
+
+      /// en translation: Settings
+      ///
+      /// Key: tabBar.settings
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var tabBarSettings: RswiftResources.StringResource { .init(key: "tabBar.settings", tableName: "Localizable", source: source, developmentValue: "Settings", comment: nil) }
+
       /// en translation: Enter E-mail
       ///
       /// Key: textField.email
@@ -286,7 +307,7 @@ struct _R {
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 12 images.
+  /// This `_R.image` struct is generated, and contains static references to 18 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -317,11 +338,29 @@ struct _R {
     /// Image `forgotpassword`.
     var forgotpassword: RswiftResources.ImageResource { .init(name: "forgotpassword", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `home`.
+    var home: RswiftResources.ImageResource { .init(name: "home", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `homeSelected`.
+    var homeSelected: RswiftResources.ImageResource { .init(name: "homeSelected", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `login`.
     var login: RswiftResources.ImageResource { .init(name: "login", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `permission`.
     var permission: RswiftResources.ImageResource { .init(name: "permission", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `search`.
+    var search: RswiftResources.ImageResource { .init(name: "search", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `searchSelected`.
+    var searchSelected: RswiftResources.ImageResource { .init(name: "searchSelected", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `setting`.
+    var setting: RswiftResources.ImageResource { .init(name: "setting", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `settingSelected`.
+    var settingSelected: RswiftResources.ImageResource { .init(name: "settingSelected", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `splash`.
     var splash: RswiftResources.ImageResource { .init(name: "splash", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -347,17 +386,23 @@ struct _R {
     }
   }
 
-  /// This `_R.storyboard` struct is generated, and contains static references to 6 storyboards.
+  /// This `_R.storyboard` struct is generated, and contains static references to 9 storyboards.
   struct storyboard {
     let bundle: Foundation.Bundle
     var forgotPasswordViewController: forgotPasswordViewController { .init(bundle: bundle) }
+    var homeTabBarViewController: homeTabBarViewController { .init(bundle: bundle) }
     var languageViewController: languageViewController { .init(bundle: bundle) }
     var launchScreen: launchScreen { .init(bundle: bundle) }
     var loginViewController: loginViewController { .init(bundle: bundle) }
     var permissionViewController: permissionViewController { .init(bundle: bundle) }
+    var searchTabBarViewController: searchTabBarViewController { .init(bundle: bundle) }
+    var settingTabBarViewController: settingTabBarViewController { .init(bundle: bundle) }
     var splashViewController: splashViewController { .init(bundle: bundle) }
 
     func forgotPasswordViewController(bundle: Foundation.Bundle) -> forgotPasswordViewController {
+      .init(bundle: bundle)
+    }
+    func homeTabBarViewController(bundle: Foundation.Bundle) -> homeTabBarViewController {
       .init(bundle: bundle)
     }
     func languageViewController(bundle: Foundation.Bundle) -> languageViewController {
@@ -372,15 +417,24 @@ struct _R {
     func permissionViewController(bundle: Foundation.Bundle) -> permissionViewController {
       .init(bundle: bundle)
     }
+    func searchTabBarViewController(bundle: Foundation.Bundle) -> searchTabBarViewController {
+      .init(bundle: bundle)
+    }
+    func settingTabBarViewController(bundle: Foundation.Bundle) -> settingTabBarViewController {
+      .init(bundle: bundle)
+    }
     func splashViewController(bundle: Foundation.Bundle) -> splashViewController {
       .init(bundle: bundle)
     }
     func validate() throws {
       try self.forgotPasswordViewController.validate()
+      try self.homeTabBarViewController.validate()
       try self.languageViewController.validate()
       try self.launchScreen.validate()
       try self.loginViewController.validate()
       try self.permissionViewController.validate()
+      try self.searchTabBarViewController.validate()
+      try self.settingTabBarViewController.validate()
       try self.splashViewController.validate()
     }
 
@@ -399,6 +453,24 @@ struct _R {
         if UIKit.UIImage(named: "forgotpassword", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'forgotpassword' is used in storyboard 'ForgotPasswordViewController', but couldn't be loaded.") }
         if UIKit.UIColor(named: "2D3BB6", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named '2D3BB6' is used in storyboard 'ForgotPasswordViewController', but couldn't be loaded.") }
         if forgotPasswordViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'forgotPasswordViewController' could not be loaded from storyboard 'ForgotPasswordViewController' as 'ForgotPasswordViewController'.") }
+      }
+    }
+
+    /// Storyboard `HomeTabBarViewController`.
+    struct homeTabBarViewController: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
+      typealias InitialController = HomeTabBarViewController
+
+      let bundle: Foundation.Bundle
+
+      let name = "HomeTabBarViewController"
+
+      var homeTabBarViewController: RswiftResources.StoryboardViewControllerIdentifier<HomeTabBarViewController> { .init(identifier: "HomeTabBarViewController", storyboard: name, bundle: bundle) }
+
+      func validate() throws {
+        if UIKit.UIImage(named: "homeSelected", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'homeSelected' is used in storyboard 'HomeTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "search", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'search' is used in storyboard 'HomeTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "setting", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'setting' is used in storyboard 'HomeTabBarViewController', but couldn't be loaded.") }
+        if homeTabBarViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'homeTabBarViewController' could not be loaded from storyboard 'HomeTabBarViewController' as 'HomeTabBarViewController'.") }
       }
     }
 
@@ -463,6 +535,43 @@ struct _R {
         if UIKit.UIColor(named: "253590", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named '253590' is used in storyboard 'PermissionViewController', but couldn't be loaded.") }
         if UIKit.UIColor(named: "2D3BB6", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named '2D3BB6' is used in storyboard 'PermissionViewController', but couldn't be loaded.") }
         if permissionViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'permissionViewController' could not be loaded from storyboard 'PermissionViewController' as 'PermissionViewController'.") }
+      }
+    }
+
+    /// Storyboard `SearchTabBarViewController`.
+    struct searchTabBarViewController: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
+      typealias InitialController = SearchTabBarViewController
+
+      let bundle: Foundation.Bundle
+
+      let name = "SearchTabBarViewController"
+
+      var searchTabBarViewController: RswiftResources.StoryboardViewControllerIdentifier<SearchTabBarViewController> { .init(identifier: "SearchTabBarViewController", storyboard: name, bundle: bundle) }
+
+      func validate() throws {
+        if UIKit.UIImage(named: "home", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'home' is used in storyboard 'SearchTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "homeSelected", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'homeSelected' is used in storyboard 'SearchTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "searchSelected", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'searchSelected' is used in storyboard 'SearchTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "setting", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'setting' is used in storyboard 'SearchTabBarViewController', but couldn't be loaded.") }
+        if searchTabBarViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'searchTabBarViewController' could not be loaded from storyboard 'SearchTabBarViewController' as 'SearchTabBarViewController'.") }
+      }
+    }
+
+    /// Storyboard `SettingTabBarViewController`.
+    struct settingTabBarViewController: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
+      typealias InitialController = SettingTabBarViewController
+
+      let bundle: Foundation.Bundle
+
+      let name = "SettingTabBarViewController"
+
+      var settingTabBarViewController: RswiftResources.StoryboardViewControllerIdentifier<SettingTabBarViewController> { .init(identifier: "SettingTabBarViewController", storyboard: name, bundle: bundle) }
+
+      func validate() throws {
+        if UIKit.UIImage(named: "home", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'home' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "search", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'search' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "settingSelected", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'settingSelected' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
+        if settingTabBarViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'settingTabBarViewController' could not be loaded from storyboard 'SettingTabBarViewController' as 'SettingTabBarViewController'.") }
       }
     }
 
