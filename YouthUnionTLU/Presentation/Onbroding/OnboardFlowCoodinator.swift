@@ -56,9 +56,5 @@ final class OnboardFlowCoodinator {
 
         appFlowCoordinator.auth()
     }
-    
-    private func show() {
-        
-    }
 }
 

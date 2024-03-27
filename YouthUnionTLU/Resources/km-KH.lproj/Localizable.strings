@@ -39,3 +39,7 @@ error.password.title = "ពាក្យ​សម្ងាត់​មិន​�
 error.password.message = "ពាក្យ​សម្ងាត់​ត្រូវ​មាន​យ៉ាងតិច 8 តួអក្សរ ដោយ​គ្មាន​លំនឹង";
 error.password.messageRequire = "ពាក្យ​សម្ងាត់​ត្រូវ​ការ";
 error.login.message = "ព័ត៌មានចូលមិនត្រឹមត្រូវ។" ;
+
+tabBar.home = "ទំព័រ​ដើម";
+tabBar.search = "ស្វែងរក";
+tabBar.settings = "ការ​កំណត់";

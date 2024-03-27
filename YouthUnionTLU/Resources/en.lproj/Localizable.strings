@@ -40,3 +40,6 @@ error.password.message = "Password must be at least 8 characters without spaces"
 error.password.messageRequire = "Password is required";
 error.login.message =  "Incorrect login credentials.";
 
+tabBar.home = "Home";
+tabBar.search = "Search";
+tabBar.settings = "Settings";

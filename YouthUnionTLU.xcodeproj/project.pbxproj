@@ -30,8 +30,8 @@
 		AA732F712B9F4CF2009EB608 /* UserDefaultsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA732F702B9F4CF2009EB608 /* UserDefaultsData.swift */; };
 		AA732F752B9F4EC5009EB608 /* LanguageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA732F732B9F4EC5009EB608 /* LanguageTableViewCell.swift */; };
 		AA732F762B9F4EC5009EB608 /* LanguageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA732F742B9F4EC5009EB608 /* LanguageTableViewCell.xib */; };
-		AA88267C2BAA6837004A2FAC /* FileAuthenDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88267B2BAA6837004A2FAC /* FileAuthenDIContainer.swift */; };
-		AA8826802BAA6898004A2FAC /* AuthFlowCoodination.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88267F2BAA6898004A2FAC /* AuthFlowCoodination.swift */; };
+		AA88267C2BAA6837004A2FAC /* AuthenDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88267B2BAA6837004A2FAC /* AuthenDIContainer.swift */; };
+		AA8826802BAA6898004A2FAC /* AuthFlowCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88267F2BAA6898004A2FAC /* AuthFlowCoodinator.swift */; };
 		AA8826822BAA68C6004A2FAC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826812BAA68C6004A2FAC /* LoginViewController.swift */; };
 		AA8826842BAA68CD004A2FAC /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA8826832BAA68CD004A2FAC /* LoginViewController.storyboard */; };
 		AA8826862BAA68EE004A2FAC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826852BAA68EE004A2FAC /* LoginViewModel.swift */; };
@@ -46,6 +46,30 @@
 		AA88269D2BAADC8A004A2FAC /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88269C2BAADC8A004A2FAC /* ForgotPasswordViewController.swift */; };
 		AA88269F2BAADC94004A2FAC /* ForgotPasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA88269E2BAADC94004A2FAC /* ForgotPasswordViewController.storyboard */; };
 		AA8826A12BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826A02BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift */; };
+		AA8826A42BAC3771004A2FAC /* HomeDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826A32BAC3771004A2FAC /* HomeDIContainer.swift */; };
+		AA8826A72BAC3858004A2FAC /* DataUserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826A62BAC3858004A2FAC /* DataUserClient.swift */; };
+		AA8826A92BAC3872004A2FAC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826A82BAC3872004A2FAC /* User.swift */; };
+		AA8826AB2BAC38C0004A2FAC /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826AA2BAC38C0004A2FAC /* Student.swift */; };
+		AA8826AD2BAC3D0C004A2FAC /* Posstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826AC2BAC3D0C004A2FAC /* Posstion.swift */; };
+		AA8826AF2BAC3DD2004A2FAC /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826AE2BAC3DD2004A2FAC /* Teacher.swift */; };
+		AA8826B12BAC3EA3004A2FAC /* Faculaty.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826B02BAC3EA3004A2FAC /* Faculaty.swift */; };
+		AA8826B32BAC3ED7004A2FAC /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826B22BAC3ED7004A2FAC /* Manager.swift */; };
+		AA8826BA2BAC6FAA004A2FAC /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826B92BAC6FAA004A2FAC /* HomeTabBarViewController.swift */; };
+		AA8826BF2BAC6FE4004A2FAC /* SearchTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826BE2BAC6FE4004A2FAC /* SearchTabBarViewController.swift */; };
+		AA8826C22BAC7008004A2FAC /* SettingTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826C12BAC7008004A2FAC /* SettingTabBarViewController.swift */; };
+		AA8826C42BAC70B8004A2FAC /* HomeTabBarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA8826C32BAC70B8004A2FAC /* HomeTabBarViewController.storyboard */; };
+		AA8826C62BAC70DD004A2FAC /* SearchTabBarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA8826C52BAC70DD004A2FAC /* SearchTabBarViewController.storyboard */; };
+		AA8826C82BAC70F8004A2FAC /* SettingTabBarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA8826C72BAC70F8004A2FAC /* SettingTabBarViewController.storyboard */; };
+		AA8826CA2BAC7283004A2FAC /* CustomStyleTabBarContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826C92BAC7283004A2FAC /* CustomStyleTabBarContentView.swift */; };
+		AA8826CC2BAC7536004A2FAC /* FSUserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826CB2BAC7536004A2FAC /* FSUserClient.swift */; };
+		AA8826CE2BAC7644004A2FAC /* HomeFlowCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826CD2BAC7644004A2FAC /* HomeFlowCoodinator.swift */; };
+		AA8826D02BAC76AC004A2FAC /* HomeTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826CF2BAC76AC004A2FAC /* HomeTabBarViewModel.swift */; };
+		AA8826D22BAC782F004A2FAC /* SearchFlowCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826D12BAC782F004A2FAC /* SearchFlowCoodinator.swift */; };
+		AA8826D42BAC7857004A2FAC /* SearchTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826D32BAC7857004A2FAC /* SearchTabBarViewModel.swift */; };
+		AA8826D62BAC78A6004A2FAC /* SettingTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826D52BAC78A6004A2FAC /* SettingTabBarViewModel.swift */; };
+		AA8826D82BAC7A94004A2FAC /* SettingDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826D72BAC7A94004A2FAC /* SettingDIContainer.swift */; };
+		AA8826DA2BAC7AAD004A2FAC /* SearchDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826D92BAC7AAD004A2FAC /* SearchDIContainer.swift */; };
+		AA8826DC2BAC7B9C004A2FAC /* SettingFlowCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826DB2BAC7B9C004A2FAC /* SettingFlowCoodinator.swift */; };
 		AAC206422B9B625000BDFCF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC206412B9B625000BDFCF9 /* AppDelegate.swift */; };
 		AAC2064B2B9B625200BDFCF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAC2064A2B9B625200BDFCF9 /* Assets.xcassets */; };
 		AAC2064E2B9B625200BDFCF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC2064C2B9B625200BDFCF9 /* LaunchScreen.storyboard */; };
@@ -91,8 +115,8 @@
 		AA732F702B9F4CF2009EB608 /* UserDefaultsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsData.swift; sourceTree = "<group>"; };
 		AA732F732B9F4EC5009EB608 /* LanguageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTableViewCell.swift; sourceTree = "<group>"; };
 		AA732F742B9F4EC5009EB608 /* LanguageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LanguageTableViewCell.xib; sourceTree = "<group>"; };
-		AA88267B2BAA6837004A2FAC /* FileAuthenDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileAuthenDIContainer.swift; sourceTree = "<group>"; };
-		AA88267F2BAA6898004A2FAC /* AuthFlowCoodination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowCoodination.swift; sourceTree = "<group>"; };
+		AA88267B2BAA6837004A2FAC /* AuthenDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenDIContainer.swift; sourceTree = "<group>"; };
+		AA88267F2BAA6898004A2FAC /* AuthFlowCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowCoodinator.swift; sourceTree = "<group>"; };
 		AA8826812BAA68C6004A2FAC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AA8826832BAA68CD004A2FAC /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		AA8826852BAA68EE004A2FAC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -107,6 +131,30 @@
 		AA88269C2BAADC8A004A2FAC /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		AA88269E2BAADC94004A2FAC /* ForgotPasswordViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPasswordViewController.storyboard; sourceTree = "<group>"; };
 		AA8826A02BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		AA8826A32BAC3771004A2FAC /* HomeDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDIContainer.swift; sourceTree = "<group>"; };
+		AA8826A62BAC3858004A2FAC /* DataUserClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUserClient.swift; sourceTree = "<group>"; };
+		AA8826A82BAC3872004A2FAC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AA8826AA2BAC38C0004A2FAC /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		AA8826AC2BAC3D0C004A2FAC /* Posstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posstion.swift; sourceTree = "<group>"; };
+		AA8826AE2BAC3DD2004A2FAC /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
+		AA8826B02BAC3EA3004A2FAC /* Faculaty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Faculaty.swift; sourceTree = "<group>"; };
+		AA8826B22BAC3ED7004A2FAC /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		AA8826B92BAC6FAA004A2FAC /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
+		AA8826BE2BAC6FE4004A2FAC /* SearchTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabBarViewController.swift; sourceTree = "<group>"; };
+		AA8826C12BAC7008004A2FAC /* SettingTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTabBarViewController.swift; sourceTree = "<group>"; };
+		AA8826C32BAC70B8004A2FAC /* HomeTabBarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTabBarViewController.storyboard; sourceTree = "<group>"; };
+		AA8826C52BAC70DD004A2FAC /* SearchTabBarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchTabBarViewController.storyboard; sourceTree = "<group>"; };
+		AA8826C72BAC70F8004A2FAC /* SettingTabBarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingTabBarViewController.storyboard; sourceTree = "<group>"; };
+		AA8826C92BAC7283004A2FAC /* CustomStyleTabBarContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStyleTabBarContentView.swift; sourceTree = "<group>"; };
+		AA8826CB2BAC7536004A2FAC /* FSUserClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSUserClient.swift; sourceTree = "<group>"; };
+		AA8826CD2BAC7644004A2FAC /* HomeFlowCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlowCoodinator.swift; sourceTree = "<group>"; };
+		AA8826CF2BAC76AC004A2FAC /* HomeTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewModel.swift; sourceTree = "<group>"; };
+		AA8826D12BAC782F004A2FAC /* SearchFlowCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFlowCoodinator.swift; sourceTree = "<group>"; };
+		AA8826D32BAC7857004A2FAC /* SearchTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabBarViewModel.swift; sourceTree = "<group>"; };
+		AA8826D52BAC78A6004A2FAC /* SettingTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTabBarViewModel.swift; sourceTree = "<group>"; };
+		AA8826D72BAC7A94004A2FAC /* SettingDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDIContainer.swift; sourceTree = "<group>"; };
+		AA8826D92BAC7AAD004A2FAC /* SearchDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDIContainer.swift; sourceTree = "<group>"; };
+		AA8826DB2BAC7B9C004A2FAC /* SettingFlowCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFlowCoodinator.swift; sourceTree = "<group>"; };
 		AAC2063E2B9B625000BDFCF9 /* YouthUnionTLU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouthUnionTLU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC206412B9B625000BDFCF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAC2064A2B9B625200BDFCF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,6 +205,7 @@
 				AA8826872BAA6939004A2FAC /* Observable.swift */,
 				AA8826952BAABF46004A2FAC /* CheckValidate.swift */,
 				AA8826992BAAC0D3004A2FAC /* Alert.swift */,
+				AA8826C92BAC7283004A2FAC /* CustomStyleTabBarContentView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -165,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				AA732F6B2B9F4A3C009EB608 /* LanguageType.swift */,
+				AA8826AC2BAC3D0C004A2FAC /* Posstion.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				AA8826892BAA6987004A2FAC /* FirebaseAuth */,
+				AA8826A52BAC37D4004A2FAC /* FireStore */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -220,6 +271,9 @@
 		AA732F312B9D7457009EB608 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				AA8826BC2BAC6FB9004A2FAC /* Setting */,
+				AA8826BB2BAC6FB3004A2FAC /* Search */,
+				AA8826A22BAC3566004A2FAC /* Home */,
 				AA88267D2BAA686D004A2FAC /* Auth */,
 				AA732F332B9D7621009EB608 /* Onbroding */,
 			);
@@ -264,7 +318,10 @@
 			children = (
 				AA732F482B9DD32F009EB608 /* AppDIContainer.swift */,
 				AA732F4A2B9DD346009EB608 /* OnboardDIContainer.swift */,
-				AA88267B2BAA6837004A2FAC /* FileAuthenDIContainer.swift */,
+				AA88267B2BAA6837004A2FAC /* AuthenDIContainer.swift */,
+				AA8826A32BAC3771004A2FAC /* HomeDIContainer.swift */,
+				AA8826D92BAC7AAD004A2FAC /* SearchDIContainer.swift */,
+				AA8826D72BAC7A94004A2FAC /* SettingDIContainer.swift */,
 			);
 			path = DIContainer;
 			sourceTree = "<group>";
@@ -329,7 +386,7 @@
 			children = (
 				AA88267E2BAA6879004A2FAC /* Login */,
 				AA88269B2BAAD27B004A2FAC /* ForgotPassword */,
-				AA88267F2BAA6898004A2FAC /* AuthFlowCoodination.swift */,
+				AA88267F2BAA6898004A2FAC /* AuthFlowCoodinator.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -355,6 +412,11 @@
 		AA88268C2BAA69E2004A2FAC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AA8826A82BAC3872004A2FAC /* User.swift */,
+				AA8826AA2BAC38C0004A2FAC /* Student.swift */,
+				AA8826AE2BAC3DD2004A2FAC /* Teacher.swift */,
+				AA8826B02BAC3EA3004A2FAC /* Faculaty.swift */,
+				AA8826B22BAC3ED7004A2FAC /* Manager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -363,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				AA88268E2BAA6CC1004A2FAC /* FireAuthClient.swift */,
+				AA8826CB2BAC7536004A2FAC /* FSUserClient.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -383,6 +446,71 @@
 				AA8826A02BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift */,
 			);
 			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		AA8826A22BAC3566004A2FAC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AA8826B82BAC6F94004A2FAC /* HomeTabBar */,
+				AA8826CD2BAC7644004A2FAC /* HomeFlowCoodinator.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AA8826A52BAC37D4004A2FAC /* FireStore */ = {
+			isa = PBXGroup;
+			children = (
+				AA8826A62BAC3858004A2FAC /* DataUserClient.swift */,
+			);
+			path = FireStore;
+			sourceTree = "<group>";
+		};
+		AA8826B82BAC6F94004A2FAC /* HomeTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				AA8826B92BAC6FAA004A2FAC /* HomeTabBarViewController.swift */,
+				AA8826C32BAC70B8004A2FAC /* HomeTabBarViewController.storyboard */,
+				AA8826CF2BAC76AC004A2FAC /* HomeTabBarViewModel.swift */,
+			);
+			path = HomeTabBar;
+			sourceTree = "<group>";
+		};
+		AA8826BB2BAC6FB3004A2FAC /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				AA8826BD2BAC6FCD004A2FAC /* SearchTabBar */,
+				AA8826D12BAC782F004A2FAC /* SearchFlowCoodinator.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		AA8826BC2BAC6FB9004A2FAC /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				AA8826C02BAC6FEC004A2FAC /* SettingTabBar */,
+				AA8826DB2BAC7B9C004A2FAC /* SettingFlowCoodinator.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		AA8826BD2BAC6FCD004A2FAC /* SearchTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				AA8826BE2BAC6FE4004A2FAC /* SearchTabBarViewController.swift */,
+				AA8826C52BAC70DD004A2FAC /* SearchTabBarViewController.storyboard */,
+				AA8826D32BAC7857004A2FAC /* SearchTabBarViewModel.swift */,
+			);
+			path = SearchTabBar;
+			sourceTree = "<group>";
+		};
+		AA8826C02BAC6FEC004A2FAC /* SettingTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				AA8826C12BAC7008004A2FAC /* SettingTabBarViewController.swift */,
+				AA8826C72BAC70F8004A2FAC /* SettingTabBarViewController.storyboard */,
+				AA8826D52BAC78A6004A2FAC /* SettingTabBarViewModel.swift */,
+			);
+			path = SettingTabBar;
 			sourceTree = "<group>";
 		};
 		AAC206352B9B625000BDFCF9 = {
@@ -507,7 +635,10 @@
 				AA8826842BAA68CD004A2FAC /* LoginViewController.storyboard in Resources */,
 				AA732F762B9F4EC5009EB608 /* LanguageTableViewCell.xib in Resources */,
 				AA732F5B2B9F42BE009EB608 /* LanguageViewController.storyboard in Resources */,
+				AA8826C42BAC70B8004A2FAC /* HomeTabBarViewController.storyboard in Resources */,
+				AA8826C82BAC70F8004A2FAC /* SettingTabBarViewController.storyboard in Resources */,
 				AADC74072BA33F5A00406787 /* PermissionViewController.storyboard in Resources */,
+				AA8826C62BAC70DD004A2FAC /* SearchTabBarViewController.storyboard in Resources */,
 				AA732F642B9F4530009EB608 /* Localizable.strings in Resources */,
 				AAC2064E2B9B625200BDFCF9 /* LaunchScreen.storyboard in Resources */,
 				AA732F422B9D844F009EB608 /* GoogleService-Info.plist in Resources */,
@@ -594,7 +725,8 @@
 				AADC74052BA33F5000406787 /* PermissionViewController.swift in Sources */,
 				AA732F752B9F4EC5009EB608 /* LanguageTableViewCell.swift in Sources */,
 				AA8826912BAA9156004A2FAC /* ExtentionTextField.swift in Sources */,
-				AA8826802BAA6898004A2FAC /* AuthFlowCoodination.swift in Sources */,
+				AA8826DA2BAC7AAD004A2FAC /* SearchDIContainer.swift in Sources */,
+				AA8826802BAA6898004A2FAC /* AuthFlowCoodinator.swift in Sources */,
 				AA732F3A2B9D7723009EB608 /* SplashViewModel.swift in Sources */,
 				AADC74092BA3434A00406787 /* PermisstionViewModel.swift in Sources */,
 				AA8826A12BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift in Sources */,
@@ -603,23 +735,43 @@
 				AA732F712B9F4CF2009EB608 /* UserDefaultsData.swift in Sources */,
 				AA8826882BAA6939004A2FAC /* Observable.swift in Sources */,
 				AA732F4B2B9DD346009EB608 /* OnboardDIContainer.swift in Sources */,
+				AA8826AB2BAC38C0004A2FAC /* Student.swift in Sources */,
 				AA732F272B9D739A009EB608 /* R.generated.swift in Sources */,
-				AA88267C2BAA6837004A2FAC /* FileAuthenDIContainer.swift in Sources */,
+				AA8826CC2BAC7536004A2FAC /* FSUserClient.swift in Sources */,
+				AA8826AD2BAC3D0C004A2FAC /* Posstion.swift in Sources */,
+				AA8826CA2BAC7283004A2FAC /* CustomStyleTabBarContentView.swift in Sources */,
+				AA8826BF2BAC6FE4004A2FAC /* SearchTabBarViewController.swift in Sources */,
+				AA88267C2BAA6837004A2FAC /* AuthenDIContainer.swift in Sources */,
 				AA88268B2BAA69A2004A2FAC /* AuthClient.swift in Sources */,
+				AA8826B12BAC3EA3004A2FAC /* Faculaty.swift in Sources */,
 				AA88268F2BAA6CC1004A2FAC /* FireAuthClient.swift in Sources */,
+				AA8826D62BAC78A6004A2FAC /* SettingTabBarViewModel.swift in Sources */,
+				AA8826DC2BAC7B9C004A2FAC /* SettingFlowCoodinator.swift in Sources */,
 				AA732F452B9DD2E1009EB608 /* AppFlowCoordinator.swift in Sources */,
+				AA8826B32BAC3ED7004A2FAC /* Manager.swift in Sources */,
+				AA8826D82BAC7A94004A2FAC /* SettingDIContainer.swift in Sources */,
+				AA8826A92BAC3872004A2FAC /* User.swift in Sources */,
 				AA8826862BAA68EE004A2FAC /* LoginViewModel.swift in Sources */,
 				AA732F472B9DD30C009EB608 /* AppAppearance.swift in Sources */,
 				AA732F502B9DD3F2009EB608 /* StoryboardInstantiable.swift in Sources */,
+				AA8826A42BAC3771004A2FAC /* HomeDIContainer.swift in Sources */,
 				AA8826962BAABF46004A2FAC /* CheckValidate.swift in Sources */,
+				AA8826D42BAC7857004A2FAC /* SearchTabBarViewModel.swift in Sources */,
+				AA8826D02BAC76AC004A2FAC /* HomeTabBarViewModel.swift in Sources */,
+				AA8826BA2BAC6FAA004A2FAC /* HomeTabBarViewController.swift in Sources */,
 				AA732F6F2B9F4CC6009EB608 /* LanguageLocalizable.swift in Sources */,
 				AA732F362B9D76F5009EB608 /* SplashViewController.swift in Sources */,
+				AA8826C22BAC7008004A2FAC /* SettingTabBarViewController.swift in Sources */,
 				AA732F592B9F42A8009EB608 /* LanguageViewController.swift in Sources */,
 				AA8826942BAA9999004A2FAC /* LoadingView.swift in Sources */,
+				AA8826D22BAC782F004A2FAC /* SearchFlowCoodinator.swift in Sources */,
 				AA732F4D2B9DD374009EB608 /* OnboardFlowCoodinator.swift in Sources */,
+				AA8826CE2BAC7644004A2FAC /* HomeFlowCoodinator.swift in Sources */,
 				AA732F6C2B9F4A3C009EB608 /* LanguageType.swift in Sources */,
+				AA8826AF2BAC3DD2004A2FAC /* Teacher.swift in Sources */,
 				AA88269A2BAAC0D3004A2FAC /* Alert.swift in Sources */,
 				AA732F532B9DF2A7009EB608 /* ExtentionView.swift in Sources */,
+				AA8826A72BAC3858004A2FAC /* DataUserClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
