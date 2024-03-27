@@ -52,6 +52,7 @@ extension DefaultLoginViewModel {
                 return
             }
             LoadingView.hide()
+            UserDefaultsData.shared.showLogin = true
             self.actions.showHome()
         }
     }

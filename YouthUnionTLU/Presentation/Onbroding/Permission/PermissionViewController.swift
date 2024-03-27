@@ -29,13 +29,6 @@ class PermissionViewController: UIViewController, StoryboardInstantiable {
         return vc
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        requestPhotoLibraryPermission()
-        requestCameraPermission()
-        requestNotificationPermission()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,13 +42,16 @@ class PermissionViewController: UIViewController, StoryboardInstantiable {
         cameraPermission.text = R.stringLocalizable.permissionCamera()
         notificationPermission.text = R.stringLocalizable.permissionNotifications()
         goBtn.setTitle(R.stringLocalizable.buttonGo(), for: .normal)
+        
+        photoSwitch.isOn = checkPhotoLibraryPermission()
+        cameraSwitch.isOn = checkCameraPermission()
+        notificationSwitch.isOn = checkNotificationPermission()
     }
     
     @IBAction func photoPermisionChangeValue(_ sender: UISwitch) {
         if sender.isOn {
             requestPhotoLibraryPermission()
         }
-        
     }
     
     @IBAction func cameraPermissionChangeValue(_ sender: UISwitch) {
@@ -76,25 +72,28 @@ class PermissionViewController: UIViewController, StoryboardInstantiable {
 }
 
 extension PermissionViewController {
+    func checkPhotoLibraryPermission() -> Bool {
+        let status = PHPhotoLibrary.authorizationStatus()
+        return status == .authorized || status == .limited
+    }
+    
     func requestPhotoLibraryPermission() {
         let status = PHPhotoLibrary.authorizationStatus()
         DispatchQueue.main.async {
-            switch status {
-            case .authorized, .limited:
-                self.photoSwitch.isOn = true
-            case .denied, .restricted:
-                self.photoSwitch.isOn = false
-                
-            case .notDetermined:
-                PHPhotoLibrary.requestAuthorization { status in
+            self.photoSwitch.isOn = (status == .authorized || status == .limited)
+            
+            if status == .notDetermined {
+                PHPhotoLibrary.requestAuthorization { _ in
                     DispatchQueue.main.async {
-                        self.requestPhotoLibraryPermission()
+                        self.photoSwitch.isOn = (PHPhotoLibrary.authorizationStatus() == .authorized)
                     }
                 }
-            @unknown default:
-                break
             }
         }
+    }
+
+    func checkCameraPermission() -> Bool {
+        return AVCaptureDevice.authorizationStatus(for: .video) == .authorized
     }
     
     func requestCameraPermission() {
@@ -108,6 +107,23 @@ extension PermissionViewController {
                 }
             }
         }
+    }
+
+    func checkNotificationPermission() -> Bool {
+        let current = UNUserNotificationCenter.current()
+        var isAuthorized = false
+        
+        let semaphore = DispatchSemaphore(value: 0)
+        
+        current.getNotificationSettings { settings in
+            if settings.authorizationStatus == .authorized {
+                isAuthorized = true
+            }
+            semaphore.signal()
+        }
+        
+        semaphore.wait()
+        return isAuthorized
     }
     
     func requestNotificationPermission() {

@@ -26,7 +26,8 @@ final class OnboardFlowCoodinator {
     func start() {
         let actions = SplashActions(showFirstLanguage: showLanguage,
                                     showPermission: showPermission,
-                                    showLogin: showLogin)
+                                    showLogin: showLogin,
+                                    showHome: showHome)
         let vc = dependencies.makeSplashVC(actions: actions)
         navigationController?.viewControllers = [vc]
     }
@@ -55,6 +56,20 @@ final class OnboardFlowCoodinator {
         )
 
         appFlowCoordinator.auth()
+    }
+    
+    private func showHome() {
+        guard let navigationController = navigationController else {
+            return
+        }
+        
+        let appDIContainer = AppDIContainer()
+        let appFlowCoordinator = AppFlowCoordinator(
+            navigationController: navigationController,
+            appDIContainer: appDIContainer
+        )
+
+        appFlowCoordinator.home()
     }
 }
 

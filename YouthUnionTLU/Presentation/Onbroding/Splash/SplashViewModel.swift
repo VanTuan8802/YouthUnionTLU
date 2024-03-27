@@ -11,6 +11,7 @@ struct SplashActions {
     let showFirstLanguage: () -> Void
     let showPermission: () -> Void
     let showLogin: () -> Void
+    let showHome: () -> Void
 }
 
 protocol SplashViewModelInput {
@@ -44,7 +45,11 @@ extension DefaultSplashViewModel {
             if !UserDefaultsData.shared.showPermission {
                 actions?.showPermission()
             } else {
-                actions?.showLogin()
+                if UserDefaultsData.shared.showLogin {
+                    actions?.showHome()
+                } else {
+                    actions?.showLogin()
+                }
             }
         }
     }
