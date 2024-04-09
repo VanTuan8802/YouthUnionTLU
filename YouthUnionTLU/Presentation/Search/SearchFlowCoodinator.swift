@@ -23,7 +23,7 @@ final class SearchFlowCoodinator {
     
     func search() {
         let actions = SearchTabBarActions(showHomeTabBar: showHomeTabBar,
-                                          showSettingTabBar: showSetting)
+                                          showSettingTabBar: show)
         let vc = dependencies.makeSearchTabBarVC(actions: actions)
         navigationController?.viewControllers = [vc]
     }

@@ -307,7 +307,7 @@ struct _R {
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 20 images.
+  /// This `_R.image` struct is generated, and contains static references to 18 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -349,12 +349,6 @@ struct _R {
 
     /// Image `permission`.
     var permission: RswiftResources.ImageResource { .init(name: "permission", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
-    /// Image `profile`.
-    var profile: RswiftResources.ImageResource { .init(name: "profile", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
-
-    /// Image `score`.
-    var score: RswiftResources.ImageResource { .init(name: "score", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `search`.
     var search: RswiftResources.ImageResource { .init(name: "search", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -555,11 +549,8 @@ struct _R {
       var searchTabBarViewController: RswiftResources.StoryboardViewControllerIdentifier<SearchTabBarViewController> { .init(identifier: "SearchTabBarViewController", storyboard: name, bundle: bundle) }
 
       func validate() throws {
-        if UIKit.UIImage(named: "activities", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'activities' is used in storyboard 'SearchTabBarViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "home", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'home' is used in storyboard 'SearchTabBarViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "homeSelected", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'homeSelected' is used in storyboard 'SearchTabBarViewController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "profile", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'profile' is used in storyboard 'SearchTabBarViewController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "score", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'score' is used in storyboard 'SearchTabBarViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "searchSelected", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'searchSelected' is used in storyboard 'SearchTabBarViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "setting", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'setting' is used in storyboard 'SearchTabBarViewController', but couldn't be loaded.") }
         if searchTabBarViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'searchTabBarViewController' could not be loaded from storyboard 'SearchTabBarViewController' as 'SearchTabBarViewController'.") }

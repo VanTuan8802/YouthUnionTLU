@@ -18,6 +18,38 @@
             endingLineNumber = "37"
             landmarkName = "home()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "667CAC89-5125-4A40-A0A2-B426C771D2FF - 26664a6fe4b5d72a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YouthUnionTLU.AppFlowCoordinator.home() -&gt; ()"
+                  moduleName = "YouthUnionTLU"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vantuan/Documents/Study/Year_4/Term_2/DATN/YouthUnionTLU/YouthUnionTLU/Application/AppFlowCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "667CAC89-5125-4A40-A0A2-B426C771D2FF - 26664a6fe4b5d854"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "YouthUnionTLU.AppFlowCoordinator.home() -&gt; ()"
+                  moduleName = "YouthUnionTLU"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vantuan/Documents/Study/Year_4/Term_2/DATN/YouthUnionTLU/YouthUnionTLU/Application/AppFlowCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
