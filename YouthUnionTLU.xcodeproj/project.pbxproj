@@ -70,6 +70,7 @@
 		AA8826D82BAC7A94004A2FAC /* SettingDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826D72BAC7A94004A2FAC /* SettingDIContainer.swift */; };
 		AA8826DA2BAC7AAD004A2FAC /* SearchDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826D92BAC7AAD004A2FAC /* SearchDIContainer.swift */; };
 		AA8826DC2BAC7B9C004A2FAC /* SettingFlowCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826DB2BAC7B9C004A2FAC /* SettingFlowCoodinator.swift */; };
+		AAAD27972BC4180A0040594C /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAD27962BC4180A0040594C /* PermissionManager.swift */; };
 		AAC206422B9B625000BDFCF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC206412B9B625000BDFCF9 /* AppDelegate.swift */; };
 		AAC2064B2B9B625200BDFCF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAC2064A2B9B625200BDFCF9 /* Assets.xcassets */; };
 		AAC2064E2B9B625200BDFCF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC2064C2B9B625200BDFCF9 /* LaunchScreen.storyboard */; };
@@ -155,6 +156,7 @@
 		AA8826D72BAC7A94004A2FAC /* SettingDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDIContainer.swift; sourceTree = "<group>"; };
 		AA8826D92BAC7AAD004A2FAC /* SearchDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDIContainer.swift; sourceTree = "<group>"; };
 		AA8826DB2BAC7B9C004A2FAC /* SettingFlowCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFlowCoodinator.swift; sourceTree = "<group>"; };
+		AAAD27962BC4180A0040594C /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		AAC2063E2B9B625000BDFCF9 /* YouthUnionTLU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YouthUnionTLU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC206412B9B625000BDFCF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAC2064A2B9B625200BDFCF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				AA732F4E2B9DD3D8009EB608 /* Protocols */,
 				AA8826872BAA6939004A2FAC /* Observable.swift */,
 				AA8826952BAABF46004A2FAC /* CheckValidate.swift */,
+				AAAD27962BC4180A0040594C /* PermissionManager.swift */,
 				AA8826992BAAC0D3004A2FAC /* Alert.swift */,
 				AA8826C92BAC7283004A2FAC /* CustomStyleTabBarContentView.swift */,
 			);
@@ -763,6 +766,7 @@
 				AA732F362B9D76F5009EB608 /* SplashViewController.swift in Sources */,
 				AA8826C22BAC7008004A2FAC /* SettingTabBarViewController.swift in Sources */,
 				AA732F592B9F42A8009EB608 /* LanguageViewController.swift in Sources */,
+				AAAD27972BC4180A0040594C /* PermissionManager.swift in Sources */,
 				AA8826942BAA9999004A2FAC /* LoadingView.swift in Sources */,
 				AA8826D22BAC782F004A2FAC /* SearchFlowCoodinator.swift in Sources */,
 				AA732F4D2B9DD374009EB608 /* OnboardFlowCoodinator.swift in Sources */,
