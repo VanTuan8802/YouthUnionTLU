@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Posstion: String, Decodable {
+enum Position: String, Decodable {
     case member = "member";
     case teacher = "teacher";
     case faculaty = "facilaty";

@@ -11,6 +11,6 @@ import FirebaseFirestore
 protocol UserClient {
     associatedtype T
     
-    func getPossionUser(id: String, completion: @escaping(Posstion?,Error?) -> Void)
+    func getPossionUser(id: String, completion: @escaping(Position?,Error?) -> Void)
     func getDataUser(id: String, completion: @escaping(T?,Error?) -> Void)
 }

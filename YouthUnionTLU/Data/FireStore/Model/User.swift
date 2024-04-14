@@ -14,5 +14,5 @@ struct User: Decodable {
     var teacher: Teacher?
     var faculaty: Faculaty?
     var manager: Manager?
-    var posstion: Posstion
+    var posstion: Position
 }
