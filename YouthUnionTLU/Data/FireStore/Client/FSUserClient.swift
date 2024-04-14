@@ -11,7 +11,7 @@ import FirebaseAuth
 class FSUserClient: UserClient {
     typealias T = User
     
-    func getPossionUser(id: String, completion: @escaping (Posstion?, Error?) -> Void) {
+    func getPossionUser(id: String, completion: @escaping (Position?, Error?) -> Void) {
         
     }
     

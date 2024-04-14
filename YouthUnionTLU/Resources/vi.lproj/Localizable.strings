@@ -28,7 +28,7 @@ button.signIn = "Đăng nhập";
 textField.email = "Nhập Email";
 textField.password = "Nhập mật khẩu";
 button.forgotPassword = "Quên mật khẩu";
-label.sendEmail = "Một email đã được gửi đến bạn. Vui lòng nhấn vào liên kết để đặt lại mật khẩu của bạn.";
+lable.sendEmail = "Một email đã được gửi đến bạn. Vui lòng nhấn vào liên kết để đặt lại mật khẩu của bạn.";
 button.backLogin = "Quay lại đăng nhập";
 button.resetPassword = "Đặt lại mật khẩu";
 

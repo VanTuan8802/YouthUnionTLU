@@ -28,7 +28,7 @@ button.signIn = "Se connecter";
 textField.email = "Entrez votre e-mail";
 textField.password = "Entrez votre mot de passe";
 button.forgotPassword = "Mot de passe oublié ?";
-label.sendEmail = "Un e-mail vous a été envoyé. Veuillez cliquer sur le lien pour réinitialiser votre mot de passe.";
+lable.sendEmail = "Un e-mail vous a été envoyé. Veuillez cliquer sur le lien pour réinitialiser votre mot de passe.";
 button.backLogin = "Retour à la connexion";
 button.resetPassword = "Réinitialiser mon mot de passe";
 

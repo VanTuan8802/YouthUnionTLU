@@ -179,7 +179,7 @@ struct _R {
       ///
       /// Key: lable.sendEmail
       ///
-      /// Locales: en
+      /// Locales: en, fr, km-KH, lo-LA, vi
       var lableSendEmail: RswiftResources.StringResource { .init(key: "lable.sendEmail", tableName: "Localizable", source: source, developmentValue: "An email has been sent to you. Please click on the link to reset your password.", comment: nil) }
 
       /// en translation: Cambodian
@@ -296,7 +296,7 @@ struct _R {
     }
   }
 
-  /// This `_R.color` struct is generated, and contains static references to 2 colors.
+  /// This `_R.color` struct is generated, and contains static references to 3 colors.
   struct color {
     let bundle: Foundation.Bundle
 
@@ -305,9 +305,12 @@ struct _R {
 
     /// Color `AccentColor`.
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
+
+    /// Color `Background`.
+    var background: RswiftResources.ColorResource { .init(name: "Background", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 18 images.
+  /// This `_R.image` struct is generated, and contains static references to 24 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -320,11 +323,17 @@ struct _R {
     /// Image `French`.
     var french: RswiftResources.ImageResource { .init(name: "French", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `Languagge`.
+    var languagge: RswiftResources.ImageResource { .init(name: "Languagge", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `Laos`.
     var laos: RswiftResources.ImageResource { .init(name: "Laos", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `VietNam`.
     var vietNam: RswiftResources.ImageResource { .init(name: "VietNam", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `changePass`.
+    var changePass: RswiftResources.ImageResource { .init(name: "changePass", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `check`.
     var check: RswiftResources.ImageResource { .init(name: "check", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -344,11 +353,20 @@ struct _R {
     /// Image `homeSelected`.
     var homeSelected: RswiftResources.ImageResource { .init(name: "homeSelected", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `logOut`.
+    var logOut: RswiftResources.ImageResource { .init(name: "logOut", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `login`.
     var login: RswiftResources.ImageResource { .init(name: "login", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `permission`.
     var permission: RswiftResources.ImageResource { .init(name: "permission", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `policy`.
+    var policy: RswiftResources.ImageResource { .init(name: "policy", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `rate`.
+    var rate: RswiftResources.ImageResource { .init(name: "rate", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `search`.
     var search: RswiftResources.ImageResource { .init(name: "search", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -361,6 +379,9 @@ struct _R {
 
     /// Image `settingSelected`.
     var settingSelected: RswiftResources.ImageResource { .init(name: "settingSelected", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `share`.
+    var share: RswiftResources.ImageResource { .init(name: "share", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `splash`.
     var splash: RswiftResources.ImageResource { .init(name: "splash", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -568,9 +589,16 @@ struct _R {
       var settingTabBarViewController: RswiftResources.StoryboardViewControllerIdentifier<SettingTabBarViewController> { .init(identifier: "SettingTabBarViewController", storyboard: name, bundle: bundle) }
 
       func validate() throws {
+        if UIKit.UIImage(named: "Languagge", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'Languagge' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "changePass", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'changePass' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "home", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'home' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "logOut", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'logOut' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "policy", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'policy' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "rate", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'rate' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "search", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'search' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "settingSelected", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'settingSelected' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "share", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'share' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIColor(named: "Background", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'Background' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
         if settingTabBarViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'settingTabBarViewController' could not be loaded from storyboard 'SettingTabBarViewController' as 'SettingTabBarViewController'.") }
       }
     }
