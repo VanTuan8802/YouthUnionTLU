@@ -15,6 +15,7 @@ struct _R {
   var string: string { .init(bundle: bundle, preferredLanguages: nil, locale: nil) }
   var color: color { .init(bundle: bundle) }
   var image: image { .init(bundle: bundle) }
+  var font: font { .init(bundle: bundle) }
   var file: file { .init(bundle: bundle) }
   var nib: nib { .init(bundle: bundle) }
   var storyboard: storyboard { .init(bundle: bundle) }
@@ -34,6 +35,9 @@ struct _R {
   func image(bundle: Foundation.Bundle) -> image {
     .init(bundle: bundle)
   }
+  func font(bundle: Foundation.Bundle) -> font {
+    .init(bundle: bundle)
+  }
   func file(bundle: Foundation.Bundle) -> file {
     .init(bundle: bundle)
   }
@@ -44,6 +48,7 @@ struct _R {
     .init(bundle: bundle)
   }
   func validate() throws {
+    try self.font.validate()
     try self.nib.validate()
     try self.storyboard.validate()
   }
@@ -366,12 +371,56 @@ struct _R {
     var splash: RswiftResources.ImageResource { .init(name: "splash", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
-  /// This `_R.file` struct is generated, and contains static references to 1 resource files.
+  /// This `_R.font` struct is generated, and contains static references to 5 fonts.
+  struct font: Sequence {
+    let bundle: Foundation.Bundle
+
+    /// Font `SFProDisplay-Bold`.
+    var sfProDisplayBold: RswiftResources.FontResource { .init(name: "SFProDisplay-Bold", bundle: bundle, filename: "SF-Pro-Display-Bold.otf") }
+
+    /// Font `SFProDisplay-Heavy`.
+    var sfProDisplayHeavy: RswiftResources.FontResource { .init(name: "SFProDisplay-Heavy", bundle: bundle, filename: "SF-Pro-Display-Heavy.otf") }
+
+    /// Font `SFProDisplay-Medium`.
+    var sfProDisplayMedium: RswiftResources.FontResource { .init(name: "SFProDisplay-Medium", bundle: bundle, filename: "SF-Pro-Display-Medium.otf") }
+
+    /// Font `SFProDisplay-Regular`.
+    var sfProDisplayRegular: RswiftResources.FontResource { .init(name: "SFProDisplay-Regular", bundle: bundle, filename: "SF-Pro-Display-Regular.otf") }
+
+    /// Font `SFProDisplay-Semibold`.
+    var sfProDisplaySemibold: RswiftResources.FontResource { .init(name: "SFProDisplay-Semibold", bundle: bundle, filename: "SF-Pro-Display-Semibold.otf") }
+
+    func makeIterator() -> IndexingIterator<[RswiftResources.FontResource]> {
+      [sfProDisplayBold, sfProDisplayHeavy, sfProDisplayMedium, sfProDisplayRegular, sfProDisplaySemibold].makeIterator()
+    }
+    func validate() throws {
+      for font in self {
+        if !font.canBeLoaded() { throw RswiftResources.ValidationError("[R.swift] Font '\(font.name)' could not be loaded, is '\(font.filename)' added to the UIAppFonts array in this targets Info.plist?") }
+      }
+    }
+  }
+
+  /// This `_R.file` struct is generated, and contains static references to 6 resource files.
   struct file {
     let bundle: Foundation.Bundle
 
     /// Resource file `GoogleService-Info.plist`.
     var googleServiceInfoPlist: RswiftResources.FileResource { .init(name: "GoogleService-Info", pathExtension: "plist", bundle: bundle, locale: LocaleReference.none) }
+
+    /// Resource file `SF-Pro-Display-Bold.otf`.
+    var sfProDisplayBoldOtf: RswiftResources.FileResource { .init(name: "SF-Pro-Display-Bold", pathExtension: "otf", bundle: bundle, locale: LocaleReference.none) }
+
+    /// Resource file `SF-Pro-Display-Heavy.otf`.
+    var sfProDisplayHeavyOtf: RswiftResources.FileResource { .init(name: "SF-Pro-Display-Heavy", pathExtension: "otf", bundle: bundle, locale: LocaleReference.none) }
+
+    /// Resource file `SF-Pro-Display-Medium.otf`.
+    var sfProDisplayMediumOtf: RswiftResources.FileResource { .init(name: "SF-Pro-Display-Medium", pathExtension: "otf", bundle: bundle, locale: LocaleReference.none) }
+
+    /// Resource file `SF-Pro-Display-Regular.otf`.
+    var sfProDisplayRegularOtf: RswiftResources.FileResource { .init(name: "SF-Pro-Display-Regular", pathExtension: "otf", bundle: bundle, locale: LocaleReference.none) }
+
+    /// Resource file `SF-Pro-Display-Semibold.otf`.
+    var sfProDisplaySemiboldOtf: RswiftResources.FileResource { .init(name: "SF-Pro-Display-Semibold", pathExtension: "otf", bundle: bundle, locale: LocaleReference.none) }
   }
 
   /// This `_R.nib` struct is generated, and contains static references to 1 nibs.

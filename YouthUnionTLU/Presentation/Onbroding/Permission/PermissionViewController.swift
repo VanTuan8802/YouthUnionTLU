@@ -37,6 +37,8 @@ class PermissionViewController: UIViewController, StoryboardInstantiable {
     
     private func setUI() {
         permissionTitle.text = R.stringLocalizable.permissionTitle()
+        permissionTitle.setFont(name: AppFont.sf_pro_display_bold.rawValue,
+                                size: 12)
         permissionContent.text = R.stringLocalizable.permissionContent()
         photoPermisstion.text = R.stringLocalizable.permissionPhotos()
         cameraPermission.text = R.stringLocalizable.permissionCamera()
