@@ -46,6 +46,7 @@ class DefaultSettingTabBarViewModel: SettingTabBarViewModel {
     func openSearchTabBar() {
         actions.showSearchTabBar()
     }
+
 }
 
 
