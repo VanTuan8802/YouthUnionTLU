@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Collection: String {
+enum CollectionFireStore: String {
     case userCollection = "users"
     case profileCollection = "profiles"
 }

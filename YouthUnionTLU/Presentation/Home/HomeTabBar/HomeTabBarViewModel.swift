@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 struct HomeTabBarActions {
     let showSearchTabBar: () -> Void
@@ -36,7 +37,6 @@ class DefaultHomeTabBarViewModel: HomeTabBarViewModel {
     }
     
     func viewDidLoad() {
-        
     }
     
     func openSearchTabBar() {
@@ -46,5 +46,6 @@ class DefaultHomeTabBarViewModel: HomeTabBarViewModel {
     func openSettingTabBar() {
         actions.showSettingTabBar()
     }
+
 }
 

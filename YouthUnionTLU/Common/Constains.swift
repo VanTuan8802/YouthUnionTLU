@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct Constains {
+    static var posistion = "position"
+}
