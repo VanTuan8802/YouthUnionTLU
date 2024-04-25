@@ -9,12 +9,26 @@ import Foundation
 import FirebaseAuth
 
 struct SettingTabBarActions {
+    let showInformation: () -> Void
+    let showLanguage: () -> Void
+    let showShare: () -> Void
+    let showRate: () -> Void
+    let showPolicy: () -> Void
+    let showChangePassword: () -> Void
+    let showLogOut: () -> Void
     let showHomeTabBar: () -> Void
     let showSearchTabBar: () -> Void
 }
 
 protocol SettingTabBarViewModelInput {
     func viewDidLoad()
+    func openInformation()
+    func openLanguage()
+    func openShare()
+    func openRate()
+    func openPolicy()
+    func openChangePassword()
+    func openLogOut()
     func openHomeTabBar()
     func openSearchTabBar()
 }
@@ -28,6 +42,8 @@ protocol SettingTabBarViewModel: SettingTabBarViewModelInput, SettingTabBarViewM
 }
 
 class DefaultSettingTabBarViewModel: SettingTabBarViewModel {
+    
+    
     var error: Observable<String?> = Observable(nil)
     
     private var actions: SettingTabBarActions
@@ -36,7 +52,36 @@ class DefaultSettingTabBarViewModel: SettingTabBarViewModel {
         self.actions = actions
     }
     
+    
     func viewDidLoad() {
+        
+    }
+    
+    func openInformation() {
+        actions.showInformation()
+    }
+    
+    func openLanguage() {
+        
+    }
+    
+    func openShare() {
+        
+    }
+    
+    func openRate() {
+        
+    }
+    
+    func openPolicy() {
+        
+    }
+    
+    func openChangePassword() {
+        
+    }
+    
+    func openLogOut() {
         
     }
     

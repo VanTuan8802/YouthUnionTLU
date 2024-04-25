@@ -52,22 +52,35 @@ extension DefaultLoginViewModel {
                 return
             }
             
-            guard let uid = uid else {
+            guard let uid = Auth.auth().currentUser?.uid else {
+                LoadingView.hide()
                 return
             }
             
-            FSUserClient.shared.getPossionUser(uid: uid) { position, error in
-                guard let position = position else {
+            FSUserClient.shared.getPossionUser(uid: uid) { positionStudent, error in
+                guard error == nil else {
+                    LoadingView.hide()
                     return
                 }
                 
-                UserDefaults.standard.set(position.rawValue, forKey: Constains.posistion)
+                guard let positionStudent = positionStudent else {
+                    LoadingView.hide()
+                    return
+                }
+                
+                UserDefaultsData.shared.posision = positionStudent.position
+                
+                if positionStudent.position == Position.member.rawValue {
+                    UserDefaultsData.shared.studentCode = positionStudent.student_Code ?? ""
+                }
+
                 LoadingView.hide()
                 UserDefaultsData.shared.showLogin = true
                 self.actions.showHome()
             }
         }
     }
+
     
     func forgotPassword() {
         actions.showForgotPassword()

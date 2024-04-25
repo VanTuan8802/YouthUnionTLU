@@ -10,4 +10,7 @@ import Foundation
 enum CollectionFireStore: String {
     case userCollection = "users"
     case profileCollection = "profiles"
+    case studentCodeCollection = "student_Code"
+    case persionalInfor = "persional_Infor"
+    case studentInfor = "student_Infor"
 }

@@ -24,7 +24,7 @@ class SettingTabBarViewController: UIViewController, StoryboardInstantiable {
     
     private var viewModel: SettingTabBarViewModel!
     
-    private let position = UserDefaults.standard.value(forKey: Constains.posistion)
+    private let position = UserDefaultsData.shared.posision
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,6 +35,7 @@ class SettingTabBarViewController: UIViewController, StoryboardInstantiable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(position)
         self.tabBarSetting?.delegate = self
         setUI()
     }
@@ -51,6 +52,9 @@ class SettingTabBarViewController: UIViewController, StoryboardInstantiable {
         homeTabBarItem.title = R.stringLocalizable.tabBarHome()
         searchTabBarItem.title = R.stringLocalizable.tabBarSearch()
         settingTabBarItem.title = R.stringLocalizable.tabBarSettings()
+        
+        infoUserBtn.isEnabled = (position == Position.member.rawValue)
+
     }
     
     private func bind(to viewModel: SettingTabBarViewModel) {
@@ -64,10 +68,10 @@ class SettingTabBarViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func showInformationAction(_ sender: Any) {
-        
+        viewModel.openInformation()
     }
     
-    @IBAction func chagePasswordAction(_ sender: Any) {
+    @IBAction func chageLanguageAction(_ sender: Any) {
         
     }
     

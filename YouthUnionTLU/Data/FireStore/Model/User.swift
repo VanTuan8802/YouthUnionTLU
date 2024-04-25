@@ -10,7 +10,7 @@ import FirebaseFirestore
 
 struct User: Decodable {
     @DocumentID var uid: String?
-    var student: Student?
+    var student: ProfileStudent?
     var teacher: Teacher?
     var faculaty: Faculaty?
     var manager: Manager?

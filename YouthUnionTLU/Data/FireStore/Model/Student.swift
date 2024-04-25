@@ -13,12 +13,12 @@ struct Address: Codable {
     let city: String
 }
 
-struct Student: Codable{
+struct PerSonalInformation: Decodable {
     let id: String
     let name: String
     let avatarUrl: String
     let date_Of_Birth: String
-    let sex: String
+    let gender: String
     let address: Address
     let nation: String
     let religion: String
@@ -26,13 +26,21 @@ struct Student: Codable{
     let citizenId: String
     let date_Range: String
     let address_Range: String
+}
+
+struct StudentInformation: Decodable{
     let className: String
     let batch: String
     let faculaty: String
     let major: String
     let email: String
     let year_Of_Admission: Int
-    let year_Of_HighSchool_Graduation: String
+    let year_Of_HighSchool_Graduation: Int
     let account_Number: String
-    let bank: String
+    let bankName: String
+}
+
+struct ProfileStudent: Decodable {
+    let perSonalInformation: PerSonalInformation
+    let studentInformation: StudentInformation
 }

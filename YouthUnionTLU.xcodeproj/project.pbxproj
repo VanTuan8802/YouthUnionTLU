@@ -10,6 +10,10 @@
 		75DAFBEE875009620FCC9B14 /* Pods_YouthUnionTLU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5442DE59D1755506FBFF32 /* Pods_YouthUnionTLU.framework */; };
 		AA14F4FC2BCD694C00277DFC /* CollectionFireStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14F4FB2BCD694C00277DFC /* CollectionFireStore.swift */; };
 		AA14F4FE2BCE04DC00277DFC /* Constains.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14F4FD2BCE04DC00277DFC /* Constains.swift */; };
+		AA14F5012BD2AE4700277DFC /* InformationStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14F5002BD2AE4700277DFC /* InformationStudentViewController.swift */; };
+		AA14F5032BD2AE5400277DFC /* InformationStudentViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA14F5022BD2AE5400277DFC /* InformationStudentViewController.storyboard */; };
+		AA14F5052BD2AE6400277DFC /* InformationStudentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14F5042BD2AE6400277DFC /* InformationStudentViewModel.swift */; };
+		AA61AD502BDAAB750097B8BA /* PositionStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA61AD4F2BDAAB750097B8BA /* PositionStudent.swift */; };
 		AA732F272B9D739A009EB608 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA732F262B9D739A009EB608 /* R.generated.swift */; };
 		AA732F362B9D76F5009EB608 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA732F352B9D76F5009EB608 /* SplashViewController.swift */; };
 		AA732F382B9D770A009EB608 /* SplashViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA732F372B9D770A009EB608 /* SplashViewController.storyboard */; };
@@ -84,6 +88,10 @@
 		4F0A6FA60D4219DC995B36EA /* Pods-YouthUnionTLU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouthUnionTLU.release.xcconfig"; path = "Target Support Files/Pods-YouthUnionTLU/Pods-YouthUnionTLU.release.xcconfig"; sourceTree = "<group>"; };
 		AA14F4FB2BCD694C00277DFC /* CollectionFireStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionFireStore.swift; sourceTree = "<group>"; };
 		AA14F4FD2BCE04DC00277DFC /* Constains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constains.swift; sourceTree = "<group>"; };
+		AA14F5002BD2AE4700277DFC /* InformationStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationStudentViewController.swift; sourceTree = "<group>"; };
+		AA14F5022BD2AE5400277DFC /* InformationStudentViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InformationStudentViewController.storyboard; sourceTree = "<group>"; };
+		AA14F5042BD2AE6400277DFC /* InformationStudentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationStudentViewModel.swift; sourceTree = "<group>"; };
+		AA61AD4F2BDAAB750097B8BA /* PositionStudent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionStudent.swift; sourceTree = "<group>"; };
 		AA732F262B9D739A009EB608 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		AA732F352B9D76F5009EB608 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		AA732F372B9D770A009EB608 /* SplashViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashViewController.storyboard; sourceTree = "<group>"; };
@@ -191,6 +199,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AA14F4FF2BD2ADEF00277DFC /* InformationStudent */ = {
+			isa = PBXGroup;
+			children = (
+				AA14F5002BD2AE4700277DFC /* InformationStudentViewController.swift */,
+				AA14F5022BD2AE5400277DFC /* InformationStudentViewController.storyboard */,
+				AA14F5042BD2AE6400277DFC /* InformationStudentViewModel.swift */,
+			);
+			path = InformationStudent;
+			sourceTree = "<group>";
+		};
 		AA732F292B9D73E8009EB608 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +295,7 @@
 		AA732F312B9D7457009EB608 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				AA14F4FF2BD2ADEF00277DFC /* InformationStudent */,
 				AA8826BC2BAC6FB9004A2FAC /* Setting */,
 				AA8826BB2BAC6FB3004A2FAC /* Search */,
 				AA8826A22BAC3566004A2FAC /* Home */,
@@ -423,6 +442,7 @@
 				AA8826AE2BAC3DD2004A2FAC /* Teacher.swift */,
 				AA8826B02BAC3EA3004A2FAC /* Faculaty.swift */,
 				AA8826B22BAC3ED7004A2FAC /* Manager.swift */,
+				AA61AD4F2BDAAB750097B8BA /* PositionStudent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -644,6 +664,7 @@
 				AA8826C42BAC70B8004A2FAC /* HomeTabBarViewController.storyboard in Resources */,
 				AA8826C82BAC70F8004A2FAC /* SettingTabBarViewController.storyboard in Resources */,
 				AADC74072BA33F5A00406787 /* PermissionViewController.storyboard in Resources */,
+				AA14F5032BD2AE5400277DFC /* InformationStudentViewController.storyboard in Resources */,
 				AA8826C62BAC70DD004A2FAC /* SearchTabBarViewController.storyboard in Resources */,
 				AA732F642B9F4530009EB608 /* Localizable.strings in Resources */,
 				AAC2064E2B9B625200BDFCF9 /* LaunchScreen.storyboard in Resources */,
@@ -731,6 +752,7 @@
 				AADC74052BA33F5000406787 /* PermissionViewController.swift in Sources */,
 				AA732F752B9F4EC5009EB608 /* LanguageTableViewCell.swift in Sources */,
 				AA8826912BAA9156004A2FAC /* ExtentionTextField.swift in Sources */,
+				AA14F5052BD2AE6400277DFC /* InformationStudentViewModel.swift in Sources */,
 				AA14F4FE2BCE04DC00277DFC /* Constains.swift in Sources */,
 				AA8826DA2BAC7AAD004A2FAC /* SearchDIContainer.swift in Sources */,
 				AA8826802BAA6898004A2FAC /* AuthFlowCoodinator.swift in Sources */,
@@ -750,6 +772,7 @@
 				AA8826BF2BAC6FE4004A2FAC /* SearchTabBarViewController.swift in Sources */,
 				AA88267C2BAA6837004A2FAC /* AuthenDIContainer.swift in Sources */,
 				AA88268B2BAA69A2004A2FAC /* AuthClient.swift in Sources */,
+				AA14F5012BD2AE4700277DFC /* InformationStudentViewController.swift in Sources */,
 				AA8826B12BAC3EA3004A2FAC /* Faculaty.swift in Sources */,
 				AA88268F2BAA6CC1004A2FAC /* FireAuthClient.swift in Sources */,
 				AA8826D62BAC78A6004A2FAC /* SettingTabBarViewModel.swift in Sources */,
@@ -777,6 +800,7 @@
 				AA8826CE2BAC7644004A2FAC /* HomeFlowCoodinator.swift in Sources */,
 				AA732F6C2B9F4A3C009EB608 /* LanguageType.swift in Sources */,
 				AA8826AF2BAC3DD2004A2FAC /* Teacher.swift in Sources */,
+				AA61AD502BDAAB750097B8BA /* PositionStudent.swift in Sources */,
 				AA88269A2BAAC0D3004A2FAC /* Alert.swift in Sources */,
 				AA732F532B9DF2A7009EB608 /* ExtentionView.swift in Sources */,
 				AA8826A72BAC3858004A2FAC /* DataUserClient.swift in Sources */,
