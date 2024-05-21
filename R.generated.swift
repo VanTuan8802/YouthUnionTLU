@@ -552,15 +552,22 @@ struct _R {
     var googleServiceInfoPlist: RswiftResources.FileResource { .init(name: "GoogleService-Info", pathExtension: "plist", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
     let bundle: Foundation.Bundle
+
+    /// Nib `InformationOneViewTableViewCell`.
+    var informationOneViewTableViewCell: RswiftResources.NibReference<InformationOneViewTableViewCell> { .init(name: "InformationOneViewTableViewCell", bundle: bundle) }
+
+    /// Nib `InformationTwoViewTableViewCell`.
+    var informationTwoViewTableViewCell: RswiftResources.NibReference<InformationTwoViewTableViewCell> { .init(name: "InformationTwoViewTableViewCell", bundle: bundle) }
 
     /// Nib `LanguageTableViewCell`.
     var languageTableViewCell: RswiftResources.NibReference<LanguageTableViewCell> { .init(name: "LanguageTableViewCell", bundle: bundle) }
 
     func validate() throws {
-
+      if UIKit.UIColor(named: "Background", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'Background' is used in nib 'InformationOneViewTableViewCell', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "Background", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'Background' is used in nib 'InformationTwoViewTableViewCell', but couldn't be loaded.") }
     }
   }
 
@@ -668,8 +675,6 @@ struct _R {
       var informationStudentViewController: RswiftResources.StoryboardViewControllerIdentifier<InformationStudentViewController> { .init(identifier: "InformationStudentViewController", storyboard: name, bundle: bundle) }
 
       func validate() throws {
-        if UIKit.UIImage(named: "Laos", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'Laos' is used in storyboard 'InformationStudentViewController', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "hide", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'hide' is used in storyboard 'InformationStudentViewController', but couldn't be loaded.") }
         if UIKit.UIColor(named: "Background", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'Background' is used in storyboard 'InformationStudentViewController', but couldn't be loaded.") }
         if informationStudentViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'informationStudentViewController' could not be loaded from storyboard 'InformationStudentViewController' as 'InformationStudentViewController'.") }
       }
