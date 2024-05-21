@@ -42,8 +42,6 @@ protocol SettingTabBarViewModel: SettingTabBarViewModelInput, SettingTabBarViewM
 }
 
 class DefaultSettingTabBarViewModel: SettingTabBarViewModel {
-    
-    
     var error: Observable<String?> = Observable(nil)
     
     private var actions: SettingTabBarActions
@@ -62,7 +60,7 @@ class DefaultSettingTabBarViewModel: SettingTabBarViewModel {
     }
     
     func openLanguage() {
-        
+        actions.showLanguage()
     }
     
     func openShare() {

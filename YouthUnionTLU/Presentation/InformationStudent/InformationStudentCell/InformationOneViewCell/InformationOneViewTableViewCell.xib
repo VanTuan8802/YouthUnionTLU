@@ -4,9 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -47,7 +45,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="OLL-A6-2sZ" secondAttribute="bottom" id="1HL-It-fwt"/>
                                     <constraint firstItem="OLL-A6-2sZ" firstAttribute="leading" secondItem="ntt-qu-BTi" secondAttribute="leading" id="EoC-Je-qat"/>
@@ -57,12 +55,18 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.89411764709999997" green="0.89411764709999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qhY-jb-TRU" firstAttribute="leading" secondItem="67j-N6-kfQ" secondAttribute="leading" id="Inl-nY-6a0"/>
                             <constraint firstAttribute="bottom" secondItem="ntt-qu-BTi" secondAttribute="bottom" id="kd5-D9-AR9"/>
@@ -72,7 +76,7 @@
                         </constraints>
                     </view>
                 </subviews>
-                <color key="backgroundColor" name="Background"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="67j-N6-kfQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="afi-ob-RIf"/>
                     <constraint firstAttribute="trailing" secondItem="67j-N6-kfQ" secondAttribute="trailing" id="gLW-p9-GiQ"/>
@@ -88,12 +92,4 @@
             <point key="canvasLocation" x="145.80152671755724" y="27.816901408450704"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <namedColor name="Background">
-            <color red="0.95294117647058818" green="0.96862745098039216" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

@@ -21,7 +21,6 @@ class SearchTabBarViewController: UIViewController, StoryboardInstantiable {
 
         self.tabBarSearch?.delegate = self
         setUI()
-        print(Constains.posistion)
     }
     
     private func setUI() {
