@@ -12,6 +12,7 @@ target 'YouthUnionTLU' do
   pod 'R.swift'
   pod 'IQKeyboardManagerSwift'
   pod "ESTabBarController-swift"
+  pod 'Kingfisher'
   # Pods for YouthUnionTLU
 
 end

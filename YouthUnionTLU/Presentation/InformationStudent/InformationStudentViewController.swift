@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import King
 
 class InformationStudentViewController: UIViewController, StoryboardInstantiable {
-    
-    @IBOutlet weak var inforScrollView: UIScrollView!
-    
+    @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var avatarStudent: UIImageView!
+    @IBOutlet weak var informationTableView: UITableView!
+    
     @IBOutlet weak var nameLb: UILabel!
     @IBOutlet weak var nameTxt: UITextField!
     @IBOutlet weak var birthdayLb: UILabel!
@@ -52,6 +53,12 @@ class InformationStudentViewController: UIViewController, StoryboardInstantiable
     @IBOutlet weak var bankNameLb: UILabel!
     @IBOutlet weak var bankNameTxt: UITextField!
     
+    private var persionInformation: PersionalInformation?
+    private var studentInformation: StudentInformation?
+    
+    private var dataProfile: [[Information]] = []
+    private var dataStudent: [[Information]] = []
+    
     private var viewModel: InformationStudentViewModel!
     
     class func create(with viewModel: InformationStudentViewModel) -> InformationStudentViewController {
@@ -64,39 +71,89 @@ class InformationStudentViewController: UIViewController, StoryboardInstantiable
         super.viewDidLoad()
 
         viewModel.viewDidLoad()
-        inforScrollView.delegate = self
+        bindData(to: viewModel)
+        setUpTableView()
         setUI()
     }
     
     private func setUI() {
-        nameLb.text = R.stringLocalizable.inforStudentName()
-        nameTxt.addPadding()
-        birthdayLb.text = R.stringLocalizable.inforStudentDateOfBirth()
-        birthDayTxt.addPadding()
-        sexLb.text = R.stringLocalizable.inforStudentSex()
-        sexTxt.addPadding()
-        addressLb.text = R.stringLocalizable.inforStudentPlaceOfBirth()
-        addressTxt.addPadding()
-        nationLb.text = R.stringLocalizable.inforStudentNation()
-        nationTxt.addPadding()
-        religionLb.text = R.stringLocalizable.inforStudentReligion()
-        religionTxt.addPadding()
-        citizenIdLb.text = R.stringLocalizable.inforStudentCitizentId()
-        citizenIdTxt.addPadding()
-        dateRangeLb.text = R.stringLocalizable.inforStudentDateRange()
-        dateRangeTxt.addPadding()
-        addressRangeLb.text = R.stringLocalizable.inforStudentAddressRange()
-        addressRangeTxt.addPadding()
+//        nameLb.text = R.stringLocalizable.inforStudentName()
+//        nameTxt.addPadding()
+//        birthdayLb.text = R.stringLocalizable.inforStudentDateOfBirth()
+//        birthDayTxt.addPadding()
+//        sexLb.text = R.stringLocalizable.inforStudentSex()
+//        sexTxt.addPadding()
+//        addressLb.text = R.stringLocalizable.inforStudentPlaceOfBirth()
+//        addressTxt.addPadding()
+//        nationLb.text = R.stringLocalizable.inforStudentNation()
+//        nationTxt.addPadding()
+//        religionLb.text = R.stringLocalizable.inforStudentReligion()
+//        religionTxt.addPadding()
+//        citizenIdLb.text = R.stringLocalizable.inforStudentCitizentId()
+//        citizenIdTxt.addPadding()
+//        dateRangeLb.text = R.stringLocalizable.inforStudentDateRange()
+//        dateRangeTxt.addPadding()
+//        addressRangeLb.text = R.stringLocalizable.inforStudentAddressRange()
+//        addressRangeTxt.addPadding()
         
+    }
+    
+    private func setUpTableView() {
+        informationTableView.delegate = self
+        informationTableView.dataSource = self
+        
+        informationTableView.register(UINib(nibName: InformationOneViewTableViewCell.className, bundle: nil), forCellReuseIdentifier: InformationOneViewTableViewCell.className)
+        informationTableView.register(UINib(nibName: InformationTwoViewTableViewCell.className, bundle: nil), forCellReuseIdentifier: InformationTwoViewTableViewCell.className)
+    }
+    
+    private func bindData(to viewMoldel:InformationStudentViewModel) {
+        viewMoldel.persionalInformation.observe(on: self) { persionalInformationData in
+            guard let persionalInformationData = persionalInformationData else {
+                return
+            }
+            self.persionInformation = persionalInformationData
+        }
+        
+        viewMoldel.studentInformation.observe(on: self) { studentInformationData in
+            guard let studentInformationData = studentInformationData else {
+                return
+            }
+            self.studentInformation = studentInformationData
+        }
     }
     
 }
 
-extension InformationStudentViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if (inforScrollView.contentOffset.x != 0) {
-            inforScrollView.contentOffset.x = 0
+extension InformationStudentViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return dataProfile.count
+        } else {
+            return dataStudent.count
         }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    
+}
+
+extension InformationStudentViewController: UIScrollViewDelegate {
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        if (inforScrollView.contentOffset.x != 0) {
+//            inforScrollView.contentOffset.x = 0
+//        }
+//    }
+}
+
+extension InformationStudentViewController {
+    private func fetchData() {
+        avatarStudent.k
+        dataProfile = [
+            Information(title: <#T##String#>, content: <#T##String#>)
+        ]
     }
 }
 

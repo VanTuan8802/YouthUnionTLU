@@ -25,7 +25,6 @@
 		AA732F362B9D76F5009EB608 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA732F352B9D76F5009EB608 /* SplashViewController.swift */; };
 		AA732F382B9D770A009EB608 /* SplashViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA732F372B9D770A009EB608 /* SplashViewController.storyboard */; };
 		AA732F3A2B9D7723009EB608 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA732F392B9D7723009EB608 /* SplashViewModel.swift */; };
-		AA732F422B9D844F009EB608 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA732F412B9D844F009EB608 /* GoogleService-Info.plist */; };
 		AA732F452B9DD2E1009EB608 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA732F442B9DD2E1009EB608 /* AppFlowCoordinator.swift */; };
 		AA732F472B9DD30C009EB608 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA732F462B9DD30C009EB608 /* AppAppearance.swift */; };
 		AA732F492B9DD32F009EB608 /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA732F482B9DD32F009EB608 /* AppDIContainer.swift */; };
@@ -89,6 +88,12 @@
 		AADC74052BA33F5000406787 /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC74042BA33F5000406787 /* PermissionViewController.swift */; };
 		AADC74072BA33F5A00406787 /* PermissionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AADC74062BA33F5A00406787 /* PermissionViewController.storyboard */; };
 		AADC74092BA3434A00406787 /* PermisstionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADC74082BA3434A00406787 /* PermisstionViewModel.swift */; };
+		AB0742612BF7054D00BE5308 /* Infomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0742602BF7054D00BE5308 /* Infomation.swift */; };
+		AB0742662BF7079200BE5308 /* InformationOneViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0742642BF7079200BE5308 /* InformationOneViewTableViewCell.swift */; };
+		AB0742672BF7079200BE5308 /* InformationOneViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB0742652BF7079200BE5308 /* InformationOneViewTableViewCell.xib */; };
+		AB07426B2BF707C900BE5308 /* InformationTwoViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0742692BF707C900BE5308 /* InformationTwoViewTableViewCell.swift */; };
+		AB07426C2BF707C900BE5308 /* InformationTwoViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB07426A2BF707C900BE5308 /* InformationTwoViewTableViewCell.xib */; };
+		AB07426E2BF70EF500BE5308 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB07426D2BF70EF500BE5308 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,7 +115,6 @@
 		AA732F3E2B9D77F5009EB608 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		AA732F3F2B9D7803009EB608 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		AA732F402B9D780B009EB608 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Bold.otf"; path = "../../../../../../../../IOS/Font/SF PRO DISPLAY/SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
-		AA732F412B9D844F009EB608 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AA732F442B9DD2E1009EB608 /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		AA732F462B9DD30C009EB608 /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		AA732F482B9DD32F009EB608 /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
@@ -184,6 +188,12 @@
 		AADC74042BA33F5000406787 /* PermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewController.swift; sourceTree = "<group>"; };
 		AADC74062BA33F5A00406787 /* PermissionViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PermissionViewController.storyboard; sourceTree = "<group>"; };
 		AADC74082BA3434A00406787 /* PermisstionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermisstionViewModel.swift; sourceTree = "<group>"; };
+		AB0742602BF7054D00BE5308 /* Infomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Infomation.swift; sourceTree = "<group>"; };
+		AB0742642BF7079200BE5308 /* InformationOneViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationOneViewTableViewCell.swift; sourceTree = "<group>"; };
+		AB0742652BF7079200BE5308 /* InformationOneViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationOneViewTableViewCell.xib; sourceTree = "<group>"; };
+		AB0742692BF707C900BE5308 /* InformationTwoViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationTwoViewTableViewCell.swift; sourceTree = "<group>"; };
+		AB07426A2BF707C900BE5308 /* InformationTwoViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationTwoViewTableViewCell.xib; sourceTree = "<group>"; };
+		AB07426D2BF70EF500BE5308 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC5442DE59D1755506FBFF32 /* Pods_YouthUnionTLU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YouthUnionTLU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8ECEDEF893615FBFFA5AEE9 /* Pods-YouthUnionTLU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouthUnionTLU.debug.xcconfig"; path = "Target Support Files/Pods-YouthUnionTLU/Pods-YouthUnionTLU.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,6 +221,7 @@
 		AA14F4FF2BD2ADEF00277DFC /* InformationStudent */ = {
 			isa = PBXGroup;
 			children = (
+				AB0742622BF7071700BE5308 /* InformationStudentCell */,
 				AA14F5002BD2AE4700277DFC /* InformationStudentViewController.swift */,
 				AA14F5022BD2AE5400277DFC /* InformationStudentViewController.storyboard */,
 				AA14F5042BD2AE6400277DFC /* InformationStudentViewModel.swift */,
@@ -257,7 +268,7 @@
 				AA732F3B2B9D77BA009EB608 /* Font */,
 				AA732F662B9F4530009EB608 /* Localizable.strings */,
 				AAC2064A2B9B625200BDFCF9 /* Assets.xcassets */,
-				AA732F412B9D844F009EB608 /* GoogleService-Info.plist */,
+				AB07426D2BF70EF500BE5308 /* GoogleService-Info.plist */,
 				AAC2064F2B9B625200BDFCF9 /* Info.plist */,
 				AAC2064C2B9B625200BDFCF9 /* LaunchScreen.storyboard */,
 			);
@@ -454,6 +465,7 @@
 				AA8826B02BAC3EA3004A2FAC /* Faculaty.swift */,
 				AA8826B22BAC3ED7004A2FAC /* Manager.swift */,
 				AA61AD4F2BDAAB750097B8BA /* PositionStudent.swift */,
+				AB0742602BF7054D00BE5308 /* Infomation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -595,6 +607,33 @@
 			path = Permission;
 			sourceTree = "<group>";
 		};
+		AB0742622BF7071700BE5308 /* InformationStudentCell */ = {
+			isa = PBXGroup;
+			children = (
+				AB0742682BF707AB00BE5308 /* InformationTwoViewCell */,
+				AB0742632BF7076600BE5308 /* InformationOneViewCell */,
+			);
+			path = InformationStudentCell;
+			sourceTree = "<group>";
+		};
+		AB0742632BF7076600BE5308 /* InformationOneViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				AB0742642BF7079200BE5308 /* InformationOneViewTableViewCell.swift */,
+				AB0742652BF7079200BE5308 /* InformationOneViewTableViewCell.xib */,
+			);
+			path = InformationOneViewCell;
+			sourceTree = "<group>";
+		};
+		AB0742682BF707AB00BE5308 /* InformationTwoViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				AB0742692BF707C900BE5308 /* InformationTwoViewTableViewCell.swift */,
+				AB07426A2BF707C900BE5308 /* InformationTwoViewTableViewCell.xib */,
+			);
+			path = InformationTwoViewCell;
+			sourceTree = "<group>";
+		};
 		FB5BE572E31EF3EC6E5E932C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -673,6 +712,7 @@
 				AA8826842BAA68CD004A2FAC /* LoginViewController.storyboard in Resources */,
 				AA3B657A2BCD3BA5001C47F7 /* SF-Pro-Display-Bold.otf in Resources */,
 				AA732F762B9F4EC5009EB608 /* LanguageTableViewCell.xib in Resources */,
+				AB07426C2BF707C900BE5308 /* InformationTwoViewTableViewCell.xib in Resources */,
 				AA732F5B2B9F42BE009EB608 /* LanguageViewController.storyboard in Resources */,
 				AA8826C42BAC70B8004A2FAC /* HomeTabBarViewController.storyboard in Resources */,
 				AA8826C82BAC70F8004A2FAC /* SettingTabBarViewController.storyboard in Resources */,
@@ -680,14 +720,15 @@
 				AA14F5032BD2AE5400277DFC /* InformationStudentViewController.storyboard in Resources */,
 				AA8826C62BAC70DD004A2FAC /* SearchTabBarViewController.storyboard in Resources */,
 				AA3B65782BCD3BA0001C47F7 /* SF-Pro-Display-Semibold.otf in Resources */,
+				AB07426E2BF70EF500BE5308 /* GoogleService-Info.plist in Resources */,
 				AA732F642B9F4530009EB608 /* Localizable.strings in Resources */,
 				AAC2064E2B9B625200BDFCF9 /* LaunchScreen.storyboard in Resources */,
-				AA732F422B9D844F009EB608 /* GoogleService-Info.plist in Resources */,
 				AA88269F2BAADC94004A2FAC /* ForgotPasswordViewController.storyboard in Resources */,
 				AA732F382B9D770A009EB608 /* SplashViewController.storyboard in Resources */,
 				AA3B65772BCD3B9D001C47F7 /* SF-Pro-Display-Regular.otf in Resources */,
 				AAC2064B2B9B625200BDFCF9 /* Assets.xcassets in Resources */,
 				AA3B65792BCD3BA2001C47F7 /* SF-Pro-Display-Medium.otf in Resources */,
+				AB0742672BF7079200BE5308 /* InformationOneViewTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,7 +807,9 @@
 				AA732F5D2B9F432B009EB608 /* LanguageViewModel.swift in Sources */,
 				AA8826822BAA68C6004A2FAC /* LoginViewController.swift in Sources */,
 				AADC74052BA33F5000406787 /* PermissionViewController.swift in Sources */,
+				AB0742662BF7079200BE5308 /* InformationOneViewTableViewCell.swift in Sources */,
 				AA732F752B9F4EC5009EB608 /* LanguageTableViewCell.swift in Sources */,
+				AB07426B2BF707C900BE5308 /* InformationTwoViewTableViewCell.swift in Sources */,
 				AA8826912BAA9156004A2FAC /* ExtentionTextField.swift in Sources */,
 				AA14F5052BD2AE6400277DFC /* InformationStudentViewModel.swift in Sources */,
 				AA14F4FE2BCE04DC00277DFC /* Constains.swift in Sources */,
@@ -818,6 +861,7 @@
 				AA8826CE2BAC7644004A2FAC /* HomeFlowCoodinator.swift in Sources */,
 				AA732F6C2B9F4A3C009EB608 /* LanguageType.swift in Sources */,
 				AA8826AF2BAC3DD2004A2FAC /* Teacher.swift in Sources */,
+				AB0742612BF7054D00BE5308 /* Infomation.swift in Sources */,
 				AA61AD502BDAAB750097B8BA /* PositionStudent.swift in Sources */,
 				AA88269A2BAAC0D3004A2FAC /* Alert.swift in Sources */,
 				AA732F532B9DF2A7009EB608 /* ExtentionView.swift in Sources */,
