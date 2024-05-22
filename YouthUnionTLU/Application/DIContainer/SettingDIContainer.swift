@@ -24,14 +24,22 @@ class SettingDIContainer {
                            dependencies: self)
     }
     
-    func makeSettingTabBarvc(actions: SettingTabBarActions) -> SettingTabBarViewModel {
+    func makeSettingTabBarVC(actions: SettingTabBarActions) -> SettingTabBarViewModel {
         DefaultSettingTabBarViewModel(actions: actions)
+    }
+    
+    private func makeInformationStudentVC(actions: InformationStudentActions) -> InformationStudentViewModel {
+        DefaultInformationStudentViewModel(actions: actions)
     }
 }
 
 extension SettingDIContainer: SettingFlowCoodinatorDependencies {
     func makeSettingTabBarVC(actions: SettingTabBarActions) -> SettingTabBarViewController {
-        SettingTabBarViewController.create(with: makeSettingTabBarvc(actions: actions))
+        SettingTabBarViewController.create(with: makeSettingTabBarVC(actions: actions))
+    }
+    
+    func makeInformationStudentVC(actions: InformationStudentActions) -> InformationStudentViewController {
+        InformationStudentViewController.create(with: makeInformationStudentVC(actions: actions))
     }
 
 }
