@@ -469,7 +469,7 @@ struct _R {
     var background: RswiftResources.ColorResource { .init(name: "Background", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 25 images.
+  /// This `_R.image` struct is generated, and contains static references to 26 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -490,6 +490,9 @@ struct _R {
 
     /// Image `VietNam`.
     var vietNam: RswiftResources.ImageResource { .init(name: "VietNam", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `back`.
+    var back: RswiftResources.ImageResource { .init(name: "back", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `changePass`.
     var changePass: RswiftResources.ImageResource { .init(name: "changePass", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -549,12 +552,9 @@ struct _R {
     var splash: RswiftResources.ImageResource { .init(name: "splash", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
-  /// This `_R.font` struct is generated, and contains static references to 5 fonts.
+  /// This `_R.font` struct is generated, and contains static references to 4 fonts.
   struct font: Sequence {
     let bundle: Foundation.Bundle
-
-    /// Font `SFProDisplay-Bold`.
-    var sfProDisplayBold: RswiftResources.FontResource { .init(name: "SFProDisplay-Bold", bundle: bundle, filename: "SF-Pro-Display-Bold.otf") }
 
     /// Font `SFProDisplay-Heavy`.
     var sfProDisplayHeavy: RswiftResources.FontResource { .init(name: "SFProDisplay-Heavy", bundle: bundle, filename: "SF-Pro-Display-Heavy.otf") }
@@ -569,7 +569,7 @@ struct _R {
     var sfProDisplaySemibold: RswiftResources.FontResource { .init(name: "SFProDisplay-Semibold", bundle: bundle, filename: "SF-Pro-Display-Semibold.otf") }
 
     func makeIterator() -> IndexingIterator<[RswiftResources.FontResource]> {
-      [sfProDisplayBold, sfProDisplayHeavy, sfProDisplayMedium, sfProDisplayRegular, sfProDisplaySemibold].makeIterator()
+      [sfProDisplayHeavy, sfProDisplayMedium, sfProDisplayRegular, sfProDisplaySemibold].makeIterator()
     }
     func validate() throws {
       for font in self {
@@ -578,15 +578,12 @@ struct _R {
     }
   }
 
-  /// This `_R.file` struct is generated, and contains static references to 6 resource files.
+  /// This `_R.file` struct is generated, and contains static references to 5 resource files.
   struct file {
     let bundle: Foundation.Bundle
 
     /// Resource file `GoogleService-Info.plist`.
     var googleServiceInfoPlist: RswiftResources.FileResource { .init(name: "GoogleService-Info", pathExtension: "plist", bundle: bundle, locale: LocaleReference.none) }
-
-    /// Resource file `SF-Pro-Display-Bold.otf`.
-    var sfProDisplayBoldOtf: RswiftResources.FileResource { .init(name: "SF-Pro-Display-Bold", pathExtension: "otf", bundle: bundle, locale: LocaleReference.none) }
 
     /// Resource file `SF-Pro-Display-Heavy.otf`.
     var sfProDisplayHeavyOtf: RswiftResources.FileResource { .init(name: "SF-Pro-Display-Heavy", pathExtension: "otf", bundle: bundle, locale: LocaleReference.none) }
@@ -615,7 +612,8 @@ struct _R {
     var languageTableViewCell: RswiftResources.NibReference<LanguageTableViewCell> { .init(name: "LanguageTableViewCell", bundle: bundle) }
 
     func validate() throws {
-
+      if UIKit.UIColor(named: "Background", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'Background' is used in nib 'InformationOneViewTableViewCell', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "Background", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'Background' is used in nib 'InformationTwoViewTableViewCell', but couldn't be loaded.") }
     }
   }
 
@@ -723,6 +721,7 @@ struct _R {
       var informationStudentViewController: RswiftResources.StoryboardViewControllerIdentifier<InformationStudentViewController> { .init(identifier: "InformationStudentViewController", storyboard: name, bundle: bundle) }
 
       func validate() throws {
+        if UIKit.UIImage(named: "back", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'back' is used in storyboard 'InformationStudentViewController', but couldn't be loaded.") }
         if UIKit.UIColor(named: "Background", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'Background' is used in storyboard 'InformationStudentViewController', but couldn't be loaded.") }
         if informationStudentViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'informationStudentViewController' could not be loaded from storyboard 'InformationStudentViewController' as 'InformationStudentViewController'.") }
       }

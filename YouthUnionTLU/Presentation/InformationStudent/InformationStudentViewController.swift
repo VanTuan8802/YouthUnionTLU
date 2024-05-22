@@ -37,7 +37,6 @@ class InformationStudentViewController: UIViewController, StoryboardInstantiable
     }
     
     private func setUI() {
-        navigationBar.backItem
         
     }
     
@@ -55,19 +54,70 @@ class InformationStudentViewController: UIViewController, StoryboardInstantiable
                 return
             }
             self.persionInformation = persionalInformationData
-            print(self.persionInformation)
-        }
-        
-        viewMoldel.studentInformation.observe(on: self) { studentInformationData in
-            guard let studentInformationData = studentInformationData else {
-                return
+            self.avatarStudent.kf.setImage(with: URL(string: "https://scontent.fhan2-3.fna.fbcdn.net/v/t39.30808-1/440865108_834321255210574_4695038794190883184_n.jpg?stp=dst-jpg_p480x480&_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFc0Pcmgyr0PVi436O_fVcg8BKwH946bDLwErAf3jpsMhKRZpcop4F0-G5Z8O0m_GzWQiVeaSNEkiBKCqtc_hBp&_nc_ohc=lxIv9OzEuucQ7kNvgGtYUnD&_nc_ht=scontent.fhan2-3.fna&oh=00_AYBDJlMF9MjkUtO7U3usS4Lurc6dCx2TAW8fUpPlm-dwUw&oe=6653D8A7"))
+            
+            viewMoldel.studentInformation.observe(on: self) { studentInformationData in
+                guard let studentInformationData = studentInformationData else {
+                    return
+                }
+                self.studentInformation = studentInformationData
+                self.fetchData()
             }
-            self.studentInformation = studentInformationData
         }
-        print(self.persionInformation)
-        fetchData()
     }
-    
+}
+
+extension InformationStudentViewController {
+    private func fetchData() {
+        
+        dataProfile = [
+            [Information(title: R.stringLocalizable.inforStudentName(),
+                         content: persionInformation?.name ?? "")],
+            [Information(title: R.stringLocalizable.inforStudentDateOfBirth(),
+                         content: persionInformation?.date_Of_Birth ?? ""),
+             Information(title:  R.stringLocalizable.inforStudentSex(),
+                         content: persionInformation?.gender ?? "")],
+            [Information(title: R.stringLocalizable.inforStudentPlaceOfBirth(),
+                         content: persionInformation?.place_Of_Birth ?? "")],
+            [Information(title: R.stringLocalizable.inforStudentNation(),
+                         content: persionInformation?.nation ?? ""),
+             Information(title: R.stringLocalizable.inforStudentReligion(),
+                         content: persionInformation?.religion ?? "")],
+            [Information(title: R.stringLocalizable.inforStudentPhoneNumber(),
+                         content: persionInformation?.phoneNumber ?? "")],
+            [Information(title: R.stringLocalizable.inforStudentCitizentId(),
+                         content: persionInformation?.citizentId ?? "") ],
+            [Information(title: R.stringLocalizable.inforStudentDateRange(),
+                         content: persionInformation?.date_Of_Range ?? ""),
+             Information(title: R.stringLocalizable.inforStudentAddressRange(),
+                         content: persionInformation?.address_Of_Range ?? "")]]
+        
+        dataStudent  = [
+            [Information(title: R.stringLocalizable.inforStudentEmail(),
+                         content: studentInformation?.email ?? "")],
+            [Information(title: R.stringLocalizable.inforStudentStudentId(),
+                         content: studentInformation?.student_Code ?? "")],
+            [Information(title: R.stringLocalizable.inforStudentNation(),
+                         content: persionInformation?.nation ?? ""),
+             Information(title: R.stringLocalizable.inforStudentClass(),
+                         content: studentInformation?.className ?? "")],
+            [Information(title: R.stringLocalizable.inforStudentBatch(),
+                         content: studentInformation?.batch ?? "")],
+            [Information(title: R.stringLocalizable.inforStudentFaculty(),
+                         content: studentInformation?.faculaty ?? "")],
+            [Information(title: R.stringLocalizable.inforStudentBatch(),
+                         content: studentInformation?.major ?? "") ],
+            [Information(title: R.stringLocalizable.inforStudentYearOfAdmission(),
+                         content: String(studentInformation?.year_Of_Admission ?? 0)),
+             Information(title: R.stringLocalizable.inforStudentYearOfHighSchoolGraduation(),
+                         content: String(studentInformation?.year_Of_HighSchool_Graduation ?? 0))],
+            [Information(title: R.stringLocalizable.inforStudentAccountNumber(),
+                         content: studentInformation?.bankName ?? ""),
+             Information(title: R.stringLocalizable.inforStudentBankName(),
+                         content: studentInformation?.bankName ?? "")],
+        ]
+        informationTableView.reloadData()
+    }
 }
 
 extension InformationStudentViewController: UITableViewDelegate, UITableViewDataSource {
@@ -121,57 +171,4 @@ extension InformationStudentViewController: UIScrollViewDelegate {
     //        }
     //    }
 }
-
-extension InformationStudentViewController {
-    private func fetchData() {
-        avatarStudent.kf.setImage(with: URL(string: persionInformation?.avatarUrl ?? ""))
-        dataProfile = [
-            [Information(title: R.stringLocalizable.inforStudentName(),
-                         content: persionInformation?.name ?? "")],
-            [Information(title: R.stringLocalizable.inforStudentDateOfBirth(),
-                         content: persionInformation?.date_Of_Birth ?? ""),
-             Information(title:  R.stringLocalizable.inforStudentSex(),
-                         content: persionInformation?.gender ?? "")],
-            [Information(title: R.stringLocalizable.inforStudentPlaceOfBirth(),
-                         content: persionInformation?.place_Of_Birth ?? "")],
-            [Information(title: R.stringLocalizable.inforStudentNation(),
-                         content: persionInformation?.nation ?? ""),
-             Information(title: R.stringLocalizable.inforStudentReligion(),
-                         content: persionInformation?.religion ?? "")],
-            [Information(title: R.stringLocalizable.inforStudentPhoneNumber(),
-                         content: persionInformation?.phoneNumber ?? "")],
-            [Information(title: R.stringLocalizable.inforStudentCitizentId(),
-                         content: persionInformation?.citizentId ?? "") ],
-            [Information(title: R.stringLocalizable.inforStudentDateRange(),
-                         content: persionInformation?.date_Of_Range ?? ""),
-             Information(title: R.stringLocalizable.inforStudentAddressRange(),
-                         content: persionInformation?.address_Of_Range ?? "")]]
-        
-        dataStudent  = [
-            [Information(title: R.stringLocalizable.inforStudentEmail(),
-                         content: studentInformation?.email ?? "")],
-            [Information(title: R.stringLocalizable.inforStudentStudentId(),
-                         content: studentInformation?.student_Code ?? "")],
-            [Information(title: R.stringLocalizable.inforStudentNation(),
-                         content: persionInformation?.nation ?? ""),
-             Information(title: R.stringLocalizable.inforStudentClass(),
-                         content: studentInformation?.className ?? "")],
-            [Information(title: R.stringLocalizable.inforStudentBatch(),
-                         content: studentInformation?.batch ?? "")],
-            [Information(title: R.stringLocalizable.inforStudentFaculty(),
-                         content: studentInformation?.faculaty ?? "")],
-            [Information(title: R.stringLocalizable.inforStudentBatch(),
-                         content: studentInformation?.major ?? "") ],
-            [Information(title: R.stringLocalizable.inforStudentYearOfAdmission(),
-                         content: String(studentInformation?.year_Of_Admission ?? 0)),
-             Information(title: R.stringLocalizable.inforStudentYearOfHighSchoolGraduation(),
-                         content: String(studentInformation?.year_Of_HighSchool_Graduation ?? 0))],
-            [Information(title: R.stringLocalizable.inforStudentAccountNumber(),
-                         content: studentInformation?.bankName ?? ""),
-             Information(title: R.stringLocalizable.inforStudentBankName(),
-                         content: studentInformation?.bankName ?? "")],
-        ]
-    }
-}
-
 
