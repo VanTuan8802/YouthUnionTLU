@@ -16,10 +16,19 @@ class HomeTabBarViewController: UIViewController, StoryboardInstantiable {
     
     private var viewModel: HomeTabBarViewModel!
     
+    private var position: Position?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        bind(to: viewModel)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBar?.delegate = self
         setUI()
+        viewModel.viewDidLoad()
     }
     
     class func create(with viewModel: HomeTabBarViewModel) -> HomeTabBarViewController {
@@ -36,6 +45,16 @@ class HomeTabBarViewController: UIViewController, StoryboardInstantiable {
         searchTabBarItem.title = R.stringLocalizable.tabBarSearch()
         settingTabBarItem.title = R.stringLocalizable.tabBarSettings()
         
+    }
+    
+    private func bind(to viewModel: HomeTabBarViewModel) {
+        viewModel.error.observe(on: self) { [weak self] error in
+            if let error = error {
+                self?.show(message: error,
+                           okTitle: R.stringLocalizable.buttonOk())
+                return
+            }
+        }
     }
 }
 

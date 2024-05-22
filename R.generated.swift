@@ -78,7 +78,7 @@ struct _R {
       let source: RswiftResources.StringResource.Source
     }
 
-    /// This `_R.string.localizable` struct is generated, and contains static references to 31 localization keys.
+    /// This `_R.string.localizable` struct is generated, and contains static references to 53 localization keys.
     struct localizable {
       let source: RswiftResources.StringResource.Source
 
@@ -180,11 +180,165 @@ struct _R {
       /// Locales: en, fr, km-KH, lo-LA, vi
       var errorPasswordTitle: RswiftResources.StringResource { .init(key: "error.password.title", tableName: "Localizable", source: source, developmentValue: "Invalid Password", comment: nil) }
 
+      /// en translation: Account Number
+      ///
+      /// Key: inforStudent.accountNumber
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var inforStudentAccountNumber: RswiftResources.StringResource { .init(key: "inforStudent.accountNumber", tableName: "Localizable", source: source, developmentValue: "Account Number", comment: nil) }
+
+      /// en translation: Place of Issue
+      ///
+      /// Key: inforStudent.addressRange
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var inforStudentAddressRange: RswiftResources.StringResource { .init(key: "inforStudent.addressRange", tableName: "Localizable", source: source, developmentValue: "Place of Issue", comment: nil) }
+
+      /// en translation: Bank Name
+      ///
+      /// Key: inforStudent.bankName
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var inforStudentBankName: RswiftResources.StringResource { .init(key: "inforStudent.bankName", tableName: "Localizable", source: source, developmentValue: "Bank Name", comment: nil) }
+
+      /// en translation: Batch
+      ///
+      /// Key: inforStudent.batch
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var inforStudentBatch: RswiftResources.StringResource { .init(key: "inforStudent.batch", tableName: "Localizable", source: source, developmentValue: "Batch", comment: nil) }
+
+      /// en translation: Citizen ID
+      ///
+      /// Key: inforStudent.citizentId
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var inforStudentCitizentId: RswiftResources.StringResource { .init(key: "inforStudent.citizentId", tableName: "Localizable", source: source, developmentValue: "Citizen ID", comment: nil) }
+
+      /// en translation: Class
+      ///
+      /// Key: inforStudent.class
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var inforStudentClass: RswiftResources.StringResource { .init(key: "inforStudent.class", tableName: "Localizable", source: source, developmentValue: "Class", comment: nil) }
+
+      /// en translation: Date of Birth
+      ///
+      /// Key: inforStudent.dateOfBirth
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var inforStudentDateOfBirth: RswiftResources.StringResource { .init(key: "inforStudent.dateOfBirth", tableName: "Localizable", source: source, developmentValue: "Date of Birth", comment: nil) }
+
+      /// en translation: Date of Issue
+      ///
+      /// Key: inforStudent.dateRange
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var inforStudentDateRange: RswiftResources.StringResource { .init(key: "inforStudent.dateRange", tableName: "Localizable", source: source, developmentValue: "Date of Issue", comment: nil) }
+
+      /// en translation: Email
+      ///
+      /// Key: inforStudent.email
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var inforStudentEmail: RswiftResources.StringResource { .init(key: "inforStudent.email", tableName: "Localizable", source: source, developmentValue: "Email", comment: nil) }
+
+      /// en translation: Faculty
+      ///
+      /// Key: inforStudent.faculty
+      ///
+      /// Locales: en, fr, km-KH
+      var inforStudentFaculty: RswiftResources.StringResource { .init(key: "inforStudent.faculty", tableName: "Localizable", source: source, developmentValue: "Faculty", comment: nil) }
+
+      /// en translation: Major
+      ///
+      /// Key: inforStudent.major
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var inforStudentMajor: RswiftResources.StringResource { .init(key: "inforStudent.major", tableName: "Localizable", source: source, developmentValue: "Major", comment: nil) }
+
+      /// en translation: Full Name
+      ///
+      /// Key: inforStudent.name
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var inforStudentName: RswiftResources.StringResource { .init(key: "inforStudent.name", tableName: "Localizable", source: source, developmentValue: "Full Name", comment: nil) }
+
+      /// en translation: Ethnicity
+      ///
+      /// Key: inforStudent.nation
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var inforStudentNation: RswiftResources.StringResource { .init(key: "inforStudent.nation", tableName: "Localizable", source: source, developmentValue: "Ethnicity", comment: nil) }
+
+      /// en translation: Phone Number
+      ///
+      /// Key: inforStudent.phoneNumber
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var inforStudentPhoneNumber: RswiftResources.StringResource { .init(key: "inforStudent.phoneNumber", tableName: "Localizable", source: source, developmentValue: "Phone Number", comment: nil) }
+
+      /// en translation: Place of Birth
+      ///
+      /// Key: inforStudent.placeOfBirth
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var inforStudentPlaceOfBirth: RswiftResources.StringResource { .init(key: "inforStudent.placeOfBirth", tableName: "Localizable", source: source, developmentValue: "Place of Birth", comment: nil) }
+
+      /// en translation: Personal Information
+      ///
+      /// Key: inforStudent.profile.title
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var inforStudentProfileTitle: RswiftResources.StringResource { .init(key: "inforStudent.profile.title", tableName: "Localizable", source: source, developmentValue: "Personal Information", comment: nil) }
+
+      /// en translation: Religion
+      ///
+      /// Key: inforStudent.religion
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var inforStudentReligion: RswiftResources.StringResource { .init(key: "inforStudent.religion", tableName: "Localizable", source: source, developmentValue: "Religion", comment: nil) }
+
+      /// en translation: Gender
+      ///
+      /// Key: inforStudent.sex
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var inforStudentSex: RswiftResources.StringResource { .init(key: "inforStudent.sex", tableName: "Localizable", source: source, developmentValue: "Gender", comment: nil) }
+
+      /// en translation: Student Information
+      ///
+      /// Key: inforStudent.student.title
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var inforStudentStudentTitle: RswiftResources.StringResource { .init(key: "inforStudent.student.title", tableName: "Localizable", source: source, developmentValue: "Student Information", comment: nil) }
+
+      /// en translation: Student ID
+      ///
+      /// Key: inforStudent.studentId
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var inforStudentStudentId: RswiftResources.StringResource { .init(key: "inforStudent.studentId", tableName: "Localizable", source: source, developmentValue: "Student ID", comment: nil) }
+
+      /// en translation: Year of Admission
+      ///
+      /// Key: inforStudent.yearOfAdmission
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var inforStudentYearOfAdmission: RswiftResources.StringResource { .init(key: "inforStudent.yearOfAdmission", tableName: "Localizable", source: source, developmentValue: "Year of Admission", comment: nil) }
+
+      /// en translation: Year of High School Graduation
+      ///
+      /// Key: inforStudent.yearOfHighSchoolGraduation
+      ///
+      /// Locales: en, fr, km-KH, lo-LA, vi
+      var inforStudentYearOfHighSchoolGraduation: RswiftResources.StringResource { .init(key: "inforStudent.yearOfHighSchoolGraduation", tableName: "Localizable", source: source, developmentValue: "Year of High School Graduation", comment: nil) }
+
       /// en translation: An email has been sent to you. Please click on the link to reset your password.
       ///
       /// Key: lable.sendEmail
       ///
-      /// Locales: en
+      /// Locales: en, fr, km-KH, lo-LA, vi
       var lableSendEmail: RswiftResources.StringResource { .init(key: "lable.sendEmail", tableName: "Localizable", source: source, developmentValue: "An email has been sent to you. Please click on the link to reset your password.", comment: nil) }
 
       /// en translation: Cambodian
@@ -301,7 +455,7 @@ struct _R {
     }
   }
 
-  /// This `_R.color` struct is generated, and contains static references to 2 colors.
+  /// This `_R.color` struct is generated, and contains static references to 3 colors.
   struct color {
     let bundle: Foundation.Bundle
 
@@ -310,9 +464,12 @@ struct _R {
 
     /// Color `AccentColor`.
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
+
+    /// Color `Background`.
+    var background: RswiftResources.ColorResource { .init(name: "Background", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 18 images.
+  /// This `_R.image` struct is generated, and contains static references to 26 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -325,11 +482,20 @@ struct _R {
     /// Image `French`.
     var french: RswiftResources.ImageResource { .init(name: "French", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `Languagge`.
+    var languagge: RswiftResources.ImageResource { .init(name: "Languagge", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `Laos`.
     var laos: RswiftResources.ImageResource { .init(name: "Laos", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `VietNam`.
     var vietNam: RswiftResources.ImageResource { .init(name: "VietNam", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `back`.
+    var back: RswiftResources.ImageResource { .init(name: "back", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `changePass`.
+    var changePass: RswiftResources.ImageResource { .init(name: "changePass", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `check`.
     var check: RswiftResources.ImageResource { .init(name: "check", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -343,17 +509,29 @@ struct _R {
     /// Image `forgotpassword`.
     var forgotpassword: RswiftResources.ImageResource { .init(name: "forgotpassword", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `hide`.
+    var hide: RswiftResources.ImageResource { .init(name: "hide", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `home`.
     var home: RswiftResources.ImageResource { .init(name: "home", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `homeSelected`.
     var homeSelected: RswiftResources.ImageResource { .init(name: "homeSelected", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `logOut`.
+    var logOut: RswiftResources.ImageResource { .init(name: "logOut", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `login`.
     var login: RswiftResources.ImageResource { .init(name: "login", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `permission`.
     var permission: RswiftResources.ImageResource { .init(name: "permission", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `policy`.
+    var policy: RswiftResources.ImageResource { .init(name: "policy", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `rate`.
+    var rate: RswiftResources.ImageResource { .init(name: "rate", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `search`.
     var search: RswiftResources.ImageResource { .init(name: "search", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -367,16 +545,16 @@ struct _R {
     /// Image `settingSelected`.
     var settingSelected: RswiftResources.ImageResource { .init(name: "settingSelected", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
+    /// Image `share`.
+    var share: RswiftResources.ImageResource { .init(name: "share", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
     /// Image `splash`.
     var splash: RswiftResources.ImageResource { .init(name: "splash", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
-  /// This `_R.font` struct is generated, and contains static references to 5 fonts.
+  /// This `_R.font` struct is generated, and contains static references to 4 fonts.
   struct font: Sequence {
     let bundle: Foundation.Bundle
-
-    /// Font `SFProDisplay-Bold`.
-    var sfProDisplayBold: RswiftResources.FontResource { .init(name: "SFProDisplay-Bold", bundle: bundle, filename: "SF-Pro-Display-Bold.otf") }
 
     /// Font `SFProDisplay-Heavy`.
     var sfProDisplayHeavy: RswiftResources.FontResource { .init(name: "SFProDisplay-Heavy", bundle: bundle, filename: "SF-Pro-Display-Heavy.otf") }
@@ -391,7 +569,7 @@ struct _R {
     var sfProDisplaySemibold: RswiftResources.FontResource { .init(name: "SFProDisplay-Semibold", bundle: bundle, filename: "SF-Pro-Display-Semibold.otf") }
 
     func makeIterator() -> IndexingIterator<[RswiftResources.FontResource]> {
-      [sfProDisplayBold, sfProDisplayHeavy, sfProDisplayMedium, sfProDisplayRegular, sfProDisplaySemibold].makeIterator()
+      [sfProDisplayHeavy, sfProDisplayMedium, sfProDisplayRegular, sfProDisplaySemibold].makeIterator()
     }
     func validate() throws {
       for font in self {
@@ -400,15 +578,12 @@ struct _R {
     }
   }
 
-  /// This `_R.file` struct is generated, and contains static references to 6 resource files.
+  /// This `_R.file` struct is generated, and contains static references to 5 resource files.
   struct file {
     let bundle: Foundation.Bundle
 
     /// Resource file `GoogleService-Info.plist`.
     var googleServiceInfoPlist: RswiftResources.FileResource { .init(name: "GoogleService-Info", pathExtension: "plist", bundle: bundle, locale: LocaleReference.none) }
-
-    /// Resource file `SF-Pro-Display-Bold.otf`.
-    var sfProDisplayBoldOtf: RswiftResources.FileResource { .init(name: "SF-Pro-Display-Bold", pathExtension: "otf", bundle: bundle, locale: LocaleReference.none) }
 
     /// Resource file `SF-Pro-Display-Heavy.otf`.
     var sfProDisplayHeavyOtf: RswiftResources.FileResource { .init(name: "SF-Pro-Display-Heavy", pathExtension: "otf", bundle: bundle, locale: LocaleReference.none) }
@@ -423,23 +598,31 @@ struct _R {
     var sfProDisplaySemiboldOtf: RswiftResources.FileResource { .init(name: "SF-Pro-Display-Semibold", pathExtension: "otf", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 3 nibs.
   struct nib {
     let bundle: Foundation.Bundle
+
+    /// Nib `InformationOneViewTableViewCell`.
+    var informationOneViewTableViewCell: RswiftResources.NibReference<InformationOneViewTableViewCell> { .init(name: "InformationOneViewTableViewCell", bundle: bundle) }
+
+    /// Nib `InformationTwoViewTableViewCell`.
+    var informationTwoViewTableViewCell: RswiftResources.NibReference<InformationTwoViewTableViewCell> { .init(name: "InformationTwoViewTableViewCell", bundle: bundle) }
 
     /// Nib `LanguageTableViewCell`.
     var languageTableViewCell: RswiftResources.NibReference<LanguageTableViewCell> { .init(name: "LanguageTableViewCell", bundle: bundle) }
 
     func validate() throws {
-
+      if UIKit.UIColor(named: "Background", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'Background' is used in nib 'InformationOneViewTableViewCell', but couldn't be loaded.") }
+      if UIKit.UIColor(named: "Background", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'Background' is used in nib 'InformationTwoViewTableViewCell', but couldn't be loaded.") }
     }
   }
 
-  /// This `_R.storyboard` struct is generated, and contains static references to 9 storyboards.
+  /// This `_R.storyboard` struct is generated, and contains static references to 10 storyboards.
   struct storyboard {
     let bundle: Foundation.Bundle
     var forgotPasswordViewController: forgotPasswordViewController { .init(bundle: bundle) }
     var homeTabBarViewController: homeTabBarViewController { .init(bundle: bundle) }
+    var informationStudentViewController: informationStudentViewController { .init(bundle: bundle) }
     var languageViewController: languageViewController { .init(bundle: bundle) }
     var launchScreen: launchScreen { .init(bundle: bundle) }
     var loginViewController: loginViewController { .init(bundle: bundle) }
@@ -452,6 +635,9 @@ struct _R {
       .init(bundle: bundle)
     }
     func homeTabBarViewController(bundle: Foundation.Bundle) -> homeTabBarViewController {
+      .init(bundle: bundle)
+    }
+    func informationStudentViewController(bundle: Foundation.Bundle) -> informationStudentViewController {
       .init(bundle: bundle)
     }
     func languageViewController(bundle: Foundation.Bundle) -> languageViewController {
@@ -478,6 +664,7 @@ struct _R {
     func validate() throws {
       try self.forgotPasswordViewController.validate()
       try self.homeTabBarViewController.validate()
+      try self.informationStudentViewController.validate()
       try self.languageViewController.validate()
       try self.launchScreen.validate()
       try self.loginViewController.validate()
@@ -520,6 +707,23 @@ struct _R {
         if UIKit.UIImage(named: "search", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'search' is used in storyboard 'HomeTabBarViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "setting", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'setting' is used in storyboard 'HomeTabBarViewController', but couldn't be loaded.") }
         if homeTabBarViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'homeTabBarViewController' could not be loaded from storyboard 'HomeTabBarViewController' as 'HomeTabBarViewController'.") }
+      }
+    }
+
+    /// Storyboard `InformationStudentViewController`.
+    struct informationStudentViewController: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
+      typealias InitialController = InformationStudentViewController
+
+      let bundle: Foundation.Bundle
+
+      let name = "InformationStudentViewController"
+
+      var informationStudentViewController: RswiftResources.StoryboardViewControllerIdentifier<InformationStudentViewController> { .init(identifier: "InformationStudentViewController", storyboard: name, bundle: bundle) }
+
+      func validate() throws {
+        if UIKit.UIImage(named: "back", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'back' is used in storyboard 'InformationStudentViewController', but couldn't be loaded.") }
+        if UIKit.UIColor(named: "Background", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'Background' is used in storyboard 'InformationStudentViewController', but couldn't be loaded.") }
+        if informationStudentViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'informationStudentViewController' could not be loaded from storyboard 'InformationStudentViewController' as 'InformationStudentViewController'.") }
       }
     }
 
@@ -617,9 +821,16 @@ struct _R {
       var settingTabBarViewController: RswiftResources.StoryboardViewControllerIdentifier<SettingTabBarViewController> { .init(identifier: "SettingTabBarViewController", storyboard: name, bundle: bundle) }
 
       func validate() throws {
+        if UIKit.UIImage(named: "Languagge", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'Languagge' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "changePass", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'changePass' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "home", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'home' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "logOut", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'logOut' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "policy", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'policy' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "rate", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'rate' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "search", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'search' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "settingSelected", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'settingSelected' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "share", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'share' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIColor(named: "Background", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'Background' is used in storyboard 'SettingTabBarViewController', but couldn't be loaded.") }
         if settingTabBarViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'settingTabBarViewController' could not be loaded from storyboard 'SettingTabBarViewController' as 'SettingTabBarViewController'.") }
       }
     }
