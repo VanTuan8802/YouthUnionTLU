@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 struct SettingTabBarActions {
     let showHomeTabBar: () -> Void
@@ -27,10 +28,10 @@ protocol SettingTabBarViewModel: SettingTabBarViewModelInput, SettingTabBarViewM
 }
 
 class DefaultSettingTabBarViewModel: SettingTabBarViewModel {
-    
     var error: Observable<String?> = Observable(nil)
-    private var actions: SettingTabBarActions
     
+    private var actions: SettingTabBarActions
+
     init( actions: SettingTabBarActions) {
         self.actions = actions
     }
@@ -46,6 +47,7 @@ class DefaultSettingTabBarViewModel: SettingTabBarViewModel {
     func openSearchTabBar() {
         actions.showSearchTabBar()
     }
+
 }
 
 

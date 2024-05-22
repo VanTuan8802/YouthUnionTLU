@@ -51,9 +51,21 @@ extension DefaultLoginViewModel {
                 LoadingView.hide()
                 return
             }
-            LoadingView.hide()
-            UserDefaultsData.shared.showLogin = true
-            self.actions.showHome()
+            
+            guard let uid = uid else {
+                return
+            }
+            
+            FSUserClient.shared.getPossionUser(uid: uid) { position, error in
+                guard let position = position else {
+                    return
+                }
+                
+                UserDefaults.standard.set(position.rawValue, forKey: Constains.posistion)
+                LoadingView.hide()
+                UserDefaultsData.shared.showLogin = true
+                self.actions.showHome()
+            }
         }
     }
     

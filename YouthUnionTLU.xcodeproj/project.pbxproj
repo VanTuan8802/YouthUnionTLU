@@ -15,6 +15,8 @@
 		AA3B65782BCD3BA0001C47F7 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA732F3E2B9D77F5009EB608 /* SF-Pro-Display-Semibold.otf */; };
 		AA3B65792BCD3BA2001C47F7 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA732F3F2B9D7803009EB608 /* SF-Pro-Display-Medium.otf */; };
 		AA3B657A2BCD3BA5001C47F7 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AA732F402B9D780B009EB608 /* SF-Pro-Display-Bold.otf */; };
+		AA14F4FC2BCD694C00277DFC /* CollectionFireStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14F4FB2BCD694C00277DFC /* CollectionFireStore.swift */; };
+		AA14F4FE2BCE04DC00277DFC /* Constains.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA14F4FD2BCE04DC00277DFC /* Constains.swift */; };
 		AA732F272B9D739A009EB608 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA732F262B9D739A009EB608 /* R.generated.swift */; };
 		AA732F362B9D76F5009EB608 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA732F352B9D76F5009EB608 /* SplashViewController.swift */; };
 		AA732F382B9D770A009EB608 /* SplashViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA732F372B9D770A009EB608 /* SplashViewController.storyboard */; };
@@ -89,6 +91,8 @@
 		4F0A6FA60D4219DC995B36EA /* Pods-YouthUnionTLU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouthUnionTLU.release.xcconfig"; path = "Target Support Files/Pods-YouthUnionTLU/Pods-YouthUnionTLU.release.xcconfig"; sourceTree = "<group>"; };
 		AA3B65722BCD2E17001C47F7 /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
 		AA3B65742BCD2EF4001C47F7 /* SetFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetFont.swift; sourceTree = "<group>"; };
+		AA14F4FB2BCD694C00277DFC /* CollectionFireStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionFireStore.swift; sourceTree = "<group>"; };
+		AA14F4FD2BCE04DC00277DFC /* Constains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constains.swift; sourceTree = "<group>"; };
 		AA732F262B9D739A009EB608 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		AA732F352B9D76F5009EB608 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		AA732F372B9D770A009EB608 /* SplashViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashViewController.storyboard; sourceTree = "<group>"; };
@@ -247,6 +251,8 @@
 			children = (
 				AA732F702B9F4CF2009EB608 /* UserDefaultsData.swift */,
 				AA3B65722BCD2E17001C47F7 /* AppFont.swift */,
+				AA14F4FB2BCD694C00277DFC /* CollectionFireStore.swift */,
+				AA14F4FD2BCE04DC00277DFC /* Constains.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -741,6 +747,7 @@
 				AADC74052BA33F5000406787 /* PermissionViewController.swift in Sources */,
 				AA732F752B9F4EC5009EB608 /* LanguageTableViewCell.swift in Sources */,
 				AA8826912BAA9156004A2FAC /* ExtentionTextField.swift in Sources */,
+				AA14F4FE2BCE04DC00277DFC /* Constains.swift in Sources */,
 				AA8826DA2BAC7AAD004A2FAC /* SearchDIContainer.swift in Sources */,
 				AA8826802BAA6898004A2FAC /* AuthFlowCoodinator.swift in Sources */,
 				AA732F3A2B9D7723009EB608 /* SplashViewModel.swift in Sources */,
@@ -782,6 +789,7 @@
 				AA8826C22BAC7008004A2FAC /* SettingTabBarViewController.swift in Sources */,
 				AA732F592B9F42A8009EB608 /* LanguageViewController.swift in Sources */,
 				AA8826942BAA9999004A2FAC /* LoadingView.swift in Sources */,
+				AA14F4FC2BCD694C00277DFC /* CollectionFireStore.swift in Sources */,
 				AA8826D22BAC782F004A2FAC /* SearchFlowCoodinator.swift in Sources */,
 				AA732F4D2B9DD374009EB608 /* OnboardFlowCoodinator.swift in Sources */,
 				AA8826CE2BAC7644004A2FAC /* HomeFlowCoodinator.swift in Sources */,
