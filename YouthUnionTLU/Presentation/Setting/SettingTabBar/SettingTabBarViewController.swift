@@ -72,18 +72,23 @@ class SettingTabBarViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func chageLanguageAction(_ sender: Any) {
-        
+        viewModel.openLanguage()
     }
     
     @IBAction func shareAction(_ sender: Any) {
-        
+        if let url = URL(string: Constants.Key.appStoreLink) {
+                   let objectsToShare: [Any] = [url]
+                   let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+                   self.present(activityVC, animated: true, completion: nil)
+               }
     }
     
     @IBAction func rateAction(_ sender: Any) {
-        
+
     }
     
     @IBAction func policyAction(_ sender: Any) {
+        
     }
     
     @IBAction func changePasswordAction(_ sender: Any) {

@@ -615,8 +615,7 @@ struct _R {
     var languageTableViewCell: RswiftResources.NibReference<LanguageTableViewCell> { .init(name: "LanguageTableViewCell", bundle: bundle) }
 
     func validate() throws {
-      if UIKit.UIColor(named: "Background", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'Background' is used in nib 'InformationOneViewTableViewCell', but couldn't be loaded.") }
-      if UIKit.UIColor(named: "Background", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'Background' is used in nib 'InformationTwoViewTableViewCell', but couldn't be loaded.") }
+
     }
   }
 

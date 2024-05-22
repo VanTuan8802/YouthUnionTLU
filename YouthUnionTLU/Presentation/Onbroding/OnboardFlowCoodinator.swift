@@ -33,7 +33,8 @@ final class OnboardFlowCoodinator {
     }
     
     private func showLanguage() {
-        let actions = LanguageActions(showPermission: showPermission, showLogin: showLogin)
+        let actions = LanguageActions(showPermission: showPermission, showLogin: showLogin,
+                                      showHome: showHome)
         let vc = dependencies.makeLanguageVC(actions: actions)
         navigationController?.viewControllers = [vc]
     }
@@ -54,7 +55,7 @@ final class OnboardFlowCoodinator {
             navigationController: navigationController,
             appDIContainer: appDIContainer
         )
-
+        
         appFlowCoordinator.auth()
     }
     
@@ -68,7 +69,7 @@ final class OnboardFlowCoodinator {
             navigationController: navigationController,
             appDIContainer: appDIContainer
         )
-
+        
         appFlowCoordinator.home()
     }
 }

@@ -17,6 +17,7 @@ struct PersionalInformation: Decodable {
     let name: String
     let avatarUrl: String
     let date_Of_Birth: String
+    let place_Of_Birth: String
     let gender: String
     let nation: String
     let religion: String
@@ -27,6 +28,7 @@ struct PersionalInformation: Decodable {
 }
 
 struct StudentInformation: Decodable {
+    let student_Code: String
     let className: String
     let batch: String
     let faculaty: String

@@ -31,6 +31,10 @@ class SettingDIContainer {
     private func makeInformationStudentVC(actions: InformationStudentActions) -> InformationStudentViewModel {
         DefaultInformationStudentViewModel(actions: actions)
     }
+    
+    private func makeLanguageVC(actions: LanguageActions) -> LanguageViewModel {
+        DefaultLanguageViewModel(actions: actions)
+    }
 }
 
 extension SettingDIContainer: SettingFlowCoodinatorDependencies {
@@ -40,6 +44,10 @@ extension SettingDIContainer: SettingFlowCoodinatorDependencies {
     
     func makeInformationStudentVC(actions: InformationStudentActions) -> InformationStudentViewController {
         InformationStudentViewController.create(with: makeInformationStudentVC(actions: actions))
+    }
+    
+    func makeLanguageVC(actions: LanguageActions) -> LanguageViewController {
+        LanguageViewController.create(with: makeLanguageVC(actions: actions))
     }
 
 }

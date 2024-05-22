@@ -11,6 +11,7 @@ import UIKit
 protocol SettingFlowCoodinatorDependencies {
     func makeSettingTabBarVC(actions: SettingTabBarActions) -> SettingTabBarViewController
     func makeInformationStudentVC(actions: InformationStudentActions) -> InformationStudentViewController
+    func makeLanguageVC(actions: LanguageActions) -> LanguageViewController
 }
 
 final class SettingFlowCoodinator {
@@ -24,7 +25,7 @@ final class SettingFlowCoodinator {
     
     func setting() {
         let actions = SettingTabBarActions(showInformation: showInformation,
-                                           showLanguage: show,
+                                           showLanguage: showLanguage,
                                            showShare: show,
                                            showRate: show,
                                            showPolicy: show,
@@ -34,10 +35,6 @@ final class SettingFlowCoodinator {
                                            showSearchTabBar: showSearchTabBar)
         let vc = dependencies.makeSettingTabBarVC(actions: actions)
         navigationController?.viewControllers = [vc]
-    }
-    
-    private func show() {
-        
     }
     
     private func showInformation() {
@@ -73,5 +70,16 @@ final class SettingFlowCoodinator {
         )
 
         appFlowCoordinator.search()
+    }
+    
+    private func showLanguage() {
+        let actions = LanguageActions(showPermission: show, showLogin: show,
+                                      showHome: showHomeTabBar)
+        let vc = dependencies.makeLanguageVC(actions: actions)
+        navigationController?.viewControllers = [vc]
+    }
+    
+    private func show() {
+        
     }
 }

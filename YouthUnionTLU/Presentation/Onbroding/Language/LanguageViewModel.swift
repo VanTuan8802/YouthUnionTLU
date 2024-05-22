@@ -10,11 +10,13 @@ import Foundation
 struct LanguageActions {
     let showPermission: () -> Void
     let showLogin: () -> Void
+    let showHome: () -> Void
 }
 
 protocol LanguageViewModelInput {
     func viewDidLoad()
     func openPermisstion()
+    func openHome()
 }
 
 protocol LanguageViewModelOutput {
@@ -44,6 +46,10 @@ extension DefaultLanguageViewModel {
         } else {
             actions?.showLogin()
         }
+    }
+    
+    func openHome() {
+        actions?.showHome()
     }
 }
 
