@@ -11,6 +11,8 @@ import Kingfisher
 class InformationStudentViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var avatarStudent: UIImageView!
+    @IBOutlet weak var dataStudentViiew: UIView!
+    @IBOutlet weak var noDataView: UIView!
     @IBOutlet weak var informationTableView: UITableView!
     
     private var persionInformation: PersionalInformation?
@@ -37,7 +39,8 @@ class InformationStudentViewController: UIViewController, StoryboardInstantiable
     }
     
     private func setUI() {
-        
+        dataStudentViiew.isHidden = false
+        noDataView.isHidden = true
     }
     
     private func setUpTableView() {
@@ -51,13 +54,16 @@ class InformationStudentViewController: UIViewController, StoryboardInstantiable
     private func bindData(to viewMoldel:InformationStudentViewModel) {
         viewMoldel.persionalInformation.observe(on: self) { persionalInformationData in
             guard let persionalInformationData = persionalInformationData else {
+            
                 return
             }
             self.persionInformation = persionalInformationData
-            self.avatarStudent.kf.setImage(with: URL(string: "https://scontent.fhan2-3.fna.fbcdn.net/v/t39.30808-1/440865108_834321255210574_4695038794190883184_n.jpg?stp=dst-jpg_p480x480&_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFc0Pcmgyr0PVi436O_fVcg8BKwH946bDLwErAf3jpsMhKRZpcop4F0-G5Z8O0m_GzWQiVeaSNEkiBKCqtc_hBp&_nc_ohc=lxIv9OzEuucQ7kNvgGtYUnD&_nc_ht=scontent.fhan2-3.fna&oh=00_AYBDJlMF9MjkUtO7U3usS4Lurc6dCx2TAW8fUpPlm-dwUw&oe=6653D8A7"))
+            print(persionalInformationData.avatarUrl)
+            self.avatarStudent.kf.setImage(with: URL(string: persionalInformationData.avatarUrl))
             
             viewMoldel.studentInformation.observe(on: self) { studentInformationData in
                 guard let studentInformationData = studentInformationData else {
+                    
                     return
                 }
                 self.studentInformation = studentInformationData

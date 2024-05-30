@@ -469,7 +469,7 @@ struct _R {
     var background: RswiftResources.ColorResource { .init(name: "Background", path: [], bundle: bundle) }
   }
 
-  /// This `_R.image` struct is generated, and contains static references to 26 images.
+  /// This `_R.image` struct is generated, and contains static references to 27 images.
   struct image {
     let bundle: Foundation.Bundle
 
@@ -490,6 +490,9 @@ struct _R {
 
     /// Image `VietNam`.
     var vietNam: RswiftResources.ImageResource { .init(name: "VietNam", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `activities`.
+    var activities: RswiftResources.ImageResource { .init(name: "activities", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `back`.
     var back: RswiftResources.ImageResource { .init(name: "back", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
@@ -598,7 +601,7 @@ struct _R {
     var sfProDisplaySemiboldOtf: RswiftResources.FileResource { .init(name: "SF-Pro-Display-Semibold", pathExtension: "otf", bundle: bundle, locale: LocaleReference.none) }
   }
 
-  /// This `_R.nib` struct is generated, and contains static references to 3 nibs.
+  /// This `_R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
     let bundle: Foundation.Bundle
 
@@ -611,13 +614,16 @@ struct _R {
     /// Nib `LanguageTableViewCell`.
     var languageTableViewCell: RswiftResources.NibReference<LanguageTableViewCell> { .init(name: "LanguageTableViewCell", bundle: bundle) }
 
+    /// Nib `MajorTableViewCell`.
+    var majorTableViewCell: RswiftResources.NibReference<MajorTableViewCell> { .init(name: "MajorTableViewCell", bundle: bundle) }
+
     func validate() throws {
       if UIKit.UIColor(named: "Background", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'Background' is used in nib 'InformationOneViewTableViewCell', but couldn't be loaded.") }
       if UIKit.UIColor(named: "Background", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'Background' is used in nib 'InformationTwoViewTableViewCell', but couldn't be loaded.") }
     }
   }
 
-  /// This `_R.storyboard` struct is generated, and contains static references to 10 storyboards.
+  /// This `_R.storyboard` struct is generated, and contains static references to 11 storyboards.
   struct storyboard {
     let bundle: Foundation.Bundle
     var forgotPasswordViewController: forgotPasswordViewController { .init(bundle: bundle) }
@@ -627,6 +633,7 @@ struct _R {
     var launchScreen: launchScreen { .init(bundle: bundle) }
     var loginViewController: loginViewController { .init(bundle: bundle) }
     var permissionViewController: permissionViewController { .init(bundle: bundle) }
+    var searchInformationStudentViewController: searchInformationStudentViewController { .init(bundle: bundle) }
     var searchTabBarViewController: searchTabBarViewController { .init(bundle: bundle) }
     var settingTabBarViewController: settingTabBarViewController { .init(bundle: bundle) }
     var splashViewController: splashViewController { .init(bundle: bundle) }
@@ -652,6 +659,9 @@ struct _R {
     func permissionViewController(bundle: Foundation.Bundle) -> permissionViewController {
       .init(bundle: bundle)
     }
+    func searchInformationStudentViewController(bundle: Foundation.Bundle) -> searchInformationStudentViewController {
+      .init(bundle: bundle)
+    }
     func searchTabBarViewController(bundle: Foundation.Bundle) -> searchTabBarViewController {
       .init(bundle: bundle)
     }
@@ -669,6 +679,7 @@ struct _R {
       try self.launchScreen.validate()
       try self.loginViewController.validate()
       try self.permissionViewController.validate()
+      try self.searchInformationStudentViewController.validate()
       try self.searchTabBarViewController.validate()
       try self.settingTabBarViewController.validate()
       try self.splashViewController.validate()
@@ -791,6 +802,25 @@ struct _R {
       }
     }
 
+    /// Storyboard `SearchInformationStudentViewController`.
+    struct searchInformationStudentViewController: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
+      typealias InitialController = SearchInformationStudentViewController
+
+      let bundle: Foundation.Bundle
+
+      let name = "SearchInformationStudentViewController"
+
+      var searchInformationStudentViewController: RswiftResources.StoryboardViewControllerIdentifier<SearchInformationStudentViewController> { .init(identifier: "SearchInformationStudentViewController", storyboard: name, bundle: bundle) }
+
+      func validate() throws {
+        if UIKit.UIImage(named: "back", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'back' is used in storyboard 'SearchInformationStudentViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "hide", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'hide' is used in storyboard 'SearchInformationStudentViewController', but couldn't be loaded.") }
+        if UIKit.UIColor(named: "AccentColor", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'AccentColor' is used in storyboard 'SearchInformationStudentViewController', but couldn't be loaded.") }
+        if UIKit.UIColor(named: "Background", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'Background' is used in storyboard 'SearchInformationStudentViewController', but couldn't be loaded.") }
+        if searchInformationStudentViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'searchInformationStudentViewController' could not be loaded from storyboard 'SearchInformationStudentViewController' as 'SearchInformationStudentViewController'.") }
+      }
+    }
+
     /// Storyboard `SearchTabBarViewController`.
     struct searchTabBarViewController: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
       typealias InitialController = SearchTabBarViewController
@@ -802,10 +832,14 @@ struct _R {
       var searchTabBarViewController: RswiftResources.StoryboardViewControllerIdentifier<SearchTabBarViewController> { .init(identifier: "SearchTabBarViewController", storyboard: name, bundle: bundle) }
 
       func validate() throws {
+        if UIKit.UIImage(named: "activities", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'activities' is used in storyboard 'SearchTabBarViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "home", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'home' is used in storyboard 'SearchTabBarViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "homeSelected", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'homeSelected' is used in storyboard 'SearchTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "profile", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'profile' is used in storyboard 'SearchTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "score", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'score' is used in storyboard 'SearchTabBarViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "searchSelected", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'searchSelected' is used in storyboard 'SearchTabBarViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "setting", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Image named 'setting' is used in storyboard 'SearchTabBarViewController', but couldn't be loaded.") }
+        if UIKit.UIColor(named: "Background", in: bundle, compatibleWith: nil) == nil { throw RswiftResources.ValidationError("[R.swift] Color named 'Background' is used in storyboard 'SearchTabBarViewController', but couldn't be loaded.") }
         if searchTabBarViewController() == nil { throw RswiftResources.ValidationError("[R.swift] ViewController with identifier 'searchTabBarViewController' could not be loaded from storyboard 'SearchTabBarViewController' as 'SearchTabBarViewController'.") }
       }
     }

@@ -10,6 +10,10 @@ import UIKit
 
 protocol SearchFlowCoodinatorDependencies {
     func makeSearchTabBarVC(actions: SearchTabBarActions) -> SearchTabBarViewController
+    
+    func makeSearchInformation(actions: SearchInformationStudentActions) -> SearchInformationStudentViewController
+    
+    func makeInformationStudentVC(actions: InformationStudentActions, studentCode: String) -> InformationStudentViewController
 }
 
 final class SearchFlowCoodinator {
@@ -23,7 +27,10 @@ final class SearchFlowCoodinator {
     
     func search() {
         let actions = SearchTabBarActions(showHomeTabBar: showHome,
-                                        showSettingTabBar: showSetting)
+                                          showSettingTabBar: showSetting,
+                                          showSearchActivity: show,
+                                          showSearchScore: show,
+                                          showSearchInformation: showSearchInformationStudent)
         let vc = dependencies.makeSearchTabBarVC(actions: actions)
         navigationController?.viewControllers = [vc]
     }
@@ -32,7 +39,7 @@ final class SearchFlowCoodinator {
         
     }
     
-    func showHome() {
+    private func showHome() {
         guard let navigationController = navigationController else {
             return
         }
@@ -46,7 +53,7 @@ final class SearchFlowCoodinator {
         appFlowCoordinator.home()
     }
     
-    func showSetting() {
+    private func showSetting() {
         guard let navigationController = navigationController else {
             return
         }
@@ -58,5 +65,38 @@ final class SearchFlowCoodinator {
         )
 
         appFlowCoordinator.setting()
+    }
+    
+    private func showSearchActivity() {
+        
+    }
+    
+    private func showSearchScore() {
+        
+    }
+    
+    private func showSearchInformationStudent() {
+        let actions = SearchInformationStudentActions(
+            showInformationStudent: { studentCode in
+                self.showInformation(studentCode: studentCode)
+            },
+            showSearch: popSearchTabBar
+        )
+        let vc = dependencies.makeSearchInformation(actions: actions)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+    private func showInformation(studentCode: String) {
+        let actions = InformationStudentActions(
+            showSearchInformation: show,
+            showSetting: show
+        )
+       let vc = dependencies.makeInformationStudentVC(actions: actions, studentCode: studentCode)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+    
+    private func popSearchTabBar() {
+        navigationController?.popViewController(animated: true)
     }
 }

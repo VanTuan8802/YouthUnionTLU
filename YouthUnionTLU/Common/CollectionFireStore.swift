@@ -13,4 +13,5 @@ enum CollectionFireStore: String {
     case studentCodeCollection = "student_Code"
     case persionalInfor = "persional_Info"
     case studentInfor = "student_Info"
+    case majores = "majores"
 }

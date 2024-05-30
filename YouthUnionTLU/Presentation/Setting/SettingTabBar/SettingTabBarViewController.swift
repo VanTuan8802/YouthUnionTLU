@@ -35,7 +35,6 @@ class SettingTabBarViewController: UIViewController, StoryboardInstantiable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(position)
         self.tabBarSetting?.delegate = self
         setUI()
     }
@@ -68,7 +67,7 @@ class SettingTabBarViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func showInformationAction(_ sender: Any) {
-        viewModel.openInformation()
+        viewModel.openInformation(studentCode: "2051062363")
     }
     
     @IBAction func chageLanguageAction(_ sender: Any) {

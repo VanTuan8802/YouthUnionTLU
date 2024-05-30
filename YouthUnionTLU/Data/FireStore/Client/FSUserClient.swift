@@ -11,7 +11,6 @@ import FirebaseFirestore
 
 class FSUserClient: UserClient {
     
-    
     typealias T = ProfileStudent
     
     static let shared = FSUserClient()
