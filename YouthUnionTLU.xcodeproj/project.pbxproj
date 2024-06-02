@@ -83,6 +83,10 @@
 		AB07426B2BF707C900BE5308 /* InformationTwoViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0742692BF707C900BE5308 /* InformationTwoViewTableViewCell.swift */; };
 		AB07426C2BF707C900BE5308 /* InformationTwoViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB07426A2BF707C900BE5308 /* InformationTwoViewTableViewCell.xib */; };
 		AB07426E2BF70EF500BE5308 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB07426D2BF70EF500BE5308 /* GoogleService-Info.plist */; };
+		AB9274782C0C5EE6003DE063 /* SearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9274772C0C5EE6003DE063 /* SearchType.swift */; };
+		AB92747A2C0C6862003DE063 /* PointTraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9274792C0C6862003DE063 /* PointTraining.swift */; };
+		AB92747D2C0C6BE3003DE063 /* PointTraingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB92747C2C0C6BE3003DE063 /* PointTraingViewController.swift */; };
+		AB92747F2C0C6BEC003DE063 /* PointTraingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB92747E2C0C6BEC003DE063 /* PointTraingViewController.storyboard */; };
 		ABC09C4C2BFE039A0036E786 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC09C492BFE039A0036E786 /* AppFlowCoordinator.swift */; };
 		ABC09C4D2BFE039A0036E786 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC09C4A2BFE039A0036E786 /* AppAppearance.swift */; };
 		ABC09C4E2BFE039A0036E786 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC09C4B2BFE039A0036E786 /* AppDelegate.swift */; };
@@ -178,7 +182,6 @@
 		AA8826D32BAC7857004A2FAC /* SearchTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabBarViewModel.swift; sourceTree = "<group>"; };
 		AA8826D52BAC78A6004A2FAC /* SettingTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTabBarViewModel.swift; sourceTree = "<group>"; };
 		AA8826DB2BAC7B9C004A2FAC /* SettingFlowCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFlowCoodinator.swift; sourceTree = "<group>"; };
-		AAC2063E2B9B625000BDFCF9 /* YouthUnionTLU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = YouthUnionTLU.app; path = "/Users/tuannguyen/Documents/DATN/YouthUnionTLU_IOS/build/Debug-iphoneos/YouthUnionTLU.app"; sourceTree = "<absolute>"; };
 		AAC2064A2B9B625200BDFCF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAC2064D2B9B625200BDFCF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AAC2064F2B9B625200BDFCF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -191,6 +194,11 @@
 		AB0742692BF707C900BE5308 /* InformationTwoViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationTwoViewTableViewCell.swift; sourceTree = "<group>"; };
 		AB07426A2BF707C900BE5308 /* InformationTwoViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationTwoViewTableViewCell.xib; sourceTree = "<group>"; };
 		AB07426D2BF70EF500BE5308 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AB9274762C0B5658003DE063 /* YouthUnionTLU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = YouthUnionTLU.app; path = "/Users/tuannguyen/Documents/DATN/YouthUnionTLU_IOS/build/Debug-iphoneos/YouthUnionTLU.app"; sourceTree = "<absolute>"; };
+		AB9274772C0C5EE6003DE063 /* SearchType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchType.swift; sourceTree = "<group>"; };
+		AB9274792C0C6862003DE063 /* PointTraining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTraining.swift; sourceTree = "<group>"; };
+		AB92747C2C0C6BE3003DE063 /* PointTraingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTraingViewController.swift; sourceTree = "<group>"; };
+		AB92747E2C0C6BEC003DE063 /* PointTraingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PointTraingViewController.storyboard; sourceTree = "<group>"; };
 		ABC09C492BFE039A0036E786 /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		ABC09C4A2BFE039A0036E786 /* AppAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		ABC09C4B2BFE039A0036E786 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -259,7 +267,6 @@
 			isa = PBXGroup;
 			children = (
 				ABC09C762C088F430036E786 /* Manager */,
-				ABC09C752C088F3F0036E786 /* New Group */,
 				AA8826922BAA9989004A2FAC /* LoadingView */,
 				AA732F512B9DF28D009EB608 /* Extention */,
 				AA732F6D2B9F4CA7009EB608 /* LanguageLocalizable */,
@@ -277,6 +284,7 @@
 			children = (
 				AA732F6B2B9F4A3C009EB608 /* LanguageType.swift */,
 				AA8826AC2BAC3D0C004A2FAC /* Posstion.swift */,
+				AB9274772C0C5EE6003DE063 /* SearchType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -325,6 +333,7 @@
 		AA732F312B9D7457009EB608 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				AB92747B2C0C6B91003DE063 /* PointTraning */,
 				AA14F4FF2BD2ADEF00277DFC /* InformationStudent */,
 				AA8826BC2BAC6FB9004A2FAC /* Setting */,
 				AA8826BB2BAC6FB3004A2FAC /* Search */,
@@ -462,6 +471,7 @@
 				AA61AD4F2BDAAB750097B8BA /* PositionStudent.swift */,
 				AB0742602BF7054D00BE5308 /* Infomation.swift */,
 				ABC09C6A2C062D100036E786 /* Majoy.swift */,
+				AB9274792C0C6862003DE063 /* PointTraining.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -525,9 +535,7 @@
 		AA8826BB2BAC6FB3004A2FAC /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				ABC09C612BFF8D350036E786 /* SearchInformation */,
-				ABC09C602BFF8CE80036E786 /* SearchScore */,
-				ABC09C5F2BFF8CD20036E786 /* SearchActivity */,
+				ABC09C612BFF8D350036E786 /* SearchInfomation */,
 				AA8826BD2BAC6FCD004A2FAC /* SearchTabBar */,
 				ABC09C5C2BFE056B0036E786 /* SearchFlowCoodinator.swift */,
 			);
@@ -626,6 +634,15 @@
 			path = InformationTwoViewCell;
 			sourceTree = "<group>";
 		};
+		AB92747B2C0C6B91003DE063 /* PointTraning */ = {
+			isa = PBXGroup;
+			children = (
+				AB92747C2C0C6BE3003DE063 /* PointTraingViewController.swift */,
+				AB92747E2C0C6BEC003DE063 /* PointTraingViewController.storyboard */,
+			);
+			path = PointTraning;
+			sourceTree = "<group>";
+		};
 		ABC09C482BFE03850036E786 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -650,21 +667,7 @@
 			path = DIContainer;
 			sourceTree = "<group>";
 		};
-		ABC09C5F2BFF8CD20036E786 /* SearchActivity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SearchActivity;
-			sourceTree = "<group>";
-		};
-		ABC09C602BFF8CE80036E786 /* SearchScore */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SearchScore;
-			sourceTree = "<group>";
-		};
-		ABC09C612BFF8D350036E786 /* SearchInformation */ = {
+		ABC09C612BFF8D350036E786 /* SearchInfomation */ = {
 			isa = PBXGroup;
 			children = (
 				ABC09C702C06B2230036E786 /* MajorCell */,
@@ -672,7 +675,7 @@
 				ABC09C642BFF8DF70036E786 /* SearchInformationStudentViewController.storyboard */,
 				ABC09C682BFF92F60036E786 /* SearchInformationStudentViewModel.swift */,
 			);
-			path = SearchInformation;
+			path = SearchInfomation;
 			sourceTree = "<group>";
 		};
 		ABC09C702C06B2230036E786 /* MajorCell */ = {
@@ -682,13 +685,6 @@
 				ABC09C722C06B2400036E786 /* MajorTableViewCell.xib */,
 			);
 			path = MajorCell;
-			sourceTree = "<group>";
-		};
-		ABC09C752C088F3F0036E786 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		ABC09C762C088F430036E786 /* Manager */ = {
@@ -728,7 +724,7 @@
 			);
 			name = YouthUnionTLU;
 			productName = YouthUnionTLU;
-			productReference = AAC2063E2B9B625000BDFCF9 /* YouthUnionTLU.app */;
+			productReference = AB9274762C0B5658003DE063 /* YouthUnionTLU.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -785,6 +781,7 @@
 				ABC09C742C06B2400036E786 /* MajorTableViewCell.xib in Resources */,
 				AA8826C62BAC70DD004A2FAC /* SearchTabBarViewController.storyboard in Resources */,
 				AA3B65782BCD3BA0001C47F7 /* SF-Pro-Display-Semibold.otf in Resources */,
+				AB92747F2C0C6BEC003DE063 /* PointTraingViewController.storyboard in Resources */,
 				AB07426E2BF70EF500BE5308 /* GoogleService-Info.plist in Resources */,
 				AA732F642B9F4530009EB608 /* Localizable.strings in Resources */,
 				AAC2064E2B9B625200BDFCF9 /* LaunchScreen.storyboard in Resources */,
@@ -875,6 +872,7 @@
 				AADC74052BA33F5000406787 /* PermissionViewController.swift in Sources */,
 				AB0742662BF7079200BE5308 /* InformationOneViewTableViewCell.swift in Sources */,
 				AA732F752B9F4EC5009EB608 /* LanguageTableViewCell.swift in Sources */,
+				AB9274782C0C5EE6003DE063 /* SearchType.swift in Sources */,
 				AB07426B2BF707C900BE5308 /* InformationTwoViewTableViewCell.swift in Sources */,
 				AA8826912BAA9156004A2FAC /* ExtentionTextField.swift in Sources */,
 				AA14F5052BD2AE6400277DFC /* InformationStudentViewModel.swift in Sources */,
@@ -906,6 +904,7 @@
 				AA8826B32BAC3ED7004A2FAC /* Manager.swift in Sources */,
 				ABC09C562BFE03B20036E786 /* AppDIContainer.swift in Sources */,
 				AA8826A92BAC3872004A2FAC /* User.swift in Sources */,
+				AB92747D2C0C6BE3003DE063 /* PointTraingViewController.swift in Sources */,
 				AA8826862BAA68EE004A2FAC /* LoginViewModel.swift in Sources */,
 				AA3B65752BCD2EF4001C47F7 /* SetFont.swift in Sources */,
 				AA732F502B9DD3F2009EB608 /* StoryboardInstantiable.swift in Sources */,
@@ -918,6 +917,7 @@
 				ABC09C6B2C062D100036E786 /* Majoy.swift in Sources */,
 				AA732F6F2B9F4CC6009EB608 /* LanguageLocalizable.swift in Sources */,
 				ABC09C632BFF8DE70036E786 /* SearchInformationStudentViewController.swift in Sources */,
+				AB92747A2C0C6862003DE063 /* PointTraining.swift in Sources */,
 				AA732F362B9D76F5009EB608 /* SplashViewController.swift in Sources */,
 				AA8826C22BAC7008004A2FAC /* SettingTabBarViewController.swift in Sources */,
 				AA732F592B9F42A8009EB608 /* LanguageViewController.swift in Sources */,

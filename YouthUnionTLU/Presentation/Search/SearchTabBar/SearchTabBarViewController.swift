@@ -44,18 +44,16 @@ class SearchTabBarViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func openSearchActivity(_ sender: Any) {
-        viewModel.openSearchActivity()
+        viewModel.openSearchInformation(searchType: .searchActivity)
     }
     
     @IBAction func openSearchScore(_ sender: Any) {
-        viewModel.openSearchScore()
+        viewModel.openSearchInformation(searchType: .searchPointTraining)
     }
     
     @IBAction func searchInformationStudent(_ sender: Any) {
-        viewModel.openSearchInformation()
+        viewModel.openSearchInformation(searchType: .searchInfomatioStudent)
     }
-    
-
 }
 
 extension SearchTabBarViewController: UITabBarDelegate {

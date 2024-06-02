@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 struct SearchInformationStudentActions {
     let showInformationStudent: (String) -> Void
@@ -29,7 +30,7 @@ protocol SearchInformationStudentViewModel: SearchInformationStudentViewModelInp
 }
 
 class DefaultSearchInformationStudentModel: SearchInformationStudentViewModel {
-    
+
     var error: Observable<String?> = Observable(nil)
     var listMajor: Observable<[Major]?> = Observable([])
     

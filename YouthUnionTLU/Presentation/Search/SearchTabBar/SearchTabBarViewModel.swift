@@ -10,18 +10,14 @@ import Foundation
 struct SearchTabBarActions {
     let showHomeTabBar: () -> Void
     let showSettingTabBar: () -> Void
-    let showSearchActivity: () -> Void
-    let showSearchScore: () -> Void
-    let showSearchInformation: () -> Void
+    let showSearchInformation: (SearchType) -> Void
 }
 
 protocol SearchTabBarViewModelInput {
     func viewDidLoad()
     func openHomeTabBar()
     func openSettingTabBar()
-    func openSearchActivity()
-    func openSearchScore()
-    func openSearchInformation()
+    func openSearchInformation(searchType: SearchType)
 }
 
 protocol SearchTabBarViewModelOutput {
@@ -52,16 +48,8 @@ class DefaultSearchTabBarViewModel: SearchTabBarViewModel {
         actions.showSettingTabBar()
     }
     
-    func openSearchActivity() {
-        actions.showSearchActivity()
-    }
-    
-    func openSearchScore() {
-        actions.showSearchScore()
-    }
-    
-    func openSearchInformation() {
-        actions.showSearchInformation()
+    func openSearchInformation(searchType: SearchType) {
+        actions.showSearchInformation(searchType)
     }
 }
 
