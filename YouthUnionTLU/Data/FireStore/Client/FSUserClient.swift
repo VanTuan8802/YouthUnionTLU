@@ -65,20 +65,64 @@ class FSUserClient: UserClient {
             }
     }
     
-    func getDataPointTraining(studentCode: String,completion: @escaping ([PointTrainingYear]?, Error?) -> Void) {
-        var listPoint : [PointTraining] = []
+    func getDataPointTraining(studentCode: String, completion: @escaping ([PointTrainingYear]?, Error?) -> Void) {
+        var listPoint: [PointTrainingYear] = []
+        let dispatchGroup = DispatchGroup()
+        
         database.collection(CollectionFireStore.pointTraining.rawValue)
             .document(studentCode)
             .collection(CollectionFireStore.pointes.rawValue)
             .getDocuments { snapshotData, error in
-                guard let snapshotData = snapshotData ,
-                      error == nil else {
+                guard let snapshotData = snapshotData, error == nil else {
                     completion(nil, error)
                     return
                 }
                 
                 for year in snapshotData.documents {
-                    print(year.documentID)
+                    dispatchGroup.enter()
+                    self.getDataPointTrainingTerm(year: year.documentID, studentCode: studentCode) { pointTraning, error in
+                        defer {
+                            dispatchGroup.leave()
+                        }
+                        
+                        guard let pointTraning = pointTraning, error == nil else {
+                            completion(nil, error)
+                            return
+                        }
+                        
+                        let pointTraningYear = PointTrainingYear(year: year.documentID, points: pointTraning)
+                        listPoint.append(pointTraningYear)
+                    }
+                }
+                
+                dispatchGroup.notify(queue: .main) {
+                    completion(listPoint, nil)
+                }
+            }
+    }
+    
+    private func getDataPointTrainingTerm(year: String, studentCode: String,completion: @escaping (PointTraining?, Error?) -> Void) {
+        database.collection(CollectionFireStore.pointTraining.rawValue)
+            .document(studentCode)
+            .collection(CollectionFireStore.pointes.rawValue)
+            .document(year)
+            .getDocument(as: PointTraining.self) {result in
+                switch result {
+                case .success(let data):
+                    completion(data, nil)
+                case .failure(let error):
+                    var errorMessage = "Error decoding document: \(error.localizedDescription)"
+                    if case let DecodingError.typeMismatch(_, context) = error {
+                        errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
+                    } else if case let DecodingError.valueNotFound(_, context) = error {
+                        errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
+                    } else if case let DecodingError.keyNotFound(_, context) = error {
+                        errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
+                    } else if case let DecodingError.dataCorrupted(key) = error {
+                        errorMessage = "\(error.localizedDescription): \(key)"
+                    }
+                    print(errorMessage)
+                    completion(nil, error)
                 }
             }
     }

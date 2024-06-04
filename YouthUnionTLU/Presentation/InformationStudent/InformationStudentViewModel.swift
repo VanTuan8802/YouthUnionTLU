@@ -56,83 +56,47 @@ class DefaultInformationStudentViewModel: InformationStudentViewModel {
     }
     
     func viewDidLoad() {
-        FSUserClient.shared.getDataStudent(studentCode: studentCode) {
-            profileStudent, error in
-            guard let profileStudent = profileStudent ,
-                  error == nil else {
-                self.error.value = error?.localizedDescription
-                return
+        if UserDefaultsData.shared.posision == Position.manager.rawValue {
+            self.getDataStudent(studentCode: self.studentCode) {
             }
-            self.profileStudent.value = profileStudent
-        }
-        
-        getListStudent {
-            guard let listStudents = self.listStudent.value else {
-                return
-            }
-            
-            if !listStudents.contains(self.studentCode) {
-                self.error.value = "Nodata"
-            } else {
-                self.getDataStudent(studentCode: self.studentCode) {
-                    self.getListClass(uid: self.uid ?? "") {
-                        guard let studentClass = self.profileStudent.value?.className ,
-                              let listClasss = self.listClass.value else {
-                            return
-                        }
-                        
-                        if !listClasss.contains(studentClass) {
-                            self.error.value = "No data"
+        } else {
+            getDataStudent(studentCode: studentCode) {
+                SearchManager.shared.checkStudentCode(studentCode: self.studentCode,
+                                                      profileStudent: self.profileStudent.value) { isTrue in
+                    if !isTrue {
+                        self.error.value = "No data"
+                    } else {
+                        self.getDataStudent(studentCode: self.studentCode) {
                         }
                     }
                 }
             }
-                    
         }
     }
-
+    
     func openSearchInformation() {
         
     }
-
+    
     func openSetting() {
         
     }
     
-    private func getListClass(uid: String, completion: @escaping() -> Void) {
-        FSUserClient.shared.getListClass(uid: Auth.auth().currentUser?.uid ?? "") { classes, error in
-            guard let classes = classes,
-                    error == nil else {
-                self.error.value = error?.localizedDescription
-                return
-            }
-            self.listClass.value = classes
-            completion()
-        }
-    }
-    
-    private func getListStudent(completion: @escaping() -> Void) {
-        FSUserClient.shared.getListStudent { studentes, error in
-            guard let studentes = studentes,
-                  error == nil else {
-                self.error.value = error?.localizedDescription
-                return
-            }
-            self.listStudent.value = studentes
-            completion()
-        }
-    }
-
     private func getDataStudent(studentCode: String, completion: @escaping () -> Void) {
         FSUserClient.shared.getDataStudent(studentCode: studentCode) { profileStudent, error in
-            guard let profileStudent = profileStudent ,
-                  error == nil else {
-                self.error.value = error?.localizedDescription
+            if let error = error {
+                self.error.value = error.localizedDescription
+                completion()
                 return
             }
-            print(profileStudent)
-            self.profileStudent.value = profileStudent
+            
+            if let profileStudent = profileStudent {
+                self.profileStudent.value = profileStudent
+            } else {
+                self.error.value = "No profile found"
+            }
+            
+            completion()
         }
-        completion()
     }
 }

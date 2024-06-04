@@ -11,9 +11,11 @@ import UIKit
 protocol SearchFlowCoodinatorDependencies {
     func makeSearchTabBarVC(actions: SearchTabBarActions) -> SearchTabBarViewController
     
-    func makeSearchInformation(actions: SearchInformationStudentActions) -> SearchInformationStudentViewController
+    func makeSearchInformation(actions: SearchInformationStudentActions, searchType: SearchType) -> SearchInformationStudentViewController
     
     func makeInformationStudentVC(actions: InformationStudentActions, studentCode: String) -> InformationStudentViewController
+    
+    func makePointTrainingVC(actions: PointTrainingActions, studentCode: String) -> PointTraingViewController
 }
 
 final class SearchFlowCoodinator {
@@ -80,10 +82,13 @@ final class SearchFlowCoodinator {
         let actions = SearchInformationStudentActions(
             showInformationStudent: { studentCode in
                 self.showInformation(studentCode: studentCode)
+            }, 
+            showPointTraining: {studentCode in
+                self.showPointTraining(studentCode: studentCode)
             },
             showSearch: popSearchTabBar
         )
-        let vc = dependencies.makeSearchInformation(actions: actions)
+        let vc = dependencies.makeSearchInformation(actions: actions, searchType: searchType)
         navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -96,6 +101,11 @@ final class SearchFlowCoodinator {
         navigationController?.pushViewController(vc, animated: true)
     }
 
+    private func showPointTraining(studentCode: String) {
+        let actions = PointTrainingActions(showSearchInformation: show)
+        let vc = dependencies.makePointTrainingVC(actions: actions, studentCode: studentCode)
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
     private func popSearchTabBar() {
         navigationController?.popViewController(animated: true)

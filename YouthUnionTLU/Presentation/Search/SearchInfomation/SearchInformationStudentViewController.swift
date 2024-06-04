@@ -8,7 +8,7 @@
 import UIKit
 
 class SearchInformationStudentViewController: UIViewController, StoryboardInstantiable {
-
+    
     @IBOutlet weak var majorLb: UILabel!
     @IBOutlet weak var majorTxt: UITextField!
     @IBOutlet weak var batchLb: UILabel!
@@ -23,6 +23,7 @@ class SearchInformationStudentViewController: UIViewController, StoryboardInstan
     
     private var viewModel : SearchInformationStudentViewModel!
     private var listMajor: [Major] = []
+    private var searchType: SearchType = .searchInfomatioStudent
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +67,11 @@ class SearchInformationStudentViewController: UIViewController, StoryboardInstan
             self.listMajor = listMajorData
             self.majoyTableView.reloadData()
         }
+        
+        viewModel.searchType.observe(on: self) { searchType in
+            self.searchType = searchType
+        }
+        
     }
     
     @IBAction func backAction(_ sender: Any) {
@@ -78,7 +84,14 @@ class SearchInformationStudentViewController: UIViewController, StoryboardInstan
     }
     
     @IBAction func showInformation(_ sender: Any) {
-        viewModel.openInformationStudent(studentCode: studentCodeTxt.text ?? "")
+        if searchType == .searchActivity {
+        } else {
+            if searchType == .searchPointTraining {
+                viewModel.openPoinTraining(studentCode: studentCodeTxt.text ?? "")
+            } else {
+                viewModel.openInformationStudent(studentCode: studentCodeTxt.text ?? "")
+            }
+        }
     }
 }
 

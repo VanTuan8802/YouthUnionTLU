@@ -57,7 +57,6 @@ class InformationStudentViewController: UIViewController, StoryboardInstantiable
             
             self.profileStudent = profileStudentData
             
-            print(profileStudentData)
             self.fetchData()
             self.avatarStudent.kf.setImage(with: URL(string: profileStudentData.avatarUrl ))
             self.informationTableView.reloadData()
@@ -66,7 +65,7 @@ class InformationStudentViewController: UIViewController, StoryboardInstantiable
         }
         
         viewMoldel.error.observe(on: self) {error in
-            guard let error = error else {
+            guard error != nil else {
                 return
             }
             self.dataStudentViiew.isHidden = true
@@ -146,7 +145,6 @@ extension InformationStudentViewController: UITableViewDelegate, UITableViewData
             cell.bindData(information: data)
             return cell
         }
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

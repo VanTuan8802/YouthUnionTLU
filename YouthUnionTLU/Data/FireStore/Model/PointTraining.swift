@@ -8,11 +8,11 @@
 import Foundation
 
 struct PointTraining: Decodable {
-    var term: String
-    var score: Int
+    var term1: Double
+    var term2: Double?
 }
 
 struct PointTrainingYear: Decodable {
     var year: String
-    var points: [PointTraining]
+    var points: PointTraining
 }

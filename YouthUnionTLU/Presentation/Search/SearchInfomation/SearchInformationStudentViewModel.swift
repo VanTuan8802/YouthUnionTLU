@@ -10,6 +10,7 @@ import FirebaseAuth
 
 struct SearchInformationStudentActions {
     let showInformationStudent: (String) -> Void
+    let showPointTraining:(String) -> Void
     let showSearch: () -> Void
 }
 
@@ -17,12 +18,14 @@ struct SearchInformationStudentActions {
 protocol SearchInformationStudentViewModelInput {
     func viewDidLoad()
     func openInformationStudent(studentCode: String)
+    func openPoinTraining(studentCode: String)
     func openSeach()
 }
 
 protocol SearchInformationStudentViewModelOutput {
     var error: Observable<String?> {get}
     var listMajor: Observable<[Major]?> {get}
+    var searchType: Observable<SearchType> {get}
 }
 
 protocol SearchInformationStudentViewModel: SearchInformationStudentViewModelInput, SearchInformationStudentViewModelOutput {
@@ -33,16 +36,19 @@ class DefaultSearchInformationStudentModel: SearchInformationStudentViewModel {
 
     var error: Observable<String?> = Observable(nil)
     var listMajor: Observable<[Major]?> = Observable([])
+    var searchType: Observable<SearchType> = Observable(SearchType.searchActivity)
     
     private let actions: SearchInformationStudentActions
     
-    init(actions: SearchInformationStudentActions) {
+    init(actions: SearchInformationStudentActions, searchType: SearchType) {
         self.actions = actions
+        self.searchType.value = searchType
     }
 }
 
 extension DefaultSearchInformationStudentModel {
     func viewDidLoad() {
+        print(searchType)
         getListMajor {
             
         }
@@ -50,6 +56,10 @@ extension DefaultSearchInformationStudentModel {
     
     func openInformationStudent(studentCode: String) {
         actions.showInformationStudent(studentCode)
+    }
+    
+    func openPoinTraining(studentCode: String) {
+        actions.showPointTraining(studentCode)
     }
     
     func openSeach() {
