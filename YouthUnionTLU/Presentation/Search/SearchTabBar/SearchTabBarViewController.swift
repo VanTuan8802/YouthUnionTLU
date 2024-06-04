@@ -13,6 +13,7 @@ class SearchTabBarViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var homeTabBarItem: UITabBarItem!
     @IBOutlet weak var searchTabBarItem: UITabBarItem!
     @IBOutlet weak var settingTabBarItem: UITabBarItem!
+    @IBOutlet weak var viewSearchInformation: UIView!
     
     private var viewModel: SearchTabBarViewModel!
     
@@ -30,6 +31,10 @@ class SearchTabBarViewController: UIViewController, StoryboardInstantiable {
         searchTabBarItem.title = R.stringLocalizable.tabBarSearch()
         settingTabBarItem.title = R.stringLocalizable.tabBarSettings()
         
+        if  UserDefaultsData.shared.posision == Position.member.rawValue {
+            viewSearchInformation.isHidden = true
+        }
+        
     }
     
     class func create(with viewModel: SearchTabBarViewModel) -> SearchTabBarViewController {
@@ -37,7 +42,18 @@ class SearchTabBarViewController: UIViewController, StoryboardInstantiable {
         vc.viewModel = viewModel
         return vc
     }
-
+    
+    @IBAction func openSearchActivity(_ sender: Any) {
+        viewModel.openSearchInformation(searchType: .searchActivity)
+    }
+    
+    @IBAction func openSearchScore(_ sender: Any) {
+        viewModel.openSearchInformation(searchType: .searchPointTraining)
+    }
+    
+    @IBAction func searchInformationStudent(_ sender: Any) {
+        viewModel.openSearchInformation(searchType: .searchInfomatioStudent)
+    }
 }
 
 extension SearchTabBarViewController: UITabBarDelegate {

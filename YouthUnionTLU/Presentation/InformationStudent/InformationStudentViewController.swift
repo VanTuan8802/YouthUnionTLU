@@ -11,13 +11,13 @@ import Kingfisher
 class InformationStudentViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var avatarStudent: UIImageView!
+    @IBOutlet weak var dataStudentViiew: UIView!
+    @IBOutlet weak var noDataView: UIView!
     @IBOutlet weak var informationTableView: UITableView!
     
-    private var persionInformation: PersionalInformation?
-    private var studentInformation: StudentInformation?
+    private var profileStudent: ProfileStudent?
     
     private var dataProfile: [[Information]] = []
-    private var dataStudent: [[Information]] = []
     
     private var viewModel: InformationStudentViewModel!
     
@@ -37,7 +37,8 @@ class InformationStudentViewController: UIViewController, StoryboardInstantiable
     }
     
     private func setUI() {
-        
+        dataStudentViiew.isHidden = false
+        noDataView.isHidden = true
     }
     
     private func setUpTableView() {
@@ -49,21 +50,31 @@ class InformationStudentViewController: UIViewController, StoryboardInstantiable
     }
     
     private func bindData(to viewMoldel:InformationStudentViewModel) {
-        viewMoldel.persionalInformation.observe(on: self) { persionalInformationData in
-            guard let persionalInformationData = persionalInformationData else {
+        viewMoldel.profileStudent.observe(on: self) { profileStudentData in
+            guard let profileStudentData = profileStudentData else {
                 return
             }
-            self.persionInformation = persionalInformationData
-            self.avatarStudent.kf.setImage(with: URL(string: "https://scontent.fhan2-3.fna.fbcdn.net/v/t39.30808-1/440865108_834321255210574_4695038794190883184_n.jpg?stp=dst-jpg_p480x480&_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFc0Pcmgyr0PVi436O_fVcg8BKwH946bDLwErAf3jpsMhKRZpcop4F0-G5Z8O0m_GzWQiVeaSNEkiBKCqtc_hBp&_nc_ohc=lxIv9OzEuucQ7kNvgGtYUnD&_nc_ht=scontent.fhan2-3.fna&oh=00_AYBDJlMF9MjkUtO7U3usS4Lurc6dCx2TAW8fUpPlm-dwUw&oe=6653D8A7"))
             
-            viewMoldel.studentInformation.observe(on: self) { studentInformationData in
-                guard let studentInformationData = studentInformationData else {
-                    return
-                }
-                self.studentInformation = studentInformationData
-                self.fetchData()
-            }
+            self.profileStudent = profileStudentData
+            
+            self.fetchData()
+            self.avatarStudent.kf.setImage(with: URL(string: profileStudentData.avatarUrl ))
+            self.informationTableView.reloadData()
+            self.dataStudentViiew.isHidden = false
+            self.noDataView.isHidden = true
         }
+        
+        viewMoldel.error.observe(on: self) {error in
+            guard error != nil else {
+                return
+            }
+            self.dataStudentViiew.isHidden = true
+            self.noDataView.isHidden = false
+        }
+    }
+    
+    @IBAction func backAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -72,90 +83,67 @@ extension InformationStudentViewController {
         
         dataProfile = [
             [Information(title: R.stringLocalizable.inforStudentName(),
-                         content: persionInformation?.name ?? "")],
+                         content: profileStudent?.name ?? "")],
             [Information(title: R.stringLocalizable.inforStudentDateOfBirth(),
-                         content: persionInformation?.date_Of_Birth ?? ""),
+                         content: profileStudent?.date_Of_Birth ?? ""),
              Information(title:  R.stringLocalizable.inforStudentSex(),
-                         content: persionInformation?.gender ?? "")],
+                         content: profileStudent?.gender ?? "")],
             [Information(title: R.stringLocalizable.inforStudentPlaceOfBirth(),
-                         content: persionInformation?.place_Of_Birth ?? "")],
+                         content: profileStudent?.place_Of_Birth ?? "")],
             [Information(title: R.stringLocalizable.inforStudentNation(),
-                         content: persionInformation?.nation ?? ""),
+                         content: profileStudent?.nation ?? ""),
              Information(title: R.stringLocalizable.inforStudentReligion(),
-                         content: persionInformation?.religion ?? "")],
+                         content: profileStudent?.religion ?? "")],
             [Information(title: R.stringLocalizable.inforStudentPhoneNumber(),
-                         content: persionInformation?.phoneNumber ?? "")],
+                         content: profileStudent?.phoneNumber ?? "")],
             [Information(title: R.stringLocalizable.inforStudentCitizentId(),
-                         content: persionInformation?.citizentId ?? "") ],
+                         content: profileStudent?.citizenId ?? "") ],
             [Information(title: R.stringLocalizable.inforStudentDateRange(),
-                         content: persionInformation?.date_Of_Range ?? ""),
+                         content: profileStudent?.date_Of_Range ?? ""),
              Information(title: R.stringLocalizable.inforStudentAddressRange(),
-                         content: persionInformation?.address_Of_Range ?? "")]]
-        
-        dataStudent  = [
+                         content: profileStudent?.address_Of_Range ?? "")],
             [Information(title: R.stringLocalizable.inforStudentEmail(),
-                         content: studentInformation?.email ?? "")],
+                         content: profileStudent?.email ?? "")],
             [Information(title: R.stringLocalizable.inforStudentStudentId(),
-                         content: studentInformation?.student_Code ?? "")],
+                         content: profileStudent?.student_Code ?? "")],
             [Information(title: R.stringLocalizable.inforStudentNation(),
-                         content: persionInformation?.nation ?? ""),
+                         content: profileStudent?.nation ?? ""),
              Information(title: R.stringLocalizable.inforStudentClass(),
-                         content: studentInformation?.className ?? "")],
+                         content: profileStudent?.className ?? "")],
             [Information(title: R.stringLocalizable.inforStudentBatch(),
-                         content: studentInformation?.batch ?? "")],
+                         content: profileStudent?.batch ?? "")],
             [Information(title: R.stringLocalizable.inforStudentFaculty(),
-                         content: studentInformation?.faculaty ?? "")],
+                         content: profileStudent?.faculaty ?? "")],
             [Information(title: R.stringLocalizable.inforStudentBatch(),
-                         content: studentInformation?.major ?? "") ],
+                         content: profileStudent?.major ?? "") ],
             [Information(title: R.stringLocalizable.inforStudentYearOfAdmission(),
-                         content: String(studentInformation?.year_Of_Admission ?? 0)),
+                         content: String(profileStudent?.year_Of_Admission ?? 0)),
              Information(title: R.stringLocalizable.inforStudentYearOfHighSchoolGraduation(),
-                         content: String(studentInformation?.year_Of_HighSchool_Graduation ?? 0))],
+                         content: String(profileStudent?.year_Of_HighSchool_Graduation ?? 0))],
             [Information(title: R.stringLocalizable.inforStudentAccountNumber(),
-                         content: studentInformation?.bankName ?? ""),
+                         content: profileStudent?.bankName ?? ""),
              Information(title: R.stringLocalizable.inforStudentBankName(),
-                         content: studentInformation?.bankName ?? "")],
+                         content: profileStudent?.bankName ?? "")],
         ]
         informationTableView.reloadData()
     }
 }
 
 extension InformationStudentViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return dataProfile.count
-        } else {
-            return dataStudent.count
-        }
+        return dataProfile.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let section = indexPath.section
-        if section == 0 {
-            let data = dataProfile[indexPath.row]
-            if data.count == 1 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: InformationOneViewTableViewCell.className, for: indexPath) as! InformationOneViewTableViewCell
-                cell.bindData(infomation: data)
-                return cell
-            } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: InformationTwoViewTableViewCell.className, for: indexPath) as! InformationTwoViewTableViewCell
-                cell.bindData(information: data)
-                return cell
-            }
+        let data = dataProfile[indexPath.row]
+        if data.count == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: InformationOneViewTableViewCell.className, for: indexPath) as! InformationOneViewTableViewCell
+            cell.bindData(infomation: data)
+            return cell
         } else {
-            let data = dataStudent[indexPath.row]
-            if data.count == 1 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: InformationOneViewTableViewCell.className, for: indexPath) as! InformationOneViewTableViewCell
-                cell.bindData(infomation: data)
-                return cell
-            } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: InformationTwoViewTableViewCell.className, for: indexPath) as! InformationTwoViewTableViewCell
-                cell.bindData(information: data)
-                return cell
-            }
+            let cell = tableView.dequeueReusableCell(withIdentifier: InformationTwoViewTableViewCell.className, for: indexPath) as! InformationTwoViewTableViewCell
+            cell.bindData(information: data)
+            return cell
         }
     }
     

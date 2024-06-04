@@ -12,6 +12,7 @@ protocol UserClient {
     associatedtype T
     
     func getPossionUser(uid: String, completion: @escaping(PositionStudent?,Error?) -> Void)
-    func getDataProfile(studentCode: String, completion: @escaping (PersionalInformation?, Error?) -> Void)
-    func getDataStudent(studentCode: String, completion: @escaping (StudentInformation?, Error?) -> Void)
+    func getDataStudent(studentCode: String, completion: @escaping (ProfileStudent?, Error?) -> Void)
+    func getListClass(uid: String, completion: @escaping([String]?,Error?) -> Void)
+    func getListStudent(completion: @escaping([String]?,Error?) -> Void)
 }

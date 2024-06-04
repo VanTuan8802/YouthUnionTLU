@@ -9,7 +9,7 @@ import Foundation
 import FirebaseAuth
 
 struct SettingTabBarActions {
-    let showInformation: () -> Void
+    let showInformation: (String) -> Void
     let showLanguage: () -> Void
     let showShare: () -> Void
     let showRate: () -> Void
@@ -22,7 +22,7 @@ struct SettingTabBarActions {
 
 protocol SettingTabBarViewModelInput {
     func viewDidLoad()
-    func openInformation()
+    func openInformation(studentCode: String)
     func openLanguage()
     func openShare()
     func openRate()
@@ -55,8 +55,8 @@ class DefaultSettingTabBarViewModel: SettingTabBarViewModel {
         
     }
     
-    func openInformation() {
-        actions.showInformation()
+    func openInformation(studentCode: String) {
+        actions.showInformation(studentCode)
     }
     
     func openLanguage() {

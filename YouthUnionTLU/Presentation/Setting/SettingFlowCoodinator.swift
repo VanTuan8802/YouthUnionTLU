@@ -10,7 +10,7 @@ import UIKit
 
 protocol SettingFlowCoodinatorDependencies {
     func makeSettingTabBarVC(actions: SettingTabBarActions) -> SettingTabBarViewController
-    func makeInformationStudentVC(actions: InformationStudentActions) -> InformationStudentViewController
+    func makeInformationStudentVC(actions: InformationStudentActions, studentCode: String) -> InformationStudentViewController
     func makeLanguageVC(actions: LanguageActions) -> LanguageViewController
 }
 
@@ -24,23 +24,26 @@ final class SettingFlowCoodinator {
     }
     
     func setting() {
-        let actions = SettingTabBarActions(showInformation: showInformation,
-                                           showLanguage: showLanguage,
-                                           showShare: show,
-                                           showRate: show,
-                                           showPolicy: show,
-                                           showChangePassword: show,
-                                           showLogOut: show,
-                                           showHomeTabBar: showHomeTabBar,
-                                           showSearchTabBar: showSearchTabBar)
+        let actions = SettingTabBarActions(
+            showInformation: {studentCode in
+                self.showInformation(studentCode: studentCode)
+            },
+            showLanguage: showLanguage,
+            showShare: show,
+            showRate: show,
+            showPolicy: show,
+            showChangePassword: show,
+            showLogOut: show,
+            showHomeTabBar: showHomeTabBar,
+            showSearchTabBar: showSearchTabBar)
         let vc = dependencies.makeSettingTabBarVC(actions: actions)
         navigationController?.viewControllers = [vc]
     }
     
-    private func showInformation() {
+    private func showInformation(studentCode: String) {
         let actions = InformationStudentActions(showSearchInformation: show,
                                                 showSetting: show)
-        let vc = dependencies.makeInformationStudentVC(actions: actions)
+        let vc = dependencies.makeInformationStudentVC(actions: actions, studentCode: studentCode)
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -54,7 +57,7 @@ final class SettingFlowCoodinator {
             navigationController: navigationController,
             appDIContainer: appDIContainer
         )
-
+        
         appFlowCoordinator.home()
     }
     
@@ -68,7 +71,7 @@ final class SettingFlowCoodinator {
             navigationController: navigationController,
             appDIContainer: appDIContainer
         )
-
+        
         appFlowCoordinator.search()
     }
     

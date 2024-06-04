@@ -28,8 +28,8 @@ class SettingDIContainer {
         DefaultSettingTabBarViewModel(actions: actions)
     }
     
-    private func makeInformationStudentVC(actions: InformationStudentActions) -> InformationStudentViewModel {
-        DefaultInformationStudentViewModel(actions: actions)
+    private func makeInformationStudentVC(actions: InformationStudentActions, studentCode: String) -> InformationStudentViewModel {
+        DefaultInformationStudentViewModel(actions: actions, studentCode: studentCode)
     }
     
     private func makeLanguageVC(actions: LanguageActions) -> LanguageViewModel {
@@ -38,12 +38,13 @@ class SettingDIContainer {
 }
 
 extension SettingDIContainer: SettingFlowCoodinatorDependencies {
+
     func makeSettingTabBarVC(actions: SettingTabBarActions) -> SettingTabBarViewController {
         SettingTabBarViewController.create(with: makeSettingTabBarVC(actions: actions))
     }
     
-    func makeInformationStudentVC(actions: InformationStudentActions) -> InformationStudentViewController {
-        InformationStudentViewController.create(with: makeInformationStudentVC(actions: actions))
+    func makeInformationStudentVC(actions: InformationStudentActions, studentCode: String) -> InformationStudentViewController {
+        InformationStudentViewController.create(with: makeInformationStudentVC(actions: actions, studentCode: studentCode))
     }
     
     func makeLanguageVC(actions: LanguageActions) -> LanguageViewController {

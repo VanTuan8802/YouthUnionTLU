@@ -11,7 +11,6 @@ import FirebaseFirestore
 
 class FSUserClient: UserClient {
     
-    
     typealias T = ProfileStudent
     
     static let shared = FSUserClient()
@@ -42,70 +41,127 @@ class FSUserClient: UserClient {
             }
     }
     
-    func getDataProfile(studentCode: String, completion: @escaping (PersionalInformation?, Error?) -> Void) {
+    func getDataStudent(studentCode: String, completion: @escaping (ProfileStudent?, Error?) -> Void) {
         database.collection(CollectionFireStore.profileCollection.rawValue)
             .document(studentCode)
-            .collection(CollectionFireStore.persionalInfor.rawValue)
-            .getDocuments { document, error in
-                
-                guard let persionalDocument = document?.documents.first?.documentID else {
-                    return
-                }
-                
-                self.database.collection(CollectionFireStore.persionalInfor.rawValue)
-                    .document(persionalDocument)
-                    .getDocument(as: PersionalInformation.self) { result in
-                        switch result {
-                        case .success(let data):
-                            completion(data, nil)
-                        case .failure(let error):
-                            var errorMessage = "Error decoding document: \(error.localizedDescription)"
-                            if case let DecodingError.typeMismatch(_, context) = error {
-                                errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
-                            } else if case let DecodingError.valueNotFound(_, context) = error {
-                                errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
-                            } else if case let DecodingError.keyNotFound(_, context) = error {
-                                errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
-                            } else if case let DecodingError.dataCorrupted(key) = error {
-                                errorMessage = "\(error.localizedDescription): \(key)"
-                            }
-                            print(errorMessage)
-                            completion(nil, error)
-                        }
+            .getDocument(as: ProfileStudent.self) { result in
+                switch result {
+                case .success(let data):
+                    completion(data, nil)
+                case .failure(let error):
+                    var errorMessage = "Error decoding document: \(error.localizedDescription)"
+                    if case let DecodingError.typeMismatch(_, context) = error {
+                        errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
+                    } else if case let DecodingError.valueNotFound(_, context) = error {
+                        errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
+                    } else if case let DecodingError.keyNotFound(_, context) = error {
+                        errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
+                    } else if case let DecodingError.dataCorrupted(key) = error {
+                        errorMessage = "\(error.localizedDescription): \(key)"
                     }
+                    print(errorMessage)
+                    completion(nil, error)
+                }
             }
     }
     
-    func getDataStudent(studentCode: String, completion: @escaping (StudentInformation?, Error?) -> Void) {
-        database.collection(CollectionFireStore.profileCollection.rawValue)
+    func getDataPointTraining(studentCode: String, completion: @escaping ([PointTrainingYear]?, Error?) -> Void) {
+        var listPoint: [PointTrainingYear] = []
+        let dispatchGroup = DispatchGroup()
+        
+        database.collection(CollectionFireStore.pointTraining.rawValue)
             .document(studentCode)
-            .collection(CollectionFireStore.studentInfor.rawValue)
-            .getDocuments { document, error in
-                
-                guard let studentDocument = document?.documents.first?.documentID else {
+            .collection(CollectionFireStore.pointes.rawValue)
+            .getDocuments { snapshotData, error in
+                guard let snapshotData = snapshotData, error == nil else {
+                    completion(nil, error)
                     return
                 }
-                self.database.collection(CollectionFireStore.studentInfor.rawValue)
-                    .document(studentDocument)
-                    .getDocument(as: StudentInformation.self) { result in
-                        switch result {
-                        case .success(let data):
-                            completion(data, nil)
-                        case .failure(let error):
-                            var errorMessage = "Error decoding document: \(error.localizedDescription)"
-                            if case let DecodingError.typeMismatch(_, context) = error {
-                                errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
-                            } else if case let DecodingError.valueNotFound(_, context) = error {
-                                errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
-                            } else if case let DecodingError.keyNotFound(_, context) = error {
-                                errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
-                            } else if case let DecodingError.dataCorrupted(key) = error {
-                                errorMessage = "\(error.localizedDescription): \(key)"
-                            }
-                            print(errorMessage)
-                            completion(nil, error)
+                
+                for year in snapshotData.documents {
+                    dispatchGroup.enter()
+                    self.getDataPointTrainingTerm(year: year.documentID, studentCode: studentCode) { pointTraning, error in
+                        defer {
+                            dispatchGroup.leave()
                         }
+                        
+                        guard let pointTraning = pointTraning, error == nil else {
+                            completion(nil, error)
+                            return
+                        }
+                        
+                        let pointTraningYear = PointTrainingYear(year: year.documentID, points: pointTraning)
+                        listPoint.append(pointTraningYear)
                     }
+                }
+                
+                dispatchGroup.notify(queue: .main) {
+                    completion(listPoint, nil)
+                }
             }
     }
+    
+    private func getDataPointTrainingTerm(year: String, studentCode: String,completion: @escaping (PointTraining?, Error?) -> Void) {
+        database.collection(CollectionFireStore.pointTraining.rawValue)
+            .document(studentCode)
+            .collection(CollectionFireStore.pointes.rawValue)
+            .document(year)
+            .getDocument(as: PointTraining.self) {result in
+                switch result {
+                case .success(let data):
+                    completion(data, nil)
+                case .failure(let error):
+                    var errorMessage = "Error decoding document: \(error.localizedDescription)"
+                    if case let DecodingError.typeMismatch(_, context) = error {
+                        errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
+                    } else if case let DecodingError.valueNotFound(_, context) = error {
+                        errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
+                    } else if case let DecodingError.keyNotFound(_, context) = error {
+                        errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
+                    } else if case let DecodingError.dataCorrupted(key) = error {
+                        errorMessage = "\(error.localizedDescription): \(key)"
+                    }
+                    print(errorMessage)
+                    completion(nil, error)
+                }
+            }
+    }
+    
+    func getListClass(uid: String, completion: @escaping ([String]?, Error?) -> Void) {
+        var listClass :[String] = []
+        database.collection(CollectionFireStore.userCollection.rawValue)
+            .document(uid)
+            .collection(CollectionFireStore.classes.rawValue)
+            .getDocuments { data, error in
+                guard let data = data,
+                      error == nil else {
+                    completion(nil,error)
+                    return
+                }
+                
+                for className in data.documents {
+                    listClass.append(className.documentID)
+                }
+                completion(listClass,nil)
+            }
+    }
+    
+    func getListStudent(completion: @escaping ([String]?, Error?) -> Void) {
+        var listStudent: [String] = []
+        database.collection(CollectionFireStore.profileCollection.rawValue)
+            .getDocuments { data, error in
+                guard let data = data,
+                      error == nil else {
+                    completion(nil,error)
+                    return
+                }
+                
+                
+                for studentId in data.documents {
+                    listStudent.append(studentId.documentID)
+                }
+                completion(listStudent,nil)
+            }
+    }
+    
 }
