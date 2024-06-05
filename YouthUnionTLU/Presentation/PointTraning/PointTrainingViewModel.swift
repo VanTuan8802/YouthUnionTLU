@@ -1,51 +1,52 @@
 //
-//  InformationStudentViewModel.swift
+//  PointTrainingViewModel.swift
 //  YouthUnionTLU
 //
-//  Created by VanTuan on 19/4/24.
+//  Created by Tuấn Nguyễn on 5/6/24.
 //
 
 import Foundation
 import FirebaseFirestore
 import FirebaseAuth
 
-struct InformationStudentActions {
+struct PointTrainingActions {
     let showSearchInformation: () -> Void
-    let showSetting: () -> Void
 }
 
-protocol InformationStudentViewModelInput {
+protocol PointTrainingViewModelInput {
     func viewDidLoad()
     func openSearchInformation()
-    func openSetting()
 }
 
-protocol InformationStudentViewModelOutput {
+protocol PointTrainingViewModelOutput {
     var error: Observable<String?> {get}
+    var listPoint: Observable<[PointTrainingYear]?> {get}
     var profileStudent: Observable<ProfileStudent?> {get}
 }
 
-protocol InformationStudentViewModel: InformationStudentViewModelInput, InformationStudentViewModelOutput {
+protocol PointTrainingViewModel: PointTrainingViewModelInput, PointTrainingViewModelOutput {
     
 }
 
-class DefaultInformationStudentViewModel: InformationStudentViewModel {
+class DefaultPointTrainingViewModel: PointTrainingViewModel {
+    
     private let uid = Auth.auth().currentUser?.uid
     
     var error: Observable<String?> = Observable(nil)
     var profileStudent: Observable<ProfileStudent?> = Observable(nil)
+    var listPoint: Observable<[PointTrainingYear]?> = Observable([])
     
-    private let actions: InformationStudentActions?
+    private let actions: PointTrainingActions?
     private let studentCode: String
     private let seachType: SearchType
     
-    init(actions: InformationStudentActions?, studentCode: String, searchType: SearchType) {
+    init(actions: PointTrainingActions?, studentCode: String, searchType: SearchType) {
         self.actions = actions
         self.studentCode = studentCode
         self.seachType = searchType
     }
     
-    init(actions: InformationStudentActions?, studentCode: String) {
+    init(actions: PointTrainingActions?, studentCode: String) {
         self.actions = actions
         self.studentCode = studentCode
         self.seachType = .searchInfomatioStudent
@@ -54,6 +55,8 @@ class DefaultInformationStudentViewModel: InformationStudentViewModel {
     func viewDidLoad() {
         if UserDefaultsData.shared.posision == Position.manager.rawValue {
             self.getDataStudent(studentCode: self.studentCode) {
+            }
+            self.getListPointTraining(studentCode: self.studentCode) {
             }
         } else {
             getDataStudent(studentCode: studentCode) {
@@ -64,6 +67,8 @@ class DefaultInformationStudentViewModel: InformationStudentViewModel {
                     } else {
                         self.getDataStudent(studentCode: self.studentCode) {
                         }
+                        self.getListPointTraining(studentCode: self.studentCode) {
+                        }
                     }
                 }
             }
@@ -71,10 +76,6 @@ class DefaultInformationStudentViewModel: InformationStudentViewModel {
     }
     
     func openSearchInformation() {
-        
-    }
-    
-    func openSetting() {
         
     }
     
@@ -95,4 +96,19 @@ class DefaultInformationStudentViewModel: InformationStudentViewModel {
             completion()
         }
     }
+    
+    private func getListPointTraining(studentCode: String, completion: @escaping () -> Void) {
+        FSUserClient.shared.getDataPointTraining(studentCode: studentCode) { listPoint, error in
+            guard let listPoint = listPoint,
+                  error == nil else {
+                self.error.value = error?.localizedDescription
+                completion()
+                return
+            }
+            print(listPoint)
+            self.listPoint.value = listPoint
+        }
+        completion()
+    }
 }
+

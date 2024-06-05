@@ -70,5 +70,4 @@ class PointTrainingTableViewCell: UITableViewCell {
             return "Kém"
         }
     }
-    
 }

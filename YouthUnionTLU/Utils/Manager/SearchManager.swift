@@ -20,15 +20,19 @@ class SearchManager {
                 return
             }
             
-            FSUserClient.shared.getListClass(uid: Auth.auth().currentUser?.uid ?? "") { classes, error in
-                guard let classes = classes,
-                      error == nil,
-                      let profileStudent = profileStudent else {
-                    completion(false)
-                    return
+            if UserDefaultsData.shared.posision == Position.member.rawValue {
+                completion(true)
+            } else {
+                FSUserClient.shared.getListClass(uid: Auth.auth().currentUser?.uid ?? "") { classes, error in
+                    guard let classes = classes,
+                          error == nil,
+                          let profileStudent = profileStudent else {
+                        completion(false)
+                        return
+                    }
+                    
+                    completion(classes.contains(profileStudent.className))
                 }
-                
-                completion(classes.contains(profileStudent.className))
             }
         }
     }
