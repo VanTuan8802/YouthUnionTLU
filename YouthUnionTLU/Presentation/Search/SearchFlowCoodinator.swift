@@ -15,7 +15,7 @@ protocol SearchFlowCoodinatorDependencies {
     
     func makeInformationStudentVC(actions: InformationStudentActions, studentCode: String) -> InformationStudentViewController
     
-    func makePointTrainingVC(actions: PointTrainingActions, studentCode: String) -> PointTraingViewController
+    func makePointTrainingVC(actions: PointTrainingActions, studentCode: String, searchType: SearchType) -> PointTraingViewController
 }
 
 final class SearchFlowCoodinator {
@@ -33,7 +33,9 @@ final class SearchFlowCoodinator {
                                           showSearchInformation: { searchType in
             self.showSearchInformation(searchType: searchType)
             
-        })
+        }, showMyScore: {
+            self.showPointTraining(studentCode: UserDefaultsData.shared.studentCode)
+        } )
         let vc = dependencies.makeSearchTabBarVC(actions: actions)
         navigationController?.viewControllers = [vc]
     }
@@ -52,7 +54,7 @@ final class SearchFlowCoodinator {
             navigationController: navigationController,
             appDIContainer: appDIContainer
         )
-
+        
         appFlowCoordinator.home()
     }
     
@@ -66,7 +68,7 @@ final class SearchFlowCoodinator {
             navigationController: navigationController,
             appDIContainer: appDIContainer
         )
-
+        
         appFlowCoordinator.setting()
     }
     
@@ -82,28 +84,32 @@ final class SearchFlowCoodinator {
         let actions = SearchInformationStudentActions(
             showInformationStudent: { studentCode in
                 self.showInformation(studentCode: studentCode)
-            }, 
+            },
             showPointTraining: {studentCode in
                 self.showPointTraining(studentCode: studentCode)
             },
-            showSearch: popSearchTabBar
+            showSearch: {
+                self.showPointTraining(studentCode: UserDefaultsData.shared.studentCode)
+            }
         )
+        
         let vc = dependencies.makeSearchInformation(actions: actions, searchType: searchType)
         navigationController?.pushViewController(vc, animated: true)
+        
     }
-
+    
     private func showInformation(studentCode: String) {
         let actions = InformationStudentActions(
             showSearchInformation: show,
             showSetting: show
         )
-       let vc = dependencies.makeInformationStudentVC(actions: actions, studentCode: studentCode)
+        let vc = dependencies.makeInformationStudentVC(actions: actions, studentCode: studentCode)
         navigationController?.pushViewController(vc, animated: true)
     }
-
+    
     private func showPointTraining(studentCode: String) {
         let actions = PointTrainingActions(showSearchInformation: show)
-        let vc = dependencies.makePointTrainingVC(actions: actions, studentCode: studentCode)
+        let vc = dependencies.makePointTrainingVC(actions: actions, studentCode: studentCode, searchType: .searchPointTraining)
         navigationController?.pushViewController(vc, animated: true)
     }
     

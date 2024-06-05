@@ -19,7 +19,7 @@ class PointTraingViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var majoyValue: UILabel!
     @IBOutlet weak var pointTrainingTableView: UITableView!
     
-    private var viewModel: PointTraingViewModel!
+    private var viewModel: PointTrainingViewModel!
     private var listPoint: [PointTrainingYear] = []
     private var profileStudent: ProfileStudent?
     
@@ -31,13 +31,13 @@ class PointTraingViewController: UIViewController, StoryboardInstantiable {
         setUI()
     }
     
-    class func create(with viewModel: PointTraingViewModel) -> PointTraingViewController {
+    class func create(with viewModel: PointTrainingViewModel) -> PointTraingViewController {
         let vc = PointTraingViewController.instantiateViewController()
         vc.viewModel = viewModel
         return vc
     }
     
-    private func bindData(to viewMoldel:PointTraingViewModel) {
+    private func bindData(to viewMoldel:PointTrainingViewModel) {
         viewMoldel.listPoint.observe(on: self) { listPoint in
             guard let listPoint = listPoint else {
                 return
@@ -81,6 +81,9 @@ class PointTraingViewController: UIViewController, StoryboardInstantiable {
         pointTrainingTableView.register(UINib(nibName: PointTrainingTableViewCell.className, bundle: nil ), forCellReuseIdentifier: PointTrainingTableViewCell.className)
     }
     
+    @IBAction func backAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 extension PointTraingViewController: UITableViewDataSource, UITableViewDelegate {
@@ -92,12 +95,8 @@ extension PointTraingViewController: UITableViewDataSource, UITableViewDelegate 
         let data = listPoint.reversed()[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: PointTrainingTableViewCell.className, for: indexPath) as! PointTrainingTableViewCell
-        cell.fetchData(pointTraning: data)
+        cell.fetchData(pointTraing: data)
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 153
     }
 }
 

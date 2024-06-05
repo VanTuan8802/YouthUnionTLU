@@ -37,8 +37,8 @@ class SearchDIContainer {
         DefaultInformationStudentViewModel(actions: actions, studentCode: studentCode)
     }
     
-    private func makePointTrainingVC(actions: PointTrainingActions, studentCode: String) -> PointTraingViewModel {
-        DefaultPointTraingViewModel(studentCode: studentCode, actions: actions)
+    private func makePointTrainingVC(actions: PointTrainingActions, studentCode: String) -> PointTrainingViewModel {
+        DefaultPointTrainingViewModel(actions: actions, studentCode: studentCode)
     }
 }
 
@@ -56,7 +56,7 @@ extension SearchDIContainer: SearchFlowCoodinatorDependencies {
         SearchInformationStudentViewController.create(with: makeSearchInformationVC(actions: actions, searchType: searchType))
     }
     
-    func makePointTrainingVC(actions: PointTrainingActions, studentCode: String) -> PointTraingViewController {
+    func makePointTrainingVC(actions: PointTrainingActions, studentCode: String, searchType: SearchType) -> PointTraingViewController {
         PointTraingViewController.create(with: makePointTrainingVC(actions: actions, studentCode: studentCode))
     }
     

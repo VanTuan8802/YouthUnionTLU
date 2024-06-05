@@ -67,7 +67,7 @@ class SettingTabBarViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func showInformationAction(_ sender: Any) {
-        viewModel.openInformation(studentCode: "1851061735")
+        viewModel.openInformation(studentCode: UserDefaultsData.shared.studentCode)
     }
     
     @IBAction func chageLanguageAction(_ sender: Any) {

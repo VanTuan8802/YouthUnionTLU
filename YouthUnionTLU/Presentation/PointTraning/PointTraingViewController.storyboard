@@ -43,6 +43,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="backAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ndh-yZ-YDe"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="Background"/>
@@ -171,28 +174,18 @@
                                             <constraint firstItem="rQX-3Z-6JB" firstAttribute="width" secondItem="qdJ-ws-VTg" secondAttribute="width" id="tPM-84-7JC"/>
                                         </constraints>
                                     </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="saa-h5-Dog">
-                                        <rect key="frame" x="24" y="48" width="313" height="1"/>
-                                        <color key="backgroundColor" name="343434"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="cnU-0v-r2a"/>
-                                        </constraints>
-                                    </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FlN-Lj-PWJ">
-                                        <rect key="frame" x="0.0" y="49" width="361" height="522.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="48" width="361" height="523.66666666666663"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="FlN-Lj-PWJ" firstAttribute="top" secondItem="E49-bY-Isv" secondAttribute="bottom" id="5aJ-gX-Iln"/>
                                     <constraint firstAttribute="bottom" secondItem="FlN-Lj-PWJ" secondAttribute="bottom" id="SXD-x4-Q0K"/>
                                     <constraint firstItem="E49-bY-Isv" firstAttribute="top" secondItem="9p0-qX-PLs" secondAttribute="top" id="T9L-fO-zk7"/>
                                     <constraint firstAttribute="trailing" secondItem="FlN-Lj-PWJ" secondAttribute="trailing" id="dkT-Md-Tmr"/>
-                                    <constraint firstItem="FlN-Lj-PWJ" firstAttribute="top" secondItem="saa-h5-Dog" secondAttribute="bottom" id="g8S-wA-dmR"/>
                                     <constraint firstItem="FlN-Lj-PWJ" firstAttribute="leading" secondItem="9p0-qX-PLs" secondAttribute="leading" id="gJV-PT-sXh"/>
-                                    <constraint firstItem="saa-h5-Dog" firstAttribute="top" secondItem="E49-bY-Isv" secondAttribute="bottom" id="h1P-ug-eC2"/>
-                                    <constraint firstAttribute="trailing" secondItem="saa-h5-Dog" secondAttribute="trailing" constant="24" id="ooR-q9-h2Q"/>
-                                    <constraint firstItem="saa-h5-Dog" firstAttribute="leading" secondItem="9p0-qX-PLs" secondAttribute="leading" constant="24" id="ruw-7K-bBA"/>
                                     <constraint firstAttribute="trailing" secondItem="E49-bY-Isv" secondAttribute="trailing" id="tLd-ga-u07"/>
                                     <constraint firstItem="E49-bY-Isv" firstAttribute="leading" secondItem="9p0-qX-PLs" secondAttribute="leading" id="v6e-1X-6vH"/>
                                 </constraints>
@@ -237,9 +230,6 @@
     </scenes>
     <resources>
         <image name="back" width="24" height="24"/>
-        <namedColor name="343434">
-            <color red="0.20392156862745098" green="0.20392156862745098" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Background">
             <color red="0.95294117647058818" green="0.96862745098039216" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

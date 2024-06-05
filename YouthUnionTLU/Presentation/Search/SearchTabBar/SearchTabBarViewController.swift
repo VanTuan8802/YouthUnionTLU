@@ -19,7 +19,7 @@ class SearchTabBarViewController: UIViewController, StoryboardInstantiable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        viewModel.viewDidLoad()
         self.tabBarSearch?.delegate = self
         setUI()
     }
@@ -48,7 +48,11 @@ class SearchTabBarViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func openSearchScore(_ sender: Any) {
-        viewModel.openSearchInformation(searchType: .searchPointTraining)
+        if UserDefaultsData.shared.posision == Position.member.rawValue {
+            viewModel.openMyScore()
+        } else {
+            viewModel.openSearchInformation(searchType: .searchPointTraining)
+        }
     }
     
     @IBAction func searchInformationStudent(_ sender: Any) {
