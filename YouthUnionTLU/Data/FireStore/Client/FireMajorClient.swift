@@ -10,7 +10,6 @@ import FirebaseFirestore
 
 class FSMajoyClient: MajorClient {
     
-    
     static let shared = FSMajoyClient()
     
     private let database = Firestore.firestore()
@@ -33,7 +32,6 @@ class FSMajoyClient: MajorClient {
                     } else if case let DecodingError.dataCorrupted(key) = error {
                         errorMessage = "\(error.localizedDescription): \(key)"
                     }
-                    print(errorMessage)
                     completion(nil, error)
                 }
             }
@@ -46,14 +44,12 @@ class FSMajoyClient: MajorClient {
         database.collection(CollectionFireStore.majores.rawValue)
             .getDocuments { snapShot, error in
                 if let error = error {
-                    print(error)
                     completion(nil, error)
                     return
                 }
                 
                 guard let snapShots = snapShot else {
                     let error = NSError(domain: "Snapshot Error", code: -1, userInfo: nil)
-                    print(error)
                     completion(nil, error)
                     return
                 }

@@ -10,6 +10,7 @@ import UIKit
 
 protocol HomeFlowCoodinatorDependencies {
     func makeHomeTabBarVC(actions: HomeTabBarActions) -> HomeTabBarViewController
+    func makePostVC(actions: PostActions, newId: String) -> PostViewController
 }
 
 final class HomeFlowCoodinator {
@@ -23,7 +24,10 @@ final class HomeFlowCoodinator {
     
     func home() {
         let actions = HomeTabBarActions(showSearchTabBar: showSearch,
-                                        showSettingTabBar: showSetting)
+                                        showSettingTabBar: showSetting, 
+                                        showPost: { newId in
+            self.showPostVc(newId: newId)
+        })
         let vc = dependencies.makeHomeTabBarVC(actions: actions)
         navigationController?.viewControllers = [vc]
     }
@@ -58,5 +62,11 @@ final class HomeFlowCoodinator {
         )
 
         appFlowCoordinator.setting()
+    }
+    
+    private func showPostVc(newId: String) {
+        let actions = PostActions(showSearchInformation: show)
+        let vc = dependencies.makePostVC(actions: actions, newId: newId)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

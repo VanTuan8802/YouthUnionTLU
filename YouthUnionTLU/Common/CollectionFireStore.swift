@@ -14,4 +14,6 @@ enum CollectionFireStore: String {
     case pointes = "pointes"
     case majores = "majores"
     case classes = "classes"
+    case new = "posts"
+    case listContent = "listContent"
 }

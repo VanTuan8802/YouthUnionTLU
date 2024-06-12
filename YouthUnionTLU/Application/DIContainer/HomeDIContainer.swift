@@ -28,6 +28,10 @@ class HomeDIContainer {
     func makeHomeTabBarvc(actions: HomeTabBarActions) -> HomeTabBarViewModel {
         DefaultHomeTabBarViewModel(actions: actions)
     }
+    
+    func makePostvc(actions: PostActions, newId: String) -> PostViewModel {
+        DefaultPostViewModel(actions: actions, newId: newId)
+    }
 }
 
 extension HomeDIContainer: HomeFlowCoodinatorDependencies {
@@ -35,4 +39,7 @@ extension HomeDIContainer: HomeFlowCoodinatorDependencies {
         HomeTabBarViewController.create(with: makeHomeTabBarvc(actions: actions))
     }
     
+    func makePostVC( actions: PostActions, newId: String) -> PostViewController {
+        PostViewController.create(with: makePostvc(actions: actions, newId: newId))
+    }
 }

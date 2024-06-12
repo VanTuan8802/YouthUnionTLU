@@ -83,6 +83,7 @@
 		AB07426B2BF707C900BE5308 /* InformationTwoViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0742692BF707C900BE5308 /* InformationTwoViewTableViewCell.swift */; };
 		AB07426C2BF707C900BE5308 /* InformationTwoViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB07426A2BF707C900BE5308 /* InformationTwoViewTableViewCell.xib */; };
 		AB07426E2BF70EF500BE5308 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB07426D2BF70EF500BE5308 /* GoogleService-Info.plist */; };
+		AB814E8D2C19E3A600DFC34E /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB814E8C2C19E3A600DFC34E /* AddPostViewController.swift */; };
 		AB9274782C0C5EE6003DE063 /* SearchType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9274772C0C5EE6003DE063 /* SearchType.swift */; };
 		AB92747A2C0C6862003DE063 /* PointTraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9274792C0C6862003DE063 /* PointTraining.swift */; };
 		AB92747D2C0C6BE3003DE063 /* PointTraingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB92747C2C0C6BE3003DE063 /* PointTraingViewController.swift */; };
@@ -90,6 +91,17 @@
 		AB9274A12C10A0E4003DE063 /* PointTrainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9274A02C10A0E4003DE063 /* PointTrainingViewModel.swift */; };
 		AB9274A52C10A61C003DE063 /* PointTrainingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9274A42C10A61C003DE063 /* PointTrainingTableViewCell.swift */; };
 		AB92755A2C10B188003DE063 /* PointTrainingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB9274A62C10A620003DE063 /* PointTrainingTableViewCell.xib */; };
+		AB92755E2C13FE54003DE063 /* NewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB92755C2C13FE54003DE063 /* NewTableViewCell.swift */; };
+		AB92755F2C13FE54003DE063 /* NewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB92755D2C13FE54003DE063 /* NewTableViewCell.xib */; };
+		AB9275662C15E44B003DE063 /* New.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9275652C15E44B003DE063 /* New.swift */; };
+		AB9275B42C173228003DE063 /* NewClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9275B32C173228003DE063 /* NewClient.swift */; };
+		AB9275B62C17329F003DE063 /* FSNewClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9275B52C17329F003DE063 /* FSNewClient.swift */; };
+		AB9275B82C1739AC003DE063 /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9275B72C1739AC003DE063 /* TimeConverter.swift */; };
+		AB9275BC2C173F10003DE063 /* PostViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB9275BB2C173F10003DE063 /* PostViewController.storyboard */; };
+		AB9275C02C173FDE003DE063 /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9275BE2C173FDE003DE063 /* ContentTableViewCell.swift */; };
+		AB9275C12C173FDE003DE063 /* ContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB9275BF2C173FDE003DE063 /* ContentTableViewCell.xib */; };
+		AB9275C32C17446D003DE063 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9275C22C17446D003DE063 /* PostViewModel.swift */; };
+		AB9275C52C174662003DE063 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9275C42C174662003DE063 /* PostViewController.swift */; };
 		ABC09C4C2BFE039A0036E786 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC09C492BFE039A0036E786 /* AppFlowCoordinator.swift */; };
 		ABC09C4D2BFE039A0036E786 /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC09C4A2BFE039A0036E786 /* AppAppearance.swift */; };
 		ABC09C4E2BFE039A0036E786 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC09C4B2BFE039A0036E786 /* AppDelegate.swift */; };
@@ -197,6 +209,7 @@
 		AB0742692BF707C900BE5308 /* InformationTwoViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationTwoViewTableViewCell.swift; sourceTree = "<group>"; };
 		AB07426A2BF707C900BE5308 /* InformationTwoViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InformationTwoViewTableViewCell.xib; sourceTree = "<group>"; };
 		AB07426D2BF70EF500BE5308 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AB814E8C2C19E3A600DFC34E /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		AB9274772C0C5EE6003DE063 /* SearchType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchType.swift; sourceTree = "<group>"; };
 		AB9274792C0C6862003DE063 /* PointTraining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTraining.swift; sourceTree = "<group>"; };
 		AB92747C2C0C6BE3003DE063 /* PointTraingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTraingViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +218,17 @@
 		AB9274A02C10A0E4003DE063 /* PointTrainingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTrainingViewModel.swift; sourceTree = "<group>"; };
 		AB9274A42C10A61C003DE063 /* PointTrainingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointTrainingTableViewCell.swift; sourceTree = "<group>"; };
 		AB9274A62C10A620003DE063 /* PointTrainingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointTrainingTableViewCell.xib; sourceTree = "<group>"; };
+		AB92755C2C13FE54003DE063 /* NewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTableViewCell.swift; sourceTree = "<group>"; };
+		AB92755D2C13FE54003DE063 /* NewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTableViewCell.xib; sourceTree = "<group>"; };
+		AB9275652C15E44B003DE063 /* New.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = New.swift; path = ../../../../../../../.Trash/YouthUnionTLU_IOS/YouthUnionTLU/Data/FireStore/Model/New.swift; sourceTree = "<group>"; };
+		AB9275B32C173228003DE063 /* NewClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewClient.swift; sourceTree = "<group>"; };
+		AB9275B52C17329F003DE063 /* FSNewClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSNewClient.swift; sourceTree = "<group>"; };
+		AB9275B72C1739AC003DE063 /* TimeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
+		AB9275BB2C173F10003DE063 /* PostViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostViewController.storyboard; sourceTree = "<group>"; };
+		AB9275BE2C173FDE003DE063 /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
+		AB9275BF2C173FDE003DE063 /* ContentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentTableViewCell.xib; sourceTree = "<group>"; };
+		AB9275C22C17446D003DE063 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		AB9275C42C174662003DE063 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		ABC09C492BFE039A0036E786 /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		ABC09C4A2BFE039A0036E786 /* AppAppearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		ABC09C4B2BFE039A0036E786 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -281,6 +305,7 @@
 				AA8826952BAABF46004A2FAC /* CheckValidate.swift */,
 				AA8826992BAAC0D3004A2FAC /* Alert.swift */,
 				AA8826C92BAC7283004A2FAC /* CustomStyleTabBarContentView.swift */,
+				AB9275B72C1739AC003DE063 /* TimeConverter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -478,6 +503,7 @@
 				AB0742602BF7054D00BE5308 /* Infomation.swift */,
 				ABC09C6A2C062D100036E786 /* Majoy.swift */,
 				AB9274792C0C6862003DE063 /* PointTraining.swift */,
+				AB9275652C15E44B003DE063 /* New.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -488,6 +514,7 @@
 				AA88268E2BAA6CC1004A2FAC /* FireAuthClient.swift */,
 				AA8826CB2BAC7536004A2FAC /* FSUserClient.swift */,
 				ABC09C6C2C062DA40036E786 /* FireMajorClient.swift */,
+				AB9275B52C17329F003DE063 /* FSNewClient.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -513,6 +540,8 @@
 		AA8826A22BAC3566004A2FAC /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				AB814E8B2C19E38E00DFC34E /* AddPost */,
+				AB9275672C15E901003DE063 /* PostView */,
 				AA8826B82BAC6F94004A2FAC /* HomeTabBar */,
 				AA8826CD2BAC7644004A2FAC /* HomeFlowCoodinator.swift */,
 			);
@@ -524,6 +553,7 @@
 			children = (
 				ABC09C6E2C062E140036E786 /* MajorClient.swift */,
 				AA8826A62BAC3858004A2FAC /* DataUserClient.swift */,
+				AB9275B32C173228003DE063 /* NewClient.swift */,
 			);
 			path = FireStore;
 			sourceTree = "<group>";
@@ -531,6 +561,7 @@
 		AA8826B82BAC6F94004A2FAC /* HomeTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				AB92755B2C13FE2A003DE063 /* NewTableViewCell */,
 				AA8826B92BAC6FAA004A2FAC /* HomeTabBarViewController.swift */,
 				AA8826C32BAC70B8004A2FAC /* HomeTabBarViewController.storyboard */,
 				AA8826CF2BAC76AC004A2FAC /* HomeTabBarViewModel.swift */,
@@ -641,6 +672,14 @@
 			path = InformationTwoViewCell;
 			sourceTree = "<group>";
 		};
+		AB814E8B2C19E38E00DFC34E /* AddPost */ = {
+			isa = PBXGroup;
+			children = (
+				AB814E8C2C19E3A600DFC34E /* AddPostViewController.swift */,
+			);
+			path = AddPost;
+			sourceTree = "<group>";
+		};
 		AB92747B2C0C6B91003DE063 /* PointTraning */ = {
 			isa = PBXGroup;
 			children = (
@@ -659,6 +698,35 @@
 				AB9274A62C10A620003DE063 /* PointTrainingTableViewCell.xib */,
 			);
 			path = PointTrainingCell;
+			sourceTree = "<group>";
+		};
+		AB92755B2C13FE2A003DE063 /* NewTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				AB92755C2C13FE54003DE063 /* NewTableViewCell.swift */,
+				AB92755D2C13FE54003DE063 /* NewTableViewCell.xib */,
+			);
+			path = NewTableViewCell;
+			sourceTree = "<group>";
+		};
+		AB9275672C15E901003DE063 /* PostView */ = {
+			isa = PBXGroup;
+			children = (
+				AB9275BD2C173FB4003DE063 /* ContentTableView */,
+				AB9275C42C174662003DE063 /* PostViewController.swift */,
+				AB9275BB2C173F10003DE063 /* PostViewController.storyboard */,
+				AB9275C22C17446D003DE063 /* PostViewModel.swift */,
+			);
+			path = PostView;
+			sourceTree = "<group>";
+		};
+		AB9275BD2C173FB4003DE063 /* ContentTableView */ = {
+			isa = PBXGroup;
+			children = (
+				AB9275BE2C173FDE003DE063 /* ContentTableViewCell.swift */,
+				AB9275BF2C173FDE003DE063 /* ContentTableViewCell.xib */,
+			);
+			path = ContentTableView;
 			sourceTree = "<group>";
 		};
 		ABC09C482BFE03850036E786 /* Application */ = {
@@ -788,6 +856,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA3B65762BCD39FB001C47F7 /* SF-Pro-Display-Heavy.otf in Resources */,
+				AB9275BC2C173F10003DE063 /* PostViewController.storyboard in Resources */,
 				AA8826842BAA68CD004A2FAC /* LoginViewController.storyboard in Resources */,
 				AA732F762B9F4EC5009EB608 /* LanguageTableViewCell.xib in Resources */,
 				AB07426C2BF707C900BE5308 /* InformationTwoViewTableViewCell.xib in Resources */,
@@ -801,9 +870,11 @@
 				AA3B65782BCD3BA0001C47F7 /* SF-Pro-Display-Semibold.otf in Resources */,
 				AB92747F2C0C6BEC003DE063 /* PointTraingViewController.storyboard in Resources */,
 				AB07426E2BF70EF500BE5308 /* GoogleService-Info.plist in Resources */,
+				AB9275C12C173FDE003DE063 /* ContentTableViewCell.xib in Resources */,
 				AA732F642B9F4530009EB608 /* Localizable.strings in Resources */,
 				AAC2064E2B9B625200BDFCF9 /* LaunchScreen.storyboard in Resources */,
 				AB92755A2C10B188003DE063 /* PointTrainingTableViewCell.xib in Resources */,
+				AB92755F2C13FE54003DE063 /* NewTableViewCell.xib in Resources */,
 				AA88269F2BAADC94004A2FAC /* ForgotPasswordViewController.storyboard in Resources */,
 				AA732F382B9D770A009EB608 /* SplashViewController.storyboard in Resources */,
 				AA3B65772BCD3B9D001C47F7 /* SF-Pro-Display-Regular.otf in Resources */,
@@ -885,6 +956,7 @@
 			files = (
 				AA732F552B9DF311009EB608 /* ExtentionNameable.swift in Sources */,
 				AB9274A12C10A0E4003DE063 /* PointTrainingViewModel.swift in Sources */,
+				AB9275C32C17446D003DE063 /* PostViewModel.swift in Sources */,
 				AA88269D2BAADC8A004A2FAC /* ForgotPasswordViewController.swift in Sources */,
 				AA732F5D2B9F432B009EB608 /* LanguageViewModel.swift in Sources */,
 				AA8826822BAA68C6004A2FAC /* LoginViewController.swift in Sources */,
@@ -901,7 +973,9 @@
 				AA8826802BAA6898004A2FAC /* AuthFlowCoodinator.swift in Sources */,
 				AA732F3A2B9D7723009EB608 /* SplashViewModel.swift in Sources */,
 				ABC09C782C088F600036E786 /* SearchManager.swift in Sources */,
+				AB9275B42C173228003DE063 /* NewClient.swift in Sources */,
 				ABC09C582BFE03B20036E786 /* HomeDIContainer.swift in Sources */,
+				AB9275B62C17329F003DE063 /* FSNewClient.swift in Sources */,
 				AADC74092BA3434A00406787 /* PermisstionViewModel.swift in Sources */,
 				AA8826A12BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift in Sources */,
 				AA8826982BAAC0B8004A2FAC /* ExtensionUIVc.swift in Sources */,
@@ -924,15 +998,19 @@
 				AA8826DC2BAC7B9C004A2FAC /* SettingFlowCoodinator.swift in Sources */,
 				AA8826B32BAC3ED7004A2FAC /* Manager.swift in Sources */,
 				ABC09C562BFE03B20036E786 /* AppDIContainer.swift in Sources */,
+				AB814E8D2C19E3A600DFC34E /* AddPostViewController.swift in Sources */,
 				AA8826A92BAC3872004A2FAC /* User.swift in Sources */,
 				AB92747D2C0C6BE3003DE063 /* PointTraingViewController.swift in Sources */,
 				AA8826862BAA68EE004A2FAC /* LoginViewModel.swift in Sources */,
 				AA3B65752BCD2EF4001C47F7 /* SetFont.swift in Sources */,
+				AB9275662C15E44B003DE063 /* New.swift in Sources */,
 				AA732F502B9DD3F2009EB608 /* StoryboardInstantiable.swift in Sources */,
 				AA8826962BAABF46004A2FAC /* CheckValidate.swift in Sources */,
 				ABC09C4C2BFE039A0036E786 /* AppFlowCoordinator.swift in Sources */,
 				AA8826D42BAC7857004A2FAC /* SearchTabBarViewModel.swift in Sources */,
 				AA8826D02BAC76AC004A2FAC /* HomeTabBarViewModel.swift in Sources */,
+				AB9275C52C174662003DE063 /* PostViewController.swift in Sources */,
+				AB9275B82C1739AC003DE063 /* TimeConverter.swift in Sources */,
 				ABC09C6F2C062E140036E786 /* MajorClient.swift in Sources */,
 				AA8826BA2BAC6FAA004A2FAC /* HomeTabBarViewController.swift in Sources */,
 				ABC09C6B2C062D100036E786 /* Majoy.swift in Sources */,
@@ -951,10 +1029,12 @@
 				AB0742612BF7054D00BE5308 /* Infomation.swift in Sources */,
 				ABC09C5A2BFE03B20036E786 /* SearchDIContainer.swift in Sources */,
 				AA61AD502BDAAB750097B8BA /* PositionStudent.swift in Sources */,
+				AB9275C02C173FDE003DE063 /* ContentTableViewCell.swift in Sources */,
 				ABC09C5D2BFE056B0036E786 /* SearchFlowCoodinator.swift in Sources */,
 				AA88269A2BAAC0D3004A2FAC /* Alert.swift in Sources */,
 				AA732F532B9DF2A7009EB608 /* ExtentionView.swift in Sources */,
 				AA8826A72BAC3858004A2FAC /* DataUserClient.swift in Sources */,
+				AB92755E2C13FE54003DE063 /* NewTableViewCell.swift in Sources */,
 				ABC09C5B2BFE03B20036E786 /* SettingDIContainer.swift in Sources */,
 				ABC09C732C06B2400036E786 /* MajorTableViewCell.swift in Sources */,
 				ABC09C592BFE03B20036E786 /* AuthenDIContainer.swift in Sources */,
