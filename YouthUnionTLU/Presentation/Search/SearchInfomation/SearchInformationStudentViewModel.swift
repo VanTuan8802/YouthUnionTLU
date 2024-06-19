@@ -67,7 +67,7 @@ extension DefaultSearchInformationStudentModel {
     }
     
     private func getListMajor(completion: @escaping () -> Void) {
-        FSMajoyClient.shared.getListMajoy { data, error in
+        FSMajoyClient.shared.getListMajor { data, error in
             guard let data = data,
                   error == nil else {
                 return

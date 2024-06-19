@@ -15,7 +15,6 @@ class PostViewController: UIViewController , StoryboardInstantiable{
     private var listContent: [ContentModel] = []
     private var viewModel: PostViewModel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()

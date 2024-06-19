@@ -32,6 +32,14 @@ class HomeDIContainer {
     func makePostvc(actions: PostActions, newId: String) -> PostViewModel {
         DefaultPostViewModel(actions: actions, newId: newId)
     }
+    
+    func makeAddPostVC(actions: AddPostViewActions) -> AddPostViewModel {
+        DefaultAddPostViewModel(actions: actions)
+    }
+    
+    func makeAddContentVC(actions: AddContentViewActions, new: NewModelMock) -> AddContentViewModel {
+        DefaultAddContentViewModel(actions: actions, new: new)
+    }
 }
 
 extension HomeDIContainer: HomeFlowCoodinatorDependencies {
@@ -41,5 +49,13 @@ extension HomeDIContainer: HomeFlowCoodinatorDependencies {
     
     func makePostVC( actions: PostActions, newId: String) -> PostViewController {
         PostViewController.create(with: makePostvc(actions: actions, newId: newId))
+    }
+    
+    func makeAddPostVC(actions: AddPostViewActions) -> AddPostViewController {
+        AddPostViewController.create(with: makeAddPostVC(actions: actions))
+    }
+    
+    func makeAddContentVC(actions: AddContentViewActions, new: NewModelMock) -> AddContentViewController {
+        AddContentViewController.create(with: makeAddContentVC(actions: actions, new: new))
     }
 }

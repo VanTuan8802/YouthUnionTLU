@@ -22,6 +22,7 @@ class UserDefaultsData {
         case hashPass
         case position
         case studentCode
+        case major
     }
     
     var language: LanguageType {
@@ -107,6 +108,15 @@ class UserDefaultsData {
         }
         set {
             data.set(newValue, forKey: Datakey.studentCode.rawValue)
+        }
+    }
+    
+    var major: String {
+        get {
+            data.string(forKey: Datakey.major.rawValue) ?? ""
+        }
+        set {
+            data.set(newValue, forKey: Datakey.major.rawValue)
         }
     }
 }

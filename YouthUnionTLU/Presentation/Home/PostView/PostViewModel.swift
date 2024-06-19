@@ -56,7 +56,8 @@ class DefaultPostViewModel: PostViewModel {
             return
         }
         
-        FSNewClient.shared.getListContent(newId: newId) { listContent, error in
+        FSNewClient.shared.getListContent(majorId: UserDefaultsData.shared.major,
+                                          newId: newId) { listContent, error in
             guard let listContent = listContent,
                   error == nil else {
                 completion()

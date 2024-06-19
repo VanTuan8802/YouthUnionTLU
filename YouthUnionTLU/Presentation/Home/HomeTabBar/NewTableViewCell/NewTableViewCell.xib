@@ -24,19 +24,22 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DJt-Y2-Dvg">
-                        <rect key="frame" x="0.0" y="8" width="376" height="250"/>
+                        <rect key="frame" x="0.0" y="8.0000000000000142" width="376" height="255.33333333333337"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="5gE-kI-mUV">
-                                <rect key="frame" x="0.0" y="8" width="376" height="154.66666666666666"/>
+                                <rect key="frame" x="0.0" y="8" width="376" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="HhL-gp-jxB"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diễn đàn quốc gia về thanh niên xung phong, thanh niên tình nguyện" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pJ-Te-nUl">
-                                <rect key="frame" x="28" y="170.66666666666666" width="320" height="38.333333333333343"/>
+                                <rect key="frame" x="16" y="176" width="344" height="38.333333333333343"/>
                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEg-kQ-7P8">
-                                <rect key="frame" x="28" y="221" width="42" height="21"/>
+                                <rect key="frame" x="16" y="226.33333333333334" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -44,20 +47,20 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="250" id="6x1-DX-IBy"/>
-                            <constraint firstItem="HEg-kQ-7P8" firstAttribute="leading" secondItem="DJt-Y2-Dvg" secondAttribute="leading" constant="28" id="7rY-2H-dhn"/>
+                            <constraint firstItem="HEg-kQ-7P8" firstAttribute="leading" secondItem="DJt-Y2-Dvg" secondAttribute="leading" constant="16" id="7rY-2H-dhn"/>
                             <constraint firstItem="5gE-kI-mUV" firstAttribute="leading" secondItem="DJt-Y2-Dvg" secondAttribute="leading" id="RWs-zA-14i"/>
                             <constraint firstAttribute="trailing" secondItem="5gE-kI-mUV" secondAttribute="trailing" id="U7z-rF-f4K"/>
-                            <constraint firstAttribute="trailing" secondItem="2pJ-Te-nUl" secondAttribute="trailing" constant="28" id="rRe-s5-G0x"/>
+                            <constraint firstAttribute="bottom" secondItem="HEg-kQ-7P8" secondAttribute="bottom" constant="8" id="hYB-j8-YmI"/>
+                            <constraint firstAttribute="trailing" secondItem="2pJ-Te-nUl" secondAttribute="trailing" constant="16" id="rRe-s5-G0x"/>
                             <constraint firstItem="HEg-kQ-7P8" firstAttribute="top" secondItem="2pJ-Te-nUl" secondAttribute="bottom" constant="12" id="si0-6e-XmY"/>
-                            <constraint firstItem="2pJ-Te-nUl" firstAttribute="leading" secondItem="DJt-Y2-Dvg" secondAttribute="leading" constant="28" id="tfG-NJ-Y4z"/>
+                            <constraint firstItem="2pJ-Te-nUl" firstAttribute="leading" secondItem="DJt-Y2-Dvg" secondAttribute="leading" constant="16" id="tfG-NJ-Y4z"/>
                             <constraint firstItem="5gE-kI-mUV" firstAttribute="top" secondItem="DJt-Y2-Dvg" secondAttribute="top" constant="8" id="uAL-DM-5QP"/>
-                            <constraint firstAttribute="bottom" secondItem="HEg-kQ-7P8" secondAttribute="bottom" constant="8" id="vZS-e6-nWh"/>
                             <constraint firstItem="2pJ-Te-nUl" firstAttribute="top" secondItem="5gE-kI-mUV" secondAttribute="bottom" constant="8" id="vbF-ZC-m2a"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="DJt-Y2-Dvg" secondAttribute="bottom" constant="8" id="1Re-CM-1jC"/>
                     <constraint firstItem="DJt-Y2-Dvg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="W4v-Ri-3Dd"/>
                     <constraint firstItem="DJt-Y2-Dvg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="fs8-ac-5cE"/>
                     <constraint firstAttribute="trailing" secondItem="DJt-Y2-Dvg" secondAttribute="trailing" id="pCL-Ac-BAY"/>

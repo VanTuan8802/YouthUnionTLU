@@ -14,7 +14,7 @@ class FSMajoyClient: MajorClient {
     
     private let database = Firestore.firestore()
     
-    func getDataMajoy(majorId: String, completion: @escaping (Major?, Error?) -> Void) {
+    func getDataMajor(majorId: String, completion: @escaping (Major?, Error?) -> Void) {
         self.database.collection(CollectionFireStore.majores.rawValue)
             .document(majorId)
             .getDocument(as: Major.self) { result in
@@ -37,7 +37,35 @@ class FSMajoyClient: MajorClient {
             }
     }
     
-    func getListMajoy(completion: @escaping ([Major]?, Error?) -> Void) {
+    func getListMajorId(completion: @escaping ([String]?, Error?) -> Void) {
+        var listMajorId: [String] = []
+        let dispatchGroup = DispatchGroup()
+        
+        database.collection(CollectionFireStore.majores.rawValue).getDocuments { snapshot, error in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            
+            guard let snapshot = snapshot else {
+                let error = NSError(domain: "Snapshot Error", code: -1, userInfo: nil)
+                completion(nil, error)
+                return
+            }
+            
+            for document in snapshot.documents {
+                dispatchGroup.enter()
+                listMajorId.append(document.documentID)
+                dispatchGroup.leave()
+            }
+            
+            dispatchGroup.notify(queue: .main) {
+                completion(listMajorId, nil)
+            }
+        }
+    }
+    
+    func getListMajor(completion: @escaping ([Major]?, Error?) -> Void) {
         var dataMajor: [Major] = []
         let dispatchGroup = DispatchGroup()
         
@@ -57,7 +85,7 @@ class FSMajoyClient: MajorClient {
                 for snapshot in snapShots.documents {
                     dispatchGroup.enter()
                     
-                    self.getDataMajoy(majorId: snapshot.documentID) { major, error in
+                    self.getDataMajor(majorId: snapshot.documentID) { major, error in
                         defer {
                             dispatchGroup.leave()
                         }

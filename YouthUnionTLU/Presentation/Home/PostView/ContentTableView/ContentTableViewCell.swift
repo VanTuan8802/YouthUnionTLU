@@ -21,8 +21,6 @@ class ContentTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-       
-    
     }
     
     func fetchData(content: ContentModel) {
@@ -52,7 +50,6 @@ class ContentTableViewCell: UITableViewCell {
             }
             textContentTv.isHidden = true
         } else {
-            print(content)
             guard let textContent = content.textContent else {
                 return
             }
