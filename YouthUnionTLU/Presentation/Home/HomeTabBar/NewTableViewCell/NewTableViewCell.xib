@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Medium.otf">
+            <string>SFProDisplay-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="373" id="KGk-i7-Jjw" customClass="NewTableViewCell" customModule="YouthUnionTLU" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="376" height="373"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="376" height="373"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DJt-Y2-Dvg">
+                        <rect key="frame" x="0.0" y="8.0000000000000142" width="376" height="255.33333333333337"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="5gE-kI-mUV">
+                                <rect key="frame" x="0.0" y="8" width="376" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="HhL-gp-jxB"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diễn đàn quốc gia về thanh niên xung phong, thanh niên tình nguyện" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pJ-Te-nUl">
+                                <rect key="frame" x="16" y="176" width="344" height="38.333333333333343"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEg-kQ-7P8">
+                                <rect key="frame" x="16" y="226.33333333333334" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HEg-kQ-7P8" firstAttribute="leading" secondItem="DJt-Y2-Dvg" secondAttribute="leading" constant="16" id="7rY-2H-dhn"/>
+                            <constraint firstItem="5gE-kI-mUV" firstAttribute="leading" secondItem="DJt-Y2-Dvg" secondAttribute="leading" id="RWs-zA-14i"/>
+                            <constraint firstAttribute="trailing" secondItem="5gE-kI-mUV" secondAttribute="trailing" id="U7z-rF-f4K"/>
+                            <constraint firstAttribute="bottom" secondItem="HEg-kQ-7P8" secondAttribute="bottom" constant="8" id="hYB-j8-YmI"/>
+                            <constraint firstAttribute="trailing" secondItem="2pJ-Te-nUl" secondAttribute="trailing" constant="16" id="rRe-s5-G0x"/>
+                            <constraint firstItem="HEg-kQ-7P8" firstAttribute="top" secondItem="2pJ-Te-nUl" secondAttribute="bottom" constant="12" id="si0-6e-XmY"/>
+                            <constraint firstItem="2pJ-Te-nUl" firstAttribute="leading" secondItem="DJt-Y2-Dvg" secondAttribute="leading" constant="16" id="tfG-NJ-Y4z"/>
+                            <constraint firstItem="5gE-kI-mUV" firstAttribute="top" secondItem="DJt-Y2-Dvg" secondAttribute="top" constant="8" id="uAL-DM-5QP"/>
+                            <constraint firstItem="2pJ-Te-nUl" firstAttribute="top" secondItem="5gE-kI-mUV" secondAttribute="bottom" constant="8" id="vbF-ZC-m2a"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="DJt-Y2-Dvg" secondAttribute="bottom" constant="8" id="1Re-CM-1jC"/>
+                    <constraint firstItem="DJt-Y2-Dvg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="W4v-Ri-3Dd"/>
+                    <constraint firstItem="DJt-Y2-Dvg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="fs8-ac-5cE"/>
+                    <constraint firstAttribute="trailing" secondItem="DJt-Y2-Dvg" secondAttribute="trailing" id="pCL-Ac-BAY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imageNew" destination="5gE-kI-mUV" id="6YV-GB-XXD"/>
+                <outlet property="timeCreate" destination="HEg-kQ-7P8" id="29r-fw-bP4"/>
+                <outlet property="titleNew" destination="2pJ-Te-nUl" id="4kj-2T-NNs"/>
+            </connections>
+            <point key="canvasLocation" x="-73.282442748091597" y="45.422535211267608"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="splash" width="393" height="412"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

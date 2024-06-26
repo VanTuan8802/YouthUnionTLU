@@ -45,107 +45,43 @@ class PermissionViewController: UIViewController, StoryboardInstantiable {
         notificationPermission.text = R.stringLocalizable.permissionNotifications()
         goBtn.setTitle(R.stringLocalizable.buttonGo(), for: .normal)
         
-        photoSwitch.isOn = checkPhotoLibraryPermission()
-        cameraSwitch.isOn = checkCameraPermission()
-        notificationSwitch.isOn = checkNotificationPermission()
+        photoSwitch.isOn = PermissionManager.shared.checkPhotoLibraryPermission()
+        cameraSwitch.isOn = PermissionManager.shared.checkCameraPermission()
+        notificationSwitch.isOn = PermissionManager.shared.checkNotificationPermission()
+
     }
     
     @IBAction func photoPermisionChangeValue(_ sender: UISwitch) {
         if sender.isOn {
-            requestPhotoLibraryPermission()
+            PermissionManager.shared.requestPhotoLibraryPermission { result in
+                DispatchQueue.main.async {
+                    self.photoSwitch.isOn = result
+                }
+            }
         }
     }
     
     @IBAction func cameraPermissionChangeValue(_ sender: UISwitch) {
         if sender.isOn {
-            requestCameraPermission()
+            PermissionManager.shared.requestCameraPermission { result in
+                DispatchQueue.main.async {
+                    self.cameraSwitch.isOn = result
+                }
+            }
         }
     }
     
     @IBAction func notificationsPermissionChangeValue(_ sender: UISwitch) {
         if sender.isOn {
-            requestNotificationPermission()
+            PermissionManager.shared.requestNotificationPermission { result in
+                DispatchQueue.main.async {
+                    self.notificationSwitch.isOn = result
+                }
+            }
         }
     }
     
     @IBAction func goAction(_ sender: Any) {
         viewModel.openLogin()
-    }
-}
-
-extension PermissionViewController {
-    func checkPhotoLibraryPermission() -> Bool {
-        let status = PHPhotoLibrary.authorizationStatus()
-        return status == .authorized || status == .limited
-    }
-    
-    func requestPhotoLibraryPermission() {
-        let status = PHPhotoLibrary.authorizationStatus()
-        DispatchQueue.main.async {
-            self.photoSwitch.isOn = (status == .authorized || status == .limited)
-            
-            if status == .notDetermined {
-                PHPhotoLibrary.requestAuthorization { _ in
-                    DispatchQueue.main.async {
-                        self.photoSwitch.isOn = (PHPhotoLibrary.authorizationStatus() == .authorized)
-                    }
-                }
-            }
-        }
-    }
-
-    func checkCameraPermission() -> Bool {
-        return AVCaptureDevice.authorizationStatus(for: .video) == .authorized
-    }
-    
-    func requestCameraPermission() {
-        AVCaptureDevice.requestAccess(for: .video) { granted in
-            DispatchQueue.main.async {
-                if granted {
-                    self.cameraSwitch.isOn = true
-
-                } else {
-                    self.cameraSwitch.isOn = false
-                }
-            }
-        }
-    }
-
-    func checkNotificationPermission() -> Bool {
-        let current = UNUserNotificationCenter.current()
-        var isAuthorized = false
-        
-        let semaphore = DispatchSemaphore(value: 0)
-        
-        current.getNotificationSettings { settings in
-            if settings.authorizationStatus == .authorized {
-                isAuthorized = true
-            }
-            semaphore.signal()
-        }
-        
-        semaphore.wait()
-        return isAuthorized
-    }
-    
-    func requestNotificationPermission() {
-        let center = UNUserNotificationCenter.current()
-        let options: UNAuthorizationOptions = [.alert, .badge, .sound]
-        
-        center.requestAuthorization(options: options) { granted, error in
-            DispatchQueue.main.async {
-                if granted {
-                    self.notificationSwitch.isOn = true
-                    print("Notification permission granted.")
-                } else {
-                    self.notificationSwitch.isOn = false
-                    if let error = error {
-                        print("Notification permission denied: \(error.localizedDescription)")
-                    } else {
-                        print("Notification permission denied: Unknown error.")
-                    }
-                }
-            }
-        }
     }
 }

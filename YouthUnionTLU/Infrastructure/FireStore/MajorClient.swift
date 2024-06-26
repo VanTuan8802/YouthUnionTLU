@@ -8,6 +8,7 @@
 import Foundation
 
 protocol MajorClient {
-    func getListMajoy(completion: @escaping([Major]?,Error?) -> Void)
-    func getDataMajoy(majorId: String, completion: @escaping(Major?,Error?) -> Void)
+    func getListMajor(completion: @escaping([Major]?,Error?) -> Void)
+    func getDataMajor(majorId: String, completion: @escaping(Major?,Error?) -> Void)
+    func getListMajorId(completion: @escaping([String]?,Error?) -> Void)
 }

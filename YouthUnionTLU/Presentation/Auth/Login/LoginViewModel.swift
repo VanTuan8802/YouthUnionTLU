@@ -73,6 +73,8 @@ extension DefaultLoginViewModel {
                 if positionStudent.position == Position.member.rawValue {
                     UserDefaultsData.shared.studentCode = positionStudent.student_Code ?? ""
                 }
+                
+                UserDefaultsData.shared.major = positionStudent.majorId ?? ""
 
                 LoadingView.hide()
                 UserDefaultsData.shared.showLogin = true
