@@ -8,17 +8,17 @@
 import Foundation
 
 struct AddPostViewActions {
-    let showAddContent:(NewModelMock) -> Void
+    let showAddContent:(PostMock) -> Void
 }
 
 protocol AddPostViewModelInput {
     func viewDidload()
-    func openAddContent(new: NewModelMock)
+    func openAddContent(post: PostMock)
 }
 
 protocol AddPostViewModelOutPut {
     var error: Observable<String?> {get}
-  
+    var postTypeValue: Observable<PostType?> {get}
 }
 
 protocol AddPostViewModel: AddPostViewModelInput, AddPostViewModelOutPut {
@@ -27,21 +27,23 @@ protocol AddPostViewModel: AddPostViewModelInput, AddPostViewModelOutPut {
 
 class DefaultAddPostViewModel: AddPostViewModel {
     
+    var postTypeValue: Observable<PostType?> = Observable(nil)
     var error: Observable<String?> = Observable(nil)
     
     private var actions: AddPostViewActions
+    private var postType: PostType
     
-    
-    init(actions: AddPostViewActions) {
+    init(actions: AddPostViewActions, postType: PostType) {
         self.actions = actions
+        self.postType = postType
     }
     
     func viewDidload() {
-        
+        postTypeValue.value = postType
     }
     
-    func openAddContent(new: NewModelMock) {
-        actions.showAddContent(new)
+    func openAddContent(post: PostMock) {
+        actions.showAddContent(post)
     }
     
 }

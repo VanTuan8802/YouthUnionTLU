@@ -8,17 +8,13 @@
 import Foundation
 import FirebaseFirestore
 
-protocol NewClient {
+protocol PostClient {
     associatedtype T
     
-    func getNews(majorId: String, completion: @escaping ([NewModel]?,Error?) -> Void)
+    func getPosts(majorId: String, postType: PostType, completion: @escaping ([PostModel]?,Error?) -> Void)
     
-    func getListContent(majorId: String, newId: String, completion: @escaping ([ContentModel]?,Error?) -> Void)
+    func createPost(path: String, post: PostMock, pathImage: String, listContent: [ContentMock], completion: @escaping (Error?) -> Void)
     
-    func getListPostActivity(major: String, completion: @escaping ([ActivityModel]?,Error?) -> Void)
-    
-    func createNew(path: String, new: NewModelMock, pathImage: String, listContent: [ContentModelMock], completion: @escaping (Error?) -> Void)
-    
-    func createNewStorage(new: NewModelMock, completion: @escaping (String?, Error?) -> Void) 
+    func createPostStorage(post: PostMock, completion: @escaping (String?, Error?) -> Void)
     
 }

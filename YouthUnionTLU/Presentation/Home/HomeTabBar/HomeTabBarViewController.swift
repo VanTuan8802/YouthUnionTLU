@@ -8,7 +8,7 @@
 import UIKit
 
 enum ActionType {
-    case new, event, libriay
+    case new, activity, libriay
 }
 
 class HomeTabBarViewController: UIViewController, StoryboardInstantiable {
@@ -23,12 +23,16 @@ class HomeTabBarViewController: UIViewController, StoryboardInstantiable {
     private var viewModel: HomeTabBarViewModel!
     
     private var position: Position?
+    private var postType: PostType = .new
+    
     private var actionType = ActionType.new {
         didSet {
             switch actionType {
             case .new:
+                postType = .new
                 break
-            case .event:
+            case .activity:
+                postType = .activity
                 break
             case .libriay:
                 break
@@ -38,8 +42,8 @@ class HomeTabBarViewController: UIViewController, StoryboardInstantiable {
         }
     }
     
-    private var listNew: [NewModel] = []
-    private var listPostActivity:[ActivityModel] = []
+    private var listNew: [PostModel] = []
+    private var listPostActivity:[PostModel] = []
     private var listDocumnet: [DocumnetModel] = []
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,7 +90,7 @@ class HomeTabBarViewController: UIViewController, StoryboardInstantiable {
             }
         }
         
-        viewModel.listNew.observe(on: self) { listNew in
+        viewModel.listPostNews.observe(on: self) { listNew in
             guard let listNew = listNew else {
                 return
             }
@@ -121,7 +125,8 @@ class HomeTabBarViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func eventAction(_ sender: Any) {
-        actionType = .event
+        actionType = .activity
+        postType = .activity
         newsTableView.reloadData()
     }
     
@@ -134,7 +139,7 @@ class HomeTabBarViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func addPostAction(_ sender: Any) {
-        viewModel.openAddPost()
+        viewModel.openAddPost(postType: postType)
     }
 }
 
@@ -155,7 +160,7 @@ extension HomeTabBarViewController: UITableViewDataSource, UITableViewDelegate {
         switch actionType {
         case .new:
             return listNew.count
-        case .event:
+        case .activity:
             return listPostActivity.count
         case .libriay:
             return listDocumnet.count
@@ -168,7 +173,7 @@ extension HomeTabBarViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: NewTableViewCell.className, for: indexPath) as! NewTableViewCell
             cell.fetchData(new: listNew[indexPath.row])
             return cell
-        case .event:
+        case .activity:
             let cell = tableView.dequeueReusableCell(withIdentifier: PostActivityTableViewCell.className, for: indexPath) as! PostActivityTableViewCell
             cell.fetchData(postActivity: listPostActivity[indexPath.row])
             return cell
@@ -180,6 +185,7 @@ extension HomeTabBarViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.openPost(newId: listNew[indexPath.row].id ?? "")
+        viewModel.openPost(newId: listNew[indexPath.row].id ?? "",
+                           postType: postType ?? .new)
     }
 }

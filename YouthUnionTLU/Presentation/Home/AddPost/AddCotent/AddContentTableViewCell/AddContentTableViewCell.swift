@@ -23,7 +23,7 @@ class AddContentTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func fetchData(content: ContentModelMock) {
+    func fetchData(content: ContentMock) {
         if content.contentType == .image {
             guard let image = content.imageContent else { return }
             

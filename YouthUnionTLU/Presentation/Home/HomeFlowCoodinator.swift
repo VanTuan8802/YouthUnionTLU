@@ -10,9 +10,9 @@ import UIKit
 
 protocol HomeFlowCoodinatorDependencies {
     func makeHomeTabBarVC(actions: HomeTabBarActions) -> HomeTabBarViewController
-    func makePostVC(actions: PostActions, newId: String) -> PostViewController
-    func makeAddPostVC(actions: AddPostViewActions) -> AddPostViewController
-    func makeAddContentVC(actions: AddContentViewActions, new: NewModelMock) -> AddContentViewController
+    func makePostVC(actions: PostActions, newId: String, postType: PostType) -> PostViewController
+    func makeAddPostVC(actions: AddPostViewActions, postType: PostType) -> AddPostViewController
+    func makeAddContentVC(actions: AddContentViewActions, post: PostMock) -> AddContentViewController
 }
 
 final class HomeFlowCoodinator {
@@ -27,9 +27,14 @@ final class HomeFlowCoodinator {
     func home() {
         let actions = HomeTabBarActions(showSearchTabBar: showSearch,
                                         showSettingTabBar: showSetting,
-                                        showPost: { newId in
-            self.showPostVc(newId: newId)},
-                                        showAddPost: showAddPost)
+                                        showPost: { newId,postType  in
+            self.showPostVc(newId: newId,
+                            postType: postType)
+        },
+                                        showAddPost:{ postType in
+            self.showAddPost(postType: postType)
+        }
+        )
         let vc = dependencies.makeHomeTabBarVC(actions: actions)
         navigationController?.viewControllers = [vc]
     }
@@ -66,34 +71,37 @@ final class HomeFlowCoodinator {
         appFlowCoordinator.setting()
     }
     
-    private func showPostVc(newId: String) {
+    private func showPostVc(newId: String,postType: PostType) {
         let actions = PostActions(showSearchInformation: show)
-        let vc = dependencies.makePostVC(actions: actions, newId: newId)
+        let vc = dependencies.makePostVC(actions: actions,
+                                         newId: newId,
+                                         postType: postType)
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    private func showAddPost() {
-        let actions = AddPostViewActions(showAddContent: { new in
-            self.showAddContent(new: new)
+    private func showAddPost(postType: PostType) {
+        let actions = AddPostViewActions(showAddContent: { post   in
+            self.showAddContent(post: post, postType: postType)
         })
-        let vc = dependencies.makeAddPostVC(actions: actions)
+        let vc = dependencies.makeAddPostVC(actions: actions, postType: postType)
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    private func showAddContent(new: NewModelMock) {
+    private func showAddContent(post: PostMock, postType: PostType) {
         let actions = AddContentViewActions(showHome:{ listContent in
             self.backToHome(listContent: listContent)
             
         } )
-        let vc = dependencies.makeAddContentVC(actions: actions, new: new)
+        let vc = dependencies.makeAddContentVC(actions: actions, post: post)
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    private func backToHome(listContent: [ContentModelMock]) {
+    private func backToHome(listContent: [ContentMock]) {
         let actions = HomeTabBarActions(showSearchTabBar: showSearch,
                                         showSettingTabBar: showSetting,
-                                        showPost: { newId in
-            self.showPostVc(newId: newId)},
+                                        showPost: { newId, postType in
+            self.showPostVc(newId: newId,
+                            postType: postType)},
                                         showAddPost: showAddPost)
         let vc = dependencies.makeHomeTabBarVC(actions: actions)
         navigationController?.viewControllers = [vc]

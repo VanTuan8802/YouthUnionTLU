@@ -8,20 +8,22 @@
 import Foundation
 import FirebaseFirestoreInternal
 
-class FSNewClient: NewClient {
+class FSPostClient: PostClient {
     
-    typealias T = NewModel
+    typealias T = PostModel
     
-    static let shared = FSNewClient()
+    static let shared = FSPostClient()
     
     private let database = Firestore.firestore()
     
-    func getNews(majorId: String,
-                 completion: @escaping ([NewModel]?, Error?) -> Void) {
-        var listNews: [NewModel] = []
+    func getPosts(majorId: String,
+                  postType: PostType,
+                  completion: @escaping ([PostModel]?, Error?) -> Void) {
+        var listNews: [PostModel] = []
         let dispatchGroup = DispatchGroup()
         
-        self.database.collection("\(CollectionFireStore.new.rawValue)_\(majorId)")
+        self.database.collection("\(postType)_\(majorId)")
+            .limit(to: 50)
             .addSnapshotListener { snapShot, error in
                 if let error = error {
                     completion(nil, error)
@@ -39,7 +41,9 @@ class FSNewClient: NewClient {
                 for snapshot in snapShots.documents {
                     dispatchGroup.enter()
                     
-                    self.getNew(majorId: majorId, newId: snapshot.documentID) { new, error in
+                    self.getPost(posType: postType,
+                                 majorId: majorId,
+                                 postId: snapshot.documentID) { new, error in
                         defer {
                             dispatchGroup.leave()
                         }
@@ -58,73 +62,42 @@ class FSNewClient: NewClient {
             }
     }
     
-    func getListPostActivity(major: String,
-                             completion: @escaping ([ActivityModel]?, Error?) -> Void) {
-        var listPostActivity:[ActivityModel] = []
+    func createPost(path: String,
+                    post : PostMock,
+                    pathImage: String,
+                    listContent: [ContentMock],
+                    completion: @escaping (Error?) -> Void) {
         let dispatchGroup = DispatchGroup()
         
-        self.database.collection("\(CollectionFireStore.activities.rawValue)_\(major)")
-            .limit(to: 50)
-            .addSnapshotListener { snapShot, error in
-                if let error = error {
-                    completion(nil, error)
-                    return
-                }
-                
-                guard let snapShots = snapShot else {
-                    let error = NSError(domain: "Snapshot Error", code: -1, userInfo: nil)
-                    completion(nil, error)
-                    return
-                }
-                
-                listPostActivity.removeAll()
-                
-                for snapshot in snapShots.documents {
-                    dispatchGroup.enter()
-                    
-                    self.getPostActivity(major: major,
-                                         postActivityId: snapshot.documentID) { postActivity, error in
-                        defer {
-                            dispatchGroup.leave()
-                        }
-                        
-                        if let postActivity = postActivity {
-                            listPostActivity.append(postActivity)
-                        } else if let error = error {
-                            print("Error fetching news: \(error)")
-                        }
-                    }
-                }
-                
-                dispatchGroup.notify(queue: .main) {
-                    completion(listPostActivity, nil)
-                }
-            }
-    }
-    
-    func createNew(path: String,
-                   new: NewModelMock,
-                   pathImage: String,
-                   listContent: [ContentModelMock],
-                   completion: @escaping (Error?) -> Void) {
-        let dispatchGroup = DispatchGroup()
-        
-        guard let newId = new.id else {
+        guard let postId = post.id else {
             completion(NSError(domain: "NewModelMock",
                                code: -1,
                                userInfo: [NSLocalizedDescriptionKey: "Invalid NewModelMock id"]))
             return
         }
         
+        var postModel: PostModel
         
-        let newModel = NewModel(imageNew: pathImage,
-                                title: new.title,
-                                timeCreate: new.timeCreate)
+        if post.postType == .new {
+            postModel = PostModel(imageNew: pathImage,
+                                  title: post.title,
+                                  timeCreate: post.timeCreate,
+                                  postType: post.postType)
+        } else {
+            postModel = PostModel(imageNew: pathImage,
+                                  title: post.title,
+                                  timeCreate: post.timeCreate,
+                                  postType: post.postType,
+                                  address: post.address,
+                                  timeStartActivy: post.timeStart,
+                                  timeChecIn: post.timeCheckIn,
+                                  qrCode: post.qrText)
+        }
         
         
         database.collection(path)
-            .document(newId)
-            .setData(newModel.dictionary, completion: { error in
+            .document(postId)
+            .setData(postModel.dictionary, completion: { error in
                 if let error = error {
                     print("Failed to set data: \(error.localizedDescription)")
                     completion(error)
@@ -143,7 +116,9 @@ class FSNewClient: NewClient {
                     textContent: content.textContent,
                     contentType: .text
                 )
-                self.addContent(path: path, newId: newId, content: contentModel) { error in
+                self.addContent(path: path, 
+                                postId: postId,
+                                content: contentModel) { error in
                     if let error = error {
                         print("Failed to add text content: \(error.localizedDescription)")
                     }
@@ -158,7 +133,8 @@ class FSNewClient: NewClient {
                     return
                 }
                 
-                FSStorageClient.shared.uploadImage(image: image, path: "\(CollectionFireStore.new.rawValue)\(newId)") { result in
+                FSStorageClient.shared.uploadImage(image: image,
+                                                   path: "\(post.postType)\(postId)") { result in
                     switch result {
                     case .success(let downloadURL):
                         let contentModel = ContentModel(
@@ -166,7 +142,9 @@ class FSNewClient: NewClient {
                             imageContent: downloadURL,
                             contentType: .image
                         )
-                        self.addContent(path: path, newId: newId, content: contentModel) { error in
+                        self.addContent(path: path,
+                                        postId: postId,
+                                        content: contentModel) { error in
                             if let error = error {
                                 print("Failed to add image content: \(error.localizedDescription)")
                             }
@@ -186,14 +164,14 @@ class FSNewClient: NewClient {
         }
     }
     
-    func createNewStorage(new: NewModelMock,
-                          completion: @escaping (String?, Error?) -> Void) {
+    func createPostStorage(post: PostMock,
+                           completion: @escaping (String?, Error?) -> Void) {
         let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
         
         FSStorageClient.shared.uploadImage(
-            image: new.imageNew,
-            path: "\(CollectionFireStore.new.rawValue)/\(String(describing: new.id))",
+            image: post.imageNew,
+            path: "\(post.postType)/\(String(describing: post.id))",
             completion: { result in
                 dispatchGroup.leave()
                 switch result {
@@ -208,11 +186,11 @@ class FSNewClient: NewClient {
     }
     
     private func addContent(path:String,
-                            newId: String,
+                            postId: String,
                             content: ContentModel,
                             completion: @escaping (Error?) -> Void ) {
         self.database.collection(path)
-            .document(newId)
+            .document(postId)
             .collection(CollectionFireStore.listContent.rawValue)
             .addDocument(data: content.dictionary) { error in
                 
@@ -221,13 +199,14 @@ class FSNewClient: NewClient {
     }
     
     func getListContent(majorId: String,
-                        newId: String,
+                        postType: PostType,
+                        postId: String,
                         completion: @escaping ([ContentModel]?, Error?) -> Void) {
         var listContent:[ContentModel] = []
         let dispatchGroup = DispatchGroup()
         
         self.database.collection("\(CollectionFireStore.new.rawValue)_\(majorId)")
-            .document(newId)
+            .document(postId)
             .collection(CollectionFireStore.listContent.rawValue)
             .getDocuments { snapShot, error in
                 if let error = error {
@@ -244,7 +223,7 @@ class FSNewClient: NewClient {
                 for snapshot in snapShots.documents {
                     dispatchGroup.enter()
                     
-                    self.getContent(newId: newId,
+                    self.getContent(postId: postId,
                                     contentId: snapshot.documentID) { content, error in
                         defer {
                             dispatchGroup.leave()
@@ -264,12 +243,13 @@ class FSNewClient: NewClient {
             }
     }
     
-    private func getNew(majorId: String,
-                        newId: String,
-                        completion: @escaping (NewModel?, Error?) -> Void) {
-        self.database.collection("\(CollectionFireStore.new.rawValue)_\(majorId)")
-            .document(newId)
-            .getDocument(as: NewModel.self) { result in
+    private func getPost(posType: PostType,
+                         majorId: String,
+                         postId: String,
+                         completion: @escaping (PostModel?, Error?) -> Void) {
+        self.database.collection("\(posType)_\(majorId)")
+            .document(postId)
+            .getDocument(as: PostModel.self) { result in
                 switch result {
                 case .success(let data):
                     completion(data, nil)
@@ -289,10 +269,11 @@ class FSNewClient: NewClient {
             }
     }
     
-    private func getContent(newId: String,
-                            contentId: String, completion: @escaping (ContentModel?, Error?) -> Void) {
+    private func getContent(postId: String,
+                            contentId: String,
+                            completion: @escaping (ContentModel?, Error?) -> Void) {
         self.database.collection(CollectionFireStore.new.rawValue)
-            .document(newId)
+            .document(postId)
             .collection(CollectionFireStore.listContent.rawValue)
             .document(contentId)
             .getDocument(as: ContentModel.self) { result in
@@ -315,8 +296,9 @@ class FSNewClient: NewClient {
             }
     }
     
-    private func getPostActivity(major: String,postActivityId: String
-                                 , completion: @escaping (ActivityModel?,Error?) -> Void) {
+    private func getPostActivity(major: String,
+                                 postActivityId: String,
+                                 completion: @escaping (ActivityModel?,Error?) -> Void) {
         self.database.collection("\(CollectionFireStore.activities.rawValue)_\(major)")
             .document(postActivityId)
             .getDocument(as: ActivityModel.self) { result in

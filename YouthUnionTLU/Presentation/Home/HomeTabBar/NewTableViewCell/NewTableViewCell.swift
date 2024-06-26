@@ -24,7 +24,7 @@ class NewTableViewCell: UITableViewCell {
    
     }
     
-    func fetchData(new: NewModel) {
+    func fetchData(new: PostModel) {
         imageNew.kf.setImage(with: URL(string: new.imageNew))
         titleNew.text = new.title
         timeCreate.text = convertTimestampToString(timestamp: new.timeCreate)

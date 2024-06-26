@@ -29,33 +29,39 @@ class HomeDIContainer {
         DefaultHomeTabBarViewModel(actions: actions)
     }
     
-    func makePostvc(actions: PostActions, newId: String) -> PostViewModel {
-        DefaultPostViewModel(actions: actions, newId: newId)
+    func makePostvc(actions: PostActions, newId: String, postType: PostType) -> PostViewModel {
+        DefaultPostViewModel(actions: actions,
+                             newId: newId,
+                             postType: postType)
     }
     
-    func makeAddPostVC(actions: AddPostViewActions) -> AddPostViewModel {
-        DefaultAddPostViewModel(actions: actions)
+    func makeAddPostVC(actions: AddPostViewActions,postType: PostType) -> AddPostViewModel {
+        DefaultAddPostViewModel(actions: actions, postType: postType)
     }
     
-    func makeAddContentVC(actions: AddContentViewActions, new: NewModelMock) -> AddContentViewModel {
-        DefaultAddContentViewModel(actions: actions, new: new)
+    func makeAddContentVC(actions: AddContentViewActions, post: PostMock) -> AddContentViewModel {
+        DefaultAddContentViewModel(actions: actions,
+                                   post: post)
     }
 }
 
 extension HomeDIContainer: HomeFlowCoodinatorDependencies {
+    
     func makeHomeTabBarVC(actions: HomeTabBarActions) -> HomeTabBarViewController {
         HomeTabBarViewController.create(with: makeHomeTabBarvc(actions: actions))
     }
     
-    func makePostVC( actions: PostActions, newId: String) -> PostViewController {
-        PostViewController.create(with: makePostvc(actions: actions, newId: newId))
+    func makePostVC( actions: PostActions, newId: String, postType: PostType) -> PostViewController {
+        PostViewController.create(with: makePostvc(actions: actions, 
+                                                   newId: newId,
+                                                   postType: postType))
     }
     
-    func makeAddPostVC(actions: AddPostViewActions) -> AddPostViewController {
-        AddPostViewController.create(with: makeAddPostVC(actions: actions))
+    func makeAddPostVC(actions: AddPostViewActions, postType: PostType) -> AddPostViewController {
+        AddPostViewController.create(with: makeAddPostVC(actions: actions, postType: postType))
     }
     
-    func makeAddContentVC(actions: AddContentViewActions, new: NewModelMock) -> AddContentViewController {
-        AddContentViewController.create(with: makeAddContentVC(actions: actions, new: new))
+    func makeAddContentVC(actions: AddContentViewActions, post: PostMock) -> AddContentViewController {
+        AddContentViewController.create(with: makeAddContentVC(actions: actions,post: post))
     }
 }

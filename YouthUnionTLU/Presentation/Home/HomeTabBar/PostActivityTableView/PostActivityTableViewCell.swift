@@ -25,9 +25,9 @@ class PostActivityTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func fetchData(postActivity: ActivityModel) {
-        imageActivities.kf.setImage(with: URL(string: postActivity.imageActivity))
-        titleActivity.text = postActivity.nameActivity
-        dateCreate.text = convertTimestampToString(timestamp: postActivity.createPostActivity)
+    func fetchData(postActivity: PostModel) {
+        imageActivities.kf.setImage(with: URL(string: postActivity.imageNew))
+        titleActivity.text = postActivity.title
+        dateCreate.text = convertTimestampToString(timestamp: postActivity.timeCreate)
     }
 }

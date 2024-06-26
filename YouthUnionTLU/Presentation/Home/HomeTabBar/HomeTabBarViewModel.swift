@@ -11,22 +11,22 @@ import FirebaseAuth
 struct HomeTabBarActions {
     let showSearchTabBar: () -> Void
     let showSettingTabBar: () -> Void
-    let showPost:(String) -> Void
-    let showAddPost: () -> Void
+    let showPost:(String,PostType) -> Void
+    let showAddPost: (PostType) -> Void
 }
 
 protocol HomeTabBarViewModelInput {
     func viewDidLoad()
     func openSearchTabBar()
     func openSettingTabBar()
-    func openPost(newId: String)
-    func openAddPost()
+    func openPost(newId: String, postType: PostType)
+    func openAddPost(postType: PostType)
 }
 
 protocol HomeTabBarViewModelOutput {
     var error: Observable<String?> {get}
-    var listNew: Observable<[NewModel]?> {get}
-    var listPostActivities: Observable<[ActivityModel]?> {get}
+    var listPostNews: Observable<[PostModel]?> {get}
+    var listPostActivities: Observable<[PostModel]?> {get}
 }
 
 protocol HomeTabBarViewModel: HomeTabBarViewModelInput, HomeTabBarViewModelOutput {
@@ -35,8 +35,8 @@ protocol HomeTabBarViewModel: HomeTabBarViewModelInput, HomeTabBarViewModelOutpu
 
 class DefaultHomeTabBarViewModel: HomeTabBarViewModel {
     
-    var listPostActivities: Observable<[ActivityModel]?> = Observable(nil)
-    var listNew: Observable<[NewModel]?> = Observable(nil)
+    var listPostActivities: Observable<[PostModel]?> = Observable(nil)
+    var listPostNews: Observable<[PostModel]?> = Observable(nil)
     var error: Observable<String?> = Observable(nil)
     
     private let uid = Auth.auth().currentUser?.uid
@@ -47,7 +47,7 @@ class DefaultHomeTabBarViewModel: HomeTabBarViewModel {
     }
     
     func viewDidLoad() {
-        getListNew {
+        getListPostNew() {
             
         }
         
@@ -64,40 +64,41 @@ class DefaultHomeTabBarViewModel: HomeTabBarViewModel {
         actions.showSettingTabBar()
     }
 
-    func openPost(newId: String) {
-        actions.showPost(newId)
+    func openPost(newId: String, postType: PostType) {
+        actions.showPost(newId, postType)
     }
     
-    func openAddPost() {
-        actions.showAddPost()
+    func openAddPost(postType: PostType) {
+        actions.showAddPost(postType)
     }
     
-    private func getListNew(completion: @escaping () -> Void) {
-        let path = 
-        FSNewClient.shared.getNews(majorId: UserDefaultsData.shared.major) { listNew, error in
+    private func getListPostNew(completion: @escaping () -> Void) {
+        FSPostClient.shared.getPosts(majorId: UserDefaultsData.shared.major,
+                                     postType: .new) { listNew, error in
             guard let listNew = listNew,
                   error == nil else {
                 completion()
                 return
             }
             
-            self.listNew.value = listNew.sorted { $0.timeCreate.dateValue() > $1.timeCreate.dateValue() }
+            self.listPostNews.value = listNew.sorted { $0.timeCreate.dateValue() > $1.timeCreate.dateValue() }
             
         }
         completion()
     }
     
     private func getListPostActivity(completion: @escaping () -> Void) {
-        FSNewClient.shared.getListPostActivity(major: "TLS106") { listPostActivities, error in
-            guard let listPostActivities = listPostActivities,
+        FSPostClient.shared.getPosts(majorId: UserDefaultsData.shared.major,
+                                     postType: .activity) { listActivity, error in
+            guard let listActivity = listActivity,
                   error == nil else {
                 completion()
                 return
             }
-            self.listPostActivities.value = listPostActivities
-           
+            
+            self.listPostActivities.value = listActivity.sorted { $0.timeCreate.dateValue() > $1.timeCreate.dateValue() }
+            
         }
-        
         completion()
     }
 }

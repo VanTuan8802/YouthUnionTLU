@@ -14,10 +14,10 @@ class AddContentViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var viewAddTextCotent: UIView!
     @IBOutlet weak var textContent: UITextView!
     
-    private var listContent: [ContentModelMock] = []
+    private var listContent: [ContentMock] = []
     private var viewModel: AddContentViewModel!
     private let placeholderText = "Nhập nội dung"
-    private var new: NewModel!
+    private var new: PostModel!
     
     override func viewDidLoad() {
         viewModel.viewDidload()
@@ -115,7 +115,7 @@ class AddContentViewController: UIViewController, StoryboardInstantiable {
     
     @IBAction func addTextAction(_ sender: Any) {
         if textContent.text != nil {
-            let content = ContentModelMock(contentNumber: listContent.count + 1,
+            let content = ContentMock(contentNumber: listContent.count + 1,
                                            textContent: textContent.text,
                                            contentType: .text
             )
@@ -155,7 +155,7 @@ extension AddContentViewController: UIScrollViewDelegate {
 extension AddContentViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[.originalImage] as? UIImage {
-            let content = ContentModelMock(
+            let content = ContentMock(
                 contentNumber: listContent.count + 1,
                 imageContent: selectedImage,
                 contentType: .image

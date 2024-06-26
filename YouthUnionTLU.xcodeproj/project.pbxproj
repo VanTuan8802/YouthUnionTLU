@@ -112,9 +112,9 @@
 		AB92755A2C10B188003DE063 /* PointTrainingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB9274A62C10A620003DE063 /* PointTrainingTableViewCell.xib */; };
 		AB92755E2C13FE54003DE063 /* NewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB92755C2C13FE54003DE063 /* NewTableViewCell.swift */; };
 		AB92755F2C13FE54003DE063 /* NewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB92755D2C13FE54003DE063 /* NewTableViewCell.xib */; };
-		AB9275662C15E44B003DE063 /* New.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9275652C15E44B003DE063 /* New.swift */; };
+		AB9275662C15E44B003DE063 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9275652C15E44B003DE063 /* Post.swift */; };
 		AB9275B42C173228003DE063 /* NewClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9275B32C173228003DE063 /* NewClient.swift */; };
-		AB9275B62C17329F003DE063 /* FSNewClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9275B52C17329F003DE063 /* FSNewClient.swift */; };
+		AB9275B62C17329F003DE063 /* FSPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9275B52C17329F003DE063 /* FSPostClient.swift */; };
 		AB9275B82C1739AC003DE063 /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9275B72C1739AC003DE063 /* TimeConverter.swift */; };
 		AB9275BC2C173F10003DE063 /* PostViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB9275BB2C173F10003DE063 /* PostViewController.storyboard */; };
 		AB9275C02C173FDE003DE063 /* ContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9275BE2C173FDE003DE063 /* ContentTableViewCell.swift */; };
@@ -258,9 +258,9 @@
 		AB9274A62C10A620003DE063 /* PointTrainingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PointTrainingTableViewCell.xib; sourceTree = "<group>"; };
 		AB92755C2C13FE54003DE063 /* NewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTableViewCell.swift; sourceTree = "<group>"; };
 		AB92755D2C13FE54003DE063 /* NewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTableViewCell.xib; sourceTree = "<group>"; };
-		AB9275652C15E44B003DE063 /* New.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = New.swift; path = ../../../../../../../.Trash/YouthUnionTLU_IOS/YouthUnionTLU/Data/FireStore/Model/New.swift; sourceTree = "<group>"; };
+		AB9275652C15E44B003DE063 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Post.swift; path = ../../../../../../../.Trash/YouthUnionTLU_IOS/YouthUnionTLU/Data/FireStore/Model/Post.swift; sourceTree = "<group>"; };
 		AB9275B32C173228003DE063 /* NewClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewClient.swift; sourceTree = "<group>"; };
-		AB9275B52C17329F003DE063 /* FSNewClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSNewClient.swift; sourceTree = "<group>"; };
+		AB9275B52C17329F003DE063 /* FSPostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSPostClient.swift; sourceTree = "<group>"; };
 		AB9275B72C1739AC003DE063 /* TimeConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
 		AB9275BB2C173F10003DE063 /* PostViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostViewController.storyboard; sourceTree = "<group>"; };
 		AB9275BE2C173FDE003DE063 /* ContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTableViewCell.swift; sourceTree = "<group>"; };
@@ -545,7 +545,7 @@
 				AB0742602BF7054D00BE5308 /* Infomation.swift */,
 				ABC09C6A2C062D100036E786 /* Majoy.swift */,
 				AB9274792C0C6862003DE063 /* PointTraining.swift */,
-				AB9275652C15E44B003DE063 /* New.swift */,
+				AB9275652C15E44B003DE063 /* Post.swift */,
 				AB814E972C19E7AF00DFC34E /* Documnet.swift */,
 				AB814E992C19EB7F00DFC34E /* Activity.swift */,
 				AB814EB12C2045FB00DFC34E /* AddContentModel.swift */,
@@ -559,7 +559,7 @@
 				AA88268E2BAA6CC1004A2FAC /* FireAuthClient.swift */,
 				AA8826CB2BAC7536004A2FAC /* FSUserClient.swift */,
 				ABC09C6C2C062DA40036E786 /* FireMajorClient.swift */,
-				AB9275B52C17329F003DE063 /* FSNewClient.swift */,
+				AB9275B52C17329F003DE063 /* FSPostClient.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -1086,7 +1086,7 @@
 				ABC09C782C088F600036E786 /* SearchManager.swift in Sources */,
 				AB9275B42C173228003DE063 /* NewClient.swift in Sources */,
 				ABC09C582BFE03B20036E786 /* HomeDIContainer.swift in Sources */,
-				AB9275B62C17329F003DE063 /* FSNewClient.swift in Sources */,
+				AB9275B62C17329F003DE063 /* FSPostClient.swift in Sources */,
 				AADC74092BA3434A00406787 /* PermisstionViewModel.swift in Sources */,
 				AB814EB92C20825900DFC34E /* ExtentionDictionary.swift in Sources */,
 				AA8826A12BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift in Sources */,
@@ -1120,7 +1120,7 @@
 				AB92747D2C0C6BE3003DE063 /* PointTraingViewController.swift in Sources */,
 				AA8826862BAA68EE004A2FAC /* LoginViewModel.swift in Sources */,
 				AA3B65752BCD2EF4001C47F7 /* SetFont.swift in Sources */,
-				AB9275662C15E44B003DE063 /* New.swift in Sources */,
+				AB9275662C15E44B003DE063 /* Post.swift in Sources */,
 				AA732F502B9DD3F2009EB608 /* StoryboardInstantiable.swift in Sources */,
 				AA8826962BAABF46004A2FAC /* CheckValidate.swift in Sources */,
 				ABC09C4C2BFE039A0036E786 /* AppFlowCoordinator.swift in Sources */,

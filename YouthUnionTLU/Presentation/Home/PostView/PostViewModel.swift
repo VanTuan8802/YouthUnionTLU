@@ -34,10 +34,12 @@ class DefaultPostViewModel: PostViewModel {
     
     private var actions: PostActions?
     private var newId: String?
+    private var postType: PostType?
     
-    init(actions: PostActions? = nil, newId: String? = nil) {
+    init(actions: PostActions? = nil, newId: String? = nil, postType: PostType) {
         self.actions = actions
         self.newId = newId
+        self.postType = postType
     }
     
     func viewDidLoad() {
@@ -56,8 +58,9 @@ class DefaultPostViewModel: PostViewModel {
             return
         }
         
-        FSNewClient.shared.getListContent(majorId: UserDefaultsData.shared.major,
-                                          newId: newId) { listContent, error in
+        FSPostClient.shared.getListContent(majorId: UserDefaultsData.shared.major,
+                                           postType: postType ?? .new,
+                                          postId: newId) { listContent, error in
             guard let listContent = listContent,
                   error == nil else {
                 completion()
