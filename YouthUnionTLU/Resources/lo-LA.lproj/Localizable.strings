@@ -66,3 +66,39 @@ inforStudent.yearOfAdmission = "ປີທີ່ເຂົ້າ";
 inforStudent.yearOfHighSchoolGraduation = "ປີສຳເລັດເມັດຍິ່ງ";
 inforStudent.accountNumber = "ເລກບັນຊີ";
 inforStudent.bankName = "ຊື່ທະນາຄານ";
+
+home.new = "ຂ່າວສານ";
+home.activity = "ກິດຈະກໍາ";
+home.library = "ຫໍສະໝຸດ";
+home.question = "ຖາມຕອບ";
+
+search.activity = "ສະຖິຕິການກິດຈະກຳ";
+search.pointTraing = "ຄົ້ນຫາຄະແນນຝຶກອົບຮົມ";
+search.info = "ຄົ້ນຫາຂໍ້ມູນນັກຮຽນ";
+
+addPost.heading = "ສ້າງຂໍ້ຄວາມ";
+addPost.title = "ໃສ່ຫົວຂໍ້";
+addPost.address = "ສະຖານທີ່ຈັດ";
+addPost.timeStart = "ເວລາເລີ່ມຕົ້ນ";
+addPost.timeCheckIn = "ເວລາເຊັກອິນ";
+addPost.qrCode = "ເນື້ອໃນ QR";
+addPost.image = "ຮູບພາບສະແດງ";
+
+button.continue = "ຕໍ່ໄປ";
+
+post.content = "ລາຍລະອຽດຂໍ້ຄວາມ";
+post.text = "ເນື້ອໃນ";
+post.image = "ຮູບພາບ";
+post.addContent = "ໃສ່ເນື້ອໃນ";
+
+button.create = "ສ້າງ";
+
+joinActivity.title = "ຂໍ້ມູນການເຂົ້າຮ່ວມ";
+joinActivity.seat = "ທີ່ນັ່ງ";
+
+setting.info = "ຂໍ້ມູນສ່ວນຕົວ";
+setting.shared = "ແບ່ງປັນ";
+setting.rate = "ປະເມີນ";
+setting.policy = "ນະໂຍບາຍແລະຄວາມປອດໄພ";
+setting.changePassword = "ປ່ຽນລະຫັດຜ່ານ";
+setting.logout = "ອອກຈາກລະບົບ";

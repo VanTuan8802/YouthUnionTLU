@@ -14,6 +14,9 @@ class SearchTabBarViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var searchTabBarItem: UITabBarItem!
     @IBOutlet weak var settingTabBarItem: UITabBarItem!
     @IBOutlet weak var viewSearchInformation: UIView!
+    @IBOutlet weak var searchActivityLb: UILabel!
+    @IBOutlet weak var searchPointTraningLb: UILabel!
+    @IBOutlet weak var searchInfomationLb: UILabel!
     
     private var viewModel: SearchTabBarViewModel!
     
@@ -34,6 +37,10 @@ class SearchTabBarViewController: UIViewController, StoryboardInstantiable {
         if  UserDefaultsData.shared.posision == Position.member.rawValue {
             viewSearchInformation.isHidden = true
         }
+        
+        searchActivityLb.text = R.stringLocalizable.searchActivity()
+        searchPointTraningLb.text = R.stringLocalizable.searchPointTraing()
+        searchInfomationLb.text = R.stringLocalizable.searchInfo()
         
     }
     

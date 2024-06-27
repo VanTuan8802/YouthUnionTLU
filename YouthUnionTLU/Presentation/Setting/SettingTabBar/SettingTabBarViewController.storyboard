@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -419,15 +419,22 @@
                     </view>
                     <connections>
                         <outlet property="changePassBtn" destination="qC1-p4-RZV" id="m59-Cm-sTh"/>
+                        <outlet property="changePasswordLb" destination="M7f-u0-T54" id="s6A-Wa-5RZ"/>
                         <outlet property="homeTabBarItem" destination="blN-AD-wL2" id="doV-GK-RzQ"/>
                         <outlet property="infoUserBtn" destination="hAX-PI-f8q" id="pxT-e8-zdt"/>
+                        <outlet property="infoUserLb" destination="5Ce-9f-q5p" id="xJI-Op-aKl"/>
                         <outlet property="languageBtn" destination="53Z-iD-fPV" id="794-uC-cBz"/>
+                        <outlet property="languageLb" destination="adT-OY-Tqk" id="7EI-mE-O15"/>
                         <outlet property="logoutBtn" destination="e2F-pr-t0z" id="iuE-Dl-ogI"/>
+                        <outlet property="logoutLb" destination="XPA-Z8-8Hb" id="PTI-vK-qtI"/>
                         <outlet property="polictyBtn" destination="xZk-pd-BBF" id="7OF-47-Ojq"/>
+                        <outlet property="policyLb" destination="cIw-2f-arP" id="AzY-Ig-Zaw"/>
                         <outlet property="rateBtn" destination="6p4-Zd-mW4" id="aMy-QT-a9H"/>
+                        <outlet property="rateLb" destination="cjx-5A-rLP" id="uI5-bn-UeJ"/>
                         <outlet property="searchTabBarItem" destination="2qe-e0-tMD" id="PMs-PM-dT6"/>
                         <outlet property="settingTabBarItem" destination="gOH-Vi-9fj" id="seI-qP-6QI"/>
                         <outlet property="shareBtn" destination="iiI-9c-bOm" id="Q77-YI-irz"/>
+                        <outlet property="sharedLb" destination="xuB-k3-ZTf" id="9fV-ui-RkK"/>
                         <outlet property="tabBarSetting" destination="QMV-Kz-bbt" id="DEM-Ex-7ab"/>
                     </connections>
                 </viewController>

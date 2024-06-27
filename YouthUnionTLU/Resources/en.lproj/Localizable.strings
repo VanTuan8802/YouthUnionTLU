@@ -66,3 +66,39 @@ inforStudent.yearOfAdmission = "Year of Admission";
 inforStudent.yearOfHighSchoolGraduation = "Year of High School Graduation";
 inforStudent.accountNumber = "Account Number";
 inforStudent.bankName = "Bank Name";
+
+home.new = "News";
+home.activity = "Events";
+home.library = "Library";
+home.question = "Q&A";
+
+search.activity = "Activity Statistics";
+search.pointTraing = "Search Training Points";
+search.info = "Search Student Information";
+
+addPost.heading = "Create Post";
+addPost.title = "Enter Title";
+addPost.address = "Event Location";
+addPost.timeStart = "Start Time";
+addPost.timeCheckIn = "Check-In Time";
+addPost.qrCode = "QR Content";
+addPost.image = "Display Image";
+
+button.continue = "Continue";
+
+post.content = "Post Details";
+post.text = "Content";
+post.image = "Image";
+post.addContent = "Enter Content";
+
+button.create = "Create";
+
+joinActivity.title = "Participation Information";
+joinActivity.seat = "Seating Position";
+
+setting.info = "Personal Information";
+setting.shared = "Share";
+setting.rate = "Rate";
+setting.policy = "Policy and Security";
+setting.changePassword = "Change Password";
+setting.logout = "Logout";

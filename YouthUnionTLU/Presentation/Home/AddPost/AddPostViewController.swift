@@ -11,10 +11,13 @@ import FirebaseFirestoreInternal
 
 class AddPostViewController: UIViewController, StoryboardInstantiable {
     
+    @IBOutlet weak var titleLb: UILabel!
     @IBOutlet weak var titleTextView: UITextView!
     @IBOutlet weak var activityInputView: UIStackView!
+    @IBOutlet weak var timeStartLb: UILabel!
     @IBOutlet weak var timeStart: UIDatePicker!
     @IBOutlet weak var address: UITextField!
+    @IBOutlet weak var timeCheckInLb: UILabel!
     @IBOutlet weak var timeCheckIn: UIDatePicker!
     @IBOutlet weak var qrText: UITextField!
     @IBOutlet weak var viewImportPhoto: UIView!
@@ -40,6 +43,7 @@ class AddPostViewController: UIViewController, StoryboardInstantiable {
     }
     
     private func setUI() {
+        titleLb.text = R.stringLocalizable.addPostHeading()
         address.addPadding()
         qrText.addPadding()
     }
@@ -140,6 +144,7 @@ class AddPostViewController: UIViewController, StoryboardInstantiable {
                                  address: address,
                                  timeStart: Timestamp(date: timeStart.date),
                                  timeCheckIn: Timestamp(date: timeCheckIn.date),
+                                 qrText: qrText,
                                  postType: .activity)
         } else {
             postModel = PostMock(id: UUID().uuidString,

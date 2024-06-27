@@ -79,12 +79,13 @@ class FSPostClient: PostClient {
         var postModel: PostModel
         
         if post.postType == .new {
-            postModel = PostModel(imageNew: pathImage,
+            postModel = PostModel(id: postId,
+                                  imageNew: pathImage,
                                   title: post.title,
                                   timeCreate: post.timeCreate,
                                   postType: post.postType)
         } else {
-            postModel = PostModel(imageNew: pathImage,
+            postModel = PostModel(id: postId,imageNew: pathImage,
                                   title: post.title,
                                   timeCreate: post.timeCreate,
                                   postType: post.postType,
@@ -116,7 +117,7 @@ class FSPostClient: PostClient {
                     textContent: content.textContent,
                     contentType: .text
                 )
-                self.addContent(path: path, 
+                self.addContent(path: path,
                                 postId: postId,
                                 content: contentModel) { error in
                     if let error = error {

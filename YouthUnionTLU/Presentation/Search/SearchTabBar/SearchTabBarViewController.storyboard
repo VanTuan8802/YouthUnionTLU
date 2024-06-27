@@ -208,6 +208,9 @@
                     </view>
                     <connections>
                         <outlet property="homeTabBarItem" destination="WSe-Ag-m1t" id="sUT-4k-fDw"/>
+                        <outlet property="searchActivityLb" destination="Hqc-0U-hu4" id="iAo-41-6Sg"/>
+                        <outlet property="searchInfomationLb" destination="A22-WD-zIs" id="5n7-1o-Edg"/>
+                        <outlet property="searchPointTraningLb" destination="ZaL-VL-aBn" id="fjL-N9-0e3"/>
                         <outlet property="searchTabBarItem" destination="OGn-5w-tUR" id="Mt4-ib-LqY"/>
                         <outlet property="settingTabBarItem" destination="JW3-Xo-Ndz" id="rcW-LP-7Al"/>
                         <outlet property="tabBarSearch" destination="Xbt-6s-7FC" id="93A-hf-RSD"/>

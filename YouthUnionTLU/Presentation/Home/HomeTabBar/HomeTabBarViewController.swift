@@ -17,6 +17,10 @@ class HomeTabBarViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var homeTabBarItem: UITabBarItem!
     @IBOutlet weak var searchTabBarItem: UITabBarItem!
     @IBOutlet weak var settingTabBarItem: UITabBarItem!
+    @IBOutlet weak var newLb: UILabel!
+    @IBOutlet weak var activityLb: UILabel!
+    @IBOutlet weak var libraryLb: UILabel!
+    @IBOutlet weak var questionLb: UILabel!
     @IBOutlet weak var newsTableView: UITableView!
     @IBOutlet weak var addBtn: UIButton!
     
@@ -72,6 +76,11 @@ class HomeTabBarViewController: UIViewController, StoryboardInstantiable {
         searchTabBarItem.title = R.stringLocalizable.tabBarSearch()
         settingTabBarItem.title = R.stringLocalizable.tabBarSettings()
         
+        newLb.text = R.stringLocalizable.homeNew()
+        activityLb.text = R.stringLocalizable.homeActivity()
+        libraryLb.text = R.stringLocalizable.homeLibrary()
+        questionLb.text = R.stringLocalizable.homeQuestion()
+        
         if UserDefaultsData.shared.posision == Position.member.rawValue ||
             UserDefaultsData.shared.posision == Position.teacher.rawValue {
             addBtn.isHidden = true
@@ -96,6 +105,7 @@ class HomeTabBarViewController: UIViewController, StoryboardInstantiable {
             }
             
             self.listNew = listNew
+            print(listNew)
             self.newsTableView.reloadData()
         }
         
@@ -186,6 +196,6 @@ extension HomeTabBarViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.openPost(newId: listNew[indexPath.row].id ?? "",
-                           postType: postType ?? .new)
+                           postType: .new )
     }
 }

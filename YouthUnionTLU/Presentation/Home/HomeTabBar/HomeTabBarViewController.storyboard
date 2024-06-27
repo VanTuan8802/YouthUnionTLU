@@ -258,9 +258,13 @@
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityLb" destination="1iF-ri-wIJ" id="7xw-kX-tLC"/>
                         <outlet property="addBtn" destination="VRL-K0-lcc" id="hCe-q9-Mya"/>
                         <outlet property="homeTabBarItem" destination="bGT-14-yc1" id="aYl-ex-pMn"/>
+                        <outlet property="libraryLb" destination="UG7-qh-5hd" id="T5a-pM-5eV"/>
+                        <outlet property="newLb" destination="EKf-1h-Xby" id="Z7k-Jr-fEF"/>
                         <outlet property="newsTableView" destination="b5T-N8-EQC" id="JS0-DV-Wua"/>
+                        <outlet property="questionLb" destination="MCn-6l-rvI" id="wAd-4i-iyj"/>
                         <outlet property="searchTabBarItem" destination="udB-cb-FTr" id="QJy-Rf-smh"/>
                         <outlet property="settingTabBarItem" destination="O90-zd-6hw" id="eOr-qR-REc"/>
                         <outlet property="tabBar" destination="oDD-WI-Zts" id="bHa-Hn-N6n"/>

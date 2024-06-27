@@ -10,12 +10,19 @@ import UIKit
 class SettingTabBarViewController: UIViewController, StoryboardInstantiable {
 
     @IBOutlet weak var infoUserBtn: UIButton!
+    @IBOutlet weak var infoUserLb: UILabel!
     @IBOutlet weak var languageBtn: UIButton!
+    @IBOutlet weak var languageLb: UILabel!
+    @IBOutlet weak var sharedLb: UILabel!
     @IBOutlet weak var shareBtn: UIButton!
+    @IBOutlet weak var rateLb: UILabel!
     @IBOutlet weak var rateBtn: UIButton!
     @IBOutlet weak var polictyBtn: UIButton!
+    @IBOutlet weak var policyLb: UILabel!
     @IBOutlet weak var changePassBtn: UIButton!
+    @IBOutlet weak var changePasswordLb: UILabel!
     @IBOutlet weak var logoutBtn: UIButton!
+    @IBOutlet weak var logoutLb: UILabel!
     
     @IBOutlet weak var tabBarSetting: UITabBar!
     @IBOutlet weak var homeTabBarItem: UITabBarItem!
@@ -53,6 +60,14 @@ class SettingTabBarViewController: UIViewController, StoryboardInstantiable {
         settingTabBarItem.title = R.stringLocalizable.tabBarSettings()
         
         infoUserBtn.isEnabled = (position == Position.member.rawValue)
+        
+        infoUserLb.text = R.stringLocalizable.settingInfo()
+        languageLb.text = R.stringLocalizable.languageTitle()
+        sharedLb.text = R.stringLocalizable.settingShared()
+        rateLb.text = R.stringLocalizable.settingRate()
+        policyLb.text = R.stringLocalizable.settingPolicy()
+        changePasswordLb.text = R.stringLocalizable.settingChangePassword()
+        logoutLb.text = R.stringLocalizable.settingLogout()
 
     }
     

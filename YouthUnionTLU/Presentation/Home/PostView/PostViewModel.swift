@@ -72,4 +72,3 @@ class DefaultPostViewModel: PostViewModel {
         completion()
     }
 }
-

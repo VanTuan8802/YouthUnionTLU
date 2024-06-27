@@ -66,3 +66,43 @@ inforStudent.yearOfAdmission = "Năm nhập học";
 inforStudent.yearOfHighSchoolGraduation = "Năm tốt nghiệp THPT";
 inforStudent.accountNumber = "Số tài khoản";
 inforStudent.bankName = "Ngân hàng";
+
+home.new = "Tin tức";
+home.activity = "Sự kiện";
+home.library = "Thư viện";
+home.question = "Hỏi đáp";
+
+search.activity = "Thống kê hoạt động";
+search.pointTraing = "Tra cứu điểm rèn luyện";
+search.info = "Tra cứu thông tin sinh viên";
+
+addPost.heading = "Tạo bài viết";
+addPost.title = "Nhập tiêu đề";
+addPost.address = "Địa điểm tổ chức";
+addPost.timeStart = "Thời gian bắt đầu";
+addPost.timeCheckIn = "Thời gian check in";
+addPost.qrCode = "Nội dung QR";
+addPost.image = "Hình ảnh hiển thị";
+
+button.continue = "Tiếp tục";
+
+post.content = "Chi tiết bài viết";
+post.text = "Nội dung";
+post.image = "Hình ảnh";
+post.addContent = "Nhập nội dung";
+
+button.create = "Create";
+
+joinActivity.title = "Thông tin tham gia";
+joinActivity.seat = "Vị trí ngồi";
+
+setting.info = "Thông tin cá nhân";
+setting.shared = "Chia sẻ";
+setting.rate = "Đánh giá";
+setting.policy = "Chính sách và bảo mật";
+setting.changePassword = "Đổi mật khẩu";
+setting.logout = "Đăng xuất";
+
+
+
+
