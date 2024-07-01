@@ -11,7 +11,7 @@ import FirebaseAuth
 struct HomeTabBarActions {
     let showSearchTabBar: () -> Void
     let showSettingTabBar: () -> Void
-    let showPost:(String,PostType) -> Void
+    let showPost:(PostModel) -> Void
     let showAddPost: (PostType) -> Void
 }
 
@@ -19,7 +19,7 @@ protocol HomeTabBarViewModelInput {
     func viewDidLoad()
     func openSearchTabBar()
     func openSettingTabBar()
-    func openPost(newId: String, postType: PostType)
+    func openPost(post: PostModel)
     func openAddPost(postType: PostType)
 }
 
@@ -64,8 +64,8 @@ class DefaultHomeTabBarViewModel: HomeTabBarViewModel {
         actions.showSettingTabBar()
     }
 
-    func openPost(newId: String, postType: PostType) {
-        actions.showPost(newId, postType)
+    func openPost(post: PostModel) {
+        actions.showPost(post)
     }
     
     func openAddPost(postType: PostType) {

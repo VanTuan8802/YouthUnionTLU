@@ -29,10 +29,9 @@ class HomeDIContainer {
         DefaultHomeTabBarViewModel(actions: actions)
     }
     
-    func makePostvc(actions: PostActions, newId: String, postType: PostType) -> PostViewModel {
+    func makePostvc(actions: PostActions, post: PostModel) -> PostViewModel {
         DefaultPostViewModel(actions: actions,
-                             newId: newId,
-                             postType: postType)
+                             post: post)
     }
     
     func makeAddPostVC(actions: AddPostViewActions,postType: PostType) -> AddPostViewModel {
@@ -43,6 +42,10 @@ class HomeDIContainer {
         DefaultAddContentViewModel(actions: actions,
                                    post: post)
     }
+    
+    func makeJoinActivityVC(actions: JoinActivityViewActions, postId: String) -> JoinActivityViewModel {
+        DefaultJoinActivityViewModel(actions: actions, postId: postId)
+    }
 }
 
 extension HomeDIContainer: HomeFlowCoodinatorDependencies {
@@ -51,10 +54,8 @@ extension HomeDIContainer: HomeFlowCoodinatorDependencies {
         HomeTabBarViewController.create(with: makeHomeTabBarvc(actions: actions))
     }
     
-    func makePostVC( actions: PostActions, newId: String, postType: PostType) -> PostViewController {
-        PostViewController.create(with: makePostvc(actions: actions, 
-                                                   newId: newId,
-                                                   postType: postType))
+    func makePostVC( actions: PostActions, post: PostModel) -> PostViewController {
+        PostViewController.create(with: makePostvc(actions: actions, post: post))
     }
     
     func makeAddPostVC(actions: AddPostViewActions, postType: PostType) -> AddPostViewController {
@@ -64,4 +65,9 @@ extension HomeDIContainer: HomeFlowCoodinatorDependencies {
     func makeAddContentVC(actions: AddContentViewActions, post: PostMock) -> AddContentViewController {
         AddContentViewController.create(with: makeAddContentVC(actions: actions,post: post))
     }
+    
+    func makeJoinActivityVC(actions: JoinActivityViewActions, postId: String) -> JoinActivityViewController {
+        JoinActivityViewController.create(with: makeJoinActivityVC(actions: actions, postId: postId))
+    }
+    
 }

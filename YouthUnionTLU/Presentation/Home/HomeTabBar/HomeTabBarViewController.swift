@@ -105,7 +105,7 @@ class HomeTabBarViewController: UIViewController, StoryboardInstantiable {
             }
             
             self.listNew = listNew
-            print(listNew)
+            
             self.newsTableView.reloadData()
         }
         
@@ -195,7 +195,11 @@ extension HomeTabBarViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.openPost(newId: listNew[indexPath.row].id ?? "",
-                           postType: .new )
+        if postType == .new {
+            viewModel.openPost(post: listNew[indexPath.row] )
+        } else {
+            print(listPostActivity[indexPath.row])
+            viewModel.openPost(post: listPostActivity[indexPath.row] )
+        }
     }
 }

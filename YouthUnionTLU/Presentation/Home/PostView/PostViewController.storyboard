@@ -81,6 +81,8 @@
                     </view>
                     <connections>
                         <outlet property="contentsTableView" destination="nWp-r6-Vqg" id="Bg9-Oh-v6x"/>
+                        <outlet property="postTitleLb" destination="Xhr-aF-OUM" id="7fC-cK-h3y"/>
+                        <outlet property="qrCodeBtn" destination="l7l-LB-nBE" id="1ub-03-mpH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -17,4 +17,7 @@ protocol PostClient {
     
     func createPostStorage(post: PostMock, completion: @escaping (String?, Error?) -> Void)
     
+    func getListContent(majorId: String, post: PostModel, completion: @escaping ([ContentModel]?,Error?) -> Void )
+    
+    func joinActivity(postId: String,joinActivity: JoinActivityModel, completion: @escaping (Error?) -> Void )
 }

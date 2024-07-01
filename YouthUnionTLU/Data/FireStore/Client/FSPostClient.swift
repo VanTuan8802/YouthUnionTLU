@@ -9,6 +9,7 @@ import Foundation
 import FirebaseFirestoreInternal
 
 class FSPostClient: PostClient {
+
     
     typealias T = PostModel
     
@@ -186,6 +187,18 @@ class FSPostClient: PostClient {
         )
     }
     
+    func joinActivity(postId: String, joinActivity: JoinActivityModel, completion: @escaping (Error?) -> Void) {
+        self.database.collection(CollectionFireStore.joinActivity.rawValue)
+            .document(UserDefaultsData.shared.studentCode)
+            .collection(postId)
+            .addDocument(data: joinActivity.dictionary) { error in
+                
+                completion(error)
+            }
+    }
+    
+    
+    
     private func addContent(path:String,
                             postId: String,
                             content: ContentModel,
@@ -200,13 +213,16 @@ class FSPostClient: PostClient {
     }
     
     func getListContent(majorId: String,
-                        postType: PostType,
-                        postId: String,
+                        post: PostModel,
                         completion: @escaping ([ContentModel]?, Error?) -> Void) {
         var listContent:[ContentModel] = []
         let dispatchGroup = DispatchGroup()
         
-        self.database.collection("\(CollectionFireStore.new.rawValue)_\(majorId)")
+        guard let postId = post.id else {
+            return
+        }
+        
+        self.database.collection("\(post.postType)_\(majorId)")
             .document(postId)
             .collection(CollectionFireStore.listContent.rawValue)
             .getDocuments { snapShot, error in
@@ -224,7 +240,9 @@ class FSPostClient: PostClient {
                 for snapshot in snapShots.documents {
                     dispatchGroup.enter()
                     
-                    self.getContent(postId: postId,
+                    self.getContent(majorId: majorId,
+                                    postId: postId,
+                                    postType: post.postType,
                                     contentId: snapshot.documentID) { content, error in
                         defer {
                             dispatchGroup.leave()
@@ -270,10 +288,12 @@ class FSPostClient: PostClient {
             }
     }
     
-    private func getContent(postId: String,
+    private func getContent(majorId: String,
+                            postId: String,
+                            postType: PostType,
                             contentId: String,
                             completion: @escaping (ContentModel?, Error?) -> Void) {
-        self.database.collection(CollectionFireStore.new.rawValue)
+        self.database.collection("\(postType)_\(majorId)")
             .document(postId)
             .collection(CollectionFireStore.listContent.rawValue)
             .document(contentId)

@@ -11,15 +11,18 @@ import FirebaseAuth
 
 struct PostActions {
     let showSearchInformation: () -> Void
+    let showJoinActivity: (String) -> Void
 }
 
 protocol PostViewModelInput {
     func viewDidLoad()
     func openHome()
+    func openJoinActivity(postId: String)
 }
 
 protocol PostViewModelOutput {
     var error: Observable<String?> {get}
+    var postObs: Observable<PostModel?> {get}
     var listContent:  Observable<[ContentModel]?> {get}
 }
 
@@ -31,36 +34,41 @@ class DefaultPostViewModel: PostViewModel {
     
     var error: Observable<String?> = Observable(nil)
     var listContent: Observable<[ContentModel]?> = Observable(nil)
+    var postObs: Observable<PostModel?> = Observable(nil)
     
     private var actions: PostActions?
-    private var newId: String?
-    private var postType: PostType?
+    private var post: PostModel?
     
-    init(actions: PostActions? = nil, newId: String? = nil, postType: PostType) {
+    init( actions: PostActions? = nil, post: PostModel? = nil) {
         self.actions = actions
-        self.newId = newId
-        self.postType = postType
+        self.post = post
     }
     
     func viewDidLoad() {
         getListContent {
             
         }
+        
+        postObs.value = post
     }
     
     func openHome() {
         
     }
     
+    func openJoinActivity(postId: String) {
+        actions?.showJoinActivity(postId)
+    }
+    
     private func getListContent( completion: @escaping() -> Void) {
-        guard let newId = newId else {
+        guard let post = post,
+              let postId = post.id else {
             completion()
             return
         }
-        
+
         FSPostClient.shared.getListContent(majorId: UserDefaultsData.shared.major,
-                                           postType: postType ?? .new,
-                                          postId: newId) { listContent, error in
+                                          post: post) { listContent, error in
             guard let listContent = listContent,
                   error == nil else {
                 completion()

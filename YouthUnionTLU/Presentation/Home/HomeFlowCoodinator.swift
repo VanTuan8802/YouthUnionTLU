@@ -10,9 +10,10 @@ import UIKit
 
 protocol HomeFlowCoodinatorDependencies {
     func makeHomeTabBarVC(actions: HomeTabBarActions) -> HomeTabBarViewController
-    func makePostVC(actions: PostActions, newId: String, postType: PostType) -> PostViewController
+    func makePostVC(actions: PostActions, post: PostModel) -> PostViewController
     func makeAddPostVC(actions: AddPostViewActions, postType: PostType) -> AddPostViewController
     func makeAddContentVC(actions: AddContentViewActions, post: PostMock) -> AddContentViewController
+    func makeJoinActivityVC(actions: JoinActivityViewActions,postId: String) -> JoinActivityViewController
 }
 
 final class HomeFlowCoodinator {
@@ -27,9 +28,8 @@ final class HomeFlowCoodinator {
     func home() {
         let actions = HomeTabBarActions(showSearchTabBar: showSearch,
                                         showSettingTabBar: showSetting,
-                                        showPost: { newId,postType  in
-            self.showPostVc(newId: newId,
-                            postType: postType)
+                                        showPost: { post  in
+            self.showPostVc(post: post)
         },
                                         showAddPost:{ postType in
             self.showAddPost(postType: postType)
@@ -71,11 +71,19 @@ final class HomeFlowCoodinator {
         appFlowCoordinator.setting()
     }
     
-    private func showPostVc(newId: String,postType: PostType) {
-        let actions = PostActions(showSearchInformation: show)
-        let vc = dependencies.makePostVC(actions: actions,
-                                         newId: newId,
-                                         postType: postType)
+    private func showPostVc(post: PostModel) {
+        let actions = PostActions(showSearchInformation: show,
+                                  showJoinActivity: { postId in
+            self.showJoinActivity(postId: postId)
+        })
+        let vc = dependencies.makePostVC(actions: actions, post: post
+        )
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func showJoinActivity(postId: String) {
+        let actions = JoinActivityViewActions(showPost: backToPostVC)
+        let vc = dependencies.makeJoinActivityVC(actions: actions, postId: postId)
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -99,11 +107,15 @@ final class HomeFlowCoodinator {
     private func backToHome(listContent: [ContentMock]) {
         let actions = HomeTabBarActions(showSearchTabBar: showSearch,
                                         showSettingTabBar: showSetting,
-                                        showPost: { newId, postType in
-            self.showPostVc(newId: newId,
-                            postType: postType)},
+                                        showPost: { post in
+            self.showPostVc(post: post)},
                                         showAddPost: showAddPost)
         let vc = dependencies.makeHomeTabBarVC(actions: actions)
         navigationController?.viewControllers = [vc]
     }
+    
+    private func backToPostVC() {
+        navigationController?.popViewController(animated: true)
+    }
+
 }

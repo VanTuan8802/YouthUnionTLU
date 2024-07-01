@@ -13,14 +13,20 @@ class PostViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var contentsTableView: UITableView!
     
     private var listContent: [ContentModel] = []
+    @IBOutlet weak var qrCodeBtn: UIButton!
+    @IBOutlet weak var postTitleLb: UILabel!
     private var viewModel: PostViewModel!
-    var captureSession: AVCaptureSession!
+    private var captureSession: AVCaptureSession!
     private var previewLayer: AVCaptureVideoPreviewLayer!
+    
+    private var post: PostModel?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
         setUpTableView()
+        setUI()
         bind(to: viewModel)
     }
     
@@ -68,9 +74,28 @@ class PostViewController: UIViewController, StoryboardInstantiable {
             self.listContent = listContent
             self.contentsTableView.reloadData()
         }
+        
+        viewModel.postObs.observe(on: self) { post in
+            guard let post = post else {
+                return
+            }
+            
+            if post.postType == .activity
+                && UserDefaultsData.shared.posision == Position.member.rawValue {
+                self.qrCodeBtn.isHidden = false
+            } else {
+                self.qrCodeBtn.isHidden = true
+            }
+            
+            self.post = post
+        }
     }
     
     private func setUI() {
+        postTitleLb.text = R.stringLocalizable.addPostTitle()
+    }
+    
+    private func setUpCameraView() {
         captureSession = AVCaptureSession()
         
         guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else {
@@ -138,7 +163,7 @@ class PostViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func scanQR(_ sender: Any) {
-        setUI()
+        setUpCameraView()
     }
 }
 
@@ -169,8 +194,27 @@ extension PostViewController: AVCaptureMetadataOutputObjectsDelegate {
     }
     
     func found(code: String) {
-        print(code)
+        guard let post = post,
+              let timeChecIn = post.timeChecIn?.dateValue(),
+              let qrCode = post.qrCode else {
+            return
+        }
+        
+        if code == qrCode {
+            let timeNow = Date()
+            let calendar = Calendar.current
+            
+            let timeChecInPlus3Minutes = calendar.date(byAdding: .minute, value: 3, to: timeChecIn)!
+            
+           
+            if timeNow >= timeChecIn && timeNow <= timeChecInPlus3Minutes {
+                viewModel.openJoinActivity(postId: post.id ?? "")
+            } else {
+                self.show(message: "QR Code đã hết hạn", okTitle: R.stringLocalizable.buttonOk())
+            }
+        }
     }
+
     
     override var prefersStatusBarHidden: Bool {
         return true
