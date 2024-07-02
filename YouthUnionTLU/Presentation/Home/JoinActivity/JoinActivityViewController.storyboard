@@ -166,6 +166,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPf-fl-bVj">
                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="88"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="selectImageAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="aq1-dJ-ODf"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -239,6 +242,7 @@
                         <outlet property="nameStudentCode" destination="Emb-us-uj6" id="X5L-vp-dtf"/>
                         <outlet property="seatTxt" destination="C42-Gv-iDP" id="PTX-hW-7eY"/>
                         <outlet property="studentCode" destination="iH8-90-l0R" id="k0k-Lm-YG8"/>
+                        <outlet property="viewImportPhoto" destination="D2h-0r-hql" id="vak-zi-Xex"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -205,8 +205,7 @@ extension PostViewController: AVCaptureMetadataOutputObjectsDelegate {
             let calendar = Calendar.current
             
             let timeChecInPlus3Minutes = calendar.date(byAdding: .minute, value: 3, to: timeChecIn)!
-            
-           
+
             if timeNow >= timeChecIn && timeNow <= timeChecInPlus3Minutes {
                 viewModel.openJoinActivity(postId: post.id ?? "")
             } else {

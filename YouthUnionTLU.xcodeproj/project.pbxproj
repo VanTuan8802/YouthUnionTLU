@@ -86,6 +86,8 @@
 		AB3E2A812C2DA92F00F28ECD /* JoinActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E2A802C2DA92F00F28ECD /* JoinActivityViewController.swift */; };
 		AB3E2A832C2DA93700F28ECD /* JoinActivityViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB3E2A822C2DA93700F28ECD /* JoinActivityViewController.storyboard */; };
 		AB3E2A852C2DA96300F28ECD /* JoinActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E2A842C2DA96300F28ECD /* JoinActivityViewModel.swift */; };
+		AB3E2A8A2C32E45900F28ECD /* JoinActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E2A882C32E45900F28ECD /* JoinActivityTableViewCell.swift */; };
+		AB3E2A8B2C32E45900F28ECD /* JoinActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB3E2A892C32E45900F28ECD /* JoinActivityTableViewCell.xib */; };
 		AB814E8D2C19E3A600DFC34E /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB814E8C2C19E3A600DFC34E /* AddPostViewController.swift */; };
 		AB814E8F2C19E45400DFC34E /* AddPostViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB814E8E2C19E45400DFC34E /* AddPostViewController.storyboard */; };
 		AB814E912C19E48D00DFC34E /* AddPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB814E902C19E48D00DFC34E /* AddPostViewModel.swift */; };
@@ -234,6 +236,8 @@
 		AB3E2A802C2DA92F00F28ECD /* JoinActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinActivityViewController.swift; sourceTree = "<group>"; };
 		AB3E2A822C2DA93700F28ECD /* JoinActivityViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinActivityViewController.storyboard; sourceTree = "<group>"; };
 		AB3E2A842C2DA96300F28ECD /* JoinActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinActivityViewModel.swift; sourceTree = "<group>"; };
+		AB3E2A882C32E45900F28ECD /* JoinActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinActivityTableViewCell.swift; sourceTree = "<group>"; };
+		AB3E2A892C32E45900F28ECD /* JoinActivityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JoinActivityTableViewCell.xib; sourceTree = "<group>"; };
 		AB814E8C2C19E3A600DFC34E /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		AB814E8E2C19E45400DFC34E /* AddPostViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPostViewController.storyboard; sourceTree = "<group>"; };
 		AB814E902C19E48D00DFC34E /* AddPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewModel.swift; sourceTree = "<group>"; };
@@ -740,8 +744,18 @@
 		AB3E2A862C32E1B000F28ECD /* SearchActivity */ = {
 			isa = PBXGroup;
 			children = (
+				AB3E2A872C32E43D00F28ECD /* ActivityCell */,
 			);
 			path = SearchActivity;
+			sourceTree = "<group>";
+		};
+		AB3E2A872C32E43D00F28ECD /* ActivityCell */ = {
+			isa = PBXGroup;
+			children = (
+				AB3E2A882C32E45900F28ECD /* JoinActivityTableViewCell.swift */,
+				AB3E2A892C32E45900F28ECD /* JoinActivityTableViewCell.xib */,
+			);
+			path = ActivityCell;
 			sourceTree = "<group>";
 		};
 		AB814E8B2C19E38E00DFC34E /* AddPost */ = {
@@ -1015,6 +1029,7 @@
 				AA3B65772BCD3B9D001C47F7 /* SF-Pro-Display-Regular.otf in Resources */,
 				AAC2064B2B9B625200BDFCF9 /* Assets.xcassets in Resources */,
 				AA3B65792BCD3BA2001C47F7 /* SF-Pro-Display-Medium.otf in Resources */,
+				AB3E2A8B2C32E45900F28ECD /* JoinActivityTableViewCell.xib in Resources */,
 				AB3E2A832C2DA93700F28ECD /* JoinActivityViewController.storyboard in Resources */,
 				ABC09C652BFF8DF70036E786 /* SearchInformationStudentViewController.storyboard in Resources */,
 				AB0742672BF7079200BE5308 /* InformationOneViewTableViewCell.xib in Resources */,
@@ -1119,6 +1134,7 @@
 				AA8826A12BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift in Sources */,
 				AA8826982BAAC0B8004A2FAC /* ExtensionUIVc.swift in Sources */,
 				AA732F712B9F4CF2009EB608 /* UserDefaultsData.swift in Sources */,
+				AB3E2A8A2C32E45900F28ECD /* JoinActivityTableViewCell.swift in Sources */,
 				AA3B65732BCD2E17001C47F7 /* AppFont.swift in Sources */,
 				AB814EA12C1B311A00DFC34E /* ExtentionKingFisher.swift in Sources */,
 				AA8826882BAA6939004A2FAC /* Observable.swift in Sources */,
