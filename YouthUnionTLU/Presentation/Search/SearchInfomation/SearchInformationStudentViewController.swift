@@ -23,7 +23,7 @@ class SearchInformationStudentViewController: UIViewController, StoryboardInstan
     
     private var viewModel : SearchInformationStudentViewModel!
     private var listMajor: [Major] = []
-    private var searchType: SearchType = .searchInfomatioStudent
+    private var searchType: SearchType = .searchInfomationStudent
     
     override func viewDidLoad() {
         super.viewDidLoad()

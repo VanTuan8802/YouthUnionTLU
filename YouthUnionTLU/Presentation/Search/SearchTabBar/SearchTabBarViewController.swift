@@ -51,7 +51,11 @@ class SearchTabBarViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func openSearchActivity(_ sender: Any) {
-        viewModel.openSearchInformation(searchType: .searchActivity)
+        if UserDefaultsData.shared.posision == Position.member.rawValue {
+            viewModel.openMyJoinActivity()
+        } else {
+            viewModel.openSearchInformation(searchType: .searchActivity)
+        }
     }
     
     @IBAction func openSearchScore(_ sender: Any) {
@@ -63,7 +67,7 @@ class SearchTabBarViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func searchInformationStudent(_ sender: Any) {
-        viewModel.openSearchInformation(searchType: .searchInfomatioStudent)
+        viewModel.openSearchInformation(searchType: .searchInfomationStudent)
     }
 }
 

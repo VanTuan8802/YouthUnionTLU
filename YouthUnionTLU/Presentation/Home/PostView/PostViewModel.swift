@@ -11,13 +11,13 @@ import FirebaseAuth
 
 struct PostActions {
     let showSearchInformation: () -> Void
-    let showJoinActivity: (String) -> Void
+    let showJoinActivity: (PostModel) -> Void
 }
 
 protocol PostViewModelInput {
     func viewDidLoad()
     func openHome()
-    func openJoinActivity(postId: String)
+    func openJoinActivity(post: PostModel)
 }
 
 protocol PostViewModelOutput {
@@ -56,27 +56,40 @@ class DefaultPostViewModel: PostViewModel {
         
     }
     
-    func openJoinActivity(postId: String) {
-        actions?.showJoinActivity(postId)
+    func openJoinActivity(post: PostModel) {
+        actions?.showJoinActivity(post)
     }
     
-    private func getListContent( completion: @escaping() -> Void) {
+    private func getListContent(completion: @escaping() -> Void) {
         guard let post = post,
               let postId = post.id else {
             completion()
             return
         }
 
-        FSPostClient.shared.getListContent(majorId: UserDefaultsData.shared.major,
-                                          post: post) { listContent, error in
+        let dispatchGroup = DispatchGroup()
+        dispatchGroup.enter()
+        
+        LoadingView.show()
+
+        FSPostClient.shared.getListContent(majorId: UserDefaultsData.shared.major, post: post) { listContent, error in
+            defer {
+                dispatchGroup.leave()
+            }
+            
             guard let listContent = listContent,
                   error == nil else {
                 completion()
                 return
             }
-            
+
             self.listContent.value = listContent.sorted { $0.contentNumber < $1.contentNumber }
         }
-        completion()
+
+        dispatchGroup.notify(queue: .main) {
+            LoadingView.hide()
+            completion()
+        }
     }
+
 }

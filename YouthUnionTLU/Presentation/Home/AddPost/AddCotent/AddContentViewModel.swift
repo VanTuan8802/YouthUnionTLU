@@ -47,13 +47,16 @@ class DefaultAddContentViewModel: AddContentViewModel {
     
     func openHome(listContent: [ContentMock]) {
         let dispatchGroup = DispatchGroup()
-        dispatchGroup.enter()
+        
         LoadingView.show()
         
+        dispatchGroup.enter()
         FSPostClient.shared.createPostStorage(post: post) { [weak self] path, error in
-            guard let self = self else { return }
+            guard let self = self else {
+                dispatchGroup.leave()
+                return
+            }
             DispatchQueue.main.async {
-                LoadingView.hide()
                 if let error = error {
                     print("Error creating new storage: \(error.localizedDescription)")
                     dispatchGroup.leave()
@@ -67,12 +70,13 @@ class DefaultAddContentViewModel: AddContentViewModel {
                 }
                 
                 let path = self.post.postType.rawValue + "_" + UserDefaultsData.shared.major
+                dispatchGroup.enter()
                 FSPostClient.shared.createPost(path: path,
-                                              post: self.post,
-                                              pathImage: pathImage,
-                                              listContent: listContent) { error in
+                                post: self.post,
+                                pathImage: pathImage,
+                                listContent: listContent) { error in
                     if let error = error {
-                        print("Error creating new: \(error.localizedDescription)")
+                        print("Error creating new post: \(error.localizedDescription)")
                     }
                     dispatchGroup.leave()
                 }
@@ -86,27 +90,29 @@ class DefaultAddContentViewModel: AddContentViewModel {
                         }
                         
                         for majorId in listMajorId {
-                            let path = self.postType.value.rawValue + "_" + majorId
+                            let path = self.post.postType.rawValue + "_" + majorId
+                            dispatchGroup.enter()
                             FSPostClient.shared.createPost(path: path,
-                                                          post: self.post,
-                                                          pathImage: pathImage,
-                                                          listContent: listContent) { error in
+                                            post: self.post,
+                                            pathImage: pathImage,
+                                            listContent: listContent) { error in
                                 if let error = error {
-                                    print("Error creating new: \(error.localizedDescription)")
+                                    print("Error creating new post: \(error.localizedDescription)")
                                 }
-                                
+                                dispatchGroup.leave()
                             }
                         }
+                        dispatchGroup.leave()
                     }
                 } else {
                     dispatchGroup.leave()
                 }
             }
         }
-        
+
         dispatchGroup.notify(queue: .main) {
             self.actions.showHome(listContent)
+            LoadingView.hide()
         }
     }
-    
 }

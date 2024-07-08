@@ -18,7 +18,7 @@ protocol JoinActivityViewModelInput {
 
 protocol JoinActivityViewModelOutput {
     var error: Observable<String?> {get}
-    var postIdValue: Observable<String?> {get}
+    var postObs: Observable<PostModel?> {get}
 }
 
 protocol JoinActivityViewModel: JoinActivityViewModelInput, JoinActivityViewModelOutput {
@@ -26,19 +26,20 @@ protocol JoinActivityViewModel: JoinActivityViewModelInput, JoinActivityViewMode
 }
 
 class DefaultJoinActivityViewModel: JoinActivityViewModel {
-    var postIdValue: Observable<String?> =  Observable(nil)
+
     var error: Observable<String?> = Observable(nil)
+    var postObs: Observable<PostModel?> = Observable(nil)
     
     private var actions: JoinActivityViewActions
-    private var postId: String?
-    
-    init(actions: JoinActivityViewActions, postId: String? = nil) {
+    private var post: PostModel?
+
+    init(actions: JoinActivityViewActions, post: PostModel) {
         self.actions = actions
-        self.postId = postId
+        self.post = post
     }
     
     func viewDidLoad() {
-        postIdValue.value = postId
+        postObs.value = post
     }
     
     func openPost() {

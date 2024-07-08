@@ -195,7 +195,7 @@ extension PostViewController: AVCaptureMetadataOutputObjectsDelegate {
     
     func found(code: String) {
         guard let post = post,
-              let timeChecIn = post.timeChecIn?.dateValue(),
+              let timeChecIn = post.timeCheckIn?.dateValue(),
               let qrCode = post.qrCode else {
             return
         }
@@ -204,12 +204,13 @@ extension PostViewController: AVCaptureMetadataOutputObjectsDelegate {
             let timeNow = Date()
             let calendar = Calendar.current
             
-            let timeChecInPlus3Minutes = calendar.date(byAdding: .minute, value: 3, to: timeChecIn)!
+            let timeChecInPlus3Minutes = calendar.date(byAdding: .minute, value: 10, to: timeChecIn)!
 
             if timeNow >= timeChecIn && timeNow <= timeChecInPlus3Minutes {
-                viewModel.openJoinActivity(postId: post.id ?? "")
+                viewModel.openJoinActivity(post: post)
             } else {
-                self.show(message: "QR Code đã hết hạn", okTitle: R.stringLocalizable.buttonOk())
+                self.show(message: "QR Code đã hết hạn", 
+                          okTitle: R.stringLocalizable.buttonOk())
             }
         }
     }

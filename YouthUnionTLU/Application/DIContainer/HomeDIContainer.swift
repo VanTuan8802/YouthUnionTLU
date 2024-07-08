@@ -43,8 +43,8 @@ class HomeDIContainer {
                                    post: post)
     }
     
-    func makeJoinActivityVC(actions: JoinActivityViewActions, postId: String) -> JoinActivityViewModel {
-        DefaultJoinActivityViewModel(actions: actions, postId: postId)
+    func makeJoinActivityVC(actions: JoinActivityViewActions, post: PostModel) -> JoinActivityViewModel {
+        DefaultJoinActivityViewModel(actions: actions, post: post)
     }
 }
 
@@ -66,8 +66,8 @@ extension HomeDIContainer: HomeFlowCoodinatorDependencies {
         AddContentViewController.create(with: makeAddContentVC(actions: actions,post: post))
     }
     
-    func makeJoinActivityVC(actions: JoinActivityViewActions, postId: String) -> JoinActivityViewController {
-        JoinActivityViewController.create(with: makeJoinActivityVC(actions: actions, postId: postId))
+    func makeJoinActivityVC(actions: JoinActivityViewActions, post: PostModel) -> JoinActivityViewController {
+        JoinActivityViewController.create(with: makeJoinActivityVC(actions: actions, post: post))
     }
     
 }

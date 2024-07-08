@@ -258,10 +258,12 @@
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityImg" destination="QiR-03-NGC" id="EBE-XL-jt5"/>
                         <outlet property="activityLb" destination="1iF-ri-wIJ" id="7xw-kX-tLC"/>
                         <outlet property="addBtn" destination="VRL-K0-lcc" id="hCe-q9-Mya"/>
                         <outlet property="homeTabBarItem" destination="bGT-14-yc1" id="aYl-ex-pMn"/>
                         <outlet property="libraryLb" destination="UG7-qh-5hd" id="T5a-pM-5eV"/>
+                        <outlet property="newImg" destination="BeA-Ap-vG0" id="QLI-zq-ocB"/>
                         <outlet property="newLb" destination="EKf-1h-Xby" id="Z7k-Jr-fEF"/>
                         <outlet property="newsTableView" destination="b5T-N8-EQC" id="JS0-DV-Wua"/>
                         <outlet property="questionLb" destination="MCn-6l-rvI" id="wAd-4i-iyj"/>
@@ -280,7 +282,7 @@
         <image name="add" width="56" height="56"/>
         <image name="homeSelected" width="24.5" height="24"/>
         <image name="library" width="24.5" height="24"/>
-        <image name="news" width="30" height="30"/>
+        <image name="news" width="24.5" height="24"/>
         <image name="notification" width="24" height="24"/>
         <image name="question" width="24.5" height="24"/>
         <image name="search" width="24.5" height="24"/>

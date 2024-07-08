@@ -1,51 +1,51 @@
 //
-//  InformationStudentViewModel.swift
+//  SearchJoinActivityViewModel.swift
 //  YouthUnionTLU
 //
-//  Created by VanTuan on 19/4/24.
+//  Created by Tuấn Nguyễn on 3/7/24.
 //
 
 import Foundation
 import FirebaseFirestore
 import FirebaseAuth
 
-struct InformationStudentActions {
+struct SearchJoinActivityActions {
     let showSearchInformation: () -> Void
-    let showSetting: () -> Void
 }
 
-protocol InformationStudentViewModelInput {
+protocol SearchJoinActivityViewModelInput {
     func viewDidLoad()
     func openSearchInformation()
-    func openSetting()
 }
 
-protocol InformationStudentViewModelOutput {
+protocol SearchJoinActivityViewModelOutput {
     var error: Observable<String?> {get}
+    var listJoinActivity: Observable<[JoinActivityModel]?> {get}
     var profileStudent: Observable<ProfileStudent?> {get}
 }
 
-protocol InformationStudentViewModel: InformationStudentViewModelInput, InformationStudentViewModelOutput {
+protocol SearchJoinActivityViewModel: SearchJoinActivityViewModelInput, SearchJoinActivityViewModelOutput {
     
 }
 
-class DefaultInformationStudentViewModel: InformationStudentViewModel {
+class DefaultSearchJoinActivityViewModel: SearchJoinActivityViewModel {
     private let uid = Auth.auth().currentUser?.uid
     
     var error: Observable<String?> = Observable(nil)
     var profileStudent: Observable<ProfileStudent?> = Observable(nil)
+    var listJoinActivity: Observable<[JoinActivityModel]?>  = Observable([])
     
-    private let actions: InformationStudentActions?
+    private let actions: SearchJoinActivityActions?
     private let studentCode: String
     private let seachType: SearchType
     
-    init(actions: InformationStudentActions?, studentCode: String, searchType: SearchType) {
+    init(actions: SearchJoinActivityActions?, studentCode: String, searchType: SearchType) {
         self.actions = actions
         self.studentCode = studentCode
         self.seachType = searchType
     }
     
-    init(actions: InformationStudentActions?, studentCode: String) {
+    init(actions: SearchJoinActivityActions?, studentCode: String) {
         self.actions = actions
         self.studentCode = studentCode
         self.seachType = .searchInfomationStudent
@@ -54,6 +54,8 @@ class DefaultInformationStudentViewModel: InformationStudentViewModel {
     func viewDidLoad() {
         if UserDefaultsData.shared.posision == Position.manager.rawValue {
             self.getDataStudent(studentCode: self.studentCode) {
+            }
+            self.getListSearchJoinActivity(studentCode: self.studentCode) {
             }
         } else {
             getDataStudent(studentCode: studentCode) {
@@ -64,6 +66,8 @@ class DefaultInformationStudentViewModel: InformationStudentViewModel {
                     } else {
                         self.getDataStudent(studentCode: self.studentCode) {
                         }
+                        self.getListSearchJoinActivity(studentCode: self.studentCode) {
+                        }
                     }
                 }
             }
@@ -71,10 +75,6 @@ class DefaultInformationStudentViewModel: InformationStudentViewModel {
     }
     
     func openSearchInformation() {
-        
-    }
-    
-    func openSetting() {
         
     }
     
@@ -95,4 +95,19 @@ class DefaultInformationStudentViewModel: InformationStudentViewModel {
             completion()
         }
     }
+    
+    private func getListSearchJoinActivity(studentCode: String, completion: @escaping () -> Void) {
+        FSUserClient.shared.getListDataJoinActivity(studentCode: studentCode) { listJoinActivity, error in
+            guard let listJoinActivity = listJoinActivity,
+                  error == nil else {
+                self.error.value = error?.localizedDescription
+                completion()
+                return
+            }
+            print(listJoinActivity)
+            self.listJoinActivity.value = listJoinActivity
+        }
+        completion()
+    }
 }
+

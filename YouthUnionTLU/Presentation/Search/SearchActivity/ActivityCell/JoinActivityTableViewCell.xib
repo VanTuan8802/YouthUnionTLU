@@ -58,7 +58,6 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csd-fk-sT9">
                                 <rect key="frame" x="16" y="96" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -72,14 +71,20 @@
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ldy-VJ-XDb">
                                 <rect key="frame" x="16" y="117" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="jEj-Vu-hrV"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Ldy-VJ-XDb" firstAttribute="top" secondItem="csd-fk-sT9" secondAttribute="bottom" constant="16" id="0zE-jh-bgT"/>
+                            <constraint firstAttribute="trailing" secondItem="Ldy-VJ-XDb" secondAttribute="trailing" constant="16" id="4PV-B6-Exb"/>
+                            <constraint firstAttribute="bottom" secondItem="Ldy-VJ-XDb" secondAttribute="bottom" id="Azg-N8-P4u"/>
                             <constraint firstItem="SXD-Pz-ePY" firstAttribute="top" secondItem="lcL-o7-8U7" secondAttribute="top" constant="16" id="J6V-sb-4FF"/>
                             <constraint firstAttribute="trailing" secondItem="SXD-Pz-ePY" secondAttribute="trailing" constant="16" id="OtO-Sd-NWd"/>
                             <constraint firstItem="SXD-Pz-ePY" firstAttribute="leading" secondItem="lcL-o7-8U7" secondAttribute="leading" constant="16" id="OvQ-in-jsu"/>
+                            <constraint firstItem="Ldy-VJ-XDb" firstAttribute="leading" secondItem="lcL-o7-8U7" secondAttribute="leading" constant="16" id="bn6-8g-uap"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -92,6 +97,16 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addressLb" destination="xI5-co-xa1" id="vSg-4e-vyt"/>
+                <outlet property="addressValueLb" destination="A9l-5V-06H" id="D9H-BI-pII"/>
+                <outlet property="imageJoinActivity" destination="Ldy-VJ-XDb" id="Z03-wq-uto"/>
+                <outlet property="nameActivityLb" destination="SXD-Pz-ePY" id="U36-jA-ZLn"/>
+                <outlet property="seatLb" destination="csd-fk-sT9" id="1Ko-YB-ndp"/>
+                <outlet property="seatValue" destination="XHe-u4-3ys" id="FTE-9g-pO1"/>
+                <outlet property="timeLb" destination="22j-qc-sBF" id="Gbg-lS-9Jc"/>
+                <outlet property="timeValueLb" destination="bfc-sG-ZLo" id="Slf-Ts-x7O"/>
+            </connections>
             <point key="canvasLocation" x="281.67938931297709" y="59.154929577464792"/>
         </tableViewCell>
     </objects>

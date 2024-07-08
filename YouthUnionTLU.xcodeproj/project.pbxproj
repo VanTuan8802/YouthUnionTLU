@@ -62,13 +62,11 @@
 		AA8826BA2BAC6FAA004A2FAC /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826B92BAC6FAA004A2FAC /* HomeTabBarViewController.swift */; };
 		AA8826BF2BAC6FE4004A2FAC /* SearchTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826BE2BAC6FE4004A2FAC /* SearchTabBarViewController.swift */; };
 		AA8826C22BAC7008004A2FAC /* SettingTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826C12BAC7008004A2FAC /* SettingTabBarViewController.swift */; };
-		AA8826C42BAC70B8004A2FAC /* HomeTabBarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA8826C32BAC70B8004A2FAC /* HomeTabBarViewController.storyboard */; };
 		AA8826C62BAC70DD004A2FAC /* SearchTabBarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA8826C52BAC70DD004A2FAC /* SearchTabBarViewController.storyboard */; };
 		AA8826C82BAC70F8004A2FAC /* SettingTabBarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA8826C72BAC70F8004A2FAC /* SettingTabBarViewController.storyboard */; };
 		AA8826CA2BAC7283004A2FAC /* CustomStyleTabBarContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826C92BAC7283004A2FAC /* CustomStyleTabBarContentView.swift */; };
 		AA8826CC2BAC7536004A2FAC /* FSUserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826CB2BAC7536004A2FAC /* FSUserClient.swift */; };
 		AA8826CE2BAC7644004A2FAC /* HomeFlowCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826CD2BAC7644004A2FAC /* HomeFlowCoodinator.swift */; };
-		AA8826D02BAC76AC004A2FAC /* HomeTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826CF2BAC76AC004A2FAC /* HomeTabBarViewModel.swift */; };
 		AA8826D42BAC7857004A2FAC /* SearchTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826D32BAC7857004A2FAC /* SearchTabBarViewModel.swift */; };
 		AA8826D62BAC78A6004A2FAC /* SettingTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826D52BAC78A6004A2FAC /* SettingTabBarViewModel.swift */; };
 		AA8826DC2BAC7B9C004A2FAC /* SettingFlowCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826DB2BAC7B9C004A2FAC /* SettingFlowCoodinator.swift */; };
@@ -88,6 +86,11 @@
 		AB3E2A852C2DA96300F28ECD /* JoinActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E2A842C2DA96300F28ECD /* JoinActivityViewModel.swift */; };
 		AB3E2A8A2C32E45900F28ECD /* JoinActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E2A882C32E45900F28ECD /* JoinActivityTableViewCell.swift */; };
 		AB3E2A8B2C32E45900F28ECD /* JoinActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB3E2A892C32E45900F28ECD /* JoinActivityTableViewCell.xib */; };
+		AB3E2A8D2C358A5D00F28ECD /* SearchJoinActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E2A8C2C358A5D00F28ECD /* SearchJoinActivityViewController.swift */; };
+		AB3E2A8F2C358A6600F28ECD /* SearchJoinActivityViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB3E2A8E2C358A6600F28ECD /* SearchJoinActivityViewController.storyboard */; };
+		AB3E2A912C358A7500F28ECD /* SearchJoinActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E2A902C358A7500F28ECD /* SearchJoinActivityViewModel.swift */; };
+		AB3E2A932C3C1F2500F28ECD /* HomeTabBarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB3E2A922C3C1F2500F28ECD /* HomeTabBarViewController.storyboard */; };
+		AB3E2A952C3C1F3500F28ECD /* HomeTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E2A942C3C1F3500F28ECD /* HomeTabBarViewModel.swift */; };
 		AB814E8D2C19E3A600DFC34E /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB814E8C2C19E3A600DFC34E /* AddPostViewController.swift */; };
 		AB814E8F2C19E45400DFC34E /* AddPostViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB814E8E2C19E45400DFC34E /* AddPostViewController.storyboard */; };
 		AB814E912C19E48D00DFC34E /* AddPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB814E902C19E48D00DFC34E /* AddPostViewModel.swift */; };
@@ -211,13 +214,11 @@
 		AA8826B92BAC6FAA004A2FAC /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
 		AA8826BE2BAC6FE4004A2FAC /* SearchTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabBarViewController.swift; sourceTree = "<group>"; };
 		AA8826C12BAC7008004A2FAC /* SettingTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTabBarViewController.swift; sourceTree = "<group>"; };
-		AA8826C32BAC70B8004A2FAC /* HomeTabBarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTabBarViewController.storyboard; sourceTree = "<group>"; };
 		AA8826C52BAC70DD004A2FAC /* SearchTabBarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchTabBarViewController.storyboard; sourceTree = "<group>"; };
 		AA8826C72BAC70F8004A2FAC /* SettingTabBarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingTabBarViewController.storyboard; sourceTree = "<group>"; };
 		AA8826C92BAC7283004A2FAC /* CustomStyleTabBarContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStyleTabBarContentView.swift; sourceTree = "<group>"; };
 		AA8826CB2BAC7536004A2FAC /* FSUserClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSUserClient.swift; sourceTree = "<group>"; };
 		AA8826CD2BAC7644004A2FAC /* HomeFlowCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlowCoodinator.swift; sourceTree = "<group>"; };
-		AA8826CF2BAC76AC004A2FAC /* HomeTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewModel.swift; sourceTree = "<group>"; };
 		AA8826D32BAC7857004A2FAC /* SearchTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabBarViewModel.swift; sourceTree = "<group>"; };
 		AA8826D52BAC78A6004A2FAC /* SettingTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTabBarViewModel.swift; sourceTree = "<group>"; };
 		AA8826DB2BAC7B9C004A2FAC /* SettingFlowCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFlowCoodinator.swift; sourceTree = "<group>"; };
@@ -238,6 +239,11 @@
 		AB3E2A842C2DA96300F28ECD /* JoinActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinActivityViewModel.swift; sourceTree = "<group>"; };
 		AB3E2A882C32E45900F28ECD /* JoinActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinActivityTableViewCell.swift; sourceTree = "<group>"; };
 		AB3E2A892C32E45900F28ECD /* JoinActivityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JoinActivityTableViewCell.xib; sourceTree = "<group>"; };
+		AB3E2A8C2C358A5D00F28ECD /* SearchJoinActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchJoinActivityViewController.swift; sourceTree = "<group>"; };
+		AB3E2A8E2C358A6600F28ECD /* SearchJoinActivityViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchJoinActivityViewController.storyboard; sourceTree = "<group>"; };
+		AB3E2A902C358A7500F28ECD /* SearchJoinActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchJoinActivityViewModel.swift; sourceTree = "<group>"; };
+		AB3E2A922C3C1F2500F28ECD /* HomeTabBarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTabBarViewController.storyboard; sourceTree = "<group>"; };
+		AB3E2A942C3C1F3500F28ECD /* HomeTabBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewModel.swift; sourceTree = "<group>"; };
 		AB814E8C2C19E3A600DFC34E /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		AB814E8E2C19E45400DFC34E /* AddPostViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPostViewController.storyboard; sourceTree = "<group>"; };
 		AB814E902C19E48D00DFC34E /* AddPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewModel.swift; sourceTree = "<group>"; };
@@ -414,7 +420,6 @@
 		AA732F312B9D7457009EB608 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				AB92747B2C0C6B91003DE063 /* PointTraning */,
 				AA14F4FF2BD2ADEF00277DFC /* InformationStudent */,
 				AA8826BC2BAC6FB9004A2FAC /* Setting */,
 				AA8826BB2BAC6FB3004A2FAC /* Search */,
@@ -620,9 +625,9 @@
 				AB814E9B2C1B2C8E00DFC34E /* PostActivityTableView */,
 				AB814E922C19E6A400DFC34E /* DocumentTableView */,
 				AB92755B2C13FE2A003DE063 /* NewTableViewCell */,
+				AB3E2A922C3C1F2500F28ECD /* HomeTabBarViewController.storyboard */,
 				AA8826B92BAC6FAA004A2FAC /* HomeTabBarViewController.swift */,
-				AA8826C32BAC70B8004A2FAC /* HomeTabBarViewController.storyboard */,
-				AA8826CF2BAC76AC004A2FAC /* HomeTabBarViewModel.swift */,
+				AB3E2A942C3C1F3500F28ECD /* HomeTabBarViewModel.swift */,
 			);
 			path = HomeTabBar;
 			sourceTree = "<group>";
@@ -630,6 +635,7 @@
 		AA8826BB2BAC6FB3004A2FAC /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				AB92747B2C0C6B91003DE063 /* PointTraning */,
 				AB3E2A862C32E1B000F28ECD /* SearchActivity */,
 				ABC09C612BFF8D350036E786 /* SearchInfomation */,
 				AA8826BD2BAC6FCD004A2FAC /* SearchTabBar */,
@@ -745,6 +751,9 @@
 			isa = PBXGroup;
 			children = (
 				AB3E2A872C32E43D00F28ECD /* ActivityCell */,
+				AB3E2A8C2C358A5D00F28ECD /* SearchJoinActivityViewController.swift */,
+				AB3E2A8E2C358A6600F28ECD /* SearchJoinActivityViewController.storyboard */,
+				AB3E2A902C358A7500F28ECD /* SearchJoinActivityViewModel.swift */,
 			);
 			path = SearchActivity;
 			sourceTree = "<group>";
@@ -1007,7 +1016,6 @@
 				AB814EA82C1EEF0A00DFC34E /* AddContentViewController.storyboard in Resources */,
 				AB07426C2BF707C900BE5308 /* InformationTwoViewTableViewCell.xib in Resources */,
 				AA732F5B2B9F42BE009EB608 /* LanguageViewController.storyboard in Resources */,
-				AA8826C42BAC70B8004A2FAC /* HomeTabBarViewController.storyboard in Resources */,
 				AA8826C82BAC70F8004A2FAC /* SettingTabBarViewController.storyboard in Resources */,
 				AADC74072BA33F5A00406787 /* PermissionViewController.storyboard in Resources */,
 				AB814E962C19E6CE00DFC34E /* DocumentTableViewCell.xib in Resources */,
@@ -1028,10 +1036,12 @@
 				AA732F382B9D770A009EB608 /* SplashViewController.storyboard in Resources */,
 				AA3B65772BCD3B9D001C47F7 /* SF-Pro-Display-Regular.otf in Resources */,
 				AAC2064B2B9B625200BDFCF9 /* Assets.xcassets in Resources */,
+				AB3E2A932C3C1F2500F28ECD /* HomeTabBarViewController.storyboard in Resources */,
 				AA3B65792BCD3BA2001C47F7 /* SF-Pro-Display-Medium.otf in Resources */,
 				AB3E2A8B2C32E45900F28ECD /* JoinActivityTableViewCell.xib in Resources */,
 				AB3E2A832C2DA93700F28ECD /* JoinActivityViewController.storyboard in Resources */,
 				ABC09C652BFF8DF70036E786 /* SearchInformationStudentViewController.storyboard in Resources */,
+				AB3E2A8F2C358A6600F28ECD /* SearchJoinActivityViewController.storyboard in Resources */,
 				AB0742672BF7079200BE5308 /* InformationOneViewTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1132,6 +1142,7 @@
 				AB814EB92C20825900DFC34E /* ExtentionDictionary.swift in Sources */,
 				AB3E2A852C2DA96300F28ECD /* JoinActivityViewModel.swift in Sources */,
 				AA8826A12BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift in Sources */,
+				AB3E2A8D2C358A5D00F28ECD /* SearchJoinActivityViewController.swift in Sources */,
 				AA8826982BAAC0B8004A2FAC /* ExtensionUIVc.swift in Sources */,
 				AA732F712B9F4CF2009EB608 /* UserDefaultsData.swift in Sources */,
 				AB3E2A8A2C32E45900F28ECD /* JoinActivityTableViewCell.swift in Sources */,
@@ -1150,6 +1161,7 @@
 				AA88268B2BAA69A2004A2FAC /* AuthClient.swift in Sources */,
 				AA14F5012BD2AE4700277DFC /* InformationStudentViewController.swift in Sources */,
 				AA8826B12BAC3EA3004A2FAC /* Faculaty.swift in Sources */,
+				AB3E2A912C358A7500F28ECD /* SearchJoinActivityViewModel.swift in Sources */,
 				AB814E982C19E7AF00DFC34E /* Documnet.swift in Sources */,
 				ABC09C572BFE03B20036E786 /* OnboardDIContainer.swift in Sources */,
 				AA88268F2BAA6CC1004A2FAC /* FireAuthClient.swift in Sources */,
@@ -1169,7 +1181,6 @@
 				ABC09C4C2BFE039A0036E786 /* AppFlowCoordinator.swift in Sources */,
 				AA8826D42BAC7857004A2FAC /* SearchTabBarViewModel.swift in Sources */,
 				AB814EAA2C1EEF6200DFC34E /* AddContentViewModel.swift in Sources */,
-				AA8826D02BAC76AC004A2FAC /* HomeTabBarViewModel.swift in Sources */,
 				AB9275C52C174662003DE063 /* PostViewController.swift in Sources */,
 				AB9275B82C1739AC003DE063 /* TimeConverter.swift in Sources */,
 				ABC09C6F2C062E140036E786 /* MajorClient.swift in Sources */,
@@ -1187,6 +1198,7 @@
 				AA732F592B9F42A8009EB608 /* LanguageViewController.swift in Sources */,
 				AA8826942BAA9999004A2FAC /* LoadingView.swift in Sources */,
 				AA14F4FC2BCD694C00277DFC /* CollectionFireStore.swift in Sources */,
+				AB3E2A952C3C1F3500F28ECD /* HomeTabBarViewModel.swift in Sources */,
 				AB814EB62C2046B300DFC34E /* AddContentTableViewCell.swift in Sources */,
 				AB814EA32C1EE63500DFC34E /* PermissionManager.swift in Sources */,
 				AA732F4D2B9DD374009EB608 /* OnboardFlowCoodinator.swift in Sources */,

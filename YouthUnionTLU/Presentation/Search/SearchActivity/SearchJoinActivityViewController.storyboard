@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Semibold.otf">
+            <string>SFProDisplay-Semibold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Search Join Activity View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SearchJoinActivityViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SearchJoinActivityViewController" customModule="YouthUnionTLU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vhJ-xM-nz2">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUH-YH-XY5">
+                                <rect key="frame" x="0.0" y="59" width="393" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tra cứu điểm rèn luyện" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ov2-rK-Ab1">
+                                        <rect key="frame" x="139" y="12" width="197.33333333333337" height="24"/>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPy-pE-7dU">
+                                        <rect key="frame" x="20" y="8" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="1aW-MQ-hC7"/>
+                                            <constraint firstAttribute="width" constant="32" id="aTX-qu-fve"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="back"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="JPy-pE-7dU" firstAttribute="leading" secondItem="tUH-YH-XY5" secondAttribute="leading" constant="20" id="OLy-h4-xle"/>
+                                    <constraint firstItem="ov2-rK-Ab1" firstAttribute="centerY" secondItem="tUH-YH-XY5" secondAttribute="centerY" id="Ps7-qI-dg4"/>
+                                    <constraint firstItem="ov2-rK-Ab1" firstAttribute="centerX" secondItem="tUH-YH-XY5" secondAttribute="centerX" constant="41" id="Sdm-pE-due"/>
+                                    <constraint firstItem="JPy-pE-7dU" firstAttribute="centerY" secondItem="ov2-rK-Ab1" secondAttribute="centerY" id="eUV-cc-det"/>
+                                    <constraint firstAttribute="height" constant="48" id="jla-LR-azb"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="twq-TW-OQ2">
+                                <rect key="frame" x="32" y="155" width="329" height="663"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sDk-RH-Or4"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="tUH-YH-XY5" firstAttribute="leading" secondItem="vhJ-xM-nz2" secondAttribute="leading" id="7xf-dR-TPo"/>
+                            <constraint firstItem="twq-TW-OQ2" firstAttribute="leading" secondItem="vhJ-xM-nz2" secondAttribute="leadingMargin" constant="16" id="Cqb-1R-YNf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="twq-TW-OQ2" secondAttribute="trailing" constant="16" id="CxQ-tg-9E6"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="twq-TW-OQ2" secondAttribute="bottom" id="biX-1O-QxC"/>
+                            <constraint firstItem="tUH-YH-XY5" firstAttribute="top" secondItem="sDk-RH-Or4" secondAttribute="top" id="byL-IC-TNb"/>
+                            <constraint firstAttribute="trailing" secondItem="tUH-YH-XY5" secondAttribute="trailing" id="fya-Pl-ewb"/>
+                            <constraint firstItem="twq-TW-OQ2" firstAttribute="top" secondItem="tUH-YH-XY5" secondAttribute="bottom" constant="48" id="veG-IU-Xle"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="joinActivityTableView" destination="twq-TW-OQ2" id="OyO-Hc-Ga3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="38.931297709923662" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="24" height="24"/>
+        <namedColor name="Background">
+            <color red="0.95294117647058818" green="0.96862745098039216" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -55,7 +55,6 @@
                                     <constraint firstItem="aeb-bW-bPh" firstAttribute="centerY" secondItem="v3I-z7-pp9" secondAttribute="centerY" id="Car-CO-l4y"/>
                                     <constraint firstItem="koz-8Q-9Xk" firstAttribute="centerY" secondItem="v3I-z7-pp9" secondAttribute="centerY" id="JTW-ya-Ink"/>
                                     <constraint firstAttribute="height" constant="48" id="K6g-Jc-m3P"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="Kk1-nF-V25"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oq8-a2-lbr">

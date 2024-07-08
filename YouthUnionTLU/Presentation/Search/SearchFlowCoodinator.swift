@@ -16,6 +16,8 @@ protocol SearchFlowCoodinatorDependencies {
     func makeInformationStudentVC(actions: InformationStudentActions, studentCode: String) -> InformationStudentViewController
     
     func makePointTrainingVC(actions: PointTrainingActions, studentCode: String, searchType: SearchType) -> PointTraingViewController
+    
+    func makeSearchJoinActivity(action: SearchJoinActivityActions, studentCode: String, searchType: SearchType) -> SearchJoinActivityViewController
 }
 
 final class SearchFlowCoodinator {
@@ -35,6 +37,8 @@ final class SearchFlowCoodinator {
             
         }, showMyScore: {
             self.showPointTraining(studentCode: UserDefaultsData.shared.studentCode)
+        }, showMyJoinActivity: {
+            self.showJoinActivity(studentCode: UserDefaultsData.shared.studentCode)
         } )
         let vc = dependencies.makeSearchTabBarVC(actions: actions)
         navigationController?.viewControllers = [vc]
@@ -110,6 +114,12 @@ final class SearchFlowCoodinator {
     private func showPointTraining(studentCode: String) {
         let actions = PointTrainingActions(showSearchInformation: show)
         let vc = dependencies.makePointTrainingVC(actions: actions, studentCode: studentCode, searchType: .searchPointTraining)
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func showJoinActivity(studentCode: String) {
+        let actions = SearchJoinActivityActions(showSearchInformation: show)
+        let vc = dependencies.makeSearchJoinActivity(action: actions, studentCode: studentCode, searchType: .searchPointTraining)
         navigationController?.pushViewController(vc, animated: true)
     }
     

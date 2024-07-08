@@ -64,7 +64,7 @@ class FSPostClient: PostClient {
     }
     
     func createPost(path: String,
-                    post : PostMock,
+                    post: PostMock,
                     pathImage: String,
                     listContent: [ContentMock],
                     completion: @escaping (Error?) -> Void) {
@@ -86,7 +86,8 @@ class FSPostClient: PostClient {
                                   timeCreate: post.timeCreate,
                                   postType: post.postType)
         } else {
-            postModel = PostModel(id: postId,imageNew: pathImage,
+            postModel = PostModel(id: postId,
+                                  imageNew: pathImage,
                                   title: post.title,
                                   timeCreate: post.timeCreate,
                                   postType: post.postType,
@@ -96,16 +97,16 @@ class FSPostClient: PostClient {
                                   qrCode: post.qrText)
         }
         
-        
+        dispatchGroup.enter()
         database.collection(path)
             .document(postId)
-            .setData(postModel.dictionary, completion: { error in
+            .setData(postModel.dictionary) { error in
                 if let error = error {
                     print("Failed to set data: \(error.localizedDescription)")
                     completion(error)
-                    return
                 }
-            })
+                dispatchGroup.leave()
+            }
         
         for index in 0..<listContent.count {
             let content = listContent[index]
@@ -136,7 +137,7 @@ class FSPostClient: PostClient {
                 }
                 
                 FSStorageClient.shared.uploadImage(image: image,
-                                                   path: "\(post.postType)\(postId)") { result in
+                                                   path: "\(post.postType)/\(postId)") { result in
                     switch result {
                     case .success(let downloadURL):
                         let contentModel = ContentModel(
@@ -165,6 +166,7 @@ class FSPostClient: PostClient {
             completion(nil)
         }
     }
+
     
     func createPostStorage(post: PostMock,
                            completion: @escaping (String?, Error?) -> Void) {
@@ -190,9 +192,9 @@ class FSPostClient: PostClient {
     func joinActivity(postId: String, joinActivity: JoinActivityModel, completion: @escaping (Error?) -> Void) {
         self.database.collection(CollectionFireStore.joinActivity.rawValue)
             .document(UserDefaultsData.shared.studentCode)
-            .collection(postId)
-            .addDocument(data: joinActivity.dictionary) { error in
-                
+            .collection(CollectionFireStore.listActivity.rawValue)
+            .document(postId)
+            .setData(joinActivity.dictionary) { error in
                 completion(error)
             }
     }
@@ -262,7 +264,7 @@ class FSPostClient: PostClient {
             }
     }
     
-    private func getPost(posType: PostType,
+     func getPost(posType: PostType,
                          majorId: String,
                          postId: String,
                          completion: @escaping (PostModel?, Error?) -> Void) {
@@ -288,7 +290,7 @@ class FSPostClient: PostClient {
             }
     }
     
-    private func getContent(majorId: String,
+     func getContent(majorId: String,
                             postId: String,
                             postType: PostType,
                             contentId: String,

@@ -49,7 +49,7 @@ class DefaultPointTrainingViewModel: PointTrainingViewModel {
     init(actions: PointTrainingActions?, studentCode: String) {
         self.actions = actions
         self.studentCode = studentCode
-        self.seachType = .searchInfomatioStudent
+        self.seachType = .searchInfomationStudent
     }
     
     func viewDidLoad() {

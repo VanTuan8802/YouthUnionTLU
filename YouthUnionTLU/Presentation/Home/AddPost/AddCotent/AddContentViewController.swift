@@ -114,7 +114,7 @@ class AddContentViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func addTextAction(_ sender: Any) {
-        if textContent.text != nil {
+        if textContent.text != nil && textContent.text != "" {
             let content = ContentMock(contentNumber: listContent.count + 1,
                                            textContent: textContent.text,
                                            contentType: .text

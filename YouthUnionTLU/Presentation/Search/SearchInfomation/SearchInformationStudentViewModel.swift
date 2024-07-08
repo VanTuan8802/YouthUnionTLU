@@ -48,7 +48,7 @@ class DefaultSearchInformationStudentModel: SearchInformationStudentViewModel {
 
 extension DefaultSearchInformationStudentModel {
     func viewDidLoad() {
-        print(searchType)
+      
         getListMajor {
             
         }

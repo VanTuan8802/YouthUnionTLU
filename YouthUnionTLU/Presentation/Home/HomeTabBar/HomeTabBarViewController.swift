@@ -18,7 +18,9 @@ class HomeTabBarViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var searchTabBarItem: UITabBarItem!
     @IBOutlet weak var settingTabBarItem: UITabBarItem!
     @IBOutlet weak var newLb: UILabel!
+    @IBOutlet weak var newImg: UIImageView!
     @IBOutlet weak var activityLb: UILabel!
+    @IBOutlet weak var activityImg: UIImageView!
     @IBOutlet weak var libraryLb: UILabel!
     @IBOutlet weak var questionLb: UILabel!
     @IBOutlet weak var newsTableView: UITableView!
@@ -86,6 +88,11 @@ class HomeTabBarViewController: UIViewController, StoryboardInstantiable {
             addBtn.isHidden = true
         }
         
+        newLb.textColor = UIColor.blue
+        newImg.image = UIImage(named: R.image.newSelected.name)
+        activityLb.textColor = UIColor.black
+        activityImg.image = UIImage(named: R.image.activity.name)
+        
         setUpTableView()
         
     }
@@ -132,11 +139,21 @@ class HomeTabBarViewController: UIViewController, StoryboardInstantiable {
     
     @IBAction func newAcions(_ sender: Any) {
         actionType = .new
+        newLb.textColor = UIColor.blue
+        newImg.image = UIImage(named: R.image.newSelected.name)
+        activityLb.textColor = UIColor.black
+        activityImg.image = UIImage(named: R.image.activity.name)
+        postType = .new
+        newsTableView.reloadData()
     }
     
     @IBAction func eventAction(_ sender: Any) {
         actionType = .activity
         postType = .activity
+        newLb.textColor = UIColor.black
+        newImg.image = UIImage(named: R.image.news.name)
+        activityLb.textColor = UIColor.black
+        activityImg.image = UIImage(named: R.image.activitySelected.name)
         newsTableView.reloadData()
     }
     

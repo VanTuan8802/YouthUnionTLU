@@ -18,4 +18,5 @@ enum CollectionFireStore: String {
     case listContent = "listContent"
     case activities = "activity"
     case joinActivity = "joinActivities"
+    case listActivity = "listActivity"
 }

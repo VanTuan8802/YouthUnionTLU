@@ -13,7 +13,7 @@ protocol HomeFlowCoodinatorDependencies {
     func makePostVC(actions: PostActions, post: PostModel) -> PostViewController
     func makeAddPostVC(actions: AddPostViewActions, postType: PostType) -> AddPostViewController
     func makeAddContentVC(actions: AddContentViewActions, post: PostMock) -> AddContentViewController
-    func makeJoinActivityVC(actions: JoinActivityViewActions,postId: String) -> JoinActivityViewController
+    func makeJoinActivityVC(actions: JoinActivityViewActions, post: PostModel) -> JoinActivityViewController
 }
 
 final class HomeFlowCoodinator {
@@ -73,17 +73,17 @@ final class HomeFlowCoodinator {
     
     private func showPostVc(post: PostModel) {
         let actions = PostActions(showSearchInformation: show,
-                                  showJoinActivity: { postId in
-            self.showJoinActivity(postId: postId)
+                                  showJoinActivity: { post in
+            self.showJoinActivity(post: post)
         })
         let vc = dependencies.makePostVC(actions: actions, post: post
         )
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    private func showJoinActivity(postId: String) {
+    private func showJoinActivity(post: PostModel) {
         let actions = JoinActivityViewActions(showPost: backToPostVC)
-        let vc = dependencies.makeJoinActivityVC(actions: actions, postId: postId)
+        let vc = dependencies.makeJoinActivityVC(actions: actions, post: post)
         navigationController?.pushViewController(vc, animated: true)
     }
     

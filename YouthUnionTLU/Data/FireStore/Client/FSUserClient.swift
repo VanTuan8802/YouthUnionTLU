@@ -127,6 +127,68 @@ class FSUserClient: UserClient {
             }
     }
     
+    func getListDataJoinActivity(studentCode: String, completion: @escaping ([JoinActivityModel]?, Error?) -> Void) {
+        let dispatchGroup = DispatchGroup()
+        var listActivity: [JoinActivityModel] = []
+        database.collection(CollectionFireStore.joinActivity.rawValue)
+            .document(studentCode)
+            .collection(CollectionFireStore.listActivity.rawValue)
+            .getDocuments { data, error in
+                guard let data = data,
+                      error == nil else {
+                    completion(nil,error)
+                    return
+                }
+                
+                for joinActivity in data.documents {
+                    dispatchGroup.enter()
+                    self.getDataJoinActivity(studentCode: studentCode,
+                                             activityId: joinActivity.documentID) { joinActivity, error in
+                        defer {
+                            dispatchGroup.leave()
+                        }
+                        
+                        guard let joinActivity = joinActivity, error == nil else {
+                            completion(nil, error)
+                            return
+                        }
+                        
+                        listActivity.append(joinActivity)
+                    }
+                }
+                dispatchGroup.notify(queue: .main) {
+                    completion(listActivity, nil)
+                }
+            }
+    }
+    
+    private func getDataJoinActivity(studentCode: String, activityId: String, completion: @escaping (JoinActivityModel?, Error?) -> Void) {
+        database.collection(CollectionFireStore.joinActivity.rawValue)
+            .document(studentCode)
+            .collection(CollectionFireStore.listActivity.rawValue)
+            .document(activityId)
+            .getDocument(as: JoinActivityModel.self) {result in
+                switch result {
+                case .success(let data):
+                    completion(data, nil)
+                case .failure(let error):
+                    var errorMessage = "Error decoding document: \(error.localizedDescription)"
+                    if case let DecodingError.typeMismatch(_, context) = error {
+                        errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
+                    } else if case let DecodingError.valueNotFound(_, context) = error {
+                        errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
+                    } else if case let DecodingError.keyNotFound(_, context) = error {
+                        errorMessage = "\(error.localizedDescription): \(context.debugDescription)"
+                    } else if case let DecodingError.dataCorrupted(key) = error {
+                        errorMessage = "\(error.localizedDescription): \(key)"
+                    }
+                    print(errorMessage)
+                    completion(nil, error)
+                }
+            }
+        
+    }
+    
     func getListClass(uid: String, completion: @escaping ([String]?, Error?) -> Void) {
         var listClass :[String] = []
         database.collection(CollectionFireStore.userCollection.rawValue)

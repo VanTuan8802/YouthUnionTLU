@@ -12,6 +12,7 @@ struct SearchTabBarActions {
     let showSettingTabBar: () -> Void
     let showSearchInformation: (SearchType) -> Void
     let showMyScore: () -> Void
+    let showMyJoinActivity: () -> Void
 }
 
 protocol SearchTabBarViewModelInput {
@@ -20,6 +21,7 @@ protocol SearchTabBarViewModelInput {
     func openSettingTabBar()
     func openSearchInformation(searchType: SearchType)
     func openMyScore()
+    func openMyJoinActivity()
 }
 
 protocol SearchTabBarViewModelOutput {
@@ -57,6 +59,10 @@ class DefaultSearchTabBarViewModel: SearchTabBarViewModel {
     
     func openMyScore() {
         actions.showMyScore()
+    }
+    
+    func openMyJoinActivity() {
+        actions.showMyJoinActivity()
     }
     
 }

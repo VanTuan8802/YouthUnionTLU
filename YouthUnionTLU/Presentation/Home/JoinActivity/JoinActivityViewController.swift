@@ -16,13 +16,13 @@ class JoinActivityViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var viewImportPhoto: UIView!
     @IBOutlet weak var image: UIImageView!
     
-    private var postId: String = ""
+    private var post: PostModel?
     private var viewModel: JoinActivityViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind(to: viewModel)
         viewModel.viewDidLoad()
+        bind(to: viewModel)
         setUI()
     }
     
@@ -41,11 +41,12 @@ class JoinActivityViewController: UIViewController, StoryboardInstantiable {
             }
         }
         
-        viewModel.postIdValue.observe(on: self) { [weak self] postIdValue in
-            guard let postIdValue = postIdValue else {
+
+        viewModel.postObs.observe(on: self) { [weak self] post in
+            if let post = post {
+                self?.post = post
                 return
             }
-            self?.postId = postIdValue
         }
     }
     
@@ -100,6 +101,10 @@ class JoinActivityViewController: UIViewController, StoryboardInstantiable {
         guard let image = image,
               let imageImg = image.image,
               let studentCode = studentCode.text,
+              let post = post,
+              let postId = post.id,
+              let timeActivity = post.timeStartActivy,
+              let address = post.address,
               let classStudent = classTxt.text,
               let nameStudent = nameStudentCode.text,
               let seat = seatTxt.text else {
@@ -108,22 +113,24 @@ class JoinActivityViewController: UIViewController, StoryboardInstantiable {
         
         let path = "\(CollectionFireStore.activities.rawValue)/\(postId)/\(UserDefaultsData.shared.studentCode)"
         
-        // Show loading view when the action starts
         LoadingView.show()
         
         dispatchGroup.enter()
         FSStorageClient.shared.uploadImage(image: imageImg, path: path) { result in
             switch result {
             case .success(let downloadURL):
-                let activity = JoinActivityModel(studentCode: UserDefaultsData.shared.studentCode,
+                let activity = JoinActivityModel(nameActivity: post.title,
+                                                 timeActivity: timeActivity,
+                                                 addressActivity: address,
+                                                 studentCode: studentCode,
                                                  classStudent: classStudent,
                                                  nameStudent: nameStudent,
                                                  seatStudent: seat,
                                                  pathImage: downloadURL)
                 dispatchGroup.enter()
-                FSPostClient.shared.joinActivity(postId: self.postId, joinActivity: activity) { error in
+                FSPostClient.shared.joinActivity(postId: postId, joinActivity: activity) { error in
                     if error != nil {
-                        self.viewModel.openPost()
+                        self.navigationController?.popViewController(animated: true)
                     }
                     dispatchGroup.leave()
                 }
@@ -138,6 +145,7 @@ class JoinActivityViewController: UIViewController, StoryboardInstantiable {
             self.viewModel.openPost()
         }
     }
+
 
 }
 

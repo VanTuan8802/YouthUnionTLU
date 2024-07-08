@@ -10,5 +10,5 @@ import Foundation
 enum SearchType {
     case searchActivity
     case searchPointTraining
-    case searchInfomatioStudent
+    case searchInfomationStudent
 }

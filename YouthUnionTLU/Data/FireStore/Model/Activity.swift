@@ -18,6 +18,9 @@ struct ActivityModel: Codable {
 }
 
 struct JoinActivityModel: Codable {
+    var nameActivity: String
+    var timeActivity: Timestamp
+    var addressActivity: String
     var studentCode: String
     var classStudent: String
     var nameStudent: String
