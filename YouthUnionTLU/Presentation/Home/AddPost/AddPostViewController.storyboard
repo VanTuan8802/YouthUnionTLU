@@ -243,6 +243,11 @@
                                                 <state key="normal" title="Tiếp tục">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="nextAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="o5s-Gy-f3t"/>
                                                 </connections>
@@ -288,7 +293,9 @@
                     </view>
                     <connections>
                         <outlet property="activityInputView" destination="YlS-ZT-DN1" id="Ifp-69-twd"/>
+                        <outlet property="addImageLb" destination="XFM-0J-dLf" id="qoW-LA-6Qg"/>
                         <outlet property="address" destination="EnV-Oy-KBD" id="j11-lX-Qbi"/>
+                        <outlet property="contitnueBtn" destination="RbB-C1-mRT" id="vBa-Sw-l5e"/>
                         <outlet property="imagePost" destination="uWo-eX-83z" id="UZY-qL-O7V"/>
                         <outlet property="qrText" destination="ByX-2s-mQI" id="89b-tB-j3T"/>
                         <outlet property="timeCheckIn" destination="4DO-yj-Yrp" id="1WJ-ex-BV9"/>

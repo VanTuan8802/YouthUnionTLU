@@ -20,11 +20,12 @@ class AddPostViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var timeCheckInLb: UILabel!
     @IBOutlet weak var timeCheckIn: UIDatePicker!
     @IBOutlet weak var qrText: UITextField!
+    @IBOutlet weak var addImageLb: UILabel!
     @IBOutlet weak var viewImportPhoto: UIView!
     @IBOutlet weak var imagePost: UIImageView!
+    @IBOutlet weak var contitnueBtn: UIButton!
     
     private var viewModel: AddPostViewModel!
-    private let placeholderText = "Nhập tiêu đề"
     private var postType: PostType = .new
     
     override func viewDidLoad() {
@@ -44,8 +45,14 @@ class AddPostViewController: UIViewController, StoryboardInstantiable {
     
     private func setUI() {
         titleLb.text = R.stringLocalizable.addPostHeading()
+        timeStartLb.text = R.stringLocalizable.addPostTimeStart()
+        timeCheckInLb.text = R.stringLocalizable.addPostTimeCheckIn()
+        address.placeholder = R.stringLocalizable.addPostAddress()
         address.addPadding()
         qrText.addPadding()
+        
+        addImageLb.text = R.stringLocalizable.addPostImage()
+        contitnueBtn.setTitle(R.stringLocalizable.buttonContinue(), for: .normal)
     }
     
     @objc private func hideKeyboard() {
@@ -54,7 +61,7 @@ class AddPostViewController: UIViewController, StoryboardInstantiable {
     
     private func setupPlaceholder() {
         if titleTextView.text.isEmpty {
-            titleTextView.text = placeholderText
+            titleTextView.text = R.stringLocalizable.addPostTitle()
             titleTextView.textColor = .lightGray
         }
     }
@@ -127,7 +134,7 @@ class AddPostViewController: UIViewController, StoryboardInstantiable {
     
     @IBAction func nextAction(_ sender: Any) {
         guard let title = titleTextView.text,
-              title != placeholderText ,
+              title != R.stringLocalizable.addPostTitle() ,
               let address = address.text,
               let qrText = qrText.text,
               let image = imagePost.image else {
@@ -177,7 +184,7 @@ extension AddPostViewController: UIImagePickerControllerDelegate, UINavigationCo
 
 extension AddPostViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == placeholderText {
+        if textView.text == R.stringLocalizable.addPostTitle() {
             textView.text = nil
             textView.textColor = .black
         }
@@ -185,7 +192,7 @@ extension AddPostViewController: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = placeholderText
+            textView.text = R.stringLocalizable.addPostTitle()
             textView.textColor = .lightGray
         }
     }

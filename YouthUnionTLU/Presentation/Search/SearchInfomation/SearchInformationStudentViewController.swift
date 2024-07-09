@@ -85,6 +85,7 @@ class SearchInformationStudentViewController: UIViewController, StoryboardInstan
     
     @IBAction func showInformation(_ sender: Any) {
         if searchType == .searchActivity {
+            viewModel.openJoinActivity(studentCode: studentCodeTxt.text ?? "")
         } else {
             if searchType == .searchPointTraining {
                 viewModel.openPoinTraining(studentCode: studentCodeTxt.text ?? "")

@@ -104,8 +104,8 @@ class DefaultSearchJoinActivityViewModel: SearchJoinActivityViewModel {
                 completion()
                 return
             }
-            print(listJoinActivity)
             self.listJoinActivity.value = listJoinActivity
+            self.listJoinActivity.value = listJoinActivity.sorted(by: { $0.timeActivity.compare($1.timeActivity) == .orderedDescending })
         }
         completion()
     }

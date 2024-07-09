@@ -50,6 +50,8 @@ class HomeTabBarViewController: UIViewController, StoryboardInstantiable {
     
     private var listNew: [PostModel] = []
     private var listPostActivity:[PostModel] = []
+    private var listNewSearch: [PostModel] = []
+    private var listPostActivitySearch: [PostModel] = []
     private var listDocumnet: [DocumnetModel] = []
     
     override func viewWillAppear(_ animated: Bool) {
@@ -94,7 +96,12 @@ class HomeTabBarViewController: UIViewController, StoryboardInstantiable {
         activityImg.image = UIImage(named: R.image.activity.name)
         
         setUpTableView()
-        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func hideKeyboard() {
+        view.endEditing(true)
     }
     
     private func bind(to viewModel: HomeTabBarViewModel) {
@@ -112,6 +119,7 @@ class HomeTabBarViewController: UIViewController, StoryboardInstantiable {
             }
             
             self.listNew = listNew
+            self.listNewSearch = listNew
             
             self.newsTableView.reloadData()
         }
@@ -120,8 +128,9 @@ class HomeTabBarViewController: UIViewController, StoryboardInstantiable {
             guard let listPostActivity = listPostActivity else {
                 return
             }
-            
             self.listPostActivity = listPostActivity
+            self.listPostActivitySearch = listPostActivity
+            
             self.newsTableView.reloadData()
         }
     }
@@ -186,9 +195,9 @@ extension HomeTabBarViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch actionType {
         case .new:
-            return listNew.count
+            return listNewSearch.count
         case .activity:
-            return listPostActivity.count
+            return listPostActivitySearch.count
         case .libriay:
             return listDocumnet.count
         }
@@ -198,11 +207,11 @@ extension HomeTabBarViewController: UITableViewDataSource, UITableViewDelegate {
         switch actionType {
         case .new:
             let cell = tableView.dequeueReusableCell(withIdentifier: NewTableViewCell.className, for: indexPath) as! NewTableViewCell
-            cell.fetchData(new: listNew[indexPath.row])
+            cell.fetchData(new: listNewSearch[indexPath.row])
             return cell
         case .activity:
             let cell = tableView.dequeueReusableCell(withIdentifier: PostActivityTableViewCell.className, for: indexPath) as! PostActivityTableViewCell
-            cell.fetchData(postActivity: listPostActivity[indexPath.row])
+            cell.fetchData(postActivity: listPostActivitySearch[indexPath.row])
             return cell
         case .libriay:
             let cell = tableView.dequeueReusableCell(withIdentifier: DocumentTableViewCell.className, for: indexPath) as! DocumentTableViewCell
@@ -213,10 +222,29 @@ extension HomeTabBarViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if postType == .new {
-            viewModel.openPost(post: listNew[indexPath.row] )
+            viewModel.openPost(post: listNewSearch[indexPath.row] )
         } else {
-            print(listPostActivity[indexPath.row])
-            viewModel.openPost(post: listPostActivity[indexPath.row] )
+            viewModel.openPost(post: listPostActivitySearch[indexPath.row] )
         }
+    }
+}
+
+extension HomeTabBarViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if postType == .new {
+            if searchText.isEmpty {
+                listNewSearch = listNew
+            } else {
+                listNewSearch = listNew.filter { $0.title.localizedCaseInsensitiveContains(searchText) }
+            }
+        } else {
+            if searchText.isEmpty {
+                listPostActivitySearch = listPostActivity
+            } else {
+                listPostActivitySearch = listPostActivity.filter { $0.title.localizedCaseInsensitiveContains(searchText) }
+            }
+        }
+        
+        newsTableView.reloadData()
     }
 }

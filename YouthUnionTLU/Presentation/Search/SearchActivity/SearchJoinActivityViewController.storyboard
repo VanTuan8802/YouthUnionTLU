@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -27,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tra cứu điểm rèn luyện" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ov2-rK-Ab1">
-                                        <rect key="frame" x="139" y="12" width="197.33333333333337" height="24"/>
+                                        <rect key="frame" x="98.000000000000014" y="12" width="197.33333333333337" height="24"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -40,20 +39,23 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="backAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dtK-71-Oue"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="JPy-pE-7dU" firstAttribute="leading" secondItem="tUH-YH-XY5" secondAttribute="leading" constant="20" id="OLy-h4-xle"/>
                                     <constraint firstItem="ov2-rK-Ab1" firstAttribute="centerY" secondItem="tUH-YH-XY5" secondAttribute="centerY" id="Ps7-qI-dg4"/>
-                                    <constraint firstItem="ov2-rK-Ab1" firstAttribute="centerX" secondItem="tUH-YH-XY5" secondAttribute="centerX" constant="41" id="Sdm-pE-due"/>
+                                    <constraint firstItem="ov2-rK-Ab1" firstAttribute="centerX" secondItem="tUH-YH-XY5" secondAttribute="centerX" id="Sdm-pE-due"/>
                                     <constraint firstItem="JPy-pE-7dU" firstAttribute="centerY" secondItem="ov2-rK-Ab1" secondAttribute="centerY" id="eUV-cc-det"/>
                                     <constraint firstAttribute="height" constant="48" id="jla-LR-azb"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="twq-TW-OQ2">
-                                <rect key="frame" x="32" y="155" width="329" height="663"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="32" y="139" width="329" height="679"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sDk-RH-Or4"/>
@@ -65,10 +67,11 @@
                             <constraint firstAttribute="bottomMargin" secondItem="twq-TW-OQ2" secondAttribute="bottom" id="biX-1O-QxC"/>
                             <constraint firstItem="tUH-YH-XY5" firstAttribute="top" secondItem="sDk-RH-Or4" secondAttribute="top" id="byL-IC-TNb"/>
                             <constraint firstAttribute="trailing" secondItem="tUH-YH-XY5" secondAttribute="trailing" id="fya-Pl-ewb"/>
-                            <constraint firstItem="twq-TW-OQ2" firstAttribute="top" secondItem="tUH-YH-XY5" secondAttribute="bottom" constant="48" id="veG-IU-Xle"/>
+                            <constraint firstItem="twq-TW-OQ2" firstAttribute="top" secondItem="tUH-YH-XY5" secondAttribute="bottom" constant="32" id="veG-IU-Xle"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="joinActivityLb" destination="ov2-rK-Ab1" id="m70-Et-0i3"/>
                         <outlet property="joinActivityTableView" destination="twq-TW-OQ2" id="OyO-Hc-Ga3"/>
                     </connections>
                 </viewController>
@@ -82,8 +85,5 @@
         <namedColor name="Background">
             <color red="0.95294117647058818" green="0.96862745098039216" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

@@ -89,6 +89,10 @@ final class SearchFlowCoodinator {
             showInformationStudent: { studentCode in
                 self.showInformation(studentCode: studentCode)
             },
+            showjoinActivity: { studentCode in
+                self.showJoinActivity(studentCode: studentCode)
+            }
+            ,
             showPointTraining: {studentCode in
                 self.showPointTraining(studentCode: studentCode)
             },

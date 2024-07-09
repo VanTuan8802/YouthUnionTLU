@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class JoinActivityTableViewCell: UITableViewCell {
 
@@ -31,7 +32,13 @@ class JoinActivityTableViewCell: UITableViewCell {
     
     func fetchData(joinActivity: JoinActivityModel) {
        nameActivityLb.text = joinActivity.nameActivity
-//        timeLb.text = joinActivity.t
+        timeLb.text = R.stringLocalizable.addPostTimeStart()
+        timeValueLb.text = convertTimestampToString(timestamp: joinActivity.timeActivity)
+        addressLb.text = R.stringLocalizable.addPostAddress()
+        addressValueLb.text = joinActivity.addressActivity
+        seatLb.text = R.stringLocalizable.joinActivitySeat()
+        seatValue.text = joinActivity.seatStudent
+        imageJoinActivity.kf.setImage(with: URL(string: joinActivity.pathImage ))
     }
     
 }

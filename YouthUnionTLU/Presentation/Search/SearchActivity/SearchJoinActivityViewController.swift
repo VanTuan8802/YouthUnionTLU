@@ -9,6 +9,7 @@ import UIKit
 
 class SearchJoinActivityViewController: UIViewController, StoryboardInstantiable {
 
+    @IBOutlet weak var joinActivityLb: UILabel!
     @IBOutlet weak var joinActivityTableView: UITableView!
     
     private var viewModel: SearchJoinActivityViewModel!
@@ -19,7 +20,9 @@ class SearchJoinActivityViewController: UIViewController, StoryboardInstantiable
         super.viewDidLoad()
 
         viewModel.viewDidLoad()
+        setUI()
         bindData(to: viewModel)
+        setUpTableView()
     }
     
     class func create(with viewModel: SearchJoinActivityViewModel) -> SearchJoinActivityViewController {
@@ -35,8 +38,7 @@ class SearchJoinActivityViewController: UIViewController, StoryboardInstantiable
             }
             
             self.listJoinActivity = listJoinActivity
-            
-            print(listJoinActivity)
+            self.joinActivityTableView.reloadData()
         }
 
         
@@ -48,6 +50,23 @@ class SearchJoinActivityViewController: UIViewController, StoryboardInstantiable
         }
     }
     
+    private func setUI() {
+        joinActivityLb.text = R.stringLocalizable.searchActivity()
+    }
+    
+    private func setUpTableView() {
+        joinActivityTableView.delegate = self
+        joinActivityTableView.dataSource = self
+        
+        joinActivityTableView.rowHeight = UITableView.automaticDimension
+        
+        joinActivityTableView.register(UINib(nibName: JoinActivityTableViewCell.className, bundle: nil ), forCellReuseIdentifier: JoinActivityTableViewCell.className)
+    }
+    
+    @IBAction func backAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 extension SearchJoinActivityViewController: UITableViewDataSource, UITableViewDelegate {
@@ -57,9 +76,13 @@ extension SearchJoinActivityViewController: UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let joinActivity = listJoinActivity[indexPath.row]
+        print(joinActivity)
         let cell = tableView.dequeueReusableCell(withIdentifier: JoinActivityTableViewCell.className, for: indexPath) as! JoinActivityTableViewCell
+        cell.fetchData(joinActivity: joinActivity)
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 260
+    }
 }

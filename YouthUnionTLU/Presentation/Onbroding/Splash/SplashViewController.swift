@@ -25,8 +25,7 @@ class SplashViewController: UIViewController, StoryboardInstantiable {
         
         bind(to: viewModel)
         viewModel.viewDidLoad()
-        
-        setUI()
+
         self.progressView.setProgress(2.2, animated: true)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
@@ -37,10 +36,6 @@ class SplashViewController: UIViewController, StoryboardInstantiable {
     private func bind(to viewModel: SplashViewModel) {
     }
     
-    private func setUI() {
-        youthUnionLabel.setFont(name: AppFont.sf_pro_display_bold.rawValue, size: 56)
-        tluLabel.setFont(name: AppFont.sf_pro_display_bold.rawValue, size: 26)
-    }
 }
 
 extension SplashViewController {

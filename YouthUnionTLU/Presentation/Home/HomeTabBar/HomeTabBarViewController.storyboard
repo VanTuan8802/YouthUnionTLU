@@ -21,17 +21,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzb-x9-Uhw">
                                 <rect key="frame" x="0.0" y="20" width="320" height="48"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Or0-ZE-jPE">
-                                        <rect key="frame" x="272" y="8" width="32" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="35W-lt-S7A"/>
-                                            <constraint firstAttribute="width" constant="32" id="Gg9-AZ-4E5"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="notification"/>
-                                    </button>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="w9e-I1-TTL">
-                                        <rect key="frame" x="16" y="0.0" width="240" height="48"/>
+                                        <rect key="frame" x="16" y="0.0" width="288" height="48"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="barTintColor" systemColor="systemCyanColor"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -42,13 +33,11 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemCyanColor"/>
                                 <constraints>
-                                    <constraint firstItem="Or0-ZE-jPE" firstAttribute="centerY" secondItem="tzb-x9-Uhw" secondAttribute="centerY" id="40e-Az-rhI"/>
                                     <constraint firstItem="w9e-I1-TTL" firstAttribute="top" secondItem="tzb-x9-Uhw" secondAttribute="top" id="8gQ-vl-4fB"/>
-                                    <constraint firstItem="Or0-ZE-jPE" firstAttribute="leading" secondItem="w9e-I1-TTL" secondAttribute="trailing" constant="16" id="Boc-jw-aIS"/>
                                     <constraint firstItem="w9e-I1-TTL" firstAttribute="leading" secondItem="tzb-x9-Uhw" secondAttribute="leading" constant="16" id="GpK-Bw-l9y"/>
                                     <constraint firstAttribute="bottom" secondItem="w9e-I1-TTL" secondAttribute="bottom" id="MVa-50-9kq"/>
+                                    <constraint firstAttribute="trailing" secondItem="w9e-I1-TTL" secondAttribute="trailing" constant="16" id="Mad-dV-xDG"/>
                                     <constraint firstAttribute="height" constant="48" id="MmY-oy-UVp"/>
-                                    <constraint firstAttribute="trailing" secondItem="Or0-ZE-jPE" secondAttribute="trailing" constant="16" id="cFk-nz-F11"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="gdo-tJ-6gT">
@@ -283,7 +272,6 @@
         <image name="homeSelected" width="24.5" height="24"/>
         <image name="library" width="24.5" height="24"/>
         <image name="news" width="24.5" height="24"/>
-        <image name="notification" width="24" height="24"/>
         <image name="question" width="24.5" height="24"/>
         <image name="search" width="24.5" height="24"/>
         <image name="setting" width="24.5" height="24"/>
