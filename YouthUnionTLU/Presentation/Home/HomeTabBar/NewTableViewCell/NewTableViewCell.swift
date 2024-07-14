@@ -29,7 +29,4 @@ class NewTableViewCell: UITableViewCell {
         titleNew.text = new.title
         timeCreate.text = convertTimestampToString(timestamp: new.timeCreate)
     }
-    
-    
-    
 }

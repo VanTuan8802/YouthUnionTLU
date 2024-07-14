@@ -96,12 +96,7 @@ class HomeTabBarViewController: UIViewController, StoryboardInstantiable {
         activityImg.image = UIImage(named: R.image.activity.name)
         
         setUpTableView()
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-        view.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc private func hideKeyboard() {
-        view.endEditing(true)
+        
     }
     
     private func bind(to viewModel: HomeTabBarViewModel) {

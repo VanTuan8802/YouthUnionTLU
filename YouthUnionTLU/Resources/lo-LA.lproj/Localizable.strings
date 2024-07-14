@@ -24,6 +24,8 @@ permission.camera = "ກ້ອງຖິ່ນ";
 
 button.go = "ໄປ";
 
+openSetting = "ເປີດການຕັ້ງຄ່າແລະມອບສິດການເຂົ້າເຖິງຮູບເພື່ອດຳເນີນການຕໍ່ໄປ";
+
 button.signIn = "ເຂົ້າລະບົບ";
 textField.email = "ປ້ອນອີເມລ";
 textField.password = "ປ້ອນລະຫັດຜ່ານ";
@@ -72,9 +74,11 @@ home.activity = "ກິດຈະກໍາ";
 home.library = "ຫໍສະໝຸດ";
 home.question = "ຖາມຕອບ";
 
-search.activity = "ສະຖິຕິການກິດຈະກຳ";
-search.pointTraing = "ຄົ້ນຫາຄະແນນຝຶກອົບຮົມ";
-search.info = "ຄົ້ນຫາຂໍ້ມູນນັກຮຽນ";
+search.title = "ການຄົ້ນຫາຂໍ້ມູນ";
+search.activity = "ສະຖິຕິການກິດຈະກໍາ";
+search.pointTraing = "ຄະແນນຝຶກຫັດການຄົ້ນຫາ";
+search.searchTitle = "ຂໍ້ມູນນັກສຶກສາ";
+search.info = "ຄົ້ນຫາຂໍ້ມູນນັກສຶກສາ";
 
 addPost.heading = "ສ້າງຂໍ້ຄວາມ";
 addPost.title = "ໃສ່ຫົວຂໍ້";
@@ -90,11 +94,14 @@ post.content = "ລາຍລະອຽດຂໍ້ຄວາມ";
 post.text = "ເນື້ອໃນ";
 post.image = "ຮູບພາບ";
 post.addContent = "ໃສ່ເນື້ອໃນ";
+post.addButton = "ເພີ່ມ";
+post.create = "ທ່ານແມ່ນທີ່ຈະສໍາເລັດໂພສ?";
 
-button.create = "ສ້າງ";
+button.create = "ສໍາເລັດ";
 
-joinActivity.title = "ຂໍ້ມູນການເຂົ້າຮ່ວມ";
-joinActivity.seat = "ທີ່ນັ່ງ";
+joinActivity.title = "ຂໍ້ມູນກ່ຽວກັບການສະຫມັກ";
+joinActivity.seat = "ຕຳແໜ່ງການນັດສິນ";
+joinActivity.join = "ຢືນຢັນ";
 
 setting.info = "ຂໍ້ມູນສ່ວນຕົວ";
 setting.shared = "ແບ່ງປັນ";
@@ -102,3 +109,12 @@ setting.rate = "ປະເມີນ";
 setting.policy = "ນະໂຍບາຍແລະຄວາມປອດໄພ";
 setting.changePassword = "ປ່ຽນລະຫັດຜ່ານ";
 setting.logout = "ອອກຈາກລະບົບ";
+
+changePassword.currentPassword = "ໃສ່ລະຫັດຜ່ານປະຈຸບັນ";
+changePassword.newPassword = "ໃສ່ລະຫັດຜ່ານໃໝ່";
+changePassword.newPasswordConfirm = "ໃສ່ລະຫັດຜ່ານໃໝ່ອີກຄັ້ງ";
+
+toast.addPostSuccess = "ເພີ່ມໂພສສຳເລັດ";
+toast.addSuccess = "ເພີ່ມສຳເລັດ";
+
+message.cancle = "ທ່ານແນ່ໃຈບໍ່ວ່າຈະຍົກເລີກການສ້າງໂພສໃໝ່?";

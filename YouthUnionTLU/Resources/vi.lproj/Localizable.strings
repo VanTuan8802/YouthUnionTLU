@@ -24,6 +24,8 @@ permission.camera = "Máy ảnh";
 
 button.go = "Tiếp tục";
 
+openSetting = "Mở cài đặt và cấp quyền ảnh để tiếp tục";
+
 button.signIn = "Đăng nhập";
 textField.email = "Nhập Email";
 textField.password = "Nhập mật khẩu";
@@ -72,8 +74,10 @@ home.activity = "Sự kiện";
 home.library = "Thư viện";
 home.question = "Hỏi đáp";
 
+search.title = "Tra cứu thông tin";
 search.activity = "Thống kê hoạt động";
 search.pointTraing = "Tra cứu điểm rèn luyện";
+search.searchTitle = "Thông tin sinh viên";
 search.info = "Tra cứu thông tin sinh viên";
 
 addPost.heading = "Tạo bài viết";
@@ -90,11 +94,14 @@ post.content = "Chi tiết bài viết";
 post.text = "Nội dung";
 post.image = "Hình ảnh";
 post.addContent = "Nhập nội dung";
+post.addButton = "Thêm";
+post.create = "Bạn có chắc chắn muốn tạo một bài đăng?";
 
-button.create = "Create";
+button.create = "Tạo";
 
 joinActivity.title = "Thông tin tham gia";
 joinActivity.seat = "Vị trí ngồi";
+joinActivity.join = "Xác nhận";
 
 setting.info = "Thông tin cá nhân";
 setting.shared = "Chia sẻ";
@@ -103,6 +110,12 @@ setting.policy = "Chính sách và bảo mật";
 setting.changePassword = "Đổi mật khẩu";
 setting.logout = "Đăng xuất";
 
+changePassword.currentPassword = "Nhập mật khẩu hiện tại";
+changePassword.newPassword = "Nhập mật khẩu mới";
+changePassword.newPasswordConfirm = "Nhập lại mật khẩu mới";
 
+toast.addPostSuccess = "Thêm bài viết thành";
+toast.addSuccess = "Thêm thành công";
 
+message.cancle = "Bạn chắn chắn huỷ tạo bài viết không?";
 

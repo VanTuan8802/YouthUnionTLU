@@ -92,7 +92,7 @@ class PostViewController: UIViewController, StoryboardInstantiable {
     }
     
     private func setUI() {
-        postTitleLb.text = R.stringLocalizable.addPostTitle()
+        postTitleLb.text = R.stringLocalizable.postContent()
     }
     
     private func setUpCameraView() {
@@ -200,19 +200,21 @@ extension PostViewController: AVCaptureMetadataOutputObjectsDelegate {
             return
         }
         
-        if code == qrCode {
-            let timeNow = Date()
-            let calendar = Calendar.current
-            
-            let timeChecInPlus3Minutes = calendar.date(byAdding: .minute, value: 10, to: timeChecIn)!
-
-            if timeNow >= timeChecIn && timeNow <= timeChecInPlus3Minutes {
-                viewModel.openJoinActivity(post: post)
-            } else {
-                self.show(message: "QR Code đã hết hạn", 
-                          okTitle: R.stringLocalizable.buttonOk())
-            }
-        }
+        viewModel.openJoinActivity(post: post)
+        
+//        if code == qrCode {
+//            let timeNow = Date()
+//            let calendar = Calendar.current
+//            
+//            let timeChecInPlus3Minutes = calendar.date(byAdding: .minute, value: 10, to: timeChecIn)!
+//
+//            if timeNow >= timeChecIn && timeNow <= timeChecInPlus3Minutes {
+//                viewModel.openJoinActivity(post: post)
+//            } else {
+//                self.show(message: "QR Code đã hết hạn", 
+//                          okTitle: R.stringLocalizable.buttonOk())
+//            }
+//        }
     }
 
     

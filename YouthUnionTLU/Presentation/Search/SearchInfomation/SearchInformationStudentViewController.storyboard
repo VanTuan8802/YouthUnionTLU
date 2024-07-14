@@ -38,8 +38,8 @@
                                             <action selector="backAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3lC-kE-Bb3"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tra cứu thông tin sinh viên" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b23-VM-b0v">
-                                        <rect key="frame" x="78.000000000000014" y="12" width="237.33333333333337" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thông tin sinh viên" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b23-VM-b0v">
+                                        <rect key="frame" x="111.33333333333333" y="12" width="170.33333333333337" height="24"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -311,6 +311,7 @@
                         <outlet property="majorLb" destination="wAy-Pr-g4k" id="Oez-yW-Mz2"/>
                         <outlet property="majorTxt" destination="LQz-zw-HRT" id="zLg-SX-nER"/>
                         <outlet property="majoyTableView" destination="Mpa-09-n5l" id="iq6-X5-b4R"/>
+                        <outlet property="searchTitle" destination="b23-VM-b0v" id="Ml5-EM-5cP"/>
                         <outlet property="showDataStudent" destination="IfD-HB-LEz" id="Q0c-mQ-HNN"/>
                         <outlet property="showHideBtn" destination="aO1-BE-8aY" id="iLP-gI-39b"/>
                         <outlet property="studentCodeLb" destination="DnN-CO-pLn" id="eLE-Ha-7o2"/>

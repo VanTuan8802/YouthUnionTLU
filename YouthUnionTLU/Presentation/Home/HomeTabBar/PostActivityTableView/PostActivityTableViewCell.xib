@@ -26,7 +26,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eyE-G3-xnP">
                         <rect key="frame" x="0.0" y="0.0" width="679" height="184.33333333333334"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="Mci-J6-3XW">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="Mci-J6-3XW">
                                 <rect key="frame" x="0.0" y="0.0" width="679" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="0tb-K2-9yt"/>
@@ -39,7 +39,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFL-HC-DKb">
-                                <rect key="frame" x="16" y="155.33333333333334" width="647" height="21"/>
+                                <rect key="frame" x="16.000000000000004" y="155.33333333333334" width="41.333333333333343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRM-co-dvC">
+                                <rect key="frame" x="621" y="155.33333333333334" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -55,7 +61,8 @@
                             <constraint firstItem="OFL-HC-DKb" firstAttribute="leading" secondItem="eyE-G3-xnP" secondAttribute="leading" constant="16" id="XVX-oI-KRL"/>
                             <constraint firstAttribute="bottom" secondItem="OFL-HC-DKb" secondAttribute="bottom" constant="8" id="Yfb-Vg-S6H"/>
                             <constraint firstItem="Mci-J6-3XW" firstAttribute="leading" secondItem="eyE-G3-xnP" secondAttribute="leading" id="ZYP-NK-sb5"/>
-                            <constraint firstAttribute="trailing" secondItem="OFL-HC-DKb" secondAttribute="trailing" constant="16" id="bBo-fK-wNn"/>
+                            <constraint firstItem="QRM-co-dvC" firstAttribute="centerY" secondItem="OFL-HC-DKb" secondAttribute="centerY" id="aTz-8v-USN"/>
+                            <constraint firstAttribute="trailing" secondItem="QRM-co-dvC" secondAttribute="trailing" constant="16" id="jA5-pH-jy2"/>
                             <constraint firstAttribute="trailing" secondItem="Mci-J6-3XW" secondAttribute="trailing" id="qeL-Dr-PFa"/>
                         </constraints>
                     </view>
@@ -71,6 +78,7 @@
             <connections>
                 <outlet property="dateCreate" destination="OFL-HC-DKb" id="igh-6m-PnJ"/>
                 <outlet property="imageActivities" destination="Mci-J6-3XW" id="7sX-qs-m7o"/>
+                <outlet property="timeStartLb" destination="QRM-co-dvC" id="1Yj-we-WZd"/>
                 <outlet property="titleActivity" destination="fWj-ey-URb" id="dZW-7V-Ji1"/>
             </connections>
             <point key="canvasLocation" x="403.81679389312973" y="163.02816901408451"/>

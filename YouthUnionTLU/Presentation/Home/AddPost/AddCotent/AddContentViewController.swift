@@ -10,16 +10,24 @@ import UIKit
 class AddContentViewController: UIViewController, StoryboardInstantiable {
     
     @IBOutlet weak var titleNew: UILabel!
+    @IBOutlet weak var createBtn: UIButton!
     @IBOutlet weak var contentTableView: UITableView!
+    @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var viewAddTextCotent: UIView!
     @IBOutlet weak var textContent: UITextView!
+    @IBOutlet weak var addTextContentBtn: UIButton!
+    @IBOutlet weak var addImageBtn: UIButton!
     
     private var listContent: [ContentMock] = []
     private var viewModel: AddContentViewModel!
     private let placeholderText = "Nhập nội dung"
     private var new: PostModel!
     
+    private var selectedIndexPath: IndexPath?
+    
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         viewModel.viewDidload()
         bindData(to: viewModel)
         textContent.delegate = self
@@ -40,6 +48,11 @@ class AddContentViewController: UIViewController, StoryboardInstantiable {
         }
         
         viewAddTextCotent.isHidden = true
+        
+        createBtn.setTitle(R.stringLocalizable.buttonCreate(), for: .normal)
+        addBtn.setTitle(R.stringLocalizable.postAddButton(), for: .normal)
+        addTextContentBtn.setTitle(R.stringLocalizable.postText(), for: .normal)
+        addImageBtn.setTitle(R.stringLocalizable.postImage(), for: .normal)
     }
     
     private func setUpTableView() {
@@ -51,14 +64,10 @@ class AddContentViewController: UIViewController, StoryboardInstantiable {
         contentTableView.register(UINib(nibName: AddContentTableViewCell.className, bundle: nil), forCellReuseIdentifier: AddContentTableViewCell.className)
     }
     
-    
-    
     private func bindData(to viewModel: AddContentViewModel) {
         viewModel.error.observe(on: self) { [weak self] error in
             if let error = error {
-                self?.show(message: error,
-                           okTitle: R.stringLocalizable.buttonOk())
-                return
+                self?.show(message: error, okTitle: R.stringLocalizable.buttonOk())
             }
         }
         
@@ -81,32 +90,54 @@ class AddContentViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func backAction(_ sender: Any) {
-        let alertController = UIAlertController(title: "Thoát", 
-                                                message: "Bạn có muốn thoát không?",
-                                                preferredStyle: .alert)
+        let alertController = UIAlertController(
+            title: "",
+            message: R.stringLocalizable.messageCancel(),
+            preferredStyle: .alert)
         
-        let confirmAction = UIAlertAction(title: "Có", style: .default) { _ in
+        let confirmAction = UIAlertAction(title: R.stringLocalizable.buttonOk(), style: .default) { _ in
             self.navigationController?.popViewController(animated: true)
         }
         alertController.addAction(confirmAction)
         
-        let cancelAction = UIAlertAction(title: "Không", style: .cancel) { _ in
-          
+        let cancelAction = UIAlertAction(title: R.stringLocalizable.buttonCancle(), style: .cancel) { _ in
+            
         }
         alertController.addAction(cancelAction)
         
         present(alertController, animated: true, completion: nil)
     }
-
+    
     @IBAction func addTextContent(_ sender: Any) {
         viewAddTextCotent.isHidden = false
     }
     
     @IBAction func creatPostAction(_ sender: Any) {
-        viewModel.openHome(listContent: listContent)
+        let alertController = UIAlertController(
+            title: "",
+            message: R.stringLocalizable.postCreate(),
+            preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: R.stringLocalizable.buttonOk(), style: .default) { _ in
+            self.viewModel.openHome(listContent: self.listContent)
+            self.showToast(message: R.stringLocalizable.toastAddPostSuccess(),
+                      duration: 3)
+        }
+        
+        alertController.addAction(confirmAction)
+        
+        let cancelAction = UIAlertAction(title: R.stringLocalizable.buttonCancle(), style: .cancel) { _ in
+            
+        }
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+        
+        
     }
     
     @IBAction func addImageContent(_ sender: Any) {
+        selectedIndexPath = nil
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
@@ -114,11 +145,10 @@ class AddContentViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func addTextAction(_ sender: Any) {
-        if textContent.text != nil && textContent.text != "" {
+        if let text = textContent.text, !text.isEmpty {
             let content = ContentMock(contentNumber: listContent.count + 1,
-                                           textContent: textContent.text,
-                                           contentType: .text
-            )
+                                      textContent: text,
+                                      contentType: .text)
             listContent.append(content)
             contentTableView.reloadData()
             DispatchQueue.main.async {
@@ -137,33 +167,40 @@ extension AddContentViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AddContentTableViewCell.className, for: indexPath) as! AddContentTableViewCell
-        cell.fetchData(content: listContent[indexPath.row])
+        cell.fetchData(content: listContent[indexPath.row], at: indexPath)
+        
+        cell.imageCallback = { [weak self] imageView, indexPath in
+            if let strongSelf = self {
+                strongSelf.selectedIndexPath = indexPath
+                let imagePicker = UIImagePickerController()
+                imagePicker.delegate = strongSelf
+                imagePicker.sourceType = .photoLibrary
+                strongSelf.present(imagePicker, animated: true, completion: nil)
+            }
+        }
+        
         return cell
     }
 }
 
-extension AddContentViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView == contentTableView {
-            if contentTableView.contentOffset.x != 0 {
-                contentTableView.contentOffset.x = 0
-            }
-        }
-    }
-}
-
 extension AddContentViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    internal func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[.originalImage] as? UIImage {
-            let content = ContentMock(
-                contentNumber: listContent.count + 1,
-                imageContent: selectedImage,
-                contentType: .image
-            )
-            listContent.append(content)
-            contentTableView.reloadData()
-            DispatchQueue.main.async {
-                self.scrollToBottom()
+            if let indexPath = selectedIndexPath {
+                listContent[indexPath.row].imageContent = selectedImage
+                contentTableView.reloadRows(at: [indexPath], with: .automatic)
+                contentTableView.reloadData()
+            } else {
+                let content = ContentMock(
+                    contentNumber: listContent.count + 1,
+                    imageContent: selectedImage,
+                    contentType: .image
+                )
+                listContent.append(content)
+                contentTableView.reloadData()
+                DispatchQueue.main.async {
+                    self.scrollToBottom()
+                }
             }
         }
         dismiss(animated: true, completion: nil)
@@ -190,3 +227,14 @@ extension AddContentViewController:  UITextViewDelegate {
     }
 }
 
+
+extension AddContentViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == contentTableView {
+            if contentTableView.contentOffset.x != 0 {
+                contentTableView.contentOffset.x = 0
+            }
+        }
+    }
+    
+}

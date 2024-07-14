@@ -24,6 +24,8 @@ permission.camera = "Camera";
 
 button.go = "Go";
 
+openSetting = "Mở cài đặt và cấp quyền ảnh để tiếp tục";
+
 button.signIn = "Sign In";
 textField.email = "Enter E-mail";
 textField.password = "Enter Password";
@@ -72,8 +74,10 @@ home.activity = "Events";
 home.library = "Library";
 home.question = "Q&A";
 
+search.title = "Information Search";
 search.activity = "Activity Statistics";
 search.pointTraing = "Search Training Points";
+search.searchTitle = "Student Information";
 search.info = "Search Student Information";
 
 addPost.heading = "Create Post";
@@ -90,11 +94,14 @@ post.content = "Post Details";
 post.text = "Content";
 post.image = "Image";
 post.addContent = "Enter Content";
+post.addButton = "Add";
+post.create = "Are you sure to create an post?";
 
 button.create = "Create";
 
 joinActivity.title = "Participation Information";
 joinActivity.seat = "Seating Position";
+joinActivity.join = "Confirm";
 
 setting.info = "Personal Information";
 setting.shared = "Share";
@@ -102,3 +109,12 @@ setting.rate = "Rate";
 setting.policy = "Policy and Security";
 setting.changePassword = "Change Password";
 setting.logout = "Logout";
+
+changePassword.currentPassword = "Enter current password";
+changePassword.newPassword = "Enter new password";
+changePassword.newPasswordConfirm = "Re-enter new password";
+
+toast.addPostSuccess = "Post added successfully";
+toast.addSuccess = "Added successfully";
+
+message.cancel = "Are you sure you want to cancel creating the post?";

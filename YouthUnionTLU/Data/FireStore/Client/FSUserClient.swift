@@ -17,10 +17,10 @@ class FSUserClient: UserClient {
     
     private let database = Firestore.firestore()
     
-    func getPossionUser(uid: String, completion: @escaping (PositionStudent?, Error?) -> Void) {
+    func getPossionUser(uid: String, completion: @escaping (User?, Error?) -> Void) {
         database.collection(CollectionFireStore.userCollection.rawValue)
             .document(uid)
-            .getDocument(as: PositionStudent.self) { result in
+            .getDocument(as: User.self) { result in
                 switch result {
                 case .success(let data):
                     completion(data, nil)

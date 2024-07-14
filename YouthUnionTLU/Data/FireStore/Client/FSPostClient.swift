@@ -136,7 +136,7 @@ class FSPostClient: PostClient {
                     return
                 }
                 
-                FSStorageClient.shared.uploadImage(image: image,
+                FSStorageClient.shared.uploadImage(index: index, image: image,
                                                    path: "\(post.postType)/\(postId)") { result in
                     switch result {
                     case .success(let downloadURL):
@@ -145,6 +145,8 @@ class FSPostClient: PostClient {
                             imageContent: downloadURL,
                             contentType: .image
                         )
+                        
+                        print(downloadURL)
                         self.addContent(path: path,
                                         postId: postId,
                                         content: contentModel) { error in
@@ -174,7 +176,7 @@ class FSPostClient: PostClient {
         dispatchGroup.enter()
         
         FSStorageClient.shared.uploadImage(
-            image: post.imageNew,
+            index: nil, image: post.imageNew,
             path: "\(post.postType)/\(String(describing: post.id))",
             completion: { result in
                 dispatchGroup.leave()

@@ -9,5 +9,5 @@ import Foundation
 import UIKit
 
 protocol StorageClient {
-    func uploadImage(image: UIImage, path: String, completion: @escaping (Result<String, Error>) -> Void)
+    func uploadImage(index: Int?, image: UIImage, path: String, completion: @escaping (Result<String, Error>) -> Void)
 }

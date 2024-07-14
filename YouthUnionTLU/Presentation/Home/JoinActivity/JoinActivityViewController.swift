@@ -9,11 +9,16 @@ import UIKit
 
 class JoinActivityViewController: UIViewController, StoryboardInstantiable {
     
+    @IBOutlet weak var joinAcyivityTitle: UILabel!
     @IBOutlet weak var studentCode: UITextField!
     @IBOutlet weak var classTxt: UITextField!
     @IBOutlet weak var nameStudentCode: UITextField!
     @IBOutlet weak var seatTxt: UITextField!
+    @IBOutlet weak var viewpickImage: UIView!
     @IBOutlet weak var viewImportPhoto: UIView!
+    @IBOutlet weak var addImageLb: UILabel!
+    @IBOutlet weak var joinActivityAction: UIButton!
+    
     @IBOutlet weak var image: UIImageView!
     
     private var post: PostModel?
@@ -51,10 +56,19 @@ class JoinActivityViewController: UIViewController, StoryboardInstantiable {
     }
     
     private func setUI() {
+        joinAcyivityTitle.text = R.stringLocalizable.joinActivityTitle()
         studentCode.addPadding()
+        studentCode.placeholder = R.stringLocalizable.inforStudentStudentId()
         classTxt.addPadding()
+        classTxt.placeholder = R.stringLocalizable.inforStudentClass()
         nameStudentCode.addPadding()
+        nameStudentCode.placeholder = R.stringLocalizable.inforStudentName()
         seatTxt.addPadding()
+        seatTxt.placeholder = R.stringLocalizable.joinActivitySeat()
+        
+        joinActivityAction.setTitle(R.stringLocalizable.joinActivityJoin(), for: .normal)
+        addImageLb.text = R.stringLocalizable.postImage()
+        
     }
     
     private func presentImagePicker() {
@@ -64,13 +78,17 @@ class JoinActivityViewController: UIViewController, StoryboardInstantiable {
         present(imagePicker, animated: true, completion: nil)
     }
     
+    @IBAction func backAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func selectImageAction(_ sender: Any) {
         if PermissionManager.shared.checkPhotoLibraryPermission() == false {
             PermissionManager.shared.requestPhotoLibraryPermission { result in
                 DispatchQueue.main.async {
                     if result == false {
                         let alertController = UIAlertController(title: "",
-                                                                message: "Mở cài đặt và cấp quyền ảnh để tiếp tục",
+                                                                message: R.stringLocalizable.openSetting(),
                                                                 preferredStyle: .alert)
                         
                         let okAction = UIAlertAction(title: R.stringLocalizable.buttonOk(),
@@ -116,7 +134,8 @@ class JoinActivityViewController: UIViewController, StoryboardInstantiable {
         LoadingView.show()
         
         dispatchGroup.enter()
-        FSStorageClient.shared.uploadImage(image: imageImg, path: path) { result in
+        FSStorageClient.shared.uploadImage(index: nil,
+                                           image: imageImg, path: path) { result in
             switch result {
             case .success(let downloadURL):
                 let activity = JoinActivityModel(nameActivity: post.title,
@@ -154,7 +173,7 @@ extension JoinActivityViewController:  UIImagePickerControllerDelegate, UINaviga
                                didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let selectedImage = info[.originalImage] as? UIImage {
             viewImportPhoto.isHidden = true
-            image.isHidden = false
+            viewpickImage.isHidden = false
             image.image = selectedImage
         }
         dismiss(animated: true, completion: nil)

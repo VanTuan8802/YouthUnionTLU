@@ -9,6 +9,7 @@ import UIKit
 
 class SearchInformationStudentViewController: UIViewController, StoryboardInstantiable {
     
+    @IBOutlet weak var searchTitle: UILabel!
     @IBOutlet weak var majorLb: UILabel!
     @IBOutlet weak var majorTxt: UITextField!
     @IBOutlet weak var batchLb: UILabel!
@@ -46,10 +47,12 @@ class SearchInformationStudentViewController: UIViewController, StoryboardInstan
         classTxt.addPadding()
         studentCodeTxt.addPadding()
         
+        searchTitle.text = R.stringLocalizable.searchSearchTitle()
         majorLb.text = R.stringLocalizable.inforStudentMajor()
         batchLb.text = R.stringLocalizable.inforStudentBatch()
         classLb.text = R.stringLocalizable.inforStudentClass()
         studentCodeLb.text = R.stringLocalizable.inforStudentStudentId()
+        showDataStudent.setTitle(R.stringLocalizable.tabBarSearch(), for: .normal)
     }
     
     private func setUpTableView() {
@@ -75,7 +78,7 @@ class SearchInformationStudentViewController: UIViewController, StoryboardInstan
     }
     
     @IBAction func backAction(_ sender: Any) {
-        viewModel.openSeach()
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func showTableView(_ sender: Any) {

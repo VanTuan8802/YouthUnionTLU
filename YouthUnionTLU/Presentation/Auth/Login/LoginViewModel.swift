@@ -77,6 +77,7 @@ extension DefaultLoginViewModel {
                 UserDefaultsData.shared.major = positionStudent.majorId ?? ""
 
                 LoadingView.hide()
+                UserDefaults.standard.setValue(sha256Hash(password), forKey: Constants.password)
                 UserDefaultsData.shared.showLogin = true
                 self.actions.showHome()
             }

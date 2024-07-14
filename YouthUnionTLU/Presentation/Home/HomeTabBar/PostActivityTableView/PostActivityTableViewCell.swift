@@ -13,6 +13,7 @@ class PostActivityTableViewCell: UITableViewCell {
     @IBOutlet weak var imageActivities: UIImageView!
     @IBOutlet weak var titleActivity: UILabel!
     @IBOutlet weak var dateCreate: UILabel!
+    @IBOutlet weak var timeStartLb: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,5 +30,9 @@ class PostActivityTableViewCell: UITableViewCell {
         imageActivities.kf.setImage(with: URL(string: postActivity.imageNew))
         titleActivity.text = postActivity.title
         dateCreate.text = convertTimestampToString(timestamp: postActivity.timeCreate)
+        guard let timeCreate = postActivity.timeStartActivy else {
+            return
+        }
+        timeStartLb.text = convertTimestampToString(timestamp: timeCreate)
     }
 }

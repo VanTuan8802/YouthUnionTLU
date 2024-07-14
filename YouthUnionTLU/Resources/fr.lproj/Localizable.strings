@@ -24,6 +24,8 @@ permission.camera = "Caméra";
 
 button.go = "Aller";
 
+openSetting = "Ouvrez les paramètres et accordez les autorisations de photos pour continuer";
+
 button.signIn = "Se connecter";
 textField.email = "Entrez votre e-mail";
 textField.password = "Entrez votre mot de passe";
@@ -72,9 +74,11 @@ home.activity = "Événements";
 home.library = "Bibliothèque";
 home.question = "Questions & Réponses";
 
-search.activity = "Statistiques d'activités";
-search.pointTraing = "Recherche de points d'entraînement";
-search.info = "Recherche d'informations sur les étudiants";
+search.title = "Recherche d'informations";
+search.activity = "Statistiques d'activité";
+search.pointTraing = "Points de formation à la recherche";
+search.searchTitle = "Informations sur l'étudiant";
+search.info = "Rechercher des informations sur l'étudiant";
 
 addPost.heading = "Créer une publication";
 addPost.title = "Entrer le titre";
@@ -90,11 +94,14 @@ post.content = "Détails de la publication";
 post.text = "Contenu";
 post.image = "Image";
 post.addContent = "Entrer le contenu";
+post.addButton = "Ajouter";
+post.create = "Êtes-vous sûr de créer une publication ?";
 
 button.create = "Créer";
 
 joinActivity.title = "Informations de participation";
-joinActivity.seat = "Position d'assise";
+joinActivity.seat = "Position assise";
+joinActivity.join = "Confirmer";
 
 setting.info = "Informations personnelles";
 setting.shared = "Partager";
@@ -102,3 +109,13 @@ setting.rate = "Évaluer";
 setting.policy = "Politique et sécurité";
 setting.changePassword = "Changer le mot de passe";
 setting.logout = "Se déconnecter";
+
+changePassword.currentPassword = "Entrez le mot de passe actuel";
+changePassword.newPassword = "Entrez le nouveau mot de passe";
+changePassword.newPasswordConfirm = "Ressaisissez le nouveau mot de passe";
+
+toast.addPostSuccess = "Publication ajoutée avec succès";
+toast.addSuccess = "Ajouté avec succès";
+
+message.cancel = "Êtes-vous sûr de vouloir annuler la création de l'article ?";
+

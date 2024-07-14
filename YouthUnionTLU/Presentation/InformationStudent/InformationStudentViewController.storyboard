@@ -34,8 +34,8 @@
                                             <action selector="backAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="BCT-Yz-pae"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information Student" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPU-C3-aQY">
-                                        <rect key="frame" x="139.33333333333331" y="11.999999999999998" width="151.33333333333331" height="20.333333333333329"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thông tin sinh viên" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPU-C3-aQY">
+                                        <rect key="frame" x="143.33333333333337" y="11.999999999999998" width="143.66666666666663" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -53,8 +53,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jsw-Xe-4FE">
                                 <rect key="frame" x="0.0" y="103" width="430" height="795"/>
                                 <subviews>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kru-Yg-jkZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="430" height="216"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kru-Yg-jkZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="795"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tV6-37-XJQ">
                                                 <rect key="frame" x="155" y="32" width="120" height="160"/>
@@ -69,7 +69,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="6eg-Ad-16S">
-                                                <rect key="frame" x="16" y="216" width="398" height="0.0"/>
+                                                <rect key="frame" x="16" y="216" width="398" height="579"/>
                                                 <color key="backgroundColor" name="Background"/>
                                             </tableView>
                                         </subviews>
@@ -83,8 +83,8 @@
                                             <constraint firstItem="tV6-37-XJQ" firstAttribute="top" secondItem="kru-Yg-jkZ" secondAttribute="top" constant="32" id="tLm-d4-6U8"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="099-f1-Gcz">
-                                        <rect key="frame" x="0.0" y="0.0" width="430" height="795"/>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="099-f1-Gcz">
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="0.0"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Nodata" translatesAutoresizingMaskIntoConstraints="NO" id="jt8-vg-4hb">
                                                 <rect key="frame" x="153" y="200" width="124" height="124"/>
@@ -163,7 +163,7 @@
             <color red="0.95294117647058818" green="0.96862745098039216" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

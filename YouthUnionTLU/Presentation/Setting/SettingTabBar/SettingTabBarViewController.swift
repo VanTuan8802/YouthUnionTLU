@@ -10,6 +10,7 @@ import UIKit
 class SettingTabBarViewController: UIViewController, StoryboardInstantiable {
 
     @IBOutlet weak var infoUserBtn: UIButton!
+    @IBOutlet weak var settingTitle: UILabel!
     @IBOutlet weak var infoUserLb: UILabel!
     @IBOutlet weak var languageBtn: UIButton!
     @IBOutlet weak var languageLb: UILabel!
@@ -61,6 +62,7 @@ class SettingTabBarViewController: UIViewController, StoryboardInstantiable {
         
         infoUserBtn.isEnabled = (position == Position.member.rawValue)
         
+        settingTitle.text = R.stringLocalizable.tabBarSettings()
         infoUserLb.text = R.stringLocalizable.settingInfo()
         languageLb.text = R.stringLocalizable.languageTitle()
         sharedLb.text = R.stringLocalizable.settingShared()
@@ -106,10 +108,11 @@ class SettingTabBarViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func changePasswordAction(_ sender: Any) {
+        viewModel.openChangePassword()
     }
     
     @IBAction func logOutAction(_ sender: Any) {
-        
+        viewModel.openLogOut()
     }
 }
 

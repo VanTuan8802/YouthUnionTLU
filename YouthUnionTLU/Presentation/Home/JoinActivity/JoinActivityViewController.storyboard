@@ -13,6 +13,9 @@
         <array key="SF-Pro-Display-Regular.otf">
             <string>SFProDisplay-Regular</string>
         </array>
+        <array key="SF-Pro-Display-Semibold.otf">
+            <string>SFProDisplay-Semibold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Join Activity View Controller-->
@@ -31,10 +34,13 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="back"/>
+                                <connections>
+                                    <action selector="backAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1hX-6m-AWq"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnN-ul-yWr">
-                                <rect key="frame" x="139.5" y="42" width="41.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thông tin tham gia sự kiện" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnN-ul-yWr">
+                                <rect key="frame" x="68" y="42.5" width="184.5" height="19.5"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -188,12 +194,38 @@
                                             <constraint firstAttribute="trailing" secondItem="8d3-NY-PD0" secondAttribute="trailing" id="wAu-Qh-Sqt"/>
                                         </constraints>
                                     </view>
-                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8ht-Md-e9B">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Vb-cm-ZjT">
                                         <rect key="frame" x="0.0" y="0.0" width="288" height="160"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8ht-Md-e9B">
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="160"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0pD-zV-m2L">
+                                                <rect key="frame" x="256" y="0.0" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="3HN-5E-Qkn"/>
+                                                    <constraint firstAttribute="height" constant="32" id="4Rw-EQ-Nc0"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="Uhb-ZJ-Dtc"/>
+                                                    <constraint firstAttribute="width" constant="32" id="eJO-wS-NrN"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="change"/>
+                                                <connections>
+                                                    <action selector="selectImageAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Gif-Dg-iMk"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="160" id="l7k-t0-EZ9"/>
+                                            <constraint firstItem="8ht-Md-e9B" firstAttribute="leading" secondItem="0Vb-cm-ZjT" secondAttribute="leading" id="1As-KD-4E2"/>
+                                            <constraint firstItem="8ht-Md-e9B" firstAttribute="top" secondItem="0Vb-cm-ZjT" secondAttribute="top" id="LMM-HJ-esJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="8ht-Md-e9B" secondAttribute="bottom" id="OMb-3e-JA7"/>
+                                            <constraint firstAttribute="trailing" secondItem="0pD-zV-m2L" secondAttribute="trailing" id="Oep-Em-NHw"/>
+                                            <constraint firstItem="0pD-zV-m2L" firstAttribute="top" secondItem="0Vb-cm-ZjT" secondAttribute="top" id="pJN-di-bgE"/>
+                                            <constraint firstAttribute="trailing" secondItem="8ht-Md-e9B" secondAttribute="trailing" id="yKn-An-Wdj"/>
+                                            <constraint firstAttribute="height" constant="160" id="zzs-u7-TlN"/>
                                         </constraints>
-                                    </imageView>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="160" id="2qu-fw-WF6"/>
@@ -202,11 +234,20 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2S-lM-sHR">
                                 <rect key="frame" x="16" y="468" width="288" height="48"/>
+                                <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="qEC-kB-USY"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="joinActivityAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="5vc-ff-m2I"/>
                                 </connections>
@@ -237,12 +278,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addImageLb" destination="h57-yE-aBq" id="cFw-bI-Yos"/>
                         <outlet property="classTxt" destination="IKf-3p-Zee" id="XvN-Zn-Gw5"/>
                         <outlet property="image" destination="8ht-Md-e9B" id="WBL-sI-Ndd"/>
+                        <outlet property="joinActivityAction" destination="Y2S-lM-sHR" id="cTr-nK-eeo"/>
+                        <outlet property="joinAcyivityTitle" destination="AnN-ul-yWr" id="cc4-q6-c2G"/>
                         <outlet property="nameStudentCode" destination="Emb-us-uj6" id="X5L-vp-dtf"/>
                         <outlet property="seatTxt" destination="C42-Gv-iDP" id="PTX-hW-7eY"/>
                         <outlet property="studentCode" destination="iH8-90-l0R" id="k0k-Lm-YG8"/>
                         <outlet property="viewImportPhoto" destination="D2h-0r-hql" id="vak-zi-Xex"/>
+                        <outlet property="viewpickImage" destination="0Vb-cm-ZjT" id="Qpr-qe-yUc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -252,8 +297,12 @@
     </scenes>
     <resources>
         <image name="back" width="24" height="24"/>
+        <image name="change" width="32" height="32"/>
         <image name="dotView" width="353" height="93"/>
         <image name="upload" width="30.5" height="30"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Background">
             <color red="0.95294117647058818" green="0.96862745098039216" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

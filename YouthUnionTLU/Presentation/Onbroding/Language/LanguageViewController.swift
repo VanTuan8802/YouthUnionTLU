@@ -54,7 +54,11 @@ class LanguageViewController: UIViewController, StoryboardInstantiable {
     
     @IBAction func checkAction(_ sender: Any) {
         UserDefaultsData.shared.language = languageSelected
-        viewModel.openPermisstion()
+        if (!UserDefaultsData.shared.showFirstLanguage) {
+            viewModel.openPermisstion()
+        } else {
+            viewModel.openHome()
+        }
     }
 }
 

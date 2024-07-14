@@ -76,12 +76,19 @@ class DefaultSettingTabBarViewModel: SettingTabBarViewModel {
     }
     
     func openChangePassword() {
-        
+        actions.showChangePassword()
     }
     
+
     func openLogOut() {
-        
+        do {
+            try Auth.auth().signOut()
+            actions.showLogOut()
+        } catch let signOutError as NSError {
+            print("Error signing out: \(signOutError.localizedDescription)")
+        }
     }
+
     
     func openHomeTabBar() {
         actions.showHomeTabBar()

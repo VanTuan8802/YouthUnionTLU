@@ -12,6 +12,7 @@ class SearchTabBarViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var tabBarSearch: UITabBar!
     @IBOutlet weak var homeTabBarItem: UITabBarItem!
     @IBOutlet weak var searchTabBarItem: UITabBarItem!
+    @IBOutlet weak var searchLb: UILabel!
     @IBOutlet weak var settingTabBarItem: UITabBarItem!
     @IBOutlet weak var viewSearchInformation: UIView!
     @IBOutlet weak var searchActivityLb: UILabel!
@@ -38,6 +39,7 @@ class SearchTabBarViewController: UIViewController, StoryboardInstantiable {
             viewSearchInformation.isHidden = true
         }
         
+        searchLb.text = R.stringLocalizable.searchTitle()
         searchActivityLb.text = R.stringLocalizable.searchActivity()
         searchPointTraningLb.text = R.stringLocalizable.searchPointTraing()
         searchInfomationLb.text = R.stringLocalizable.searchInfo()

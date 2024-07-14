@@ -44,13 +44,14 @@ class AddPostViewController: UIViewController, StoryboardInstantiable {
     }
     
     private func setUI() {
+        
         titleLb.text = R.stringLocalizable.addPostHeading()
         timeStartLb.text = R.stringLocalizable.addPostTimeStart()
         timeCheckInLb.text = R.stringLocalizable.addPostTimeCheckIn()
         address.placeholder = R.stringLocalizable.addPostAddress()
         address.addPadding()
         qrText.addPadding()
-        
+        qrText.placeholder = R.stringLocalizable.addPostQrCode()
         addImageLb.text = R.stringLocalizable.addPostImage()
         contitnueBtn.setTitle(R.stringLocalizable.buttonContinue(), for: .normal)
     }

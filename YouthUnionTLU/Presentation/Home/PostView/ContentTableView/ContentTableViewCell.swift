@@ -24,6 +24,7 @@ class ContentTableViewCell: UITableViewCell {
     }
     
     func fetchData(content: ContentModel) {
+        
         if content.contentType == .image {
             guard let imageLink = content.imageContent else {
                 return

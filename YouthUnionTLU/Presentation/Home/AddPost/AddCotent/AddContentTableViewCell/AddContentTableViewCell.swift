@@ -8,22 +8,31 @@
 import UIKit
 
 class AddContentTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var imageContent: UIImageView!
     @IBOutlet weak var textContent: UITextView!
     
+    var imageCallback: ((UIImageView, IndexPath) -> Void)?
+    var indexPath: IndexPath?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
-    func fetchData(content: ContentMock) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
+    @IBAction func changeImageAction(_ sender: Any) {
+        if let callback = imageCallback, let indexPath = indexPath {
+            callback(imageContent, indexPath)
+            self.imageContent.layoutIfNeeded()
+        }
+    }
+    
+    func fetchData(content: ContentMock, at indexPath: IndexPath) {
+        self.indexPath = indexPath
+        
         if content.contentType == .image {
             guard let image = content.imageContent else { return }
             
@@ -32,29 +41,32 @@ class AddContentTableViewCell: UITableViewCell {
             textContent.isHidden = true
             
             let imageSize = image.size
-            let screenWidth = UIScreen.main.bounds.width
+            let cellWidth = self.contentView.frame.width
             
             let aspectRatio = imageSize.width / imageSize.height
-            let newHeight = screenWidth / aspectRatio
+            let newHeight = cellWidth / aspectRatio
             
             imageContent.translatesAutoresizingMaskIntoConstraints = false
             
             NSLayoutConstraint.deactivate(imageContent.constraints)
             
             NSLayoutConstraint.activate([
-                imageContent.widthAnchor.constraint(equalToConstant: screenWidth),
-                imageContent.heightAnchor.constraint(equalToConstant: newHeight),
-                imageContent.centerXAnchor.constraint(equalTo: imageContent.superview!.centerXAnchor),
-                imageContent.centerYAnchor.constraint(equalTo: imageContent.superview!.centerYAnchor)
+                imageContent.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+                imageContent.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+                imageContent.topAnchor.constraint(equalTo: self.contentView.topAnchor),
+                imageContent.heightAnchor.constraint(equalToConstant: newHeight)
             ])
             
-            imageContent.contentMode = .scaleAspectFit
-            self.imageContent.layoutIfNeeded()
+            imageContent.contentMode = .scaleToFill
+            self.layoutIfNeeded()
         } else {
             textContent.text = content.textContent
             textContent.isHidden = false
             imageContent.isHidden = true
-            self.imageContent.layoutIfNeeded()
+            self.layoutIfNeeded()
         }
     }
+
 }
+
+

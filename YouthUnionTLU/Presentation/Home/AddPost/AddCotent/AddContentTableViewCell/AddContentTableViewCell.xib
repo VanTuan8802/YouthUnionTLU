@@ -21,15 +21,41 @@
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hsR-HW-C3h">
                         <rect key="frame" x="0.0" y="0.0" width="615" height="342"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OGh-MV-Aep">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJW-fS-a51">
                                 <rect key="frame" x="0.0" y="0.0" width="615" height="342"/>
-                            </imageView>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OGh-MV-Aep">
+                                        <rect key="frame" x="0.0" y="0.0" width="615" height="342"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcj-eq-JGY">
+                                        <rect key="frame" x="583" y="0.0" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="4fY-UT-wJC"/>
+                                            <constraint firstAttribute="width" constant="32" id="dUg-Al-swY"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="change"/>
+                                        <connections>
+                                            <action selector="changeImageAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="tx9-fA-OBj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Mcj-eq-JGY" secondAttribute="trailing" id="6R7-Qc-c0D"/>
+                                    <constraint firstAttribute="trailing" secondItem="OGh-MV-Aep" secondAttribute="trailing" id="8vf-wf-cJT"/>
+                                    <constraint firstAttribute="bottom" secondItem="OGh-MV-Aep" secondAttribute="bottom" id="Gq9-Hc-5A0"/>
+                                    <constraint firstItem="Mcj-eq-JGY" firstAttribute="top" secondItem="iJW-fS-a51" secondAttribute="top" id="e9v-bF-nx5"/>
+                                    <constraint firstItem="OGh-MV-Aep" firstAttribute="top" secondItem="iJW-fS-a51" secondAttribute="top" id="fai-2U-1tq"/>
+                                    <constraint firstItem="OGh-MV-Aep" firstAttribute="leading" secondItem="iJW-fS-a51" secondAttribute="leading" id="pYG-nz-d9c"/>
+                                </constraints>
+                            </view>
                             <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AsZ-Xk-1nU">
                                 <rect key="frame" x="0.0" y="342" width="615" height="0.0"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
@@ -51,6 +77,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="change" width="32" height="32"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

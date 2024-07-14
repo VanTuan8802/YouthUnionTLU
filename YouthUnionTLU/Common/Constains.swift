@@ -14,5 +14,6 @@ struct Constants {
         static let appStoreLink = "\(itunes)?ls=1&mt=8"
     }
     static var posistion = "position"
+    static var password = "password"
     
 }

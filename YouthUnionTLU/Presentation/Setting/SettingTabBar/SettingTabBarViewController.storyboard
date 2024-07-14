@@ -433,6 +433,7 @@
                         <outlet property="rateLb" destination="cjx-5A-rLP" id="uI5-bn-UeJ"/>
                         <outlet property="searchTabBarItem" destination="2qe-e0-tMD" id="PMs-PM-dT6"/>
                         <outlet property="settingTabBarItem" destination="gOH-Vi-9fj" id="seI-qP-6QI"/>
+                        <outlet property="settingTitle" destination="4FF-FX-Z4S" id="epi-LI-KRR"/>
                         <outlet property="shareBtn" destination="iiI-9c-bOm" id="Q77-YI-irz"/>
                         <outlet property="sharedLb" destination="xuB-k3-ZTf" id="9fV-ui-RkK"/>
                         <outlet property="tabBarSetting" destination="QMV-Kz-bbt" id="DEM-Ex-7ab"/>

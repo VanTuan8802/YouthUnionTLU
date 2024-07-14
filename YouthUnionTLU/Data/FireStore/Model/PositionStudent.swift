@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PositionStudent: Decodable {
+struct User: Decodable {
     var position: String
     var student_Code: String?
     var majorId: String?

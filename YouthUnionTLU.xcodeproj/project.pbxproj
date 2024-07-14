@@ -53,7 +53,6 @@
 		AA88269F2BAADC94004A2FAC /* ForgotPasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA88269E2BAADC94004A2FAC /* ForgotPasswordViewController.storyboard */; };
 		AA8826A12BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826A02BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift */; };
 		AA8826A72BAC3858004A2FAC /* DataUserClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826A62BAC3858004A2FAC /* DataUserClient.swift */; };
-		AA8826A92BAC3872004A2FAC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826A82BAC3872004A2FAC /* User.swift */; };
 		AA8826AB2BAC38C0004A2FAC /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826AA2BAC38C0004A2FAC /* Student.swift */; };
 		AA8826AD2BAC3D0C004A2FAC /* Posstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826AC2BAC3D0C004A2FAC /* Posstion.swift */; };
 		AA8826AF2BAC3DD2004A2FAC /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8826AE2BAC3DD2004A2FAC /* Teacher.swift */; };
@@ -91,6 +90,9 @@
 		AB3E2A912C358A7500F28ECD /* SearchJoinActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E2A902C358A7500F28ECD /* SearchJoinActivityViewModel.swift */; };
 		AB3E2A932C3C1F2500F28ECD /* HomeTabBarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB3E2A922C3C1F2500F28ECD /* HomeTabBarViewController.storyboard */; };
 		AB3E2A952C3C1F3500F28ECD /* HomeTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E2A942C3C1F3500F28ECD /* HomeTabBarViewModel.swift */; };
+		AB3E2A982C3D7D0300F28ECD /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E2A972C3D7D0300F28ECD /* ChangePasswordViewController.swift */; };
+		AB3E2A9A2C3D7D1D00F28ECD /* ChangePasswordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB3E2A992C3D7D1D00F28ECD /* ChangePasswordViewController.storyboard */; };
+		AB3E2A9C2C3D7D2C00F28ECD /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3E2A9B2C3D7D2C00F28ECD /* ChangePasswordViewModel.swift */; };
 		AB814E8D2C19E3A600DFC34E /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB814E8C2C19E3A600DFC34E /* AddPostViewController.swift */; };
 		AB814E8F2C19E45400DFC34E /* AddPostViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB814E8E2C19E45400DFC34E /* AddPostViewController.storyboard */; };
 		AB814E912C19E48D00DFC34E /* AddPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB814E902C19E48D00DFC34E /* AddPostViewModel.swift */; };
@@ -148,6 +150,8 @@
 		ABC09C732C06B2400036E786 /* MajorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC09C712C06B2400036E786 /* MajorTableViewCell.swift */; };
 		ABC09C742C06B2400036E786 /* MajorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC09C722C06B2400036E786 /* MajorTableViewCell.xib */; };
 		ABC09C782C088F600036E786 /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC09C772C088F600036E786 /* SearchManager.swift */; };
+		ABE290E22C414BEF00D15899 /* hashCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE290E12C414BEF00D15899 /* hashCode.swift */; };
+		ABE290E42C43842D00D15899 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE290E32C43842D00D15899 /* Toast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -205,7 +209,6 @@
 		AA88269E2BAADC94004A2FAC /* ForgotPasswordViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ForgotPasswordViewController.storyboard; sourceTree = "<group>"; };
 		AA8826A02BAAE1F2004A2FAC /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		AA8826A62BAC3858004A2FAC /* DataUserClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUserClient.swift; sourceTree = "<group>"; };
-		AA8826A82BAC3872004A2FAC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AA8826AA2BAC38C0004A2FAC /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		AA8826AC2BAC3D0C004A2FAC /* Posstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posstion.swift; sourceTree = "<group>"; };
 		AA8826AE2BAC3DD2004A2FAC /* Teacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
@@ -244,6 +247,9 @@
 		AB3E2A902C358A7500F28ECD /* SearchJoinActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchJoinActivityViewModel.swift; sourceTree = "<group>"; };
 		AB3E2A922C3C1F2500F28ECD /* HomeTabBarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeTabBarViewController.storyboard; sourceTree = "<group>"; };
 		AB3E2A942C3C1F3500F28ECD /* HomeTabBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewModel.swift; sourceTree = "<group>"; };
+		AB3E2A972C3D7D0300F28ECD /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		AB3E2A992C3D7D1D00F28ECD /* ChangePasswordViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangePasswordViewController.storyboard; sourceTree = "<group>"; };
+		AB3E2A9B2C3D7D2C00F28ECD /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
 		AB814E8C2C19E3A600DFC34E /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 		AB814E8E2C19E45400DFC34E /* AddPostViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddPostViewController.storyboard; sourceTree = "<group>"; };
 		AB814E902C19E48D00DFC34E /* AddPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewModel.swift; sourceTree = "<group>"; };
@@ -303,6 +309,8 @@
 		ABC09C712C06B2400036E786 /* MajorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorTableViewCell.swift; sourceTree = "<group>"; };
 		ABC09C722C06B2400036E786 /* MajorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MajorTableViewCell.xib; sourceTree = "<group>"; };
 		ABC09C772C088F600036E786 /* SearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
+		ABE290E12C414BEF00D15899 /* hashCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hashCode.swift; sourceTree = "<group>"; };
+		ABE290E32C43842D00D15899 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		EC5442DE59D1755506FBFF32 /* Pods_YouthUnionTLU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YouthUnionTLU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8ECEDEF893615FBFFA5AEE9 /* Pods-YouthUnionTLU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YouthUnionTLU.debug.xcconfig"; path = "Target Support Files/Pods-YouthUnionTLU/Pods-YouthUnionTLU.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -360,6 +368,8 @@
 				AA8826992BAAC0D3004A2FAC /* Alert.swift */,
 				AA8826C92BAC7283004A2FAC /* CustomStyleTabBarContentView.swift */,
 				AB9275B72C1739AC003DE063 /* TimeConverter.swift */,
+				ABE290E12C414BEF00D15899 /* hashCode.swift */,
+				ABE290E32C43842D00D15899 /* Toast.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -551,7 +561,6 @@
 		AA88268C2BAA69E2004A2FAC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AA8826A82BAC3872004A2FAC /* User.swift */,
 				AA8826AA2BAC38C0004A2FAC /* Student.swift */,
 				AA8826AE2BAC3DD2004A2FAC /* Teacher.swift */,
 				AA8826B02BAC3EA3004A2FAC /* Faculaty.swift */,
@@ -647,6 +656,7 @@
 		AA8826BC2BAC6FB9004A2FAC /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				AB3E2A962C3D767F00F28ECD /* ChangePassword */,
 				AA8826C02BAC6FEC004A2FAC /* SettingTabBar */,
 				AA8826DB2BAC7B9C004A2FAC /* SettingFlowCoodinator.swift */,
 			);
@@ -765,6 +775,16 @@
 				AB3E2A892C32E45900F28ECD /* JoinActivityTableViewCell.xib */,
 			);
 			path = ActivityCell;
+			sourceTree = "<group>";
+		};
+		AB3E2A962C3D767F00F28ECD /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				AB3E2A972C3D7D0300F28ECD /* ChangePasswordViewController.swift */,
+				AB3E2A992C3D7D1D00F28ECD /* ChangePasswordViewController.storyboard */,
+				AB3E2A9B2C3D7D2C00F28ECD /* ChangePasswordViewModel.swift */,
+			);
+			path = ChangePassword;
 			sourceTree = "<group>";
 		};
 		AB814E8B2C19E38E00DFC34E /* AddPost */ = {
@@ -1014,6 +1034,7 @@
 				AA8826842BAA68CD004A2FAC /* LoginViewController.storyboard in Resources */,
 				AA732F762B9F4EC5009EB608 /* LanguageTableViewCell.xib in Resources */,
 				AB814EA82C1EEF0A00DFC34E /* AddContentViewController.storyboard in Resources */,
+				AB3E2A9A2C3D7D1D00F28ECD /* ChangePasswordViewController.storyboard in Resources */,
 				AB07426C2BF707C900BE5308 /* InformationTwoViewTableViewCell.xib in Resources */,
 				AA732F5B2B9F42BE009EB608 /* LanguageViewController.storyboard in Resources */,
 				AA8826C82BAC70F8004A2FAC /* SettingTabBarViewController.storyboard in Resources */,
@@ -1154,6 +1175,7 @@
 				AB814EB02C1F2E2000DFC34E /* FSStorageClient.swift in Sources */,
 				AA8826CC2BAC7536004A2FAC /* FSUserClient.swift in Sources */,
 				AA8826AD2BAC3D0C004A2FAC /* Posstion.swift in Sources */,
+				AB3E2A982C3D7D0300F28ECD /* ChangePasswordViewController.swift in Sources */,
 				AB814EAC2C1F2D0400DFC34E /* StorageClient.swift in Sources */,
 				AB9274A52C10A61C003DE063 /* PointTrainingTableViewCell.swift in Sources */,
 				AA8826CA2BAC7283004A2FAC /* CustomStyleTabBarContentView.swift in Sources */,
@@ -1171,7 +1193,7 @@
 				AA8826B32BAC3ED7004A2FAC /* Manager.swift in Sources */,
 				ABC09C562BFE03B20036E786 /* AppDIContainer.swift in Sources */,
 				AB814E8D2C19E3A600DFC34E /* AddPostViewController.swift in Sources */,
-				AA8826A92BAC3872004A2FAC /* User.swift in Sources */,
+				AB3E2A9C2C3D7D2C00F28ECD /* ChangePasswordViewModel.swift in Sources */,
 				AB92747D2C0C6BE3003DE063 /* PointTraingViewController.swift in Sources */,
 				AA8826862BAA68EE004A2FAC /* LoginViewModel.swift in Sources */,
 				AA3B65752BCD2EF4001C47F7 /* SetFont.swift in Sources */,
@@ -1205,11 +1227,13 @@
 				AA8826CE2BAC7644004A2FAC /* HomeFlowCoodinator.swift in Sources */,
 				AA732F6C2B9F4A3C009EB608 /* LanguageType.swift in Sources */,
 				AA8826AF2BAC3DD2004A2FAC /* Teacher.swift in Sources */,
+				ABE290E22C414BEF00D15899 /* hashCode.swift in Sources */,
 				AB0742612BF7054D00BE5308 /* Infomation.swift in Sources */,
 				ABC09C5A2BFE03B20036E786 /* SearchDIContainer.swift in Sources */,
 				AA61AD502BDAAB750097B8BA /* PositionStudent.swift in Sources */,
 				AB9275C02C173FDE003DE063 /* ContentTableViewCell.swift in Sources */,
 				AB814EB22C2045FB00DFC34E /* AddContentModel.swift in Sources */,
+				ABE290E42C43842D00D15899 /* Toast.swift in Sources */,
 				ABC09C5D2BFE056B0036E786 /* SearchFlowCoodinator.swift in Sources */,
 				AA88269A2BAAC0D3004A2FAC /* Alert.swift in Sources */,
 				AA732F532B9DF2A7009EB608 /* ExtentionView.swift in Sources */,

@@ -13,13 +13,12 @@ import FirebaseStorage
 class FSStorageClient: StorageClient {
     static let shared = FSStorageClient()
     
-    func uploadImage(image: UIImage, path: String, completion: @escaping (Result<String, Error>) -> Void) {
+    func uploadImage(index: Int?, image: UIImage, path: String, completion: @escaping (Result<String, Error>) -> Void) {
         guard let imageData = image.jpegData(compressionQuality: 0.8) else {
             completion(.failure(NSError(domain: "ImageConversion", code: -1, userInfo: [NSLocalizedDescriptionKey: "Unable to convert image to data"])))
             return
         }
-        
-        let storageRef = Storage.storage().reference().child("\(path)/\(UUID().uuidString).jpg")
+        let storageRef = Storage.storage().reference().child("\(path)/\( index == nil ? UUID().uuidString : "\(index!)").jpg")
         
         storageRef.putData(imageData, metadata: nil) { metadata, error in
             if let error = error {

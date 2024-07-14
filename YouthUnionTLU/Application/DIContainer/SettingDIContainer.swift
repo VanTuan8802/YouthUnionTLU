@@ -35,10 +35,14 @@ class SettingDIContainer {
     private func makeLanguageVC(actions: LanguageActions) -> LanguageViewModel {
         DefaultLanguageViewModel(actions: actions)
     }
+    
+    private func makeChangePassword(actions: ChangePasswordActions) -> ChangePasswordViewModel {
+        DefaultChangePasswordViewModel( actions: actions)
+    }
 }
 
 extension SettingDIContainer: SettingFlowCoodinatorDependencies {
-
+    
     func makeSettingTabBarVC(actions: SettingTabBarActions) -> SettingTabBarViewController {
         SettingTabBarViewController.create(with: makeSettingTabBarVC(actions: actions))
     }
@@ -49,6 +53,10 @@ extension SettingDIContainer: SettingFlowCoodinatorDependencies {
     
     func makeLanguageVC(actions: LanguageActions) -> LanguageViewController {
         LanguageViewController.create(with: makeLanguageVC(actions: actions))
+    }
+    
+    func makeChangePasswordVC(actions: ChangePasswordActions) -> ChangePasswordViewController {
+        ChangePasswordViewController.create(with: makeChangePassword(actions: actions))
     }
 
 }

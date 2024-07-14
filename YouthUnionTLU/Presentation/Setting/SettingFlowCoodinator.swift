@@ -12,6 +12,7 @@ protocol SettingFlowCoodinatorDependencies {
     func makeSettingTabBarVC(actions: SettingTabBarActions) -> SettingTabBarViewController
     func makeInformationStudentVC(actions: InformationStudentActions, studentCode: String) -> InformationStudentViewController
     func makeLanguageVC(actions: LanguageActions) -> LanguageViewController
+    func makeChangePasswordVC(actions: ChangePasswordActions ) -> ChangePasswordViewController
 }
 
 final class SettingFlowCoodinator {
@@ -32,8 +33,8 @@ final class SettingFlowCoodinator {
             showShare: show,
             showRate: show,
             showPolicy: show,
-            showChangePassword: show,
-            showLogOut: show,
+            showChangePassword: showChangePassword,
+            showLogOut: showLogin,
             showHomeTabBar: showHomeTabBar,
             showSearchTabBar: showSearchTabBar)
         let vc = dependencies.makeSettingTabBarVC(actions: actions)
@@ -80,6 +81,26 @@ final class SettingFlowCoodinator {
                                       showHome: showHomeTabBar)
         let vc = dependencies.makeLanguageVC(actions: actions)
         navigationController?.viewControllers = [vc]
+    }
+    
+    private func showChangePassword() {
+        let actions = ChangePasswordActions(showLogin: showLogin)
+        let vc = dependencies.makeChangePasswordVC(actions: actions)
+        navigationController?.viewControllers = [vc]
+    }
+    
+    private func showLogin() {
+        guard let navigationController = navigationController else {
+            return
+        }
+        
+        let appDIContainer = AppDIContainer()
+        let appFlowCoordinator = AppFlowCoordinator(
+            navigationController: navigationController,
+            appDIContainer: appDIContainer
+        )
+        
+        appFlowCoordinator.auth()
     }
     
     private func show() {

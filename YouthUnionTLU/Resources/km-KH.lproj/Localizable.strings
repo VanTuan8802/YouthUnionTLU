@@ -24,6 +24,8 @@ permission.camera = "កាមេរ៉ា";
 
 button.go = "ទៅ";
 
+openSetting = "បើកការកំណត់ និងផ្ដល់សិទ្ធិរូបភាពដើម្បីបន្ត";
+
 button.signIn = "ចូលគណនី";
 textField.email = "បញ្ចូលអ៊ីម៉ែល";
 textField.password = "បញ្ចូលពាក្យសំងាត់";
@@ -72,9 +74,11 @@ home.activity = "ព្រឹត្តិការណ៍";
 home.library = "បណ្ណាល័យ";
 home.question = "សំណួរ និងចម្លើយ";
 
-search.activity = "ស្ថិតិ សកម្មភាព";
-search.pointTraing = "ស្វែងរកពិន្ទុហ្វឹកហាត់";
-search.info = "ស្វែងរកពត៌មាននិស្សិត";
+search.title = "ស្វែងរកព័ត៌មាន";
+search.activity = "ស្ថិតិលទ្ធភាព";
+search.pointTraing = "ចំណុចបណ្តុះបណ្តាលការស្វែងរក";
+search.searchTitle = "ព័ត៌មាននិស្សិត";
+search.info = "ស្វែងរកព័ត៌មាននិស្សិត";
 
 addPost.heading = "បង្កើតប្រកាស";
 addPost.title = "បញ្ចូលចំណងជើង";
@@ -90,11 +94,14 @@ post.content = "លម្អិតអំពីប្រកាស";
 post.text = "ខ្លឹមសារ";
 post.image = "រូបភាព";
 post.addContent = "បញ្ចូលខ្លឹមសារ";
+post.addButton = "បន្ថែម";
+post.create = "តើអ្នកប្រើប្រាស់ពុម្ពដើម្បីបង្កើតកំណត់ចំណាំទេ?";
 
 button.create = "បង្កើត";
 
-joinActivity.title = "ព័ត៌មាននៃការចូលរួម";
-joinActivity.seat = "កៅអី";
+joinActivity.title = "ព័ត៌មានអំពីការចូលរួម";
+joinActivity.seat = "ទីតាំងកំពូល";
+joinActivity.join = "បញ្ជាក់";
 
 setting.info = "ព័ត៌មានផ្ទាល់ខ្លួន";
 setting.shared = "ចែករំលែក";
@@ -102,3 +109,13 @@ setting.rate = "អត្រា";
 setting.policy = "គោលនយោបាយ និងសន្តិសុខ";
 setting.changePassword = "ផ្លាស់ប្តូរពាក្យសម្ងាត់";
 setting.logout = "ចាកចេញ";
+
+changePassword.currentPassword = "បញ្ចូលពាក្យសម្ងាត់បច្ចុប្បន្ន";
+changePassword.newPassword = "បញ្ចូលពាក្យសម្ងាត់ថ្មី";
+changePassword.newPasswordConfirm = "បញ្ចូលពាក្យសម្ងាត់ថ្មីម្តងទៀត";
+
+toast.addPostSuccess = "បន្ថែម bài viết thành công";
+toast.addSuccess = "បន្ថែម thành công";
+
+message.cancle = "តើអ្នកប្រាកដថាចង់បោះបង់ការបង្កើត bài viết ?";
+
