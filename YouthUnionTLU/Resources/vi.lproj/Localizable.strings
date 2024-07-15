@@ -102,17 +102,22 @@ button.create = "Tạo";
 joinActivity.title = "Thông tin tham gia";
 joinActivity.seat = "Vị trí ngồi";
 joinActivity.join = "Xác nhận";
+joinActivity.qrCodeFail = "QR Code đã hết hạn";
 
 setting.info = "Thông tin cá nhân";
 setting.shared = "Chia sẻ";
 setting.rate = "Đánh giá";
-setting.policy = "Chính sách và bảo mật";
+setting.policy = "Chính sách và Bảo mật";
 setting.changePassword = "Đổi mật khẩu";
 setting.logout = "Đăng xuất";
 
 changePassword.currentPassword = "Nhập mật khẩu hiện tại";
 changePassword.newPassword = "Nhập mật khẩu mới";
 changePassword.newPasswordConfirm = "Nhập lại mật khẩu mới";
+changePassword.enterFill = "Vui lòng điền vào tất cả các trường.";
+changePassword.noMatch = "Mật khẩu mới và xác nhận không khớp.";
+changePassword.currentIncorrect = "Mật khẩu hiện tại không đúng.";
+changePassword.same = "Mật khẩu mới không thể giống mật khẩu hiện tại.";
 
 toast.addPostSuccess = "Thêm bài viết thành";
 toast.addSuccess = "Thêm thành công";

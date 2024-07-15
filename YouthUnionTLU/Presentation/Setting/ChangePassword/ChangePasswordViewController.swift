@@ -66,23 +66,68 @@ class ChangePasswordViewController: UIViewController, StoryboardInstantiable {
         guard let currentPassword = currentPasswordTxt.text,
               let newPassword = newPasswordTxt.text,
               let newPasswordConfirm = newPasswordConfirmTxt.text else {
+            show(message:  R.stringLocalizable.changePasswordEnterFill(),
+                 okTitle: R.stringLocalizable.buttonOk())
             return
         }
-        
-        if (sha256Hash(currentPassword) == UserDefaults.standard.string(forKey: Constants.password) &&
-            currentPassword != newPassword &&
-            newPassword == newPasswordConfirm
-        ) {
-            Auth.auth().currentUser?.updatePassword(to: newPassword) { error in
-                guard error != nil else {
-                    return
-                }
-                
-                self.viewModel.openShowLogin()
-            }
+
+        if let currentPasswordError = currentPassword.checkPassword() {
+            show(message: currentPasswordError.1,
+                 title: currentPasswordError.0,
+                 okTitle: R.stringLocalizable.buttonOk())
+            return
         }
-        viewModel.openShowLogin()
+
+        if let newPasswordError = newPassword.checkPassword() {
+            show(message: newPasswordError.1,
+                 title: newPasswordError.0,
+                 okTitle: R.stringLocalizable.buttonOk())
+            return
+        }
+
+        if let newPasswordConfirmError = newPasswordConfirm.checkPassword() {
+            show(message: newPasswordConfirmError.1,
+                 title: newPasswordConfirmError.0,
+                 okTitle: R.stringLocalizable.buttonOk())
+            return
+        }
+
+        if newPassword != newPasswordConfirm {
+            show(message: R.stringLocalizable.changePasswordNoMatch(),
+                 okTitle: R.stringLocalizable.buttonOk())
+            return
+        }
+
+        let storedPasswordHash = UserDefaults.standard.string(forKey: Constants.password)
+        guard let storedPasswordHash = storedPasswordHash else {
+            show(message: "Error retrieving stored password.",
+                 okTitle: R.stringLocalizable.buttonOk())
+            return
+        }
+
+        if sha256Hash(currentPassword) != storedPasswordHash {
+            show(message: R.stringLocalizable.changePasswordCurrentPassword(),
+                 okTitle: R.stringLocalizable.buttonOk())
+            return
+        }
+
+        if currentPassword == newPassword {
+            show(message: R.stringLocalizable.changePasswordSame(),
+                 okTitle: R.stringLocalizable.buttonOk())
+            return
+        }
+
+        Auth.auth().currentUser?.updatePassword(to: newPassword) { error in
+            if let error = error {
+                self.show(message: error.localizedDescription,
+                     title: "Error",
+                     okTitle: R.stringLocalizable.buttonOk())
+                return
+            }
+            self.viewModel.openShowLogin()
+        }
     }
+
     
     @IBAction func showCurrentPasswordAction(_ sender: Any) {
         isShowCurrentPassword = !isShowCurrentPassword

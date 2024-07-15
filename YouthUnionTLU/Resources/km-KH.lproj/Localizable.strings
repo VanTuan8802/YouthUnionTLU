@@ -102,17 +102,22 @@ button.create = "បង្កើត";
 joinActivity.title = "ព័ត៌មានអំពីការចូលរួម";
 joinActivity.seat = "ទីតាំងកំពូល";
 joinActivity.join = "បញ្ជាក់";
+joinActivity.qrCodeFail = "QR Code ផុតកំណត់";
 
 setting.info = "ព័ត៌មានផ្ទាល់ខ្លួន";
 setting.shared = "ចែករំលែក";
-setting.rate = "អត្រា";
+setting.rate = "វាយតម្លៃ";
 setting.policy = "គោលនយោបាយ និងសន្តិសុខ";
-setting.changePassword = "ផ្លាស់ប្តូរពាក្យសម្ងាត់";
+setting.changePassword = "ផ្លាស់ប្ដូរពាក្យសម្ងាត់";
 setting.logout = "ចាកចេញ";
 
 changePassword.currentPassword = "បញ្ចូលពាក្យសម្ងាត់បច្ចុប្បន្ន";
 changePassword.newPassword = "បញ្ចូលពាក្យសម្ងាត់ថ្មី";
 changePassword.newPasswordConfirm = "បញ្ចូលពាក្យសម្ងាត់ថ្មីម្តងទៀត";
+changePassword.enterFill = "សូមបំពេញគ្រប់វាលទាំងអស់។";
+changePassword.noMatch = "ពាក្យសម្ងាត់ថ្មី និងការបញ្ជាក់មិនត្រូវគ្នា។";
+changePassword.currentIncorrect = "ពាក្យសម្ងាត់បច្ចុប្បន្នមិនត្រឹមត្រូវ។";
+changePassword.same = "ពាក្យសម្ងាត់ថ្មីមិនអាចដូចនឹងពាក្យសម្ងាត់បច្ចុប្បន្នបានទេ។";
 
 toast.addPostSuccess = "បន្ថែម bài viết thành công";
 toast.addSuccess = "បន្ថែម thành công";

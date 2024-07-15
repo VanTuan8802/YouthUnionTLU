@@ -102,6 +102,7 @@ button.create = "Create";
 joinActivity.title = "Participation Information";
 joinActivity.seat = "Seating Position";
 joinActivity.join = "Confirm";
+joinActivity.qrCodeFail = "QR Code expired";
 
 setting.info = "Personal Information";
 setting.shared = "Share";
@@ -113,6 +114,10 @@ setting.logout = "Logout";
 changePassword.currentPassword = "Enter current password";
 changePassword.newPassword = "Enter new password";
 changePassword.newPasswordConfirm = "Re-enter new password";
+changePassword.enterFill = "Please fill in all the fields.";
+changePassword.noMatch = "New password and confirmation do not match.";
+changePasswied.currentIncorrect = "Current password is incorrect.";
+changePassword.same = "New password cannot be the same as the current password";
 
 toast.addPostSuccess = "Post added successfully";
 toast.addSuccess = "Added successfully";

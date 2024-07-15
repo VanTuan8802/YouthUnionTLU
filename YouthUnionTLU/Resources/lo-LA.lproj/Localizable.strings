@@ -102,17 +102,22 @@ button.create = "ສໍາເລັດ";
 joinActivity.title = "ຂໍ້ມູນກ່ຽວກັບການສະຫມັກ";
 joinActivity.seat = "ຕຳແໜ່ງການນັດສິນ";
 joinActivity.join = "ຢືນຢັນ";
+joinActivity.qrCodeFail = "QR Code หมดอายุ";
 
 setting.info = "ຂໍ້ມູນສ່ວນຕົວ";
 setting.shared = "ແບ່ງປັນ";
-setting.rate = "ປະເມີນ";
+setting.rate = "ໃຫ້ຄະແນນ";
 setting.policy = "ນະໂຍບາຍແລະຄວາມປອດໄພ";
 setting.changePassword = "ປ່ຽນລະຫັດຜ່ານ";
 setting.logout = "ອອກຈາກລະບົບ";
 
-changePassword.currentPassword = "ໃສ່ລະຫັດຜ່ານປະຈຸບັນ";
-changePassword.newPassword = "ໃສ່ລະຫັດຜ່ານໃໝ່";
-changePassword.newPasswordConfirm = "ໃສ່ລະຫັດຜ່ານໃໝ່ອີກຄັ້ງ";
+changePassword.currentPassword = "ໃສ່ລະຫັດຜ່ານປັດຈຸບັນ";
+changePassword.newPassword = "ໃສ່ລະຫັດຜ່ານໃຫມ່";
+changePassword.newPasswordConfirm = "ໃສ່ລະຫັດຜ່ານໃຫມ່ອີກຄັ້ງ";
+changePassword.enterFill = "ກະລຸນາຕື່ມຂໍ້ມູນໃຫ້ຄົບທຸກຂໍ້.";
+changePassword.noMatch = "ລະຫັດຜ່ານໃຫມ່ ແລະການຢືນຢັນບໍ່ຕົງກັນ.";
+changePassword.currentIncorrect = "ລະຫັດຜ່ານປັດຈຸບັນບໍ່ຖືກຕ້ອງ.";
+changePassword.same = "ລະຫັດຜ່ານໃຫມ່ບໍ່ສາມາດຄືກັບລະຫັດຜ່ານປັດຈຸບັນໄດ້.";
 
 toast.addPostSuccess = "ເພີ່ມໂພສສຳເລັດ";
 toast.addSuccess = "ເພີ່ມສຳເລັດ";
